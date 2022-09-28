@@ -1,10 +1,6 @@
 # Especificações do Projeto
 
-<span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
-
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
-
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
+Após as delimitações do problema, objetivos e justificativa, as personas e histórias de usuários a seguir foram criadas a partir da consulta a resultados de pesquisas realizadas pelo IBGE e da análise do levantamento de potenciais usuários, desenvolvidos de maneira ativa através da pesquisa de público-alvo facilitada pela plataforma Google Forms.
 
 ## Personas
 
