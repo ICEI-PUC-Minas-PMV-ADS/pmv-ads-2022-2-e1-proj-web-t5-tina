@@ -1,23 +1,25 @@
-# TÍTULO DO PROJETO
+# TINA
 
-`CURSO`
+`Análise e Desenvolvimento de Sistemas`
 
-`DISCIPLINA`
+`Projeto: Desenvolvimento de Aplicação Web Front-End`
 
-`SEMESTRE`
+`Eixo 1 - 1º Semestre`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O projeto desenvolvido é uma aplicação Web Front-End como solução para a gestão de tempo de estudantes a partir do Ensino Médio. O sistema possibilitará que os usuários cadastrem atividades em calendários e estabeleçam datas e horários para cumprimento de prazos e atendimento a compromissos. Também auxiliará na listagem de tarefas, cumprimento e criação de hábitos.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Diana Santiago Oliveira dos Santos
+* Ellen Caroline Trindade Gonçalves Cândido
+* Gabriela Vitoria Pereira
+* Juliana Dutra Moreira
+* Pedro Henrique Diniz Luiz
+* Pedro Mota Cassemiro
 
 ## Orientador
 
-* Nome completo do professor 1
+* Simone Alves Nogueira
 
 ## Instruções de utilização
 
