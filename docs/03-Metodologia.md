@@ -40,6 +40,7 @@ A equipe definiu a ferramenta Jira como plataforma para o gerenciamento de proje
   - Acompanhamento da projeção temporal das atividades.
 
 O quadro Kanban, presente na visão "Painel" está abaixo:
+
 ![Kanban](img/kanbanJiraTina.png)
 
 
