@@ -11,8 +11,6 @@ O fluxo de interação do usuário foi desenvolvido a partir da ferramenta Figma
   <img src = "img/fluxo.png">
 </p>
 
-![Fluxo](img/fluxo.png)
-
 ## Wireframes
 A estrutura padrão presente nas telas é descrita em detalhes a seguir:
 
