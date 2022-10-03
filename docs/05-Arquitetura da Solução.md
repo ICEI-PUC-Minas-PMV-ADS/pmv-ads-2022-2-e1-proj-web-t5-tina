@@ -33,6 +33,7 @@ que o usuário entra na plataforma, ele é apresentado à tela inicial
 (Tela 1) onde ele é confrontado com as opões de editar seu perfil ou
 então visualizar sua galeria.
 
+
 Caso ele opte por seguir pelo primeiro caminho (Editar Perfil), ele é
 redirecionado para a tela de edição de perfil (Tela 2), onde pode
 atualizar seus dados cadastrais. Nessa tela, o usuário também pode
@@ -57,9 +58,13 @@ para a Tela 2.
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
-
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+- Linguagens utlizadas para desenvolver o projeto: HTML, CSS, JavaScript
+- IDEs de desenvolvimento: Visual Studio Code
+- Plataforma para hospedagem do site: Heroku
+- Plataforma para hospedagem dos arquivos: GitHub
+- Ferramenta de versionamento: Git
+- Ferramenta para a criação de logo e imagens: Canva
+- Ferramenta para crição de template: Figma
 
 
 ## Hospedagem
