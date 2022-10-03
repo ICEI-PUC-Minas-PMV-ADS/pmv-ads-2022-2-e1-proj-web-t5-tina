@@ -8,11 +8,11 @@ A metodologia abaixo descreve a definição das plataformas e métodos utilizado
 Os diversos ambientes de trabalho e suas respectivas plataformas estão descritos abaixo: 
 
 |Ambiente| Plataforma |Link de Acesso|
-|--------------------|------------------------------------|----------------------------------------|
-|Repositório de Código Fonte|GitHub|[GitHub - TINA](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-2-e1-proj-web-t5-tina)|
-|Documentos do Projeto|Documentos Google|[Documentos Google](https://docs.google.com/document/d/1xgnERUmhhSl95Wog4cSZbBEcOPh9F8ONZzdEDbVb40k/edit)|
-|Projeto de Interface e Wireframes|Figma|https://www.figma.com/file/8fLcvqzsQxmqe885hzJItd/Tina?node-id=0%3A1|
-|Gerenciamento do Projeto|Jira|https://projetotina.atlassian.net/jira/software/projects/TINA/boards/2|
+|:--------------------:|:------------------------------------:|:----------------------------------------:|
+|Repositório de Código Fonte| GitHub |[GitHub - TINA](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-2-e1-proj-web-t5-tina)|
+|Documentos do Projeto| Documentos Google |[Documentos Google - Projeto TINA](https://docs.google.com/document/d/1xgnERUmhhSl95Wog4cSZbBEcOPh9F8ONZzdEDbVb40k/edit)|
+|Projeto de Interface e Wireframes| Figma |[Figma - Projeto TINA](https://www.figma.com/file/8fLcvqzsQxmqe885hzJItd/Tina?node-id=0%3A1)|
+|Gerenciamento do Projeto| Jira |[Jira - Projeto TINA](https://projetotina.atlassian.net/jira/software/projects/TINA/boards/2)|
 
 ## Gerenciamento de Projeto
 A equipe definiu a metodologia ágil Scrum para gerenciar o processo de desenvolvimento do projeto. As iterações, Sprints, serão de 1 semana. A cada semana ocorrerá uma reunião de planejamento da Sprint, na qual será definida os backlogs do produto que serão os backlogs da próxima Sprint. Reuniões diárias serão realizadas para reportar o que será feito, o que está sendo feito e dificuldades para o Scrum Master. Ao final da Sprint, uma reunião de revisão é realizada para avaliar se o artefato produzido atende os requisitos. Os integrantes da equipe e seus respectivos papéis estão a seguir:
