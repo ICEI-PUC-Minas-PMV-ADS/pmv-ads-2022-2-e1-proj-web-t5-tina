@@ -6,7 +6,8 @@ Após as delimitações do problema, objetivos e justificativa, as personas e hi
 
 ### Fernado Pereira
 
-![Fernando](img/Fernando%20Pereira.PNG)
+<img src="img/Fernando%20Pereira.PNG" width="210px" />
+
 <p class="attribution">"<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/56421238@N00/35004807000">Meetup - Shooting new face Model Photogénique</a>" by <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/56421238@N00">jarnix</a> is licensed under <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by/2.0/?ref=openverse">CC BY 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img></a>. </p>
 
 <b>Idade:</b> 20
@@ -25,7 +26,7 @@ Após as delimitações do problema, objetivos e justificativa, as personas e hi
 
 ### Elisa Santos Camargo
 
-![Elisa](img/Elisa%20Santos%20Camargo.PNG)
+<img src="img/Elisa%20Santos%20Camargo.PNG" width="210px" />
 <p class="attribution">"<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/56421238@N00/35262240761">Meetup - Shooting new face Model Photogénique</a>" by <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/56421238@N00">jarnix</a> is licensed under <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by/2.0/?ref=openverse">CC BY 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img></a>. </p>
 
 <b>Idade:</b> 31 
@@ -44,8 +45,7 @@ Após as delimitações do problema, objetivos e justificativa, as personas e hi
 
 ### Mariana Antunes
 
-![Mariana](img/Mariana%20Antunes.PNG)
-
+<img src="img/Mariana%20Antunes.PNG" width="210px" />
 <p class="attribution">"<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/10816734@N03/4249179026">A local business woman</a>" by <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/10816734@N03">World Bank Photo Collection</a> is licensed under <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nd-nc/2.0/jp/?ref=openverse">CC BY-NC-ND 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img><img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img></a>. </p>
 
 <b>Idade:</b> 48 anos 
@@ -64,8 +64,7 @@ Após as delimitações do problema, objetivos e justificativa, as personas e hi
  
 ### João Pedro Peixoto
 
-![João](img/João%20Pedro%20Peixoto.PNG)
-
+<img src="img/João%20Pedro%20Peixoto.PNG" width="210px" />
 <p class="attribution">"<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/80487073@N00/4023567265">Boy of Buzios, Brasil</a>" by <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/80487073@N00">alobos life</a> is licensed under <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/2.0/?ref=openverse">CC BY-NC-ND 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img><img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img></a>. </p>
 
 <b>Idade:</b> 17 
@@ -84,7 +83,7 @@ Após as delimitações do problema, objetivos e justificativa, as personas e hi
 
 ### Renata Oliveira
 
-![Renata](img/Renata%20Oliveira.PNG)
+<img src="img/Renata%20Oliveira.PNG" width="210px" />
 
 <p class="attribution">"<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/56421238@N00/35225151372">Meetup - Shooting new face Model Photogénique</a>" by <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/56421238@N00">jarnix</a> is licensed under <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by/2.0/?ref=openverse">CC BY 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img></a>. </p>
 
