@@ -7,6 +7,10 @@ A interface do sistema foi definida para atender aos requisitos funcionais e cum
 
 O fluxo de interação do usuário foi desenvolvido a partir da ferramenta Figma. O fluxo de interação pelas diversas telas do sistema é descrito a seguir:
 
+<p align = "center">
+  <img src = "img/fluxo.png">
+</p>
+
 ![Fluxo](img/fluxo.png)
 
 ## Wireframes
