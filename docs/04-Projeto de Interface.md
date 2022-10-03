@@ -40,7 +40,8 @@ Figura 5: Tela Visão Semanal
 <b>Tela - Visão diária</b>
 Já na Visão diária é possível ver, criar e editar todas as atividades, tarefas e hábitos na visão do dia vigente. Nesta função, o usuário poderá ter a visão diária de seus planejamentos por horários definidos.
 
-![tela_inicial_diaria](img/tela_inicial_diaria.png)
+![tela_inicial_diario](img/tela_inicial_diario.png)
+
 Figura 6: Tela Visão Diária
  
 <b>Tela - Criar uma tarefa, atividade, hábito ou categoria</b>
