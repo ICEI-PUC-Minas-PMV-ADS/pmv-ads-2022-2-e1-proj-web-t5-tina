@@ -13,7 +13,7 @@ O fluxo de interação do usuário foi desenvolvido a partir da ferramenta Figma
 A estrutura padrão presente nas telas é descrita em detalhes a seguir:
 
 <b>Tela - HomePage/login</b>
-
+![tela_cadastro](img/tela_cadastro.png)
 A tela Homepage/login será a tela inicial do usuário ao acessar a página. Nesta tela haverá uma pequena descrição da ferramenta, logo e slogan. É nesta tela que o usuário fará o login para acessar sua conta, ou então, criar sua conta.
 
 <b>Tela Inicial - Visão calendário</b>
