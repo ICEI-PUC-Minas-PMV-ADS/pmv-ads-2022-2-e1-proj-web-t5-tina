@@ -39,7 +39,7 @@ A equipe definiu a ferramenta Jira como plataforma para o gerenciamento de proje
 * Roteiro:
   - Acompanhamento da projeção temporal das atividades.
 
-O quadro Kanban, presente na visão "Painel" está abaixo:
+As tarefas serão organizadas entre os membros da equipe de modo que cada membro se atribui a tarefa. O quadro Kanban, presente em “Quadro”, está abaixo:
 
 ![Kanban](img/kanbanJiraTina.png)
 
