@@ -21,11 +21,13 @@ O objetivo central deste projeto é prover uma ferramenta que possibilite a estu
 
 Objetivos específicos:  
 
-Fornecer ao estudante a capacidade de manejar atividades e compromissos de acordo com a sua rotina pessoal; 
+<ul>
+<li>Fornecer ao estudante a capacidade de manejar atividades e compromissos de acordo com a sua rotina pessoal;</li> 
 
-Garantir o acompanhamento de tarefas e objetivos por períodos; 
+<li>Garantir o acompanhamento de tarefas e objetivos por períodos;</li>
 
-Estimular a realização dos compromissos e o cumprimento de prazos.
+<li>Estimular a realização dos compromissos e o cumprimento de prazos.</li>
+</ul>
 
 ## Justificativa
 
