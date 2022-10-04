@@ -19,7 +19,7 @@ A estrutura padrão presente nas telas é descrita em detalhes a seguir:
 A tela Homepage/login será a tela inicial do usuário ao acessar a página. Nesta tela haverá uma pequena descrição da ferramenta, logo e slogan. É nesta tela que o usuário fará o login para acessar sua conta, ou então, criar sua conta.
 
 <p align = "center">
-  <img src = "img/tela_cadastro.png">
+  <img src = "img/Tela_Login.png" width="700px">
 </p>
 
 <b>Tela Inicial - Visão calendário</b>
@@ -36,7 +36,7 @@ O bloco da Barra Superior traz quatro elementos distintos:
 ● 	componente Mês Posterior que leva o usuário para a tela de Visão Mensal no mês posterior ao vigente;
 
 <p align = "center">
-  <img src = "img/tela_inicial_mensal.png">
+  <img src = "img/Tela_Inicial_calendario.png" width="700px">
 </p>
  
 <b>Tela - Visão semanal</b>
@@ -44,7 +44,7 @@ O bloco da Barra Superior traz quatro elementos distintos:
 O usuário consegue alternar a visão de período, podendo escolher entre a visão mensal, semanal ou diária no menu principal. Na Visão Semanal, é possível ver, criar e editar as tarefas, atividades e hábitos da semana, além disso, permite ao usuário visualizar as atividades de cada dia da semana por horário.
 
 <p align = "center">
-  <img src = "img/tela_inicial_semanal.png">
+  <img src = "img/Tela_semanal.png" width="700px">
 </p>
  
 <b>Tela - Visão diária</b>
@@ -52,7 +52,7 @@ O usuário consegue alternar a visão de período, podendo escolher entre a vis�
 Já na Visão diária é possível ver, criar e editar todas as atividades, tarefas e hábitos na visão do dia vigente. Nesta função, o usuário poderá ter a visão diária de seus planejamentos por horários definidos.
 
 <p align = "center">
-  <img src = "img/tela_inicial_diario.png">
+  <img src = "img/Tela_diario.png" width="700px">
 </p>
  
 <b>Tela - Criar uma tarefa, atividade, hábito ou categoria</b>
@@ -60,7 +60,7 @@ Já na Visão diária é possível ver, criar e editar todas as atividades, tare
 No menu lateral também é possível inserir uma atividade, tarefa, hábito ou categoria, no qual o botão para criar estes itens está representado pela letra inicial de cada um no menu. No modo de criação da atividade, o usuário insere as informações como título, descrição, data e hora. Na atividade, serão selecionadas também etiquetas de prioridade da tarefa e categoria da atividade, além de permitir a periodização desta atividade. Por fim, ao criar este item ele ficará exibido no calendário.
 
 <p align = "center">
-  <img src = "img/tela_criar_atividade.png">
+  <img src = "img/Criar%20atividade.png" width="700px">
 </p>
 
 <b>Tela - Perfil</b>
