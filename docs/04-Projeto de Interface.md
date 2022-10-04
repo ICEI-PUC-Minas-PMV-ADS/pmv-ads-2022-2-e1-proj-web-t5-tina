@@ -25,13 +25,13 @@ A tela Homepage/login será a tela inicial do usuário ao acessar a página. Nes
 A tela Visão Calendário apresenta o calendário na visão do mês vigente com as atividades incluídas naquele mês. Além disso, na lateral esquerda, há um campo para tarefas sem prazo e outro campo para acompanhar os hábitos inseridos pelo usuário. O usuário tem a possibilidade de ocultar a barra de tarefa e/ou a de hábitos no menu principal, localizado na lateral esquerda.
 O bloco da Barra Superior traz quatro elementos distintos:
 
-● 	componente de pesquisa que permite buscar os compromissos com o resultado da busca solicitada pelo usuário;
+● 	componente de <b>pesquisa:</b> que permite buscar os compromissos com o resultado da busca solicitada pelo usuário;
 
-● 	componente Hoje que leva o usuário para a tela de Visão Mensal do mês vigente;
+● 	componente <b>Hoje:</b> que leva o usuário para a tela de Visão Mensal do mês vigente;
 
-● 	componente Mês Anterior que leva o usuário para a tela de Visão Mensal no mês anterior ao vigente;
+● 	componente <b>Mês Anterior:</b> que leva o usuário para a tela de Visão Mensal no mês anterior ao vigente;
 
-● 	componente Mês Posterior que leva o usuário para a tela de Visão Mensal no mês posterior ao vigente;
+● 	componente <b>Mês Posterior:</b> que leva o usuário para a tela de Visão Mensal no mês posterior ao vigente;
 
 ![tela_inicial_mensal](img/tela_inicial_mensal.png)
 
