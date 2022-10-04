@@ -1,6 +1,6 @@
 # Especificações do Projeto
 
-Após as delimitações do problema, objetivos e justificativa, as personas e histórias de usuários a seguir foram criadas a partir da consulta a resultados de pesquisas realizadas pelo IBGE e da análise do levantamento de potenciais usuários, desenvolvidos de maneira ativa através da pesquisa de público-alvo facilitada pela plataforma Google Forms.
+Após as delimitações do problema, objetivos e justificativa, as personas e histórias de usuários a seguir foram criadas a partir da consulta a resultados de pesquisas realizadas pelo IBGE e da análise do levantamento de potenciais usuários, desenvolvidos de maneira ativa através da pesquisa de público-alvo facilitada pela plataforma <i>Google Forms</i>.
 
 ## Personas
 
