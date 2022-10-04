@@ -147,7 +147,7 @@ Cada requisito funcional do projeto e o seu grau de prioridade são apresentados
 |RF-007| O site deve permitir que o usuário filtre as atividades por título, âmbito ou prioridade | MÉDIA |
 |RF-008| O site deve permitir que o usuário crie e associe anotações de hábitos ao calendário | MÉDIA |
 |RF-009| O site deve possibilitar automação como na criação de regras para periodização de atividades e/ou ações específicas | BAIXA |
-|RF-010| O site deve apresentar tooltips para facilitar o uso | BAIXA |
+|RF-010| O site deve apresentar <i>tooltips</i> para facilitar o uso | BAIXA |
 |RF-011| O site deve possibilitar edições de design como mudanças de cores, plano de fundo e adesivos | BAIXA |
 |RF-012| O site parabeniza o usuário quando uma atividade é marcada como concluída antes do prazo | BAIXA |
 
@@ -158,7 +158,7 @@ Nessa tabela são mostrados os requisitos não funcionais composto no projeto:
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
 |RNF-001| O site deve ser responsivo, permitindo a visualização otimizadae sua interface e funcionalidades, em navegadores acessados por dispositivos móveis | ALTA | 
-|RNF-002| O site deve ser compatível com os principais navegadores utilizados no mercado (Chrome, Firefox, Edge, Safari, Opera) |  ALTA |
+|RNF-002| O site deve ser compatível com os principais navegadores utilizados no mercado (<i>Chrome</i>, <i>Firefox</i>, <i>Edge</i>, <i>Safari</i>, <i>Opera</i>) |  ALTA |
 |RNF-003| O site deve ter a linguagem em português e ser de fácil compreensão | ALTA |
 |RNF-004| O site deve estar em conformidade com o calendário oficial e horário locais do usuário | ALTA |
 
@@ -169,6 +169,6 @@ Em seguida, a tabela sinaliza claramente as restrições e obrigações para a r
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
 |RE-001| O projeto deve ser entregue até o final do semestre 2022.2 |
-|RE-002| Todos os módulos devem ser desenvolvidos em FrontEnd       |
+|RE-002| Todos os módulos devem ser desenvolvidos em <i>FrontEnd</i>       |
 |RE-003| A equipe será responsável pelo desenvolvimento do projeto  |
 |RE-004| O projeto não possui orçamento líquido definido            |
