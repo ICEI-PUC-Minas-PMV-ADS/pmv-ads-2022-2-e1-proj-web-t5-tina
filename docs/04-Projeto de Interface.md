@@ -63,12 +63,27 @@ No menu lateral também é possível inserir uma atividade, tarefa, hábito ou c
   <img src = "img/Criar%20atividade.png" width="700px">
 </p>
 
+A criação de tarefas e hábitos possui itens semelhantes a atividade, porém, estes itens são exibidos em listas.
+
+<p align = "center">
+  <img src = "img/Criar tarefa.png" width="700px">
+</p>
+
+<p align = "center">
+  <img src = "img/Criar habito.png" width="700px">
+</p>
+
+O item Categoria permite a criação de etiquetas que indicam o âmbito da atividade, tarefa ou hábito.
+
+<p align = "center">
+  <img src = "img/Criar categoria.png" width="700px">
+</p>
+
 <b>Tela - Perfil</b>
 
 Na tela de Perfil o usuário pode visualizar seu perfil, editar seu cadastro e suas preferências.
 
 <p align = "center">
-  <img src = "img/tela_perfil.png">
+  <img src = "img/Tela_perfil.png" width="700px">
 </p>
-
 
