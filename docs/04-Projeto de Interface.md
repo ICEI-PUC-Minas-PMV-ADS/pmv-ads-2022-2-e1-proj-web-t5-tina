@@ -55,7 +55,7 @@ Já na Visão diária é possível ver, criar e editar todas as atividades, tare
   <img src = "img/Tela_diario.png" width="700px">
 </p>
  
-<b>Tela - Criar uma tarefa, atividade, hábito ou categoria</b>
+<b>Tela - Criar uma atividade, tarefa, hábito ou categoria</b>
 
 No menu lateral também é possível inserir uma atividade, tarefa, hábito ou categoria, no qual o botão para criar estes itens está representado pela letra inicial de cada um no menu. No modo de criação da atividade, o usuário insere as informações como título, descrição, data e hora. Na atividade, serão selecionadas também etiquetas de prioridade da tarefa e categoria da atividade, além de permitir a periodização desta atividade. Por fim, ao criar este item ele ficará exibido no calendário.
 
