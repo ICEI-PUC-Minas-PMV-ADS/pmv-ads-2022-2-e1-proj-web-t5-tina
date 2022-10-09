@@ -11,6 +11,8 @@ O fluxo de interação do usuário foi desenvolvido a partir da ferramenta <i>Fi
   <img src = "img/fluxo.png">
 </p>
 
+O fluxograma, em mais detalhes, pode ser visto no link: https://www.figma.com/file/8fLcvqzsQxmqe885hzJItd/Tina?node-id=3%3A3
+
 ## <i>Wireframes</i>
 A estrutura padrão presente nas telas é descrita em detalhes a seguir:
 
@@ -86,4 +88,8 @@ Na tela de Perfil o usuário pode visualizar seu perfil, editar seu cadastro e s
 <p align = "center">
   <img src = "img/Tela_perfil.png" width="700px">
 </p>
+
+O protótipo interativo das telas pode ser visto através do link: https://www.figma.com/proto/8fLcvqzsQxmqe885hzJItd/Tina?node-id=357%3A1832&scaling=min-zoom&page-id=3%3A2&starting-point-node-id=357%3A1832
+
+
 
