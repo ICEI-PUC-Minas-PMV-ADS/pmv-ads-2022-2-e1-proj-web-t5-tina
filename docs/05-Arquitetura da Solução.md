@@ -12,10 +12,15 @@ Os componetes e as conexões entre si estão representados na figura a seguir:
 
 A solução implementada conta com os seguintes módulos:
 
-- Navegador: Interface básica do sistema
-  - **Páginas Web** - Conjunto de arquivos HTML, CSS, JavaScript e imagens que implementam as funcionalidades do sistema.
-   - **Local Storage** - armazenamento mantido no Navegador, onde são implementados bancos de dados baseados em JSON.
- - **Hospedagem** - local na Internet onde as páginas são mantidas e acessadas pelo navegador. 
+- <b>Navegador</b>: Interface básica do sistema 
+  - <b>Páginas Web</b> - Conjunto de arquivos HTML, CSS, JavaScript e imagens que implementam as funcionalidades do sistema.
+  - <b>Local Storage</b> - armazenamento mantido no Navegador
+    - <b>Atividades</b> - 
+    - <b>Tarefas</b> (?) -
+    - <b>Hábitos</b> - 
+    - <b>Categorias</b> - 
+- <b>News API</b> - plataforma que permite o acesso às notícias exibidas no site.
+- <b>Hospedagem</b>  -  local  na  Internet  onde  as  páginas  são  mantidas  e  acessadas  pelo navegador. 
 
 ## Tecnologias Utilizadas
 
