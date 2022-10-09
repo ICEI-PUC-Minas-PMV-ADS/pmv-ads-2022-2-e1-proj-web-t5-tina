@@ -20,7 +20,7 @@ A solução implementada conta com os seguintes módulos:
     - <b>Hábitos</b> - 
     - <b>Categorias</b> - 
 - <b>News API</b> - plataforma que permite o acesso às notícias exibidas no site.
-- <b>Hospedagem</b>  -  local  na  Internet  onde  as  páginas  são  mantidas  e  acessadas  pelo navegador. 
+- <b>Hospedagem</b> - local  na  Internet  onde  as  páginas  são  mantidas  e  acessadas  pelo navegador. 
 
 ## Tecnologias Utilizadas
 
@@ -35,11 +35,5 @@ A solução implementada conta com os seguintes módulos:
 
 ## Hospedagem
 
-Explique como a hospedagem e o lançamento da plataforma foi feita.
 
-> **Links Úteis**:
->
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting Started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando Seu Site No Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
+
