@@ -1,28 +1,29 @@
 # Arquitetura da Solução
 
-Neste tópico, são mostrados os detalhes técnicos da estrturação do software com seus componetes da solução e do ambiente de hospedagem da aplicação.
+Neste tópico, são mostrados os detalhes técnicos da estruturação do software com seus componentes da solução e do ambiente de hospedagem da aplicação.
 
 ## Diagrama de componentes
 
-Os componetes e as conexões entre si estão representados na figura a seguir: 
+Os componentes e as conexões entre si estão representados na figura a seguir: 
 
 <p align = "center">
-  <img src = "img/diagrama_de_componentes.png">
+  <img src = "img/diagrama_de_componentes.jpg">
 </p>
 
 A solução implementada conta com os seguintes módulos:
 
-- <b>Navegador</b>: Interface básica do sistema 
+- <b>Navegador</b>: Interface básica do sistema.
   - <b>Páginas Web</b> - Conjunto de arquivos HTML, CSS, JavaScript e imagens que implementam as funcionalidades do sistema.
-  - <b>APIs de Login</b> - serviços que permitem rápido cadastro e login do usuário por contas pré-existentes em outros sistemas.
-  - <b>API de comunicação email</b> - serviço que permite o envio de informações e notificações por email. 
-  - <b>Armazenamento Local</b> - armazenamento mantido no Navegador do usuário, onde são armazenados dados baseados em JSON. São eles:
-    - <b>Sessão de usuário</b> -  informações de login do usuário.
-    - <b>Atividade</b> - itens adicionados com informação de data e hora cuja visualização está no calendário. 
-    - <b>Lista</b> - itens adicionados a uma lista de organização sem data definida.
-    - <b>Hábito</b> - itens adicionados para acompanhamento diário da execução.
-    - <b>Categorias</b> - marcadores de organização criados pelo usuário.
-- <b>Hospedagem</b> - local  na  Internet  onde  as  páginas  são  mantidas  e  acessadas  pelo navegador. 
+  - <b>Armazenamento Local</b> - Armazenamento mantido no Navegador do usuário, onde são armazenados dados baseados em JSON. São eles:
+    - <b>Sessão de usuário</b> -  Informações de login do usuário.
+    - <b>Atividade</b> - Itens adicionados com informação de data e hora cuja visualização está no calendário. 
+    - <b>Lista</b> - Itens adicionados a uma lista de organização sem data definida.
+    - <b>Hábito</b> - Itens adicionados para acompanhamento diário da execução.
+    - <b>Categorias</b> - Marcadores de organização criados pelo usuário.
+- <b>APIs externas</b> - Serviços disponibilizados por outros sistemas, são usados:
+  - <b>APIs de Login</b> - Permitem o cadastro e login do usuário por contas pré-existentes em outros sistemas.
+  - <b>API de notificação por email</b> - Permite o envio de informações e notificações por email. 
+- <b>Hospedagem</b> - Local  na  Internet  onde  as  páginas  são  mantidas  e  acessadas  pelo navegador. 
 
 ## Tecnologias Utilizadas
 
@@ -33,6 +34,7 @@ A solução implementada conta com os seguintes módulos:
 - Ferramenta de versionamento: Git.
 - Ferramenta para a criação de logo e imagens: Canva.
 - Ferramenta para crição de template: Figma.
+- Ferramenta para diagramação dos componentes: Diagrams.net.
 
 
 ## Hospedagem
