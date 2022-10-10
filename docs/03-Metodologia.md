@@ -10,7 +10,7 @@ Os diversos ambientes de trabalho e suas respectivas plataformas estão descrito
 |Ambiente| Plataforma |Link de Acesso|
 |:--------------------:|:------------------------------------:|:----------------------------------------:|
 |Repositório de Código Fonte| <i>GitHub</i> |[GitHub - TINA](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-2-e1-proj-web-t5-tina)|
-|Documentos do Projeto| <i>Documentos Google</i> |[Documentos Google - Projeto TINA](https://docs.google.com/document/d/1xgnERUmhhSl95Wog4cSZbBEcOPh9F8ONZzdEDbVb40k/edit)|
+|Documentos do Projeto| <i>GitHub</i> |[GitHub - TINA](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2022-2-e1-proj-web-t5-tina)|
 |Projeto de Interface e <i>Wireframes</i>| <i>Figma</i> |[Figma - Projeto TINA](https://www.figma.com/file/8fLcvqzsQxmqe885hzJItd/Tina?node-id=0%3A1)|
 |Gerenciamento do Projeto| <i>Jira</i> |[Jira - Projeto TINA](https://projetotina.atlassian.net/jira/software/projects/TINA/boards/2)|
 
