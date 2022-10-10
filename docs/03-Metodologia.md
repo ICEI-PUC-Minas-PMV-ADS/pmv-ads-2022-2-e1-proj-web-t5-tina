@@ -15,10 +15,10 @@ Os diversos ambientes de trabalho e suas respectivas plataformas estão descrito
 |Gerenciamento do Projeto| <i>Jira</i> |[Jira - Projeto TINA](https://projetotina.atlassian.net/jira/software/projects/TINA/boards/2)|
 
 ## Gerenciamento de Projeto
-A equipe definiu a metodologia ágil <i>Scrum</i> para gerenciar o processo de desenvolvimento do projeto. As iterações, <i>Sprints</i>, serão de 1 semana. A cada semana ocorrerá uma reunião de planejamento da <i>Sprints</i>, na qual será definida os <i>backlogs</i> do produto que serão os <i>backlogs</i> da próxima <i>Sprints</i>. Reuniões diárias serão realizadas para reportar o que será feito, o que está sendo feito e dificuldades para o <i>Scrum Master</i>. Ao final da <i>Sprints</i>, uma reunião de revisão é realizada para avaliar se o artefato produzido atende os requisitos. Os integrantes da equipe e seus respectivos papéis estão a seguir:
+A equipe definiu a metodologia ágil <i>Scrum</i> para gerenciar o processo de desenvolvimento do projeto. As iterações, <i>Sprints</i>, serão de 1 semana. A cada semana ocorrerá uma reunião de planejamento da <i>Sprint</i>, na qual será definida os <i>backlogs</i> do produto que serão os <i>backlogs</i> da próxima <i>Sprint</i>. Reuniões diárias serão realizadas para reportar o que será feito, o que está sendo feito e dificuldades para o <i>Scrum Master</i>. Ao final da <i>Sprint</i>, uma reunião de revisão é realizada para avaliar se o artefato produzido atende os requisitos. Os integrantes da equipe e seus respectivos papéis estão a seguir:
  
-* <i>Scrum Master</i>: Será um papel rotativo, a cada semana um novo <i>Scrum Master</i> será escolhido para atuar durante a <i>Sprints</i>.
-* <i>Product Owner</i>: Será um papel rotativo, a cada semana um novo <i>Product Owner</i> será escolhido para atuar durante a <i>Sprints</i>.
+* <i>Scrum Master</i>: Será um papel rotativo, a cada semana um novo <i>Scrum Master</i> será escolhido para atuar durante a <i>Sprint</i>.
+* <i>Product Owner</i>: Será um papel rotativo, a cada semana um novo <i>Product Owner</i> será escolhido para atuar durante a <i>Sprint</i>.
 * Equipe de Desenvolvimento: deve executar as tarefas e participar ativamente das rotinas. Será formada por todos os integrantes da equipe.
   - Diana Santiago Oliveira dos Santos
   - Ellen Caroline Trindade Gonçalves Cândido
@@ -30,11 +30,11 @@ A equipe definiu a metodologia ágil <i>Scrum</i> para gerenciar o processo de d
 A equipe definiu a ferramenta <i>Jira</i> como plataforma para o gerenciamento de projeto e organização e distribuição de tarefas. A estruturação da plataforma está a seguir:
 * <i>Backlog</i>:
   - <i>Backlog</i> do Produto: Lista de todos os requisitos do produto. Essa lista é categorizada de acordo com cada tópico presente nesta documentação.
-  - <i>Backlog</i> da <i>Sprints</i>: Lista dos requisitos do produto que serão incorporados à <i>Sprints</i> seguinte. É a lista presente em “Painel”.
+  - <i>Backlog</i> da <i>Sprint</i>: Lista dos requisitos do produto que serão incorporados à <i>Sprint</i> seguinte. É a lista presente em “Painel”.
 * Painel:
-  - Pendentes: Lista de <i>Backlogs</i> da <i>Sprints</i> prontos para serem atribuídos e iniciados.
-  - Em andamento: Lista de <i>Backlogs</i> da <i>Sprints</i> em desenvolvimento.
-  - Para validação: Lista de <i>Backlogs</i> da <i>Sprints</i> aguardando avaliação para conclusão.
+  - Pendentes: Lista de <i>Backlogs</i> da <i>Sprint</i> prontos para serem atribuídos e iniciados.
+  - Em andamento: Lista de <i>Backlogs</i> da <i>Sprint</i> em desenvolvimento.
+  - Para validação: Lista de <i>Backlogs</i> da <i>Sprint</i> aguardando avaliação para conclusão.
   - Feito: Lista de <i>Backlogs</i> validados e finalizados.
 * Roteiro:
   - Acompanhamento da projeção temporal das atividades.
