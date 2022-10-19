@@ -6,7 +6,7 @@
 
 `Eixo 1 - 1º Semestre`
 
-O projeto desenvolvido é uma aplicação Web Front-End como solução para a gestão de tempo de estudantes a partir do Ensino Médio. O sistema possibilitará que os usuários cadastrem atividades em calendários e estabeleçam datas e horários para cumprimento de prazos e atendimento a compromissos. Também auxiliará na listagem de tarefas, cumprimento e criação de hábitos.
+O projeto desenvolvido é uma aplicação Web Front-End como solução para a gestão de tempo de estudantes a partir do Ensino Médio. O sistema possibilitará que os usuários cadastrem atividades em calendários e estabeleçam datas e horários para cumprimento de prazos e atendimento a compromissos. Também auxiliará na listagem de tarefas, cumprimento e criação de hábitos..
 
 ## Integrantes
 
