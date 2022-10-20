@@ -1,79 +1,46 @@
 # Arquitetura da Solução
 
-<span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>
-
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
+Neste tópico, são mostrados os detalhes técnicos da estruturação do software com seus componentes da solução e do ambiente de hospedagem da aplicação.
 
 ## Diagrama de componentes
 
-Diagrama que permite a modelagem física de um sistema, através da visão dos seus componentes e relacionamentos entre os mesmos.
+Os componentes e as conexões entre si estão representados na figura a seguir: 
 
-Exemplo: 
-
-Os componentes que fazem parte da solução são apresentados na Figura XX.
-
-![Diagrama de Componentes](img/componentes.png)
-<center>Figura XX - Arquitetura da Solução</center>
+<p align = "center">
+  <img src = "img/diagrama_de_componentes.jpg">
+</p>
 
 A solução implementada conta com os seguintes módulos:
 
-- Navegador: Interface básica do sistema
-  - **Páginas Web** - Conjunto de arquivos HTML, CSS, JavaScript e imagens que implementam as funcionalidades do sistema.
-   - **Local Storage** - armazenamento mantido no Navegador, onde são implementados bancos de dados baseados em JSON.
- - **Hospedagem** - local na Internet onde as páginas são mantidas e acessadas pelo navegador. 
-
-> **Links Úteis**:
->
-> - [Whimsical](https://whimsical.com/)
-
-Inclua um diagrama da solução e descreva os módulos e as tecnologias que fazem parte da solução. Discorra sobre o diagrama.
-
-A imagem a seguir ilustra a o fluxo do usuário em nossa solução. Assim
-que o usuário entra na plataforma, ele é apresentado à tela inicial
-(Tela 1) onde ele é confrontado com as opões de editar seu perfil ou
-então visualizar sua galeria.
-
-
-Caso ele opte por seguir pelo primeiro caminho (Editar Perfil), ele é
-redirecionado para a tela de edição de perfil (Tela 2), onde pode
-atualizar seus dados cadastrais. Nessa tela, o usuário também pode
-escolher para editar sua foto de perfil. Ao selecionar essa opção, ele é
-redirecionado para a Tela 3, onde ele a imagem expandida do perfil do
-usuário é mostrado. Ao selecionar a opção para atualizar a imagem, uma
-nova janela abre pedindo para o usuário fazer o upload da nova foto.
-Assim que o processo termina um pop-up exibe o status para o usuário
-(Tela 4) e o usuário é redirecionado para a Tela 2.
-
-Caso o usuário opte seguir pelo segundo caminho (Visualizar Galeria) ele
-é redirecionado para a Tela 5 com todas as fotos que o usuário possui. O
-usuário pode clicar em um post qualquer para visualizar os detalhes do
-post (Tela 6). Nessa tela, ele pode então escolher editar o post, sendo
-redirecionado para a Tela 7. Ao editar as informações, o usuário pode
-escolher salvar ou deletar o post. Em ambos os casos o status é
-notificado para o usuário (Tela 8) e em seguida ele é redirecionado
-para a Tela 2.
-
-![Exemplo de UserFlow](img/userflow.jpg)
-
+- <b>Navegador</b>: Interface básica do sistema.
+  - <b>Páginas Web</b> - Conjunto de arquivos HTML, CSS, JavaScript e imagens que implementam as funcionalidades do sistema.
+  - <b>Armazenamento Local</b> - Armazenamento mantido no Navegador do usuário, onde são armazenados dados baseados em JSON. São eles:
+    - <b>Sessão de usuário</b> -  Informações de login do usuário.
+    - <b>Atividade</b> - Itens adicionados com informação de data e hora cuja visualização está no calendário. 
+    - <b>Lista</b> - Itens adicionados a uma lista de organização sem data definida.
+    - <b>Hábito</b> - Itens adicionados para acompanhamento diário da execução.
+    - <b>Categorias</b> - Marcadores de organização criados pelo usuário.
+- <b>APIs externas</b> - Serviços disponibilizados por outros sistemas, são usados:
+  - <b>APIs de Login</b> - Permitem o cadastro e login do usuário por contas pré-existentes em outros sistemas.
+  - <b>API de notificação por email</b> - Permite o envio de informações e notificações por email. 
+- <b>Hospedagem</b> - Local  na  Internet  onde  as  páginas  são  mantidas  e  acessadas  pelo navegador. 
 
 ## Tecnologias Utilizadas
 
-- Linguagens utlizadas para desenvolver o projeto: HTML, CSS, JavaScript
-- IDEs de desenvolvimento: Visual Studio Code
-- Plataforma para hospedagem do site: Heroku
-- Plataforma para hospedagem dos arquivos: GitHub
-- Ferramenta de versionamento: Git
-- Ferramenta para a criação de logo e imagens: Canva
-- Ferramenta para crição de template: Figma
+- Linguagens utilizadas para desenvolver o projeto: HTML, CSS, JavaScript.
+- IDEs de desenvolvimento: Visual Studio Code.
+- Plataforma para hospedagem do site: Heroku.
+- Plataforma para repositório dos arquivos: GitHub.
+- Ferramenta de versionamento: Git.
+- Ferramenta para a criação de logo e imagens: Canva.
+- Ferramenta para crição de template: Figma.
+- Ferramenta para diagramação dos componentes: Diagrams.net.
 
 
 ## Hospedagem
 
-Explique como a hospedagem e o lançamento da plataforma foi feita.
-
-> **Links Úteis**:
->
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting Started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando Seu Site No Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
+A plataforma Heroku foi escolhida por prover um ambiente em nuvem para hospedar, manter e disponibilizar o site do projeto, que pode ser acessado através da URL: 
+https://projeto-tina.herokuapp.com 
+A publicação do site no Heroku se dá através de um vínculo entre a plataforma e o repositório de arquivos, encontrado no link:
+https://git.heroku.com/projeto-tina
+As atualizações ao sistema são disponibilizadas por submissões do projeto via git a plataforma.
