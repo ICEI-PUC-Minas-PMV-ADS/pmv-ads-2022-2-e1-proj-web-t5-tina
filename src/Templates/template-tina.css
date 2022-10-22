@@ -182,7 +182,7 @@ aside {
 }
 
 .menu-visualizacao>button {
-  background-color: #fc6363;
+  background-color: rgb(223, 39, 39);
   border: hidden 4px lightblue;
   width: 40px;
   height: 40px;
@@ -206,7 +206,7 @@ aside {
 }
 
 .menu-listas>button {
-  background-color: #fc6363;
+  background-color: rgb(223, 39, 39);
   width: 40px;
   height: 40px;
   border: hidden 4px lightblue;
@@ -230,7 +230,7 @@ aside {
 }
 
 .menu-criacao>button {
-  background-color: #fc6363;
+  background-color: rgb(223, 39, 39);
   width: 40px;
   height: 40px;
   border: hidden 4px lightblue;
@@ -254,7 +254,7 @@ aside {
 }
 
 .menu-ferramentas>button {
-  background-color: #fc6363;
+  background-color: rgb(223, 39, 39);
   width: 40px;
   height: 40px;
   border: hidden 4px lightblue;
