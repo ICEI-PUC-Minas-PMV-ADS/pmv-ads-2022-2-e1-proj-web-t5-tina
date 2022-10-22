@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="src/css/styles.css">
+  <link rel="shortcut icon" href="src/images/favicon.ico" type="image/x-icon">
+  
+  <title>Tina</title>
+ 
+</head>
+<body>
+            <header>
+
+
+                              <div class="botaoLogo"> <button type="button" class="logoBotao"> <img src="src/images/Lista de hábitos.png"></button>
+                                
+                              </div>
+
+
+                              <div class="campoFiltro">
+                              
+                                <p>Filtrar...</p>
+                              
+                              </div>
+
+
+                              <div class="botaoHoje">
+                                
+                                <p>Hoje</p>
+                              
+                              </div>
+
+
+                               <div class="botaoPerfil"> <button type="button"  class="botaoPerfil">
+                                  <p>Perfil</p>
+                                  </button>
+                                </div>
+            
+            </header> 
+            
+            
+            <nav>
+              
+              <div class="menuLateral">
+
+                <div class="menuLateralVisao">
+                  
+                   
+                   <div class="visaoMensal"><button type="button">M</button>
+                  
+                   </div>
+                  
+                   <div class="visaoSemanal"><button type="button">S</button>
+                    
+                                  
+                   </div>
+
+                   <div class="visaoDiaria"><button type="button">D</button>
+                    
+                  
+                   </div>
+        
+               </div>
+        
+        
+               <div class="menuLateralExibicao">
+               
+                   <div class="exibicaoTarefa"><button type="button">T</button>
+                 
+                                      
+                   </div>
+
+            
+                   <div class="exibicaoHabitos"><button type="button">H</button>
+            
+            
+                   </div>
+        
+               
+               </div>
+
+               <div class="menuLateralCriacao">
+               
+                   <div class="criacaoAtividade"><button type="button">A+</button>
+                
+                                
+                   </div>
+
+
+                   <div class="criacaoTarefa"><button type="button">T+</button>
+                   
+                              
+                   </div>
+            
+                   
+                   <div class="criacaoHabito"><button type="button">H+</button>
+                
+                             
+                   </div>
+            
+                   
+                   <div class="criacaoCategoria"><button type="button">C+</button>
+                
+                                
+                   </div>
+            
+              </div>
+            
+            
+              <div class="menuLateralFuncionalidades">
+                
+                <div class="ajuda"><button type="button"><img src="src/images/botaodeajuda.png"></button> </div>
+        
+                <div class="opcoes"><button type="button"><img src="src/images/engrenagem.png"></button> </div>
+               
+        
+
+              </div>
+
+
+
+            </nav>
+              
+            
+            <div class="tarefas">
+                
+                <p>Lista de Tarefas</p>
+                
+                <ul class="listaTarefas"> 
+                
+                <li>#</li>
+                <li>#</li>
+                <li>#</li>
+                <li>#</li>
+                <li>#</li>
+                <li>#</li>
+                <li>#</li>
+              
+              </ul>
+            </div>
+
+            <div class="listaHabitos">
+                  
+                  <p>Lista de Hábitos</p></div>
+                 
+                  <ul class="habitosLista">
+
+                    <li>#</li>
+                    <li>#</li>
+                    <li>#</li>
+                    <li>#</li>
+                    <li>#</li>
+                    <li>#</li>
+                    <li>#</li>
+                    <li>#</li>
+                  
+
+                  </ul>
+                
+            </div>
+            
+            
+
+
+
+
+
+
+             
+</body>
+</html>
