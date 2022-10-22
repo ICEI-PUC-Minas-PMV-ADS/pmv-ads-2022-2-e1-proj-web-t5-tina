@@ -53,19 +53,35 @@ header {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.botao-hoje:hover {
+  background-color: rgb(241, 247, 248);
+  box-shadow: 1px 1px 3px black;
+}
+
 .botao-filtrar {
   background-color: white;
   border: solid 1px lightgray;
   border-radius: 15px;
   box-shadow: 1px 1px 1px lightblue;
   color: black;
-  padding: 10px 10px;
-  text-align: center;
+  padding: 10px 15px;
   text-decoration: none;
   margin: 4px 2px;
   transition-duration: 0.4s;
   font-weight: bolder;
   font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.botao-filtrar:hover {
+  background-color: rgb(241, 247, 248);
+  box-shadow: 1px 1px 3px black;
+}
+
+.fa-filter {
+  padding-right: 5px;
 }
 
 .botao-perfil {
@@ -83,7 +99,13 @@ header {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.botao-perfil:hover {
+  background-color: rgb(241, 247, 248);
+  box-shadow: 1px 1px 3px black;
+}
+
 #cabecalho-direita {
+  display: flex;
   padding-right: 5px;
   align-items: center;
 }
@@ -199,6 +221,11 @@ aside {
   align-items: center;
 }
 
+.menu-visualizacao>button:hover {
+  background-color: rgb(241, 85, 85);
+  box-shadow: 1px 1px 3px black;
+}
+
 .menu-listas {
   display: flex;
   flex-direction: column;
@@ -222,6 +249,11 @@ aside {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.menu-listas>button:hover {
+  background-color: rgb(241, 85, 85);
+  box-shadow: 1px 1px 3px black;
 }
 
 .menu-criacao {
@@ -249,6 +281,11 @@ aside {
   align-items: center;
 }
 
+.menu-criacao>button:hover {
+  background-color: rgb(241, 85, 85);
+  box-shadow: 1px 1px 3px black;
+}
+
 .menu-ferramentas {
   display: flex;
   flex-direction: column;
@@ -272,6 +309,11 @@ aside {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.menu-ferramentas>button:hover {
+  background-color: rgb(241, 85, 85);
+  box-shadow: 1px 1px 3px black;
 }
 
 footer {
@@ -312,15 +354,16 @@ footer {
     transform: translate(-50%, -95%);
     background-color: rgb(236, 42, 42);
     border: hidden 4px lightblue;
-    border-radius: 20px;
+    border-radius: 100%;
     box-shadow: 2px 2px 5px black;
     color: white;
-    padding: 15px 15px;
-    text-align: center;
+    padding: 25px 25px;
     text-decoration: none;
     transition-duration: 0.4s;
-    font-weight: bolder;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
   }
 
   header {
@@ -372,4 +415,4 @@ footer {
   }
 
 
-} 
+}
