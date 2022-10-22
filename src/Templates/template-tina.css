@@ -190,13 +190,13 @@ aside {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
   color: white;
   padding: 5px 1px;
-  text-align: center;
   text-decoration: none;
   margin: 3px 10px;
   transition-duration: 0.4s;
-  font-weight: 500;
   font-size: large;
-  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-listas {
@@ -218,9 +218,10 @@ aside {
   text-decoration: none;
   margin: 3px 10px;
   transition-duration: 0.4s;
-  font-weight: 500;
   font-size: large;
-  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-criacao {
@@ -242,9 +243,10 @@ aside {
   text-decoration: none;
   margin: 3px 10px;
   transition-duration: 0.4s;
-  font-weight: 500;
   font-size: large;
-  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .menu-ferramentas {
@@ -266,18 +268,10 @@ aside {
   text-decoration: none;
   margin: 3px 10px;
   transition-duration: 0.4s;
-  font-weight: 500;
   font-size: large;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.material-symbols-outlined {
-  margin: 4px 4px;
-  font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' -50,
-    'opsz' 40
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 footer {
