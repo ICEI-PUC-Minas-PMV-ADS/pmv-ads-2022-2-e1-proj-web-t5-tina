@@ -59,7 +59,6 @@ header {
 }
 
 #cabecalho-direita {
-  display: flex;
   padding-right: 5px;
   align-items: center;
 }
@@ -67,12 +66,13 @@ header {
 .cabecalho-perfil {
   grid-column: 1/13;
   grid-row: 2/3;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: (1fr);
   border-bottom: solid 1px lightgray;
   border-top: solid 1px lightgray;
   box-shadow: 1px 1px 2px lightblue;
   align-items: center;
-  /* alinhar o perfil ao meio da página*/
   justify-content: flex start;
   padding-left: 15px;
   padding-right: 15px;
@@ -81,11 +81,13 @@ header {
 }
 
 .perfil {
+  grid-column: 3/4;
   font-size: 30px;
   margin-left: 40%;
 }
 
 .voltar {
+  grid-column: 1/2;
   width: 70px;
   height: 30px;
   background-color: rgb(252, 252, 252);
