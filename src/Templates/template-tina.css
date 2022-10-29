@@ -104,6 +104,10 @@ header {
   box-shadow: 1px 1px 3px black;
 }
 
+.fa-solid.fa-user {
+  color: rgb(15, 15, 15);
+}
+
 #cabecalho-direita {
   display: flex;
   padding-right: 5px;
