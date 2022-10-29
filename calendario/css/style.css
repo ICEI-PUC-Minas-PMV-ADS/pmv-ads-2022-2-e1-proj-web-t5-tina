@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+  
+  }
+ 
+  h1 {
+      background-color: lightcoral;
+      color: black;
+      text-align: center;
+      height: 50px;
+  }
+  
+  
+  table {
+      position: block;
+      top:10%;
+      width: 900px;
+      height: 530px;
+      text-align: center;
+      border: solid 1px lightcoral;
+      border-radius: 15px;
+      box-shadow: 1px 1px 8px black;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bolder;
+      padding-top: 10px;
+      margin-top: 30px;
+      margin-left: 400px;
+      
+  
+  }
+
+  button {
+    background-color: rgb(223, 39, 39);
+    border: hidden 4px lightblue;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
+    color: white;
+    padding: 5px 1px;
+    text-decoration: none;
+    margin: 3px 10px;
+    transition-duration: 0.4s;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
