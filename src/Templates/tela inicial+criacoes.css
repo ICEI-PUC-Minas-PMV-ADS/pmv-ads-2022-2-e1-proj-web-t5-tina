@@ -577,8 +577,11 @@ form button {
     transition: 400ms;
 }
 
-
 form button:hover {
     background-color: #ff616199;
     text-decoration: none;
+}
+
+.campo-vazio {
+    border: solid 2px rgb(209, 45, 45) !important;
 }
