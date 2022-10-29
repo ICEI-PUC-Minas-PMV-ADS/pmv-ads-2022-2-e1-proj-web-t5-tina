@@ -58,6 +58,34 @@ header {
   box-shadow: 1px 1px 3px black;
 }
 
+#picture__input {
+  display: none;
+}
+
+.picture {
+  width: 400px;
+  aspect-ratio: 16/9;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(16, 187, 27);
+  border: 2px dashed currentColor;
+  font-family: sans-serif;
+  transition: color 300ms ease-in-out, background 300ms ease-in-out;
+}
+
+.picture:hover {
+  color:#f15555;
+  background-color:rgb(88, 88, 88);
+}
+
+.picture:active {
+  border-color: #f15555;
+  background-color:rgb(88, 88, 88);
+  background-color:black;
+}
+
 #cabecalho-direita {
   padding-right: 5px;
   align-items: center;

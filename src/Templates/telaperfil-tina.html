@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="telaperfil-tina.css">
+    <script type="text/javascript" src="telaperfil-tina.js"></script>
     <script src="https://kit.fontawesome.com/e7dd02bc5b.js" crossorigin="anonymous"></script>
     <title>Tina</title>
 </head>
@@ -31,10 +32,15 @@
         <main>
             <div class="campofoto">
                 <div class="foto-perfil">
-                    <img src="tinaavatar.png" alt="tinaavatar">
+                    <label class="picture" for="picture__input">
+                        <span class="picture__image">Escolher foto</span>
+                    </label>
+
+                    <input type="file" name="picture__input" id="picture__input">
+                    <!-- <img src="tinaavatar.png" alt="tinaavatar">
                     <div>
-                        <button class="botao-alterar-foto" type="button">Alterar foto de perfil</button>
-                    </div>
+                        <button class="botao-alterar-picture" type="button">Alterar foto de perfil</button>
+                    </div> -->
                 </div>
             </div>
             <div class="perfilinformacoes"> 
