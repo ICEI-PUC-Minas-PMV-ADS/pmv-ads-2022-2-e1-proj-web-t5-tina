@@ -292,6 +292,10 @@ aside {
   justify-content: space-evenly;
 }
 
+.fa-solid.fa-gear {
+  color: white;
+}
+
 .menu-ferramentas>button {
   background-color: rgb(223, 39, 39);
   width: 40px;
