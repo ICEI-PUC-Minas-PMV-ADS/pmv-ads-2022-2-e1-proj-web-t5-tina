@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="tela inicial+criacoes.css">
+    <script src="scripts.js" defer></script>
+    <script src="https://kit.fontawesome.com/e7dd02bc5b.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <title>Tina</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="#" class="botao-logo">Tina</a>
+            <button class="botao-hoje" type="button">Hoje</button>
+            <div id="cabecalho-direita">
+                <button class="botao-filtrar" type="button">
+                    <i class="fa-solid fa-filter"></i>
+                    Filtrar
+                </button>
+                <button class="botao-perfil">
+                    <i class="fa-solid fa-user"></i>
+                </button>
+            </div>
+        </header>
+        <div class="cabecalho-calendario">
+            <div>
+                <i class="fa-solid fa-caret-left"></i>
+                Mês Anterior
+            </div>
+            <div>Mês</div>
+            <div>
+                Mês Posterior
+                <i class="fa-solid fa-caret-right"></i>
+            </div>
+        </div>
+        <main>
+            <div class="listas">
+                <div class="lista-itens">
+                    Lista de Itens
+                    <a href="#" onclick="onOff('item')" class="button"><img src="../Images/item.png" alt="Item"></a>
+                </div>
+                <div class="lista-habitos">
+                    Lista de Hábitos
+                    <a href="#" onclick="onOff('habito')" class="button"><img src="../Images/lista-habitos.png"
+                            alt="Hábitos"></a>
+                </div>
+            </div>
+            <div class="calendario">
+                Calendário
+            </div>
+            <button class="menu" type="button">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </main>
+        <aside>
+            <div class="menu-visualizacao">
+                <button class="visualizacao-mes" type="button">
+                    <img src="../Images/mensal.png" alt="Mensal">
+                </button>
+                <button class="visualizacao-semana" type="button">
+                    <img src="../Images/semanal.png" alt="Semanal">
+                </button>
+                <button class="visualizacao-diaria" type="button">
+                    <img src="../Images/diaria.png" alt="Diária">
+                </button>
+            </div>
+            <div class="menu-listas">
+                <button class="itens" type="button">
+                    <img src="../Images/item.png" alt="Item">
+                </button>
+                <button class="habitos" type="">
+                    <img src="../Images/lista-habitos.png" alt="Hábitos">
+                </button>
+            </div>
+            <div class="menu-criacao">
+                <button class="criacao-atividade" type="button">
+                    <a href="#" onclick="onOff('atividade')" class="button"><img src="../Images/atividade.png"
+                            alt="Atividade"></a>
+                </button>
+                <button class="criacao-item" type="button">
+                    <a href="#" onclick="onOff('item')" class="button"><img src="../Images/item.png" alt="Item"></a>
+                </button>
+                <button class="criacao-habito" type="button">
+                    <a href="#" onclick="onOff('habito')" class="button"><img src="../Images/lista-habitos.png"
+                            alt="Hábitos"></a>
+                </button>
+                <button class="criacao-categoria" type="button">
+                    <img src="../Images/categoria.png" alt="Categoria">
+                </button>
+            </div>
+            <div class="menu-ferramentas">
+                <button class="ajuda" type="button">
+                    <img src="../Images/ajuda.png" alt="Ajuda">
+                </button>
+                <button class="ferramentas" type="button">
+                    <img src="../Images/configuracoes.png" alt="Configurações">
+                </button>
+            </div>
+        </aside>
+
+        <div id="modal-atividade" class="hide">
+            <div class="nova-atividade">
+                <div class="cabecalho">
+                    <h1>Nova Atividade</h1>
+                    <a href="#" onclick="onOff('atividade')"><i class="fa-solid fa-x"></i></a>
+                </div>
+
+                <form id="form-atividade" class="formulario" action="/" method="POST" onsubmit="checkFields(event)">
+                    <div class="campos">
+                        <label for="titulo">Título: </label>
+                        <input id="titulo" class="titulo" type="text" name="titulo" required>
+                    </div>
+
+                    <div class="campos">
+                        <label for="descricao">Descrição: </label>
+                        <textarea id="descricao" class="descricao" name="descricao" cols="30" rows="10"></textarea>
+                    </div>
+
+                    <div class="data">
+                        <label for="data-inicio">Data: </label>
+                        <input id="data-inicio" class="data-inicio" type="date" name="data-inicio">
+                        <label for="data-fim"> até: </label>
+                        <input id="data-fim" class="data-fim" type="date" name="data-fim">
+                    </div>
+
+                    <div class="horario">
+                        <label for="description">Horário: </label>
+                        <input id="horario-inicio" class="horario-inicio" type="time" name="horario-inicio">
+                        <label for="description"> até: </label>
+                        <input id="horario-final" class="horario-final" type="time" name="horario-final">
+                    </div>
+
+                    <div class="campos">
+                        <label for="categoria">Categoria: </label>
+                        <select id="categoria" class="categoria" name="categoria">
+                            <option value="Faculdade">Faculdade</option>
+                            <option value="Trabalho">Trabalho</option>
+                            <option value="Saúde">Saúde</option>
+                            <option value="Pessoais">Pessoais</option>
+                        </select>
+                    </div>
+
+                    <div class="campos">
+                        <label for="prioridade">Prioridade: </label>
+                        <select id="prioridade" class="prioridade" name="prioridade">
+                            <option value="Baixa">Baixa</option>
+                            <option value="Média">Média</option>
+                            <option value="Alta">Alta</option>
+                        </select>
+                    </div>
+
+                    <div class="campos">
+                        <label for="periodizacao">Periodização: </label>
+                        <select id="periodizacao" class="periodizacao" name="periodizacao">
+                            <option value="nao-se-aplica" selected>Não se aplica </option>
+                            <option value="diariamente">Diariamente </option>
+                            <option value="semanalmente">Semanalmente </option>
+                            <option value="mensalmente">Mensalmente </option>
+                        </select>
+                    </div>
+                    <div id="div-criar-atividade">
+                        <button id="criar-atividade" type="button">Criar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="modal-item" class="hide">
+            <div class="novo-item">
+                <div class="cabecalho">
+                    <h1>Novo Item</h1>
+                    <a href="#" onclick="onOff('item')"><i class="fa-solid fa-x"></i></a>
+                </div>
+
+                <form action="/" method="POST" onsubmit="checkFields(event)">
+                    <div class="campos">
+                        <label for="titulo">Título: </label>
+                        <input type="text" name="titulo">
+                    </div>
+
+                    <div class="campos">
+                        <label for="descricao">Descrição: </label>
+                        <textarea name="descricao" cols="30" rows="10"></textarea>
+                    </div>
+
+                    <div class="campos">
+                        <label for="categoria">Categoria: </label>
+                        <select id="categoria" name="categoria">
+                            <option value="Faculdade">Faculdade</option>
+                            <option value="Trabalho">Trabalho</option>
+                            <option value="Saúde">Saúde</option>
+                            <option value="Pessoais">Pessoais</option>
+                        </select>
+                    </div>
+
+                    <div class="campos">
+                        <label for="prioridade">Prioridade: </label>
+                        <select id="prioridade" name="prioridade">
+                            <option value="Baixa">Baixa</option>
+                            <option value="Média">Média</option>
+                            <option value="Alta">Alta</option>
+                        </select>
+                    </div>
+                    <button>Criar</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="modal-habito" class="hide">
+            <div class="nova-atividade">
+                <div class="cabecalho">
+                    <h1>Novo hábito</h1>
+                    <a href="#" onclick="onOff('habito')"><i class="fa-solid fa-x"></i></a>
+                </div>
+
+                <form action="/" method="POST" onsubmit="checkFields(event)">
+                    <div class="campos">
+                        <label for="titulo">Título: </label>
+                        <input type="text" name="titulo">
+                    </div>
+
+                    <div class="campos">
+                        <label for="descricao">Descrição: </label>
+                        <textarea name="descricao" cols="30" rows="10"></textarea>
+                    </div>
+
+                    <div class="data">
+                        <label for="data-inicio">Data </label>
+                        <input type="date" name="data-inicio">
+                        <label for="data-fim"> até </label>
+                        <input type="date" name="data-fim">
+                    </div>
+
+                    <div class="campos">
+                        <label for="categoria">Categoria: </label>
+                        <select id="categoria" name="categoria">
+                            <option value="Faculdade">Faculdade</option>
+                            <option value="Trabalho">Trabalho</option>
+                            <option value="Saúde">Saúde</option>
+                            <option value="Pessoais">Pessoais</option>
+                        </select>
+                    </div>
+
+                    <div class="campos">
+                        <label for="prioridade">Prioridade: </label>
+                        <select id="prioridade" name="prioridade">
+                            <option value="Baixa">Baixa</option>
+                            <option value="Média">Média</option>
+                            <option value="Alta">Alta</option>
+                        </select>
+                    </div>
+
+                    <div class="campos">
+                        <label for="periodizacao">Periodização: </label>
+                        <select id="periodizacao" name="periodizacao">
+                            <option value="nao-se-aplica" selected>Não se aplica </option>
+                            <option value="diariamente">Diariamente </option>
+                            <option value="semanalmente">Semanalmente </option>
+                            <option value="mensalmente">Mensalmente </option>
+                        </select>
+                    </div>
+                    <button>Criar</button>
+                </form>
+            </div>
+        </div>
+
+        <footer>Desenvolvido por Diana, Ellen, Gabriela, Juliana, Pedro e Pedro.</footer>
+    </div>
+</body>
+
+</html>
