@@ -7,7 +7,7 @@ Desenvolvedor(a): Diana Santiago Oliveira dos Santos
 A criação das categorias permite que os usuários categorizem por âmbito suas atividades, itens e hábitos. 
 
 <p align = "center">
-  <img src = "img/nova_categoria.jpg">
+  <img src = "img/nova_categoria.png">
 </p>
 
 ## Estrutura dos dados 
