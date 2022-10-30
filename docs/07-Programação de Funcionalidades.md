@@ -9,12 +9,13 @@ A criação das categorias permite que os usuários categorizem por âmbito suas
 <p align = "center">
   <img src = "img/nova_categoria.PNG">
 </p>
-# Artefatos da funcionalidade
+
+## Artefatos da funcionalidade
 
 - tela inicial+criacoes.html
 - scripts.js
 - tela inicial+criacoes.css
-- logo.png
+- nova_categoria.png
 
 #### Estrutura dos dados 
 
