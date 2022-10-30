@@ -10,7 +10,7 @@ A criação das categorias permite que os usuários categorizem por âmbito suas
   <img src = "img/nova_categoria.PNG">
 </p>
 
-## Estrutura dos dados 
+#### Estrutura dos dados 
 
 const titulo_categoria =  document.getElementById('titulo')
 const cor_categoria =  document.getElementById('cor-categoria')
