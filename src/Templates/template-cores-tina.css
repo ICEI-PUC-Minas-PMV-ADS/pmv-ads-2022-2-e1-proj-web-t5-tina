@@ -137,6 +137,33 @@ main {
   padding-right: 10px;
 }
 
+#themeSelect {
+  background-color: rgb(255, 255, 255);
+  border: solid 1px lightgray;
+  border-radius: 15px;
+  box-shadow: 1px 1px 1px lightblue;
+  color: black;
+  padding: 10px 50px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 10px;
+  transition-duration: 0.4s;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#themeSelect>option {
+  background-color: rgb(255, 255, 255);
+  font-size: 18px;
+
+}
+
+
+.titulo-tema {
+  padding-top: 20px;
+  font-size: large;
+}
+
 .listas {
   grid-column: 1/2;
   grid-row: 1/3;
