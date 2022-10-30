@@ -12,7 +12,7 @@ A criação das categorias permite que os usuários categorizem por âmbito suas
 
 #### Estrutura dos dados 
 
-const titulo_categoria =  document.getElementById('titulo')
+```const titulo_categoria =  document.getElementById('titulo')
 const cor_categoria =  document.getElementById('cor-categoria')
 
 const getCategoria = () => JSON.parse(localStorage.getItem("dbCategoria")) ?? [];
@@ -23,7 +23,7 @@ const criarCategoria = (categoria) => {
     dbCategoria.push(categoria);
     setDados(dbCategoria)
 }
-
+```
 
 
 ## Visualização Mensal do calendário (RF-02)
