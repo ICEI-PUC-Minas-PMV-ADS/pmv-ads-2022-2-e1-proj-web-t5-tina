@@ -11,7 +11,7 @@ function onOff(type) {
         limparCampos()
         limparErros()
     }
-    else if(type == "item"){
+    else if (type == "item") {
         document
             .querySelector("#modal-item")
             .classList
@@ -20,9 +20,9 @@ function onOff(type) {
             .querySelector("#modal-item")
             .classList
             .toggle("addScroll")
-        
+
     }
-    else if (type == "habito"){
+    else if (type == "habito") {
         document
             .querySelector("#modal-habito")
             .classList
@@ -36,15 +36,17 @@ function onOff(type) {
 
 // Criar Atividade
 
-const titulo =  document.getElementById('titulo')
-const descricao =  document.getElementById('descricao')
-const dataInicio =  document.getElementById('data-inicio')
-const dataFim =  document.getElementById('data-fim')
-const horarioInicio =  document.getElementById('horario-inicio')
-const horarioFinal =  document.getElementById('horario-final')
-const categoria =  document.getElementById('categoria')
-const prioridade =  document.getElementById('prioridade')
-const periodizacao =  document.getElementById('periodizacao')
+const titulo = document.getElementById('titulo')
+const descricao = document.getElementById('descricao')
+const dataInicio = document.getElementById('data-inicio')
+const dataFim = document.getElementById('data-fim')
+const horarioInicio = document.getElementById('horario-inicio')
+const horarioFinal = document.getElementById('horario-final')
+const categoria = document.getElementById('categoria')
+const prioridade = document.getElementById('prioridade')
+const periodizacao = document.getElementById('periodizacao')
+
+const campos = [titulo, descricao, dataInicio, dataFim, horarioInicio, horarioFinal, categoria, prioridade, periodizacao]
 
 const getDados = () => JSON.parse(localStorage.getItem("dbAtividade")) ?? [];
 const setDados = (dbAtividade) => localStorage.setItem("dbAtividade", JSON.stringify(dbAtividade));
@@ -78,47 +80,38 @@ const limparErros = () => {
     periodizacao.classList.remove('campo-vazio')
 }
 
+const isDadosValidos = (atividade) => {
+    
+    const atividades = getDados()
+    var controlador = 0;
+    var validade = true
+    atividades.forEach(dadoAtividade => {
+        
+        if (dadoAtividade.titulo == atividade.titulo) {
+            controlador++
+        }
+    });
+
+    if (controlador != 0) {
+        validade = false
+        alert('Já existe atividade com o mesmo título registrada.')
+    }
+    return validade       
+}
+
 const salvarAtividade = () => {
-    var erros = 0
-    
-    if (titulo.value == '') {
-        titulo.classList.add('campo-vazio')
-        erros++
-    }
-    if (descricao.value == '') {
-        descricao.classList.add('campo-vazio')
-        erros++
-    }
-    if (dataInicio.value == '') {
-        dataInicio.classList.add('campo-vazio')
-        erros++      
-    }
-    if (dataFim.value == '') {
-        dataFim.classList.add('campo-vazio')
-        erros++        
-    }
-    if (horarioInicio.value == '') {
-        horarioInicio.classList.add('campo-vazio')
-        erros++        
-    }
-    if (horarioFinal.value == '') {
-        horarioFinal.classList.add('campo-vazio')
-        erros++        
-    }
-    if (categoria.value == '') {
-        categoria.classList.add('campo-vazio')
-        erros++    
-    }
-    if (prioridade.value == '') {
-        prioridade.classList.add('campo-vazio')
-        erros++      
-    }
-    if (periodizacao.value == '') {
-        periodizacao.classList.add('campo-vazio')
-        erros++
-    }
-    
-    if (erros == 0) {
+    var camposVazios = 0;
+
+    campos.forEach(campo => {
+        if (campo.value == '') {
+            campo.classList.add('campo-vazio')
+            camposVazios++
+        } else {
+            campo.classList.remove('campo-vazio')
+        }
+    });
+
+    if (camposVazios == 0) {
         const atividade = {
             titulo: titulo.value,
             descricao: descricao.value,
@@ -130,8 +123,10 @@ const salvarAtividade = () => {
             prioridade: prioridade.value,
             periodizacao: periodizacao.value
         }
-        criarAtividade(atividade)
-        onOff(atividade)
+        if (isDadosValidos(atividade)) {
+            criarAtividade(atividade)
+        }
+        onOff('atividade')
     }
 }
 

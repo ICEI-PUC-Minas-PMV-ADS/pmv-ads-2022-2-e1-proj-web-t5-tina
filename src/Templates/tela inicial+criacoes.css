@@ -435,16 +435,16 @@ footer {
     background-color: white;
     border: solid 1px lightgray;
     border-radius: 15px;
-    box-shadow: 1px 1px 1px lightblue;
+    box-shadow: 1px 1px 8px lightblue;
 
-    position: absolute;
-    padding: 2%;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    margin-right: 20%;
-    margin-left: 20%;
-    padding-bottom: 0%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    padding-bottom: 0;
 
+    display: flex;
     justify-content: center;
     display: grid;
 
@@ -472,28 +472,31 @@ footer {
     padding-bottom: 15px;
 }
 
+#modal-atividade .nova-atividade .cabecalho h1,
+#modal-item .nova-atividade .cabecalho h1,
+#modal-habito .nova-atividade .cabecalho h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+}
+
 .nova-atividade .cabecalho a,
 .novo-item .cabecalho a,
 .novo-habito .cabecalho a {
-    background-color: #ff6161;
+    background-color: rgb(223, 39, 39);
+    border: hidden 4px lightblue;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
     color: white;
-    border: 1px solid;
-    border-radius: 25px;
-    padding: 0;
-
-    width: 40px;
-    height: 40px;
-
+    padding: 5px 1px;
     text-decoration: none;
-    text-align: center;
-    line-height: 38px;
-
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-
-    transition: 400ms;
+    margin: 3px 10px;
+    transition-duration: 0.4s;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -504,26 +507,24 @@ footer {
     text-decoration: none;
 }
 
-
-#modal-atividade form,
-#modal-item form,
-#modal-habito form {
+input,
+textarea,
+select  {
     width: 100%;
-
-    margin: 0 auto 0;
-    display: grid;
-    justify-content: center;
-    align-items: flex-end;
-
-    gap: 12px;
+    padding: 10px 20px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid rgb(204, 204, 204);
+    background-color: rgba(217, 217, 217, 0.58);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 form label {
-    font-weight: bolder;
-    font-size: 14px;
-    letter-spacing: 0.8px;
-    font-family: Helvetica, Arial, sans-serif;
-    vertical-align: text-top;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 5px;
 }
 
 div.campos {
@@ -540,44 +541,28 @@ div.horario {
     justify-content: space-between;
 }
 
-form input,
-form textarea,
-form select {
-    width: 85%;
-    padding: 10px;
-
-    display: inline;
-    border-radius: 10px;
-    border: 1px solid rgba(217, 217, 217, 1);
-    background-color: rgba(217, 217, 217, 0.58);
-
-    outline-color: lightgray;
-
-    font-size: 14px;
+#div-criar-atividade {
+    display: flex;
+    justify-content: center;
 }
 
-form button {
-    background-color: #ff6161;
-    border: 1px solid;
+#criar-atividade {
+    background-color: rgb(223, 39, 39);
+    border: none;
     color: white;
     border-radius: 15px 15px 0px 0px;
 
     width: 150px;
     height: 40px;
 
-    font-weight: bold;
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
-    line-height: 18px;
-    letter-spacing: 0.2px;
-
-    vertical-align: bottom;
 
     transition: 400ms;
 }
 
-form button:hover {
+#criar-atividade:hover {
     background-color: #ff616199;
     text-decoration: none;
 }
