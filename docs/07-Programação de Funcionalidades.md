@@ -128,7 +128,7 @@ document.getElementById('criar-atividade')
 ### Instruções de acesso
 
 No menu lateral, deve-se clicar no botão de criar atividade, com o ícone de bloco de notas. Uma janela irá aparecer no centro da tela e terá os campos a serem preenchidos pelo usuário para registrar a atividade no Local Storage. Ao terminar de preencher todos os campos, deve-se clicar no botão “Criar”.
-=======
+
 ## Criação, leitura e exclusão Categorias (RF-01)
 Desenvolvedor(a): Diana Santiago Oliveira dos Santos
 
