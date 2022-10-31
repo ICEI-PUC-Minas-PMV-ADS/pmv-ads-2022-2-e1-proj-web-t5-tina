@@ -470,20 +470,22 @@ footer {
 /*modal-atividade*/
 #modal-atividade,
 #modal-item,
+#modal-categoria,
 #modal-habito {
     background-color: white;
     border: solid 1px lightgray;
     border-radius: 15px;
-    box-shadow: 1px 1px 1px lightblue;
 
-    position: absolute;
-    padding: 2%;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    margin-right: 20%;
-    margin-left: 20%;
-    padding-bottom: 0%;
+    box-shadow: 1px 1px 8px lightblue;
 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    padding-bottom: 0;
+
+    display: flex;
     justify-content: center;
     display: grid;
 
@@ -492,6 +494,7 @@ footer {
 
 #modal-atividade.hide,
 #modal-item.hide,
+#modal-categoria.hide,
 #modal-habito.hide {
     opacity: 0;
     visibility: hidden;
@@ -499,52 +502,61 @@ footer {
 
 #modal-atividade.addScroll,
 #modal-item.addScroll,
+#modal-categoria.addScroll,
 #modal-habito.addScroll {
     overflow: auto;
 }
 
 #modal-atividade .nova-atividade .cabecalho,
 #modal-item .nova-item .cabecalho,
+#modal-categoria .nova-categoria .cabecalho,
 #modal-habito .nova-habito .cabecalho {
     display: flex;
     justify-content: space-between;
     padding-bottom: 15px;
 }
 
+
+#modal-atividade .nova-atividade .cabecalho h1,
+#modal-item .nova-item .cabecalho h1,
+#modal-categoria .nova-categotia .cabecalho h1,
+#modal-habito .nova-habito .cabecalho h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+}
+
 .nova-atividade .cabecalho a,
 .novo-item .cabecalho a,
+.novo-categoria .cabecalho a,
 .novo-habito .cabecalho a {
-    background-color: #ff6161;
+    background-color: rgb(223, 39, 39);
+    border: hidden 4px lightblue;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
     color: white;
-    border: 1px solid;
-    border-radius: 25px;
-    padding: 0;
-
-    width: 40px;
-    height: 40px;
-
+    padding: 5px 1px;
     text-decoration: none;
-    text-align: center;
-    line-height: 38px;
-
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-
-    transition: 400ms;
+    margin: 3px 10px;
+    transition-duration: 0.4s;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .nova-atividade .cabecalho a:hover,
-.nov--item .cabecalho a:hover,
+.novo-item .cabecalho a:hover,
+.nova-categoria .cabecalho a:hover,
 .novo-habito .cabecalho a:hover {
     background-color: #ff616199;
     text-decoration: none;
 }
 
-
 #modal-atividade form,
+#modal-categoria form,
 #modal-item form,
 #modal-habito form {
     width: 100%;
@@ -557,12 +569,24 @@ footer {
     gap: 12px;
 }
 
+input,
+textarea,
+select  {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid rgb(204, 204, 204);
+    background-color: rgba(217, 217, 217, 0.58);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 form label {
-    font-weight: bolder;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    font-family: Helvetica, Arial, sans-serif;
-    vertical-align: text-top;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 5px;
 }
 
 div.campos {
@@ -579,32 +603,24 @@ div.horario {
     justify-content: space-between;
 }
 
-form input,
-form textarea,
-form select {
-    width: 85%;
-    padding: 10px;
 
-    display: inline;
-    border-radius: 10px;
-    border: 1px solid rgba(217, 217, 217, 1);
-    background-color: rgba(217, 217, 217, 0.58);
-
-    outline-color: lightgray;
-
-    font-size: 14px;
-}
 
 form button {
     background-color: #ff6161;
     border: 1px solid;
+}
+
+
+#criar-atividade {
+    background-color: rgb(223, 39, 39);
+    border: none;
+
     color: white;
     border-radius: 15px 15px 0px 0px;
 
     width: 150px;
     height: 40px;
 
-    font-weight: bold;
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
@@ -613,11 +629,16 @@ form button {
 
     vertical-align: bottom;
 
+
     transition: 400ms;
 }
 
+#criar-atividade:hover {
 
-form button:hover {
     background-color: #ff616199;
     text-decoration: none;
+}
+
+.campo-vazio {
+    border: solid 2px rgb(209, 45, 45) !important;
 }
