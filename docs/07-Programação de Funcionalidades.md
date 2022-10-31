@@ -243,4 +243,117 @@ RF-11 - O site deve possibilitar edições de design como mudanças de cores, pl
 
 A Tela perfil é acessada ao usuário acessar o botão ferramentas no menu lateral.
 
+## Criação de Itens e hábitos (RF-03, RF-08)
+### Desenvolvedor(a): Ellen Caroline Trindade Gonçalves Cândido
 
+O modal de criação de itens apresenta os campos a serem preenchidos pelo usuário.  Os campos são: Título, descrição, categoria, prioridade
+O modal de criação de hábitos apresenta os campos a serem preenchidos pelo usuário.Os campos são: Título, descrição, data inicial, data final, categoria, prioridade e periodização. Todos os campos possuem preenchimento obrigatório. Ao concluir a ação, ou cancelá-la, fechando o modal, nenhum item ou hábito é criado e o histórico do último é mantido para futura consulta. Ao selecionar "Criar", o item ou hábito é criado e inserido em sua respectiva lista.
+
+<img src="img/criar item.PNG" alt="Criar-item">
+<img src="img/criar habito.PNG" alt="Criar-item">
+
+Na imagem é possível observar duas atividades os modais para criação das atividades. Na imagem a seguir, são mostra os itens e hábitos já criados.
+<img src="img/item-habitos-criados.png" alt="Itens e hábitos criados">
+
+### Requisitos atendidos
+
+RF-03 - O site deve permitir que o usuário crie itens em uma lista não associada a unidades de tempo no calendário 
+RF-08 - O site deve permitir que o usuário crie e associe anotações de hábitos ao calendário
+
+
+### Artefatos da funcionalidade
+ 
+- tela inicial+criacoes.html
+- scripts.js
+- tela inicial+criacoes.css
+- logo.png
+- favicon.ico
+- /Images
+
+```js
+function onOff(type) {
+    if (type == "atividade") {
+        document
+            .querySelector("#modal-atividade")
+            .classList
+            .toggle("hide")
+        document
+            .querySelector("#modal-atividade")
+            .classList
+            .toggle("addScroll")
+    }
+    else if(type == "item"){
+        document
+            .querySelector("#modal-item")
+            .classList
+            .toggle("hide")
+        document
+            .querySelector("#modal-item")
+            .classList
+            .toggle("addScroll")
+        
+    }
+    else if (type == "habito"){
+        document
+            .querySelector("#modal-habito")
+            .classList
+            .toggle("hide")
+        document
+            .querySelector("#modal-habito")
+            .classList
+            .toggle("addScroll")
+    }
+}
+
+var btnCriarItem = document.querySelector("#btn-criar-item");
+
+btnCriarItem.addEventListener("click", function(event){
+    event.preventDefault();
+
+    var formItem = document.querySelector("#form-item");
+    var item = {
+        "nome": formItem.titulo.value,
+        "descricao": formItem.descricao.value,
+        "categoria": formItem.categoria.value,
+        "prioridade": formItem.prioridade.value
+    }
+    
+    var listaItens = document.querySelector(".lista-itens");
+    var novoItem = document.createElement("div");
+    novoItem.innerHTML = "Nome: " + item.nome + "<br>Descrição: "+ item.descricao + "<br>Categoria: " + item.categoria + "      Prioridade: " + item.prioridade ;
+
+
+    listaItens.appendChild(novoItem);
+    onOff("item");
+})
+
+var btnCriarHabito = document.querySelector("#btn-criar-habito");
+
+btnCriarHabito.addEventListener("click", function(event){
+    event.preventDefault();
+    
+    var formHabito = document.querySelector("#form-habito");
+    var habito = {
+        "nome": formHabito.titulo.value,
+        "descricao": formHabito.descricao.value,
+        "data_inicio": formHabito['data-inicio'].value,
+        "data_fim" : formHabito['data-fim'].value,
+        "categoria": formHabito.categoria.value,
+        "prioridade": formHabito.prioridade.value,
+        "periodizacao": formHabito.periodizacao.value
+    }
+    
+    var listaHabitos = document.querySelector(".lista-habitos");
+    var novoHabito = document.createElement("div");
+    novoHabito.innerHTML = "Nome: " + habito.nome + "<br>Descrição: "+ habito.descricao + "<br>De: "+ habito.data_inicio + "  até  : "+ habito.data_fim + "<br>Categoria: " + habito.categoria + "      Prioridade: " + habito.prioridade + "<br>Periodização: "+ habito.periodizacao;
+
+
+    listaHabitos.appendChild(novoHabito);
+    onOff("habito");
+})
+```
+
+### Instruções de acesso
+
+Para criar item, no menu lateral, deve-se clicar no botão de criar item, com o ícone de checkbox. Uma janela irá aparecer no centro da tela e terá os campos a serem preenchidos pelo usuário para registrar o item no Local Storage e aparecer na lista. Ao terminar de preencher todos os campos, deve-se clicar no botão “Criar”.
+Já para criar hábito, no menu lateral novamente, deve-se clicar no botão de criar hábito, destacado pelo ícone de estrela. Uma janela irá aparecer no centro da tela e terá os campos a serem preenchidos pelo usuário para registrar o hábito no Local Storage e aparecer na lista. Ao terminar de preencher todos os campos, deve-se clicar no botão “Criar”.
