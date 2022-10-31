@@ -165,6 +165,30 @@ const criarCategoria = (categoria) => {
 ## Visualização Mensal do calendário (RF-02)
 Desenvolvedor(a): Pedro Henrique Diniz Luiz
 
+A Visualização Mensal conta com um botão funcional que exibe o calandário com as atividades do mês criadas pelo usuário   
+## Requisitos atendidos
+
+RF-02 O site deve apresentar, em sua página inicial, um calendário do ano corrente com as atividades criadas e permitir a alteração da visualização do calendário para diferentes períodos de tempo
+
+### Artefatos da funcionalidade
+
+visao-mensal.html
+visao-mensal.css
+visao-mensal.js
+mensal.js
+perfil-sem-foto-220615.png
+
+#### Estrutura dos dados 
+
+function toggle(el) {
+    var display = document.getElementById(el).style.display;
+    if(display == "none"){
+        document.getElementById(el).style.display = 'block';
+    }
+    else{
+        document.getElementById(el).style.display = 'none';
+    }
+} 
 
 ## Tela Criação de itens e hábitos (RF-08, RF-03, RF-09) 
 Desenvolvedor(a): Ellen Caroline Trindade Gonçalves Cândido
