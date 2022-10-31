@@ -180,7 +180,7 @@ perfil-sem-foto-220615.png
 
 #### Estrutura dos dados 
 
-function toggle(el) {
+``` function toggle(el) {
     var display = document.getElementById(el).style.display;
     if(display == "none"){
         document.getElementById(el).style.display = 'block';
@@ -188,7 +188,8 @@ function toggle(el) {
     else{
         document.getElementById(el).style.display = 'none';
     }
-} 
+}
+```
 
 ## Tela Criação de itens e hábitos (RF-08, RF-03, RF-09) 
 Desenvolvedor(a): Ellen Caroline Trindade Gonçalves Cândido
