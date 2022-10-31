@@ -128,10 +128,10 @@ header {
 }
 
 main {
-  grid-column: 2/13;
+  grid-column: 1/12;
   grid-row: 3/12;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 2fr 13fr;
   grid-template-rows: 1fr 1fr;
   grid-gap: 15px;
   padding-right: 10px;
@@ -152,10 +152,9 @@ main {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#themeSelect>option {
+#themeSelect {
   background-color: rgb(255, 255, 255);
   font-size: 18px;
-
 }
 
 
@@ -165,7 +164,7 @@ main {
 }
 
 .listas {
-  grid-column: 1/2;
+  grid-column: 2/2;
   grid-row: 1/3;
   display: grid;
   grid-template-columns: 1fr;
@@ -174,7 +173,7 @@ main {
 }
 
 .lista-itens {
-  grid-column: 1;
+  grid-column: 1/2;
   grid-row: 1/2;
   border: solid 1px lightgray;
   border-radius: 15px;
@@ -188,19 +187,6 @@ main {
 .lista-habitos {
   grid-column: 1;
   grid-row: 2/3;
-  border: solid 1px lightgray;
-  border-radius: 15px;
-  box-shadow: 1px 1px 8px lightblue;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bolder;
-  padding-top: 10px;
-}
-
-.calendario {
-  grid-column: 2/3;
-  grid-row: 1/3;
-  background-color: var(--primary-background-color);
   border: solid 1px lightgray;
   border-radius: 15px;
   box-shadow: 1px 1px 8px lightblue;
