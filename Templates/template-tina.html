@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="favicon.ico">
+    <link rel="stylesheet" href="template-tina.css">
+    <script src="https://kit.fontawesome.com/e7dd02bc5b.js" crossorigin="anonymous"></script>
+    <title>Tina</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="#" class="botao-logo">Tina</a>
+            <button class="botao-hoje" type="button">Hoje</button>
+            <div id="cabecalho-direita">
+                <button class="botao-filtrar" type="button">
+                    <i class="fa-solid fa-filter"></i>
+                    Filtrar
+                </button>
+                <button class="botao-perfil">
+                    <i class="fa-solid fa-user"></i>
+                </button>
+            </div>
+        </header>
+        <div class="cabecalho-calendario">
+            <div>
+                <i class="fa-solid fa-caret-left"></i>
+                Mês Anterior
+            </div>
+            <div>Mês</div>
+            <div>
+                Mês Posterior
+                <i class="fa-solid fa-caret-right"></i>
+            </div>
+        </div>
+        <main>
+            <div class="listas">
+                <div class="lista-itens">
+                    Lista de Itens
+                    <a href="#" onclick="onOff('item')" class="button"><img src="../Images/item.png" alt="Item"></a>
+                </div>
+                <div class="lista-habitos">
+                    Lista de Hábitos
+                    <a href="#" onclick="onOff('habito')" class="button"><img src="../Images/lista-habitos.png"
+                            alt="Hábitos"></a>
+                </div>
+            </div>
+            <div class="calendario">
+                Calendário
+            </div>
+            <button class="menu" type="button">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </main>
+        <aside>
+            <div class="menu-visualizacao">
+                <p>Modo</p>
+                <button class="visualizacao-mes" type="button">
+                    <img src="../Images/mensal.png" alt="Mensal">
+                    <p>Mensal</p>
+                </button>
+                <button class="visualizacao-semana" type="button">
+                    <img src="../Images/semanal.png" alt="Semanal">
+                    <p>Semanal</p>
+                </button>
+                <button class="visualizacao-diaria" type="button">
+                    <img src="../Images/diaria.png" alt="Diária">
+                    <p>Diária</p>
+                </button>
+            </div>
+            <div class="menu-listas">
+                <p>Listas</p>
+                <button class="itens" type="button">
+                    <img src="../Images/item.png" alt="Item">
+                    <p>Itens</p>
+                </button>
+                <button class="habitos" type="">
+                    <img src="../Images/lista-habitos.png" alt="Hábitos">
+                    <p>Hábitos</p>
+                </button>
+            </div>
+            <div class="menu-criacao">
+                <p>Criar</p>
+                <button class="criacao-atividade" type="button">
+                    <a href="#" onclick="onOff('atividade')" class="button"><img src="../Images/atividade.png"
+                            alt="Atividade"></a>
+                    <p>Atividade</p>
+                </button>
+                <button class="criacao-item" type="button">
+                    <a href="#" onclick="onOff('item')" class="button"><img src="../Images/item.png" alt="Item"></a>
+                    <p>Item</p>
+                </button>
+                <button class="criacao-habito" type="button">
+                    <a href="#" onclick="onOff('habito')" class="button"><img src="../Images/lista-habitos.png"
+                            alt="Hábitos"></a>
+                    <p>Hábitos</p>
+                </button>
+                <button class="criacao-categoria" type="button">
+                    <img src="../Images/categoria.png" alt="Categoria">
+                    <p>Categoria</p>
+                </button>
+            </div>
+            <div class="menu-ferramentas">
+                <p>Mais</p>
+                <button class="ajuda" type="button">
+                    <img src="../Images/ajuda.png" alt="Ajuda">
+                    <p>Ajuda</p>
+                </button>
+                <button class="ferramentas" type="button">
+                    <img src="../Images/configuracoes.png" alt="Configurações">
+                    <p>Configurações</p>
+                </button>
+            </div>
+        </aside>
+        <footer>Rodapé</footer>
+    </div>
+</body>
+
+</html>
