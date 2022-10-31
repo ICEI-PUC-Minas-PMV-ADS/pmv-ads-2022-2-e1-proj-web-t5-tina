@@ -32,7 +32,32 @@ function onOff(type) {
             .classList
             .toggle("addScroll")
     }
+    else if (type == "categoria"){
+        document
+            .querySelector("#modal-categoria")
+            .classList
+            .toggle("hide")
+        document
+            .querySelector("#modal-categoria")
+            .classList
+            .toggle("addScroll")
+    }        
 }
+
+//Criar categoria
+
+const titulo_categoria =  document.getElementById('titulo')
+const cor_categoria =  document.getElementById('cor-categoria')
+
+const getCategoria = () => JSON.parse(localStorage.getItem("dbCategoria")) ?? [];
+const setCategoria = (dbCategoria) => localStorage.setItem("dbCategoria", JSON.stringify(dbCategoria));
+
+const criarCategoria = (categoria) => {
+    const dbCategoria = getDados();
+    dbCategoria.push(categoria);
+    setDados(dbCategoria)
+}
+
 
 // Criar Atividade
 
@@ -47,6 +72,7 @@ const prioridade = document.getElementById('prioridade')
 const periodizacao = document.getElementById('periodizacao')
 
 const campos = [titulo, descricao, dataInicio, dataFim, horarioInicio, horarioFinal, categoria, prioridade, periodizacao]
+
 
 const getDados = () => JSON.parse(localStorage.getItem("dbAtividade")) ?? [];
 const setDados = (dbAtividade) => localStorage.setItem("dbAtividade", JSON.stringify(dbAtividade));
@@ -80,6 +106,7 @@ const limparErros = () => {
     periodizacao.classList.remove('campo-vazio')
 }
 
+
 const isDadosValidos = (atividade) => {
     
     const atividades = getDados()
@@ -112,6 +139,7 @@ const salvarAtividade = () => {
     });
 
     if (camposVazios == 0) {
+    
         const atividade = {
             titulo: titulo.value,
             descricao: descricao.value,
@@ -123,6 +151,9 @@ const salvarAtividade = () => {
             prioridade: prioridade.value,
             periodizacao: periodizacao.value
         }
+
+        criarAtividade(atividade)
+        onOff(atividade)
         if (isDadosValidos(atividade)) {
             criarAtividade(atividade)
         }
@@ -180,4 +211,3 @@ document.getElementById('criar-atividade')
 //         return res.redirect("/ideias")
 //     })
 
-// })
