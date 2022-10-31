@@ -190,7 +190,7 @@ aside {
     grid-row: 3/12;
     display: flex;
     flex-direction: column;
-    width: 65px;
+    width: 65px;/*65px*/
     height: 700px;
     justify-content: space-around;
     background-color: #F2F2F2;
@@ -207,35 +207,73 @@ aside img {
     height: 21px;
 }
 
-.menu-visualizacao {
+.menu-visualizacao, .menu-listas, .menu-criacao, .menu-ferramentas {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.menu-visualizacao>button {
+.menu-visualizacao>p, .menu-listas>p, .menu-criacao p,
+.menu-ferramentas>p {
+    letter-spacing: 0.5px;/*não tinha*/
+    padding: 5px 10px; /*5px 1px;*/
+    text-decoration: none;
+    transition-duration: 0.4s;
+    color: black;
+    font-size: small;
+    font-weight: bolder;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.menu-visualizacao>button,
+.menu-listas>button,
+.menu-criacao>button,
+.menu-ferramentas>button {
     background-color: rgb(223, 39, 39);
     border: hidden 4px lightblue;
-    width: 40px;
+    width: 40px;/*40px*/
     height: 40px;
-    border-radius: 100%;
+    border-radius: 15px; /*100%*/
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
     color: white;
-    padding: 5px 1px;
+    letter-spacing: 0.5px;/*não tinha*/
+    padding: 5px 10px; /*5px 1px;*/
     text-decoration: none;
     margin: 3px 10px;
     transition-duration: 0.4s;
-    font-size: large;
+    font-size: x-small; /*large*/
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /*center*/
     align-items: center;
 }
 
-.menu-visualizacao>button:hover {
+.menu-visualizacao>button:hover,
+.menu-listas>button:hover,
+.menu-criacao>button:hover,
+.menu-ferramentas>button:hover {
+    width: 100px;/*40px*/
     background-color: rgb(241, 85, 85);
     box-shadow: 1px 1px 3px black;
 }
 
+.menu-visualizacao>button p,
+.menu-listas>button p,
+.menu-criacao>button p,
+.menu-ferramentas>button p {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.menu-visualizacao>button:hover p,
+.menu-listas>button:hover p,
+.menu-criacao>button:hover p,
+.menu-ferramentas>button:hover p {
+    color: white;   
+    opacity: 100;
+    visibility: visible;
+}
+/*
 .menu-listas {
     display: flex;
     flex-direction: column;
@@ -325,6 +363,7 @@ aside img {
     background-color: rgb(241, 85, 85);
     box-shadow: 1px 1px 3px black;
 }
+*/
 
 footer {
     grid-column: 1/13;
@@ -585,6 +624,11 @@ form button {
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+
+    vertical-align: bottom;
+
 
     transition: 400ms;
 }

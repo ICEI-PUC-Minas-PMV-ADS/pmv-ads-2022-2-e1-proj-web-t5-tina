@@ -179,7 +179,7 @@
                     <a href="#" onclick="onOff('item')"><i class="fa-solid fa-x"></i></a>
                 </div>
 
-                <form action="/" method="POST" onsubmit="checkFields(event)">
+                <form id="form-item">
                     <div class="campos">
                         <label for="titulo">Título: </label>
                         <input type="text" name="titulo">
@@ -208,19 +208,19 @@
                             <option value="Alta">Alta</option>
                         </select>
                     </div>
-                    <button>Criar</button>
+                    <button id="btn-criar-item">Criar</button>
                 </form>
             </div>
         </div>
 
         <div id="modal-habito" class="hide">
-            <div class="nova-atividade">
+            <div class="novo-habito">
                 <div class="cabecalho">
                     <h1>Novo hábito</h1>
                     <a href="#" onclick="onOff('habito')"><i class="fa-solid fa-x"></i></a>
                 </div>
 
-                <form action="/" method="POST" onsubmit="checkFields(event)">
+                <form id="form-habito" method="POST">
                     <div class="campos">
                         <label for="titulo">Título: </label>
                         <input type="text" name="titulo">
@@ -266,7 +266,7 @@
                             <option value="mensalmente">Mensalmente </option>
                         </select>
                     </div>
-                    <button>Criar</button>
+                    <button id="btn-criar-habito">Criar</button>
                 </form>
             </div>
         </div>
@@ -301,4 +301,3 @@
 </body>
 
 </html>
-
