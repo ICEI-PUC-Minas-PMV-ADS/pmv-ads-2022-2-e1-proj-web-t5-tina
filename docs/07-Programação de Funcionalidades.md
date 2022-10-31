@@ -1,15 +1,47 @@
 # Programação de Funcionalidades
+  As telas desenvolvidas para cada funcionalidade do sistema são exibidas neste tópico. O endereço pode ser acessado no seguitne link: (link)
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="4-Metodologia.md"> Metodologia</a>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="5-Arquitetura da Solução.md"> Arquitetura da Solução</a>
+Nesta seção são apresentadas as funcionalidades do sistema.
 
-Implementação do sistema descritas por meio dos requisitos funcionais e/ou não funcionais. Deve relacionar os requisitos atendidos os artefatos criados (código fonte) além das estruturas de dados utilizadas e as instruções para acesso e verificação da implementação que deve estar funcional no ambiente de hospedagem.
+## Alteração de design do site (RF-011)
+### Desenvolvedor(a): Juliana Dutra
 
-Para cada requisito funcional, pode ser entregue um artefato desse tipo
+A tela de temas permite que o usuário escolha um tema de desing específico para aplicar em todo o site durante o uso do sistema, permitindo que este tema se mantenha durante todo o acesso ao site.
 
-> **Links Úteis**:
->
-> - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
-> - [JSON Tutorial](https://www.w3resource.com/JSON)
-> - [JSON Data Set Sample](https://opensource.adobe.com/Spry/samples/data_region/JSONDataSetSample.html)
-> - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
-> - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
+<img src="img/temas-juliana.png">
+
+### Requisitos atendidos
+
+RF-11 - O site deve possibilitar edições de design como mudanças de cores, plano de fundo e adesivos.
+
+### Artefatos da funcionalidade
+
+- template-cores-tina.html.html
+- template-cores-tina.js
+- template-cores-tina.css
+- tema-dark.css
+- tema-padrao.css
+- logo.png
+- favicon.ico
+
+```js
+        function initThemeSelector() {
+            const themeSelect = document.getElementById("themeSelect");
+            const themeStylesheetLink = document.getElementById("themeStylesheetLink");
+            const currentTheme = localStorage.getItem("theme") || "tema-padrao";
+
+            function ativarTema(themeName) {
+                themeStylesheetLink.setAttribute("href", `temas/${themeName}.css`);
+            }
+            themeSelect.addEventListener("change", () => {
+                ativarTema(themeSelect.value);
+                localStorage.setItem("theme", themeSelect.value);
+            });
+
+            ativarTema(currentTheme);
+            themeSelect.value = currentTheme;
+```
+
+### Instruções de acesso
+
+A Tela perfil é acessada ao usuário acessar o botão ferramentas no menu lateral.
