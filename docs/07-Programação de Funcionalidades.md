@@ -249,8 +249,8 @@ A Tela perfil é acessada ao usuário acessar o botão ferramentas no menu later
 O modal de criação de itens apresenta os campos a serem preenchidos pelo usuário.  Os campos são: Título, descrição, categoria, prioridade
 O modal de criação de hábitos apresenta os campos a serem preenchidos pelo usuário.Os campos são: Título, descrição, data inicial, data final, categoria, prioridade e periodização. Todos os campos possuem preenchimento obrigatório. Ao concluir a ação, ou cancelá-la, fechando o modal, nenhum item ou hábito é criado e o histórico do último é mantido para futura consulta. Ao selecionar "Criar", o item ou hábito é criado e inserido em sua respectiva lista.
 
-<img src="img/Criar item.PNG" alt="Criar-item">
-<img src="img/Criar habito.PNG" alt="Criar-item">
+<img src="img/Menu-Criar_item.png" alt="Criar-item">
+<img src="img/Menu-Criar_hábito.png" alt="Criar-item">
 
 Na imagem é possível observar duas atividades os modais para criação das atividades. Na imagem a seguir, são mostra os itens e hábitos já criados.
 <img src="img/item-habitos-criados.png" alt="Itens e hábitos criados">
