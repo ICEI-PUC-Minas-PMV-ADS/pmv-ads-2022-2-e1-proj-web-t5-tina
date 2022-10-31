@@ -4,7 +4,7 @@
 Nesta seção são apresentadas as funcionalidades do sistema.
 
 ## Alteração de design do site (RF-011)
-### Desenvolvedor(a): Juliana Dutra
+### Desenvolvedor(a): Juliana Dutra Moreira
 
 A tela de temas permite que o usuário escolha um tema de desing específico para aplicar em todo o site durante o uso do sistema, permitindo que este tema se mantenha durante todo o acesso ao site.
 
