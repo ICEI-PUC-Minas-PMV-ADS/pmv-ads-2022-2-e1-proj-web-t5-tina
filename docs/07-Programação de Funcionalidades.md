@@ -179,7 +179,6 @@ RF-02 O site deve apresentar, em sua página inicial, um calendário do ano corr
 
 - visao-mensal.html
 - visao-mensal.css
-- visao-mensal.js
 - mensal.js
 - perfil-sem-foto-220615.png
 
