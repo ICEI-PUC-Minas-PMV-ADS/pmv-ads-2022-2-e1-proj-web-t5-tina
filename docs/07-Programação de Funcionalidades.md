@@ -163,9 +163,9 @@ const criarCategoria = (categoria) => {
 
 
 ## Visualização Mensal do calendário (RF-02)
-Desenvolvedor(a): Pedro Henrique Diniz Luiz
+### Desenvolvedor(a): Pedro Henrique Diniz Luiz
 
-A Visualização Mensal conta com um botão funcional que exibe o calandário com as atividades do mês criada pelo usuário   
+A Visualização Mensal conta com um botão funcional que exibe o calandário com as atividades do mês criada pelo usuário.  
 
 <img src ="img/calendario-visuMensal2 (1).png">
 <img src ="img/calendario-visuMensal2 (2).png">
@@ -173,7 +173,7 @@ A Visualização Mensal conta com um botão funcional que exibe o calandário co
 
 ## Requisitos atendidos
 
-RF-02 - O site deve apresentar, em sua página inicial, um calendário do ano corrente com as atividades criadas e permitir a alteração da visualização do calendário para diferentes períodos de tempo
+RF-02 - O site deve apresentar, em sua página inicial, um calendário do ano corrente com as atividades criadas e permitir a alteração da visualização do calendário para diferentes períodos de tempo.
 
 ### Artefatos da funcionalidade
 
@@ -182,7 +182,7 @@ RF-02 - O site deve apresentar, em sua página inicial, um calendário do ano co
 - mensal.js
 - perfil-sem-foto-220615.png
 
-#### Estrutura dos dados 
+### Estrutura dos dados 
 
 ``` js
 function toggle(el) {
