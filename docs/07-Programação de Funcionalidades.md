@@ -173,7 +173,7 @@ A Visualização Mensal conta com um botão funcional que exibe o calandário co
 
 ## Requisitos atendidos
 
-RF-02 O site deve apresentar, em sua página inicial, um calendário do ano corrente com as atividades criadas e permitir a alteração da visualização do calendário para diferentes períodos de tempo
+RF-02 - O site deve apresentar, em sua página inicial, um calendário do ano corrente com as atividades criadas e permitir a alteração da visualização do calendário para diferentes períodos de tempo
 
 ### Artefatos da funcionalidade
 
@@ -184,7 +184,8 @@ RF-02 O site deve apresentar, em sua página inicial, um calendário do ano corr
 
 #### Estrutura dos dados 
 
-``` function toggle(el) {
+``` js
+function toggle(el) {
     var display = document.getElementById(el).style.display;
     if(display == "none"){
         document.getElementById(el).style.display = 'block';
