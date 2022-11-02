@@ -29,7 +29,7 @@
                 </button>
             </div>
         </header>
-        <div class="cabecalho-calendario">
+        <!-- <div class="cabecalho-calendario">
             <div>
                 <i class="fa-solid fa-caret-left"></i>
                 Mês Anterior
@@ -39,7 +39,7 @@
                 Mês Posterior
                 <i class="fa-solid fa-caret-right"></i>
             </div>
-        </div>
+        </div> -->
         <main>
             <div class="listas">
                 <div class="lista-itens">
@@ -53,7 +53,26 @@
                 </div>
             </div>
             <div class="calendario">
-                Calendário
+                <div id="header">
+                    <div id="monthDisplay"></div>
+                    <div>
+                        <button id="backButton">Anterior</button>
+                        <button id="nextButton">Seguinte</button>
+                    </div>
+                </div>
+
+                <div id="weekdays">
+                    <div>Domingo</div>
+                    <div>Segunda</div>
+                    <div>Terça</div>
+                    <div>Quarta</div>
+                    <div>Quinta</div>
+                    <div>Sexta</div>
+                    <div>Sábado</div>
+                </div>
+
+                <div id="calendar"></div>
+
             </div>
             <button class="menu" type="button">
                 <i class="fa-solid fa-plus"></i>
@@ -271,31 +290,31 @@
             </div>
         </div>
 
- <div id="modal-categoria" class="hide">
-                                <div class="nova-categoria">
-                                    <div class="cabecalho">
-                                        <h1>Nova Categoria</h1>
-                                        <a href="#" onclick="onOff('categoria')"><i class="fa-solid fa-x"></i></a>
-                                    </div>
-            
-                                    <form action="/" method="POST" onsubmit="checkFields(event)">
-                                        <div class="campos">
-                                            <label for="titulo">Título: </label>
-                                            <input id="titulo" class="titulo" type="text" name="titulo" required>
-                                        </div>
-                                        <div class="campos">
-                                            <label for="cor-categoria">Cor: </label>
-                                            <select id="cor-categoria" name="cor-categoria" type="color">
-                                                <option value="#0000FF" selected>Azul </option>
-                                                <option value="#000000">Vermelho </option>
-                                                <option value="#000033"">Verde </option>
-                                                <option value="#FF00FF">Amarelo </option>
-                                            </select>
-                                        </div>
-                                        <button id="criar-categoria" type="button">Criar</button>
-                                    </form>
-                                </div>
-                            </div>
+        <div id="modal-categoria" class="hide">
+            <div class="nova-categoria">
+                <div class="cabecalho">
+                    <h1>Nova Categoria</h1>
+                    <a href="#" onclick="onOff('categoria')"><i class="fa-solid fa-x"></i></a>
+                </div>
+
+                <form action="/" method="POST" onsubmit="checkFields(event)">
+                    <div class="campos">
+                        <label for="titulo">Título: </label>
+                        <input id="titulo" class="titulo" type="text" name="titulo" required>
+                    </div>
+                    <div class="campos">
+                        <label for="cor-categoria">Cor: </label>
+                        <select id="cor-categoria" name="cor-categoria" type="color">
+                            <option value="#0000FF" selected>Azul </option>
+                            <option value="#000000">Vermelho </option>
+                            <option value="#000033"">Verde </option>
+                                                <option value=" #FF00FF">Amarelo </option>
+                        </select>
+                    </div>
+                    <button id="criar-categoria" type="button">Criar</button>
+                </form>
+            </div>
+        </div>
         <footer>Desenvolvido por Diana, Ellen, Gabriela, Juliana, Pedro e Pedro.</footer>
     </div>
 </body>

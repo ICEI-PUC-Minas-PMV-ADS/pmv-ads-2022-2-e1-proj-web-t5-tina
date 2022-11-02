@@ -32,7 +32,7 @@ function onOff(type) {
             .classList
             .toggle("addScroll")
     }
-    else if (type == "categoria"){
+    else if (type == "categoria") {
         document
             .querySelector("#modal-categoria")
             .classList
@@ -41,13 +41,13 @@ function onOff(type) {
             .querySelector("#modal-categoria")
             .classList
             .toggle("addScroll")
-    }        
+    }
 }
 
 //Criar Item
 var btnCriarItem = document.querySelector("#btn-criar-item");
 
-btnCriarItem.addEventListener("click", function(event){
+btnCriarItem.addEventListener("click", function (event) {
     event.preventDefault();
 
     var formItem = document.querySelector("#form-item");
@@ -57,10 +57,10 @@ btnCriarItem.addEventListener("click", function(event){
         "categoria": formItem.categoria.value,
         "prioridade": formItem.prioridade.value
     }
-    
+
     var listaItens = document.querySelector(".lista-itens");
     var novoItem = document.createElement("div");
-    novoItem.innerHTML = "Nome: " + item.nome + "<br>Descrição: "+ item.descricao + "<br>Categoria: " + item.categoria + "      Prioridade: " + item.prioridade ;
+    novoItem.innerHTML = "Nome: " + item.nome + "<br>Descrição: " + item.descricao + "<br>Categoria: " + item.categoria + "      Prioridade: " + item.prioridade;
 
 
     listaItens.appendChild(novoItem);
@@ -70,23 +70,23 @@ btnCriarItem.addEventListener("click", function(event){
 //Criar Hábito
 var btnCriarHabito = document.querySelector("#btn-criar-habito");
 
-btnCriarHabito.addEventListener("click", function(event){
+btnCriarHabito.addEventListener("click", function (event) {
     event.preventDefault();
-    
+
     var formHabito = document.querySelector("#form-habito");
     var habito = {
         "nome": formHabito.titulo.value,
         "descricao": formHabito.descricao.value,
         "data_inicio": formHabito['data-inicio'].value,
-        "data_fim" : formHabito['data-fim'].value,
+        "data_fim": formHabito['data-fim'].value,
         "categoria": formHabito.categoria.value,
         "prioridade": formHabito.prioridade.value,
         "periodizacao": formHabito.periodizacao.value
     }
-    
+
     var listaHabitos = document.querySelector(".lista-habitos");
     var novoHabito = document.createElement("div");
-    novoHabito.innerHTML = "Nome: " + habito.nome + "<br>Descrição: "+ habito.descricao + "<br>De: "+ habito.data_inicio + "  até  : "+ habito.data_fim + "<br>Categoria: " + habito.categoria + "      Prioridade: " + habito.prioridade + "<br>Periodização: "+ habito.periodizacao;
+    novoHabito.innerHTML = "Nome: " + habito.nome + "<br>Descrição: " + habito.descricao + "<br>De: " + habito.data_inicio + "  até  : " + habito.data_fim + "<br>Categoria: " + habito.categoria + "      Prioridade: " + habito.prioridade + "<br>Periodização: " + habito.periodizacao;
 
 
     listaHabitos.appendChild(novoHabito);
@@ -95,8 +95,8 @@ btnCriarHabito.addEventListener("click", function(event){
 
 //Criar categoria
 
-const titulo_categoria =  document.getElementById('titulo')
-const cor_categoria =  document.getElementById('cor-categoria')
+const titulo_categoria = document.getElementById('titulo')
+const cor_categoria = document.getElementById('cor-categoria')
 
 const getCategoria = () => JSON.parse(localStorage.getItem("dbCategoria")) ?? [];
 const setCategoria = (dbCategoria) => localStorage.setItem("dbCategoria", JSON.stringify(dbCategoria));
@@ -157,12 +157,12 @@ const limparErros = () => {
 
 
 const isDadosValidos = (atividade) => {
-    
+
     const atividades = getDados()
     var controlador = 0;
     var validade = true
     atividades.forEach(dadoAtividade => {
-        
+
         if (dadoAtividade.titulo == atividade.titulo) {
             controlador++
         }
@@ -172,7 +172,7 @@ const isDadosValidos = (atividade) => {
         validade = false
         alert('Já existe atividade com o mesmo título registrada.')
     }
-    return validade       
+    return validade
 }
 
 const salvarAtividade = () => {
@@ -188,7 +188,7 @@ const salvarAtividade = () => {
     });
 
     if (camposVazios == 0) {
-    
+
         const atividade = {
             titulo: titulo.value,
             descricao: descricao.value,
@@ -212,3 +212,72 @@ const salvarAtividade = () => {
 
 document.getElementById('criar-atividade')
     .addEventListener('click', salvarAtividade)
+
+
+let nav = 0;
+
+const calendar = document.getElementById('calendar');
+const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+function load() {
+    const dt = new Date();
+
+    if (nav !== 0) {
+        dt.setMonth(new Date().getMonth() + nav);
+    }
+
+    const day = dt.getDate();
+    const month = dt.getMonth();
+    const year = dt.getFullYear();
+
+    const firstDayOfMonth = new Date(year, month, 1);
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    const dateString = firstDayOfMonth.toLocaleDateString('en-us', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+    });
+    const paddingDays = weekdays.indexOf(dateString.split(', ')[0]);
+
+    document.getElementById('monthDisplay').innerText =
+        `${dt.toLocaleDateString('en-us', { month: 'long' })} ${year}`;
+
+    calendar.innerHTML = '';
+
+    for (let i = 1; i <= paddingDays + daysInMonth; i++) {
+        const daySquare = document.createElement('div');
+        daySquare.classList.add('day');
+
+        const dayString = `${month + 1}/${i - paddingDays}/${year}`;
+
+        if (i > paddingDays) {
+            daySquare.innerText = i - paddingDays;
+
+            if (i - paddingDays === day && nav === 0) {
+                daySquare.id = 'currentDay';
+            }
+
+        } else {
+            daySquare.classList.add('padding');
+        }
+
+        calendar.appendChild(daySquare);
+    }
+}
+
+function initButtons() {
+    document.getElementById('nextButton').addEventListener('click', () => {
+        nav++;
+        load();
+    });
+
+    document.getElementById('backButton').addEventListener('click', () => {
+        nav--;
+        load();
+    });
+}
+
+initButtons();
+load();
