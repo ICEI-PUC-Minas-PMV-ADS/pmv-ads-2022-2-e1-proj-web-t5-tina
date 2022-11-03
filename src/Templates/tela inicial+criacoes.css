@@ -110,7 +110,7 @@ header {
     align-items: center;
 }
 
-.cabecalho-calendario {
+/* .cabecalho-calendario {
     grid-column: 1/13;
     grid-row: 2/3;
     display: flex;
@@ -123,15 +123,13 @@ header {
     padding-right: 15px;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bolder;
-}
+} */
 
 main {
     grid-column: 2/13;
-    grid-row: 3/12;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 15px;
+    grid-row: 2/12;
+    display: flex;
+    justify-content: space-evenly;
     padding-right: 10px;
 }
 
@@ -140,18 +138,20 @@ main img {
     height: 21px;
 }
 
+#container-listas {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+
 .listas {
-    grid-column: 1/2;
-    grid-row: 1/3;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .lista-itens {
-    grid-column: 1;
-    grid-row: 1/2;
     border: solid 1px lightgray;
     border-radius: 15px;
     box-shadow: 1px 1px 8px lightblue;
@@ -159,11 +159,11 @@ main img {
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bolder;
     padding-top: 10px;
+    height: 49%;
+    width: 100%;
 }
 
 .lista-habitos {
-    grid-column: 1;
-    grid-row: 2/3;
     border: solid 1px lightgray;
     border-radius: 15px;
     box-shadow: 1px 1px 8px lightblue;
@@ -171,26 +171,32 @@ main img {
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bolder;
     padding-top: 10px;
+    height: 49%;
+    width: 100%;
+}
+
+#container-calendario {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .calendario {
-    grid-column: 2/3;
-    grid-row: 1/3;
     border: solid 1px lightgray;
     border-radius: 15px;
     box-shadow: 1px 1px 8px lightblue;
-    text-align: center;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bolder;
-    padding-top: 10px;
+    width: 775px;
 }
 
 aside {
     grid-column: 1/2;
-    grid-row: 3/12;
+    grid-row: 2/12;
     display: flex;
     flex-direction: column;
     width: 65px;
+    /*65px*/
     height: 700px;
     justify-content: space-around;
     background-color: #F2F2F2;
@@ -207,35 +213,88 @@ aside img {
     height: 21px;
 }
 
-.menu-visualizacao {
+.menu-visualizacao,
+.menu-listas,
+.menu-criacao,
+.menu-ferramentas {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.menu-visualizacao>button {
+.menu-visualizacao>p,
+.menu-listas>p,
+.menu-criacao p,
+.menu-ferramentas>p {
+    letter-spacing: 0.5px;
+    /*não tinha*/
+    padding: 5px 10px;
+    /*5px 1px;*/
+    text-decoration: none;
+    transition-duration: 0.4s;
+    color: black;
+    font-size: small;
+    font-weight: bolder;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.menu-visualizacao>button,
+.menu-listas>button,
+.menu-criacao>button,
+.menu-ferramentas>button {
     background-color: rgb(223, 39, 39);
     border: hidden 4px lightblue;
     width: 40px;
+    /*40px*/
     height: 40px;
-    border-radius: 100%;
+    border-radius: 15px;
+    /*100%*/
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
     color: white;
-    padding: 5px 1px;
+    letter-spacing: 0.5px;
+    /*não tinha*/
+    padding: 5px 10px;
+    /*5px 1px;*/
     text-decoration: none;
     margin: 3px 10px;
     transition-duration: 0.4s;
-    font-size: large;
+    font-size: x-small;
+    /*large*/
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    /*center*/
     align-items: center;
 }
 
-.menu-visualizacao>button:hover {
+.menu-visualizacao>button:hover,
+.menu-listas>button:hover,
+.menu-criacao>button:hover,
+.menu-ferramentas>button:hover {
+    width: 100px;
+    /*40px*/
     background-color: rgb(241, 85, 85);
     box-shadow: 1px 1px 3px black;
 }
 
+.menu-visualizacao>button p,
+.menu-listas>button p,
+.menu-criacao>button p,
+.menu-ferramentas>button p {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.menu-visualizacao>button:hover p,
+.menu-listas>button:hover p,
+.menu-criacao>button:hover p,
+.menu-ferramentas>button:hover p {
+    color: white;
+    opacity: 100;
+    visibility: visible;
+}
+
+/*
 .menu-listas {
     display: flex;
     flex-direction: column;
@@ -325,6 +384,7 @@ aside img {
     background-color: rgb(241, 85, 85);
     box-shadow: 1px 1px 3px black;
 }
+*/
 
 footer {
     grid-column: 1/13;
@@ -431,10 +491,12 @@ footer {
 /*modal-atividade*/
 #modal-atividade,
 #modal-item,
+#modal-categoria,
 #modal-habito {
     background-color: white;
     border: solid 1px lightgray;
     border-radius: 15px;
+
     box-shadow: 1px 1px 8px lightblue;
 
     position: fixed;
@@ -453,6 +515,7 @@ footer {
 
 #modal-atividade.hide,
 #modal-item.hide,
+#modal-categoria.hide,
 #modal-habito.hide {
     opacity: 0;
     visibility: hidden;
@@ -460,27 +523,32 @@ footer {
 
 #modal-atividade.addScroll,
 #modal-item.addScroll,
+#modal-categoria.addScroll,
 #modal-habito.addScroll {
     overflow: auto;
 }
 
 #modal-atividade .nova-atividade .cabecalho,
-#modal-item .nova-atividade .cabecalho,
-#modal-habito .nova-atividade .cabecalho {
+#modal-item .nova-item .cabecalho,
+#modal-categoria .nova-categoria .cabecalho,
+#modal-habito .nova-habito .cabecalho {
     display: flex;
     justify-content: space-between;
     padding-bottom: 15px;
 }
 
+
 #modal-atividade .nova-atividade .cabecalho h1,
-#modal-item .nova-atividade .cabecalho h1,
-#modal-habito .nova-atividade .cabecalho h1 {
+#modal-item .nova-item .cabecalho h1,
+#modal-categoria .nova-categotia .cabecalho h1,
+#modal-habito .nova-habito .cabecalho h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: x-large;
 }
 
 .nova-atividade .cabecalho a,
 .novo-item .cabecalho a,
+.novo-categoria .cabecalho a,
 .novo-habito .cabecalho a {
     background-color: rgb(223, 39, 39);
     border: hidden 4px lightblue;
@@ -501,15 +569,30 @@ footer {
 
 
 .nova-atividade .cabecalho a:hover,
-.nov--item .cabecalho a:hover,
+.novo-item .cabecalho a:hover,
+.nova-categoria .cabecalho a:hover,
 .novo-habito .cabecalho a:hover {
     background-color: #ff616199;
     text-decoration: none;
 }
 
+#modal-atividade form,
+#modal-categoria form,
+#modal-item form,
+#modal-habito form {
+    width: 100%;
+
+    margin: 0 auto 0;
+    display: grid;
+    justify-content: center;
+    align-items: flex-end;
+
+    gap: 12px;
+}
+
 input,
 textarea,
-select  {
+select {
     width: 100%;
     padding: 10px 20px;
     margin: 4px 0;
@@ -541,14 +624,18 @@ div.horario {
     justify-content: space-between;
 }
 
-#div-criar-atividade {
-    display: flex;
-    justify-content: center;
+
+
+form button {
+    background-color: #ff6161;
+    border: 1px solid;
 }
+
 
 #criar-atividade {
     background-color: rgb(223, 39, 39);
     border: none;
+
     color: white;
     border-radius: 15px 15px 0px 0px;
 
@@ -558,11 +645,17 @@ div.horario {
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+
+    vertical-align: bottom;
+
 
     transition: 400ms;
 }
 
 #criar-atividade:hover {
+
     background-color: #ff616199;
     text-decoration: none;
 }
@@ -570,3 +663,108 @@ div.horario {
 .campo-vazio {
     border: solid 2px rgb(209, 45, 45) !important;
 }
+
+
+
+
+
+
+
+
+
+
+#header {
+    padding: 10px;
+    color: darkblue;
+    font-size: 26px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+#header button {
+    background-color: white;
+    border: solid 1px lightgray;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px lightblue;
+    color: black;
+    padding: 2px 10px;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    font-weight: bold;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#header button:hover {
+    background-color: rgb(241, 247, 248);
+    box-shadow: 1px 1px 3px black;
+}
+
+#container {
+    width: 770px;
+}
+
+#weekdays {
+    width: 100%;
+    display: flex;
+    color: darkblue;
+    justify-content: center
+}
+
+#weekdays div {
+    width: 100px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+#calendar {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day {
+    width: 100px;
+    padding: 10px;
+    height: 100px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 5px;
+    box-shadow: 0px 0px 3px #CBD4C2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.day:hover {
+    background-color: #e8faed;
+}
+
+.day+#currentDay {
+    background-color: #e8f4fa;
+}
+
+.padding {
+    cursor: default !important;
+    background-color: #FFFCFF !important;
+    box-shadow: none !important;
+}
+
+#monthDisplay {
+    text-transform: capitalize;
+}
+
+.event {
+    color: darkblue;
+    background-color: lightgray;
+    border-radius: 15px;
+    padding: 5px;
+    font-weight: 200;
+}
+
+

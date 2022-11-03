@@ -8,6 +8,7 @@
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="tela inicial+criacoes.css">
     <script src="scripts.js" defer></script>
+    <script src="calendarioMensal.js" defer></script>
     <script src="https://kit.fontawesome.com/e7dd02bc5b.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap"
         rel="stylesheet">
@@ -29,7 +30,7 @@
                 </button>
             </div>
         </header>
-        <div class="cabecalho-calendario">
+        <!-- <div class="cabecalho-calendario">
             <div>
                 <i class="fa-solid fa-caret-left"></i>
                 Mês Anterior
@@ -39,22 +40,46 @@
                 Mês Posterior
                 <i class="fa-solid fa-caret-right"></i>
             </div>
-        </div>
+        </div> -->
         <main>
-            <div class="listas">
-                <div class="lista-itens">
-                    Lista de Itens
-                    <a href="#" onclick="onOff('item')" class="button"><img src="../Images/item.png" alt="Item"></a>
-                </div>
-                <div class="lista-habitos">
-                    Lista de Hábitos
-                    <a href="#" onclick="onOff('habito')" class="button"><img src="../Images/lista-habitos.png"
-                            alt="Hábitos"></a>
+            <div id="container-listas">
+                <div class="listas">
+                    <div class="lista-itens">
+                        Lista de Itens
+                        <a href="#" onclick="onOff('item')" class="button"><img src="../Images/item.png" alt="Item"></a>
+                    </div>
+                    <div class="lista-habitos">
+                        Lista de Hábitos
+                        <a href="#" onclick="onOff('habito')" class="button"><img src="../Images/lista-habitos.png"
+                                alt="Hábitos"></a>
+                    </div>
                 </div>
             </div>
-            <div class="calendario">
-                Calendário
+            <div id="container-calendario">
+                <div class="calendario">
+                    <div id="header">
+                        <div id="monthDisplay"></div>
+                        <div>
+                            <button id="backButton">Anterior</button>
+                            <button id="nextButton">Seguinte</button>
+                        </div>
+                    </div>
+    
+                    <div id="weekdays">
+                        <div>Domingo</div>
+                        <div>Segunda</div>
+                        <div>Terça</div>
+                        <div>Quarta</div>
+                        <div>Quinta</div>
+                        <div>Sexta</div>
+                        <div>Sábado</div>
+                    </div>
+    
+                    <div id="calendar"></div>
+    
+                </div>
             </div>
+            
             <button class="menu" type="button">
                 <i class="fa-solid fa-plus"></i>
             </button>
