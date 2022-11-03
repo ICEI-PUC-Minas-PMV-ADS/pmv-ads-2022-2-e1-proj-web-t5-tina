@@ -178,6 +178,7 @@ main img {
 #container-calendario {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .calendario {
