@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro-tina.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Tina</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="#" class="botao-logo">
+                <img id="logo" src="logo3.png" title="logo Tina">
+            </a>
+        </header>
+        <main>
+            <div class="logo-grande">
+                <img id="logopag" src="logo2.png" title="logo Tina">
+            </div>
+            <div>
+                <img id="avatar" src="tinaavatar.png" title="Avatar Tina" width="415" height="415">
+            </div>
+            <div class="'card">
+
+                <div id="msgerror"></div>
+                <div id="msgsuccess"></div>
+                
+                <div class="input-cad">
+                    <h1>Cadastre-se!</h1>
+                    <div class="label-float">
+                        <label id="labelnome" for="nome">Nome:</label>
+                        <input type="text" id="nome" placeholder="">
+                    </div>
+                    <div class="label-float">
+                        <label id="labelemail" for="email">E-mail:</label>
+                        <input type="text" id="email" placeholder="">
+
+                    </div>
+                    <div class="label-float">
+                        <label id="labelSenha" for="senha">Cadastrar senha:</label>
+                        <i id="ver-nova" class="fa fa-eye" aria-hidden="true"></i>
+                        <input type="password" id="senha" placeholder=" ">
+                    </div>
+                    <div class="label-float">
+                        <label id="labelconfirm" for="confirmsenha">Confirmar senha:</label>
+                        <i id="ver-confirm-senha" class="fa fa-eye" aria-hidden="true"></i>
+                        <input type="password" id="confirmsenha" placeholder="">
+                    </div>
+                    <div>
+                        <button onclick='cadastrar()'>Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    </main>
+    <footer>
+        Rodapé
+    </footer>
+
+    </div>
+</body>
+
+</html>
+
+<script type="text/javascript" src="cadastro-tina.js"></script>
