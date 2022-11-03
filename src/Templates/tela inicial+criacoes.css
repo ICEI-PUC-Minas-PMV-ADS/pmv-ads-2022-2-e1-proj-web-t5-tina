@@ -181,6 +181,7 @@ main img {
     box-shadow: 1px 1px 8px lightblue;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bolder;
+    width: 775px;
 }
 
 aside {
@@ -716,7 +717,6 @@ form button {
 
 #calendar {
     width: 100%;
-    margin: 0 16px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -747,6 +747,10 @@ form button {
     cursor: default !important;
     background-color: #FFFCFF !important;
     box-shadow: none !important;
+}
+
+#monthDisplay {
+    text-transform: capitalize;
 }
 
 
