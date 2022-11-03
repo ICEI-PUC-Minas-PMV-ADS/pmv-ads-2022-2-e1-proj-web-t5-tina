@@ -123,6 +123,7 @@ const periodizacao = document.getElementById('periodizacao')
 const campos = [titulo, descricao, dataInicio, dataFim, horarioInicio, horarioFinal, categoria, prioridade, periodizacao]
 
 
+
 const getDados = () => JSON.parse(localStorage.getItem("dbAtividade")) ?? [];
 const setDados = (dbAtividade) => localStorage.setItem("dbAtividade", JSON.stringify(dbAtividade));
 
@@ -201,8 +202,6 @@ const salvarAtividade = () => {
             periodizacao: periodizacao.value
         }
 
-        criarAtividade(atividade)
-        onOff(atividade)
         if (isDadosValidos(atividade)) {
             criarAtividade(atividade)
         }
@@ -250,14 +249,23 @@ function load() {
         const daySquare = document.createElement('div');
         daySquare.classList.add('day');
 
-        const dayString = `${month + 1}/${i - paddingDays}/${year}`;
+        // const dayString = `${month + 1}/${i - paddingDays}/${year}`;
+        const dayString = `${year}-${month + 1}-${i - paddingDays}`;
 
         if (i > paddingDays) {
             daySquare.innerText = i - paddingDays;
+            const eventForDay = getDados().find(e => e.dataInicio === dayString);
 
             if (i - paddingDays === day && nav === 0) {
                 daySquare.id = 'currentDay';
             }
+
+            if (eventForDay) {
+                const eventDiv = document.createElement('div');
+                eventDiv.classList.add('event');
+                eventDiv.innerText = eventForDay.titulo;
+                daySquare.appendChild(eventDiv);
+              }
 
         } else {
             daySquare.classList.add('padding');
