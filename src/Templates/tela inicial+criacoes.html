@@ -41,39 +41,45 @@
             </div>
         </div> -->
         <main>
-            <div class="listas">
-                <div class="lista-itens">
-                    Lista de Itens
-                    <a href="#" onclick="onOff('item')" class="button"><img src="../Images/item.png" alt="Item"></a>
-                </div>
-                <div class="lista-habitos">
-                    Lista de Hábitos
-                    <a href="#" onclick="onOff('habito')" class="button"><img src="../Images/lista-habitos.png"
-                            alt="Hábitos"></a>
-                </div>
-            </div>
-            <div class="calendario">
-                <div id="header">
-                    <div id="monthDisplay"></div>
-                    <div>
-                        <button id="backButton">Anterior</button>
-                        <button id="nextButton">Seguinte</button>
+            <div id="container-listas">
+                <div class="listas">
+                    <div class="lista-itens">
+                        Lista de Itens
+                        <a href="#" onclick="onOff('item')" class="button"><img src="../Images/item.png" alt="Item"></a>
+                    </div>
+                    <div class="lista-habitos">
+                        Lista de Hábitos
+                        <a href="#" onclick="onOff('habito')" class="button"><img src="../Images/lista-habitos.png"
+                                alt="Hábitos"></a>
                     </div>
                 </div>
-
-                <div id="weekdays">
-                    <div>Domingo</div>
-                    <div>Segunda</div>
-                    <div>Terça</div>
-                    <div>Quarta</div>
-                    <div>Quinta</div>
-                    <div>Sexta</div>
-                    <div>Sábado</div>
-                </div>
-
-                <div id="calendar"></div>
-
             </div>
+            
+            <div id="container-calendario">
+                <div class="calendario">
+                    <div id="header">
+                        <div id="monthDisplay"></div>
+                        <div>
+                            <button id="backButton">Anterior</button>
+                            <button id="nextButton">Seguinte</button>
+                        </div>
+                    </div>
+    
+                    <div id="weekdays">
+                        <div>Domingo</div>
+                        <div>Segunda</div>
+                        <div>Terça</div>
+                        <div>Quarta</div>
+                        <div>Quinta</div>
+                        <div>Sexta</div>
+                        <div>Sábado</div>
+                    </div>
+    
+                    <div id="calendar"></div>
+    
+                </div>
+            </div>
+        
             <button class="menu" type="button">
                 <i class="fa-solid fa-plus"></i>
             </button>
