@@ -739,6 +739,7 @@ form button {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: auto;
 }
 
 .day:hover {
@@ -760,10 +761,13 @@ form button {
 }
 
 .event {
+    display: inline-table;
+    flex-direction: column;
     color: darkblue;
     background-color: lightgray;
     border-radius: 15px;
-    padding: 5px;
+    padding: 10px;
+    margin: 5px 0;
     font-weight: 200;
 }
 

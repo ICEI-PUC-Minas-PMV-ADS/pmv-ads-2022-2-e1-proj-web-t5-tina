@@ -34,23 +34,16 @@ function load() {
         const daySquare = document.createElement('div');
         daySquare.classList.add('day');
 
-        // const dayString = `${month + 1}/${i - paddingDays}/${year}`;
         const dayString = `${year}-${month + 1}-${i - paddingDays}`;
 
         if (i > paddingDays) {
             daySquare.innerText = i - paddingDays;
-            const eventForDay = getDados().find(e => e.dataInicio === dayString);
+
+            inserirAtividades(dayString, daySquare);
 
             if (i - paddingDays === day && nav === 0) {
                 daySquare.id = 'currentDay';
             }
-
-            if (eventForDay) {
-                const eventDiv = document.createElement('div');
-                eventDiv.classList.add('event');
-                eventDiv.innerText = eventForDay.titulo;
-                daySquare.appendChild(eventDiv);
-              }
 
         } else {
             daySquare.classList.add('padding');
@@ -69,6 +62,22 @@ function initButtons() {
     document.getElementById('backButton').addEventListener('click', () => {
         nav--;
         load();
+    });
+}
+
+function inserirAtividades(dayString, daySquare) {
+
+    getDados().forEach(atividade => {
+
+        if (atividade.dataInicio === dayString) {
+
+            const eventDiv = document.createElement('div');
+            eventDiv.classList.add('event');
+            eventDiv.setAttribute('id', atividade.titulo)
+            eventDiv.setAttribute('onClick', 'getId(this)')
+            eventDiv.innerText = atividade.titulo;
+            daySquare.appendChild(eventDiv);
+        }
     });
 }
 
