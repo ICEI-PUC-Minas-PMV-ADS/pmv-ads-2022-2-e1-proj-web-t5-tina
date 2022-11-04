@@ -167,8 +167,8 @@ const criarCategoria = (categoria) => {
 
 A Visualização Mensal conta com um botão funcional que exibe o calandário com as atividades do mês criada pelo usuário.  
 
-<img src ="img/mensal-visao (1).png">
-<img src ="img/mensal-visao (2).png">
+<img src ="img/calendario-visuMensal2 (1).png">
+<img src ="img/calendario-visuMensal2 (2).png">
 
 
 ## Requisitos atendidos
