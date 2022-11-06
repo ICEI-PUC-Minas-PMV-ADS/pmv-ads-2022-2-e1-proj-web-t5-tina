@@ -1,33 +1,27 @@
-const inputFile =
-    document.querySelector("#picture__input");
-const pictureImage =
-    document.querySelector("picture__image");
-// const pictureImageTxt = 'Escolher foto';
-// pictureImage.innerHTML = pictureImageTxt;
+// document.querySelector("#nome").value = localStorage.getItem("listaUser")
 
-// window.onload=function(){
-inputFile.addEventListener("change", function (e) {
-    const inputTarget = e.target;
-    const file = inputTarget.files[0];
+// document.querySelector("#email").value = localStorage.getItem("listaUser")
+
+// document.querySelector("#senha").value = localStorage.getItem("listaUser")
+
+// Inserir foto
+document.querySelector('#image_input').addEventListener('change', function() {
+    const reader = new FileReader()
 
 
-    if (file) {
-        const reader = new FileReader();
+    reader.addEventListener('load', () => {
+        localStorage.setItem("recent-image", reader.result)
+    })
 
-        reader.addEventListener("load", function (e) {
-            const readerTarget = e.target;
+    reader.readAsDataURL(this.files[0])
+})
 
-            const img = document.createElement("img");
-            img.src = readerTarget.result;
-            img.classList.add("picture__img");
-
-            pictureImage.innerHTML = "";
-            pictureImage.appendChild(img);
-        });
-
-        reader.readAsDataURL(file);
-    } else {
-        pictureImage.innerHTML = pictureImageTxt;
+document.addEventListener("DOMContentLoaded", () => {
+    const recentImageDataUrl = localStorage.getItem("recent-image")
+    if (recentImageDataUrl) {
+        document.querySelector('#imgPreview').setAttribute('src', recentImageDataUrl)
     }
+})
 
-});
+
+

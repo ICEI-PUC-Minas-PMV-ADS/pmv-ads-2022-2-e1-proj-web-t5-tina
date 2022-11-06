@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="src/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="telaperfil-tina.css">
-    <script type="text/javascript" src="telaperfil-tina.js"></script>
     <script src="https://kit.fontawesome.com/e7dd02bc5b.js" crossorigin="anonymous"></script>
     <title>Tina</title>
 </head>
@@ -25,43 +24,31 @@
         <div class="cabecalho-perfil">
             <div>
                 <i class="fa-solid fa-caret-left"></i>
-                <button class="voltar" type="button">Voltar</button>
+                Voltar
             </div>
             <div class="perfil"> Perfil</div>
         </div>
         <main>
             <div class="campofoto">
                 <div class="foto-perfil">
-                    <label class="picture" for="picture__input">
-                        <span class="picture__image">Escolher foto</span>
-                    </label>
-
-                    <input type="file" name="picture__input" id="picture__input">
-                    <!-- <img src="tinaavatar.png" alt="tinaavatar">
+                    <div id="display_image"></div>
                     <div>
-                        <button class="botao-alterar-picture" type="button">Alterar foto de perfil</button>
-                    </div> -->
+                        <input type="file" id="image_input" accept="image/png, image/ppg">
+                        <img id="imgPreview" src="" alt="Preview">
+                    </div>
                 </div>
             </div>
-            <div class="perfilinformacoes"> 
+            <div class="perfilinformacoes">
                 <div class="dados-do-perfil"> Dados do perfil</div>
                 <div class="cabecalhodados">Informações pessoais</div>
                 <div class="infopessoais">
-                    <form action="#" class="formsinfo">
-                        <label for="nome">Nome completo:</label>
-                        <input type="text" id="nome" name="some" value="Fulano da Silva"><br>
+                    <form action="#" class="formsinfo" autocomplete="off" onsubmit="onFormSubimit()">
+                        <label id="teste" for="nome">Nome completo:</label>
+                        <input type="text" id="nome" name="some"><br>
                         <label for="email">E-mail:</label>
-                        <input type="text" id="email" name="email" value="fulano@x.com">
+                        <input type="text" id="email" name="email"><br>
                         <input type="checkbox" id="notifemail" name="notifemail" value="notifemail">
                         <label for="notifemail"> Desejo receber notificações por E-mail</label><br>
-                        <label for="text">Gênero:</label>
-                        <select id="genero" name="genere">
-                            <option value="feminino">feminino</option>
-                            <option value="Maculino">Maculino</option>
-                            <option value="naodeclarar">Prefiro não dizer</option>
-                        </select>
-                        <label for="datanasc">Data de nascimento:</label>
-                        <input type="date" id="datanasc" name="datanasc" min="2000-01-02"><br><br>
                     </form>
                 </div>
                 <div class="seguranca">
@@ -69,17 +56,22 @@
                     <div class="formulariosenha">
                         <form action="#2">
                             <label for="senha">Alterar senha:</label>
-                            <input type="text" id="senha" name="senha" value="Insira a nova senha"><br>
-                            <label for="senha2">Confirmar nova senha:</label>
-                            <input type="text" id="senha2" name="senha2" value="Digite novamente a nova senha"><br>
+                            <input type="text" id="senha" name="senha"><br>
+                            <label for="confirmSenha">Confirmar nova senha:</label>
+                            <input type="text" id="confirmSenha" name="confirmSenha"><br>
                         </form>
                     </div>
                 </div>
-                <input type="submit" value="Salvar alterações">
+                <button onclick="salvar()" >Salvar</button>
+                <input type="salvalteracoes" value="Salvar alterações">
             </div>
         </main>
         <footer>Rodapé</footer>
     </div>
+    
 </body>
 
+
 </html>
+
+<script type="text/javascript" src="telaperfil-tina.js"></script>

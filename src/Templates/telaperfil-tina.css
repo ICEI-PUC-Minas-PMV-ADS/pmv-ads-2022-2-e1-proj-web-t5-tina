@@ -58,35 +58,8 @@ header {
   box-shadow: 1px 1px 3px black;
 }
 
-#picture__input {
-  display: none;
-}
-
-.picture {
-  width: 400px;
-  aspect-ratio: 16/9;
-  background-color: #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgb(16, 187, 27);
-  border: 2px dashed currentColor;
-  font-family: sans-serif;
-  transition: color 300ms ease-in-out, background 300ms ease-in-out;
-}
-
-.picture:hover {
-  color:#f15555;
-  background-color:rgb(88, 88, 88);
-}
-
-.picture:active {
-  border-color: #f15555;
-  background-color:rgb(88, 88, 88);
-  background-color:black;
-}
-
 #cabecalho-direita {
+  display: flex;
   padding-right: 5px;
   align-items: center;
 }
@@ -110,50 +83,31 @@ header {
 
 .perfil {
   grid-column: 3/4;
-  font-size: 30px;
+  font-size: 40px;
   margin-left: 40%;
-}
-
-.voltar {
-  grid-column: 1/2;
-  width: 70px;
-  height: 30px;
-  background-color: rgb(252, 252, 252);
-  border: 1px solid rgb(204, 204, 204);
-  box-shadow: 1px 1px 4px #add8e6;
-  border-radius: 10px;
-  box-sizing: border-box;
-  font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.voltar:hover {
-  background-color: rgb(241, 247, 248);
-  box-shadow: 1px 1px 3px rgb(88, 88, 88);
 }
 
 main {
   grid-column: 1/13;
   grid-row: 3/12;
   display: grid;
-  grid-template-columns: 0.8fr 2fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-gap: 15px;
   padding-right: 10px;
 }
 
 .campofoto {
   grid-column: 1/2;
-  grid-row: 1/3;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-gap: 10px;
+  grid-row: 1/1;
+  width: 500px;
+  margin-left: 30px;
 }
 
 .foto-perfil {
   grid-column: 1;
   grid-row: 1/2;
+  height: 480px;
   margin-left: 10px;
   border: solid 1px lightgray;
   border-radius: 15px;
@@ -164,7 +118,10 @@ main {
   padding-top: 10px;
 } 
 
-img {
+#imgPreview {
+  border: 2px solid;
+  margin: 45px 45px 45px 45px;
+  background-size: cover;
   border-radius: 50%;
   width: 300px;
   height: 300px;
@@ -172,30 +129,11 @@ img {
   border-color: #c8c4c9;
 }
 
-.botao-alterar-foto {
-  background-color: rgb(223, 39, 39);
-  color: aliceblue;
-  width: 190px;
-  height: 40px;
-  margin: 8px 0;
-  text-align: center;
-  border: 1px solid rgb(204, 204, 204);
-  box-shadow: 1px 1px 8px #add8e6;
-  border-radius: 10px;
-  box-sizing: border-box;
-  font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.botao-alterar-foto:hover {
-  background-color: #f15555;
-  box-shadow: 1px 1px 3px rgb(88, 88, 88);
-}
-
 .perfilinformacoes {
   grid-column: 2/3;
   grid-row: 1/3;
   height: 480px;
+  width: 1000px;
   border: solid 1px lightgray;
   border-radius: 15px;
   box-shadow: 1px 1px 8px lightblue;
@@ -210,7 +148,7 @@ img {
   height: 40px;
   padding-top: 5px;
   border-radius: 15px 15px 0px 0px;
-  background-color: rgb(223, 39, 39);
+  background-color: #eca3a3;
   color: aliceblue;
   box-shadow: 1px 1px 8px lightblue;
 }
@@ -221,9 +159,11 @@ img {
   padding-top: 7px;   
   text-align: left;
   font-size: 18px;
+  background-color: #c8c4c9;
   border-style: solid;
-  background-color: hwb(0 40% 7%);
+  background-color: rgb(241, 85, 85);
   border-width: 0.05px 0px 0px 0px;
+  border-color: rgb(209, 177, 177);
   color: aliceblue;
 }
 
@@ -256,7 +196,7 @@ img {
   text-align: left;
   font-size: 15px;
   border-radius: 15px 15px 0px 0px;
-  background-color: rgb(236, 101, 101);
+  background-color: rgb(241, 85, 85);
   color: aliceblue;
   box-shadow: 1px 1px 8px lightblue;
   font-family: Arial, Helvetica, sans-serif;
@@ -297,25 +237,20 @@ input[type=text] {
   font-size: 15px;
 }
 
-input[type=submit] {
-  background-color: rgb(223, 39, 39);
+input[type=salvalteracoes] {
+  background-color: rgb(241, 85, 85);
   color: aliceblue;
-  width: 200px;
+  width: 20%;
   padding: 10px 5px;
   margin: 8px 0;
   text-align: center;
   display: inline-block;
   border: 1px solid rgb(204, 204, 204);
-  box-shadow: 1px 1px 8px #add8e6;
+  box-shadow: 1px 1px 8px lightblue;
   border-radius: 10px;
   box-sizing: border-box;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
-}
-
-input[type=submit]:hover {
-  background-color: #f15555;
-  box-shadow: 1px 1px 3px rgb(88, 88, 88);
 }
 
  footer {
@@ -349,28 +284,10 @@ input[type=submit]:hover {
     grid-row: 1/2;
   }
 
-  .perfil {
-    font-size: 30px;
-    margin-left: 30%;
-  }
-  
-  .campofoto {
-    grid-column: 1/2;
-    grid-row: 2/3;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-
   .foto-perfil {
     grid-column: 1;
     grid-row: 1/2;
   }
-
-  .cabecalho-perfil {
-      grid-column: 1/13;
-      grid-row: 2/3;
-    }
 
   main {
     grid-column: 1/13;
@@ -395,19 +312,25 @@ input[type=submit]:hover {
     grid-template-rows: 1fr 1fr;
   }
 
+#display_image {
+  border: 2px solid;
+  margin: 10px 45px 0px 100px;
+  background-size: cover;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  border-style: solid;
+  border-color: #c8c4c9;
+}
+
   .foto-perfil {
     grid-column: 1;
     grid-row: 1/2;
   }
 
-  
-input[type=submit] {
-  font-size: 14px;
- 
-}
   footer {
     grid-column: 1/13;
-    grid-row: 13/13;
+    grid-row: 12/13;
   }
 
 }
