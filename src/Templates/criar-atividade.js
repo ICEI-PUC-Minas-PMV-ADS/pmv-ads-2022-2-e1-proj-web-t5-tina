@@ -1,4 +1,4 @@
-// Criar Atividade
+// CRUD - Criar Atividade
 
 const titulo = document.getElementById('titulo')
 const descricao = document.getElementById('descricao')
@@ -97,3 +97,7 @@ const salvarAtividade = () => {
 
 document.getElementById('criar-atividade')
     .addEventListener('click', salvarAtividade)
+
+// CRUD - ler atividade
+
+const lerAtividade = () => getDados()

@@ -1,4 +1,5 @@
 let nav = 0;
+let clicked = null;
 
 const calendar = document.getElementById('calendar');
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -34,7 +35,7 @@ function load() {
         const daySquare = document.createElement('div');
         daySquare.classList.add('day');
 
-        const dayString = `${year}-${month + 1}-${i - paddingDays}`;
+        const dayString = `${year}-${month < 9 ? '0' : '' }${month + 1}-${(i - paddingDays) < 10 ? '0' : ''}${i - paddingDays}`;
 
         if (i > paddingDays) {
             daySquare.innerText = i - paddingDays;
@@ -65,21 +66,7 @@ function initButtons() {
     });
 }
 
-function inserirAtividades(dayString, daySquare) {
-
-    getDados().forEach(atividade => {
-
-        if (atividade.dataInicio === dayString) {
-
-            const eventDiv = document.createElement('div');
-            eventDiv.classList.add('event');
-            eventDiv.setAttribute('id', atividade.titulo)
-            eventDiv.setAttribute('onClick', 'getId(this)')
-            eventDiv.innerText = atividade.titulo;
-            daySquare.appendChild(eventDiv);
-        }
-    });
-}
-
 initButtons();
 load();
+
+

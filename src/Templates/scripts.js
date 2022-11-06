@@ -31,6 +31,16 @@ function onOff(type) {
             .querySelector("#modal-habito")
             .classList
             .toggle("addScroll")
+    } else if (type == "atualizar-atividade") {
+        document
+            .querySelector("#modal-atualizar-atividade")
+            .classList
+            .toggle("hide")
+        document
+            .querySelector("#modal-atualizar-atividade")
+            .classList
+            .toggle("addScroll")
+        limparErrosEdicao()
     }
 }
 
