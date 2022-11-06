@@ -25,7 +25,7 @@ function entrar(){
       user: '',
       senha: ''
     }
-    
+
     listaUser = JSON.parse(localStorage.getItem('listaUser'))
     
     //varrer a lista de user item por item
@@ -42,7 +42,8 @@ function entrar(){
     })
      
     if(email.value == userValid.user && senha.value == userValid.senha){
-      window.location.href = '#'
+      window.location.href = 'http://127.0.0.1:5501/telaperfil-tina.html'
+      msgNaoEncontrado.setAttribute('style', 'display: none')
       
       //gerar um tolken para garantir o login
       let mathRandom = Math.random().toString(16).substr(2)
@@ -55,8 +56,9 @@ function entrar(){
       email.setAttribute('style', 'border-color: red')
       senhaLabel.setAttribute('style', 'color: red')
       senha.setAttribute('style', 'border-color: red')
-      msgError.setAttribute('style', 'display: block')
-      msgError.innerHTML = 'Usuário ou senha incorretos'
+      msgNaoEncontrado.setAttribute('style', 'display: block')
+      msgNaoEncontrado.innerHTML = 'Usuário ou senha incorretos. Tente novamente'
+
     }
     
   }
