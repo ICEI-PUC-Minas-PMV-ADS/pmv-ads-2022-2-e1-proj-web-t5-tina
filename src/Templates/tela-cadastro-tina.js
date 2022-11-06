@@ -23,13 +23,14 @@ let msgerror = document.querySelector('#msgerror')
 let msgsuccess = document.querySelector('#msgsuccess')
 
 nome.addEventListener("keyup", () => {
-    if (nome.value.length <= 2) {
+    if (nome.value.length <= 10) {
         labelnome.setAttribute('style', 'color: red')
-        labelnome.innerHTML = 'Nome: *Insira no minimo 3 caracteres'
+        labelnome.innerHTML = 'Nome completo: *Insira no minimo 10 caracteres'
         // nome.setAttribute('style', 'border-color: red')
         validnome = false
     } else {
         labelnome.setAttribute('style', 'color: green')
+        labelnome.innerHTML = 'Nome completo:'
         // nome.setAttribute('style', 'border-color: green')
         validnome = true
     }
@@ -43,19 +44,21 @@ email.addEventListener("keyup", () => {
         validemail = false
     } else {
         labelemail.setAttribute('style', 'color: green')
+        labelemail.innerHTML = 'E-mail:'
         // nome.setAttribute('style', 'border-color: green')
         validemail = true
     }
 })
 
 senha.addEventListener("keyup", () => {
-    if (senha.value.length <= 2) {
+    if (senha.value.length <= 5) {
         labelSenha.setAttribute('style', 'color: red')
-        labelSenha.innerHTML = 'Senha *Insira no minimo 3 caracteres'
+        labelSenha.innerHTML = 'Senha *Insira no mínimo 5 caracteres'
         // nome.setAttribute('style', 'border-color: red')
         validSenha = false
     } else {
         labelSenha.setAttribute('style', 'color: green')
+        labelSenha.innerHTML = 'Senha:'
         // nome.setAttribute('style', 'border-color: green')
         validSenha = true
     }
@@ -76,7 +79,6 @@ confirmsenha.addEventListener("keyup", () => {
 })
 
 function cadastrar() {
-    //Colocar depois o: validdatanasc || validemail
     if (validnome && validSenha && validconfirm && validemail) {
         let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[ ]')
 
@@ -98,14 +100,12 @@ function cadastrar() {
         msgerror.innerHTML = " "
         msgerror.setAttribute('style', 'display: none')
 
-        // setTimeout(() => {
-        //     window.location.href = 'http://127.0.0.1:5500/template-tina-login.html'
-        // }, 3000)
+        window.location.href = 'http://127.0.0.1:5501/template-tina-login.html'
 
 
     } else {
         msgerror.setAttribute('style', 'display: block')
-        msgerror.innerHTML = "<strong>Preencha todos os camposcorretamente antes de cadastrar</strong>"
+        msgerror.innerHTML = "<strong>Preencha todos os campos corretamente antes de cadastrar</strong>"
         msgsuccess.innerHTML = " "
         msgsuccess.setAttribute('style', 'display: none')
     }
@@ -137,3 +137,6 @@ btnConfirm.addEventListener('click', ()=>{
 listaUser = JSON.parse(localStorage.getItem('listaUser'))
 
 console.log(listaUser)
+
+
+

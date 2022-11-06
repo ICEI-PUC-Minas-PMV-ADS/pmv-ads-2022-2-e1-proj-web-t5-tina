@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cadastro-tina.css">
+    <link rel="stylesheet" href="tela-cadastro-tina.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Tina</title>
 </head>
@@ -18,21 +18,21 @@
             </a>
         </header>
         <main>
-            <div class="logo-grande">
-                <img id="logopag" src="logo2.png" title="logo Tina">
+            <div id="logogrande">
+                <img id="logopag" src="logo2.png" title="logo Tina" width="500">
             </div>
-            <div>
+            <div id="avatarpag">
                 <img id="avatar" src="tinaavatar.png" title="Avatar Tina" width="415" height="415">
             </div>
-            <div class="'card">
+            <div id="cardpag" class="card">
 
                 <div id="msgerror"></div>
                 <div id="msgsuccess"></div>
-                
+
                 <div class="input-cad">
-                    <h1>Cadastre-se!</h1>
+                    <h1 id="tituloCad">Cadastre-se!</h1>
                     <div class="label-float">
-                        <label id="labelnome" for="nome">Nome:</label>
+                        <label id="labelnome" for="nome">Nome completo:</label>
                         <input type="text" id="nome" placeholder="">
                     </div>
                     <div class="label-float">
@@ -55,9 +55,9 @@
                     </div>
                 </div>
             </div>
+        </main>
     </div>
 
-    </main>
     <footer>
         Rodapé
     </footer>
@@ -67,4 +67,4 @@
 
 </html>
 
-<script type="text/javascript" src="cadastro-tina.js"></script>
+<script type="text/javascript" src="tela-cadastro-tina.js"></script>

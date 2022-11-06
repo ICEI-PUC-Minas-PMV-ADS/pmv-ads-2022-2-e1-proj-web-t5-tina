@@ -7,7 +7,7 @@
 html,
 body {
     display: block;
-    height: 1080px;
+    height: 920px;
 }
 
 .container {
@@ -25,7 +25,7 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 5px;
-    border-bottom: solid 1px rgb(196, 61, 61);
+    border-bottom: solid 1px lightgray;
     box-shadow: 1px 1px 2px lightblue;
 }
 
@@ -47,17 +47,19 @@ main {
     grid-row: 2/12;
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(11, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+} 
+
+#logogrande {
+    grid-column: 1/5;
+    grid-row: 5/5;
+    margin-left: 50px;
 }
 
-.logo-grande {
-    grid-column: 2/6;
-    grid-row: 1/5;
-    align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 100px;
-    font-weight: bolder;
+#logopag {
+    border: 3px solid rgb(0, 0, 0);
+    margin-left: 50px;
 }
 
 
@@ -69,6 +71,22 @@ input[type=password] {
     border: 1px solid rgb(204, 204, 204);
     border-radius: 10px;
     box-sizing: border-box;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.label-float {
+    padding-top: 10px;
+}
+
+label{
+    font-size: large;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#tituloCad {
+    margin-bottom: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -85,23 +103,24 @@ button {
     font-weight: bolder;
 }
 
-#avatar {
-    grid-column: 1/11;
-    grid-row: 2/10;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 100px;
-    font-weight: bolder;
+#avatarpag {
+    grid-column: 1/5;
+    grid-row: 1/5;
+    margin-left: 150px;
+    margin-top: 37px;
+}
+
+#cardpag {
+    grid-column: 3/5;
+    grid-row: 2/5;
 }
 
 .input-cad {
-    grid-column: 1/11;
-    grid-row: 2/5;
-    width: 700px;
     border-radius: 15px;
     background-color: #f2f2f2;
-    padding: 20px;
+    padding: 30px 40px 30px 40px ;
+    width: 900px;
     box-shadow: 1px 1px 8px lightblue;
-
 }
 
 #msgerror{
@@ -134,3 +153,8 @@ footer {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
 }
+
+@media screen and (max-width: 1580px) {
+
+
+    }
