@@ -1,10 +1,19 @@
 
 
 :root {
-    --primary-background-color: ;
-    --cor-botoes: rgb(223, 39, 39);
+    --cor-botoes-visualizacao: rgb(223, 39, 39);
+    --cor-botoes-listas: rgb(223, 39, 39);
+    --cor-botoes-criacao: rgb(223, 39, 39);
+    --cor-botoes-ferramentas: rgb(223, 39, 39);
     --cor-aside: #F2F2F2;
     --cor-header: ;
     --cor-bory: ;
+    --cor-botoes-houver: rgb(241, 85, 85);
+    --cor-borda: lightgray;
+    --cor-shadow: lightblue;
+    --color-font: black;
+    --cor-background2: ;
+    --cor-background3: ;
+    --cor-fundo-titulo: rgb(220, 224, 224);
 }
 

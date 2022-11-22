@@ -31,102 +31,86 @@
         </header>
         <div class="cabecalho-calendario">
             <div>
-                <i class="fa-solid fa-caret-left"></i>
-                Mês Anterior
+
             </div>
-            <div>Mês</div>
+            <div>Configurações</div>
             <div>
-                Mês Posterior
-                <i class="fa-solid fa-caret-right"></i>
+
             </div>
         </div>
         <main>
-            <div class="listas">
                 <div class="lista-itens">
+                    <div class="titulo-cabecalho-temas">
+                        Personalização
+                    </div>
                     <p class="titulo-tema">
-                        Escolha um tema:
+                        Selecione um tema:
                     </p>
                     <select id="themeSelect">
-                        <option class="opcao-tema" value="tema-padrao">Tema Padrão</option>
-                        <option class="opcao-tema" value="tema-dark">Tema Dark</option>
+                        <option class="opcao-tema" value="tema-padrao">Padrão</option>
+                        <option class="opcao-tema" value="tema-icones">Padrão - Icones</option>
+                        <option class="opcao-tema" value="tema-dark" >Dark </option>
+                        <option class="opcao-tema" value="tema-icones-dark">Dark - Icones</option>
+                        <option class="opcao-tema" value="tema1">Tema1</option>
+                        <option class="opcao-tema" value="tema1-icones">Tema 1 - Icones</option>
+                        <option class="opcao-tema" value="tema2">Tema2</option>
+                        <option class="opcao-tema" value="tema2-icones">Tema 2 - Icones</option>
+                        <option class="opcao-tema" value="Tema3">Tema3</option>
+                        <option class="opcao-tema" value="tema3-icones">Tema 3 - Icones</option>
                     </select>
                 </div>
-                <div class="lista-habitos">
-                </div>
-            </div>
             <button class="menu" type="button">
                 <i class="fa-solid fa-plus"></i>
             </button>
         </main>
         <aside>
             <div class="menu-visualizacao">
-                <button class="visualizacao-mes" type="button">
+                <button id="mensal" class="visualizacao-mes" type="button">
                     <i class="fa-solid fa-m"></i>
                 </button>
-                <button class="visualizacao-semana" type="button">
+                <button id="semanal" class="visualizacao-semana" type="button">
                     <i class="fa-solid fa-s"></i>
                 </button>
-                <button class="visualizacao-diaria" type="button">
+                <button id="diaria" class="visualizacao-diaria" type="button">
                     <i class="fa-solid fa-d"></i>
                 </button>
             </div>
             <div class="menu-listas">
-                <button class="itens" type="button">
+                <button id="item" class="itens" type="button">
                     <i class="fa-solid fa-i"></i>
                 </button>
-                <button class="habitos" type="">
+                <button id="habitos" class="habitos" type="">
                     <i class="fa-solid fa-h"></i>
                 </button>
             </div>
             <div class="menu-criacao">
-                <button class="criacao-atividade" type="button">
+                <button id="atividade" class="criacao-atividade" type="button">
                     <i class="fa-solid fa-a"></i>
                     <i class="fa-solid fa-plus"></i>
                 </button>
-                <button class="criacao-item" type="button">
+                <button id="item" class="criacao-item" type="button">
                     <i class="fa-solid fa-i"></i>
                     <i class="fa-solid fa-plus"></i>
                 </button>
-                <button class="criacao-habito" type="button">
+                <button id="habitos" class="criacao-habito" type="button">
                     <i class="fa-solid fa-h"></i>
                     <i class="fa-solid fa-plus"></i>
                 </button>
-                <button class="criacao-categoria" type="button">
+                <button id="categoria" class="criacao-categoria" type="button">
                     <i class="fa-solid fa-c"></i>
                     <i class="fa-solid fa-plus"></i>
                 </button>
             </div>
             <div class="menu-ferramentas">
-                <button class="ajuda" type="button">
+                <button id="ajuda" class="ajuda" type="button">
                     <i class="fa-solid fa-question"></i>
-                    <button class="ferramentas" type="button">
+                    <button id="configuracoes"  class="ferramentas" type="button">
                         <i class="fa-solid fa-gear"></i>
                     </button>
             </div>
         </aside>
         <footer>Rodapé</footer>
     </div>
-    <script>
-        function initThemeSelector() {
-            const themeSelect = document.getElementById("themeSelect");
-            const themeStylesheetLink = document.getElementById("themeStylesheetLink");
-            const currentTheme = localStorage.getItem("theme") || "tema-padrao";
-
-            function ativarTema(themeName) {
-                themeStylesheetLink.setAttribute("href", `temas/${themeName}.css`);
-            }
-            themeSelect.addEventListener("change", () => {
-                ativarTema(themeSelect.value);
-                localStorage.setItem("theme", themeSelect.value);
-            });
-
-            ativarTema(currentTheme);
-            themeSelect.value = currentTheme;
-
-        }
-
-        initThemeSelector();
-    </script>
 </body>
 
 </html>

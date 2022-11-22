@@ -1,0 +1,87 @@
+:root {
+    /* --cor-background: rgb(223, 22, 39); */
+    --cor-botoes-visualizacao: rgb(201, 158, 221);
+    --cor-botoes-listas: #AFDEFA;
+    --cor-botoes-criacao: #86eecb;
+    --cor-botoes-ferramentas: #f38989;
+    --cor-aside: #F2F2F2;
+    --cor-header: ;
+    --cor-bory: ;
+    --cor-botoes-houver: rgb(241, 85, 85);
+    --cor-borda: lightgray;
+    --cor-shadow: lightblue;
+    --color-font: black;
+    --cor-background2: ;
+    --cor-background3: #ffe4f1d3;;
+    --cor-fundo-titulo: #FBF5C5;
+}
+
+
+.fa-solid.fa-m, .fa-solid.fa-s, .fa-solid.fa-d, .fa-solid.fa-i, .fa-solid.fa-h, .fa-solid.fa-a, .fa-solid.fa-plus, .fa-solid.fa-h, .fa-solid.fa-c, .fa-solid.fa-question, .fa-solid.fa-gear {
+    display: none;
+}
+
+#mensal{
+    background-image: url("/temas/mensal.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#semanal{
+    background-image: url("/temas/semanal.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#diaria{
+    background-image: url("/temas/diaria.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#item{
+    background-image: url("/temas/item.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#habitos{
+    background-image: url("/temas/habitos.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+#atividade{
+    background-image: url("/temas/atividade.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+#categoria{
+    background-image: url("/temas/categoria.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#ajuda{
+    background-image: url("/temas/ajuda.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#configuracoes{
+    background-image: url("/temas/configuracoes.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
