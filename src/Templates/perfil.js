@@ -15,7 +15,7 @@ function exibeUsuarios() {
 function initPage() {
 
     // Associa a função de logout ao botão
-    // document.getElementById('btn_logout').addEventListener('click', logoutUser);
+    document.getElementById('btn_logout').addEventListener('click', logoutUser);
 
     // Lista os usuários 
     exibeUsuarios ();
@@ -42,3 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector('#imgPreview').setAttribute('src', recentImageDataUrl)
     }
 })
+
+function logoutUser () {
+    usuarioCorrente = {};
+    sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
+    window.location.href = 'login.html'
+}
