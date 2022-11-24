@@ -42,7 +42,7 @@ function initLoginApp () {
     if (!usuariosJSON) {  // Se NÃO há dados no localStorage
         
         // Informa sobre localStorage vazio e e que serão carregados os dados iniciais
-        alert('Dados de usuários não encontrados no localStorage. \n -----> Fazendo carga inicial.');
+        // alert('Dados de usuários não encontrados no localStorage. \n -----> Fazendo carga inicial.');
 
         // Copia os dados iniciais para o banco de dados 
         db_usuarios = dadosIniciais;
@@ -69,6 +69,7 @@ function loginUser (email, senha) {
             usuarioCorrente.id = usuario.id;
             usuarioCorrente.email = usuario.email;
             usuarioCorrente.senha = usuario.senha;
+            usuarioCorrente.nome = usuario.nome;
             
             // Salva os dados do usuário corrente no Session Storage, mas antes converte para string
             sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
@@ -86,11 +87,11 @@ function loginUser (email, senha) {
     return false;
 }
 
-function logoutUser () {
-    usuarioCorrente = {};
-    sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
-    window.location = LOGIN_URL;
-}
+// function logoutUser () {
+//     usuarioCorrente = {};
+//     sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
+//     window.location = LOGIN_URL;
+// }
 
 function addUser (nome, senha, email) {
     
@@ -132,3 +133,16 @@ function processaFormLogin (event) {
 // Inicializa as estruturas utilizadas pelo LoginApp
 initLoginApp ();
 document.getElementById ('entrar').addEventListener ('click', processaFormLogin);
+
+//Visualizar senha
+let btn = document.querySelector('.fa-eye')
+
+btn.addEventListener('click', ()=>{
+  let inputSenha = document.querySelector('#senha')
+  
+  if(inputSenha.getAttribute('type') == 'password'){
+    inputSenha.setAttribute('type', 'text')
+  } else {
+    inputSenha.setAttribute('type', 'password')
+  }
+})

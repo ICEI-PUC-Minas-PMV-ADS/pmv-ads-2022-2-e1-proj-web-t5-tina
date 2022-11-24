@@ -1,23 +1,14 @@
-  // Verifica se o usuário já esta logado e se negativo, redireciona para tela de login        
+//   Verifica se o usuário já esta logado e se negativo, redireciona para tela de login        
 //   if (!usuarioCorrente.login) {
-//     window.location.href = LOGIN_URL;
+//     window.location.href = login.html;
 // }
 
 function exibeUsuarios() {
     
-    // Popula a tabela com os registros do banco de dados
-    let listaUsuarios = '';
-    for (i = 0; i < db_usuarios.usuarios.length; i++) {
-        let usuario = db_usuarios.usuarios[i];
-        // listaUsuarios += `<tr><td scope="row">${usuario.nome}</td><td>${usuario.email}</td></tr>`;
-        document.querySelector("#nome").value = usuario.nome
-        document.querySelector("#email").value = usuario.email
+    document.querySelector("#nome").value = usuarioCorrente.nome
+    document.querySelector("#email").value = usuarioCorrente.email
 
-        console.log(usuario.nome);
-    }
-
-    // Substitui as linhas do corpo da tabela
-    // document.getElementById("table-usuarios").innerHTML = listaUsuarios
+            console.log(usuarioCorrente.nome);
 
 }
 
@@ -25,9 +16,6 @@ function initPage() {
 
     // Associa a função de logout ao botão
     // document.getElementById('btn_logout').addEventListener('click', logoutUser);
-
-    // Informa o nome do usuário logado
-    // document.getElementById('nome').innerHTML = usuarioCorrente.nome;
 
     // Lista os usuários 
     exibeUsuarios ();
