@@ -122,11 +122,17 @@ const salvarAtividadeAtualizada = () => {
 
 const excluirAtividade = () => {
 
-    const dbAtividade = getDados()
-    dbAtividade.splice(index, 1)
-    setDados(dbAtividade)
-    load()
-    onOff('atualizar-atividade')
+    let confirmacao = confirm('Realmente deseja excluir a atividade selecionada? A ação não pode ser desfeita.')
+    if (confirmacao) {
+        const dbAtividade = getDados()
+        dbAtividade.splice(index, 1)
+        setDados(dbAtividade)
+        load()
+        onOff('atualizar-atividade')
+    } else {
+        onOff('atualizar-atividade')
+    }
+
 }
 
 document.querySelector('#calendar')
