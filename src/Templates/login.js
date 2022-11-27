@@ -40,9 +40,6 @@ function initLoginApp () {
 
     // Verifica se existem dados já armazenados no localStorage
     if (!usuariosJSON) {  // Se NÃO há dados no localStorage
-        
-        // Informa sobre localStorage vazio e e que serão carregados os dados iniciais
-        // alert('Dados de usuários não encontrados no localStorage. \n -----> Fazendo carga inicial.');
 
         // Copia os dados iniciais para o banco de dados 
         db_usuarios = dadosIniciais;
@@ -87,12 +84,6 @@ function loginUser (email, senha) {
     return false;
 }
 
-// function logoutUser () {
-//     usuarioCorrente = {};
-//     sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
-//     window.location = LOGIN_URL;
-// }
-
 function addUser (nome, senha, email) {
     
     // Cria um objeto de usuario para o novo usuario 
@@ -127,8 +118,6 @@ function processaFormLogin (event) {
         alert ('Usuário ou senha incorretos');
     }
 }
-
-
 
 // Inicializa as estruturas utilizadas pelo LoginApp
 initLoginApp ();
