@@ -73,20 +73,7 @@ const salvarAtividade = () => {
         } else {
             campo.classList.remove('campo-vazio')
         }
-    });
-
-    if (dataFim.value < dataInicio.value) {
-        alert('A data final não pode ser anterior à data inicial.')
-        campos[3].classList.add('campo-vazio')
-        camposVazios++
-    }
-    const dataControle = new Date(0, 0, 0, 00, 00)
-    
-    if (horarioFinal.value <= horarioInicio.value && horarioFinal.value < dataControle.toLocaleTimeString()) {
-        alert('O horário final não pode ser anterior ou igual ao horário inicial.')
-        campos[5].classList.add('campo-vazio')
-        camposVazios++
-    }   
+    });  
 
     if (camposVazios == 0) {
         const atividade = {
@@ -103,8 +90,8 @@ const salvarAtividade = () => {
         if (isDadosValidos(atividade)) {
             criarAtividade(atividade)
             load();
+            onOff('atividade')
         }
-        onOff('atividade')
     }
 }
 

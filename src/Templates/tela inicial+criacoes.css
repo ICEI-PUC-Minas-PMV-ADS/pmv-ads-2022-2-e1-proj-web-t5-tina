@@ -654,7 +654,8 @@ form button {
 
 #criar-atividade,
 #atualizar,
-#excluir {
+#excluir,
+#concluir {
     background-color: rgb(223, 39, 39);
     border: none;
 
@@ -680,7 +681,8 @@ form button {
 
 #criar-atividade:hover,
 #atualizar:hover,
-#excluir:hover {
+#excluir:hover,
+#concluir:hover {
 
     background-color: #ff616199;
     text-decoration: none;

@@ -113,8 +113,8 @@ const salvarAtividadeAtualizada = () => {
         if (isSameAtividade(atividadeAtualizada)) {
             atualizarAtividade(atividadeAtualizada)
             load();
+            onOff('atualizar-atividade')
         }
-        onOff('atualizar-atividade')
     }
 }
 

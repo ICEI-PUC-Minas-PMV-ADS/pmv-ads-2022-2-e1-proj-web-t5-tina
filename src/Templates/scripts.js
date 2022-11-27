@@ -1,5 +1,15 @@
+const dataMinima = new Date()
+
+const ano = dataMinima.getFullYear()
+const mes = dataMinima.getMonth()
+const dia = dataMinima.getDate()
+
+const dataMinimaFormatada = `${ano}-${mes + 1}-${dia}`
+
 function onOff(type) {
     if (type == "atividade") {
+        dataInicio.setAttribute('min', dataMinimaFormatada)
+        dataFim.setAttribute('min', dataMinimaFormatada)
         document
             .querySelector("#modal-atividade")
             .classList
@@ -32,6 +42,8 @@ function onOff(type) {
             .classList
             .toggle("addScroll")
     } else if (type == "atualizar-atividade") {
+        dataInicioEditado.setAttribute('min', dataMinimaFormatada)
+        dataFimEditado.setAttribute('min', dataMinimaFormatada)
         document
             .querySelector("#modal-atualizar-atividade")
             .classList
