@@ -97,9 +97,9 @@ function addUser (nome, senha, email) {
     localStorage.setItem('db_usuarios', JSON.stringify (db_usuarios));
 }
 
-function setUserPass () {
+// function setUserPass () {
 
-}
+// }
 
 function processaFormLogin (event) {                
     // Cancela a submissão do formulário para tratar sem fazer refresh da tela

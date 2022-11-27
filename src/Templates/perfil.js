@@ -1,22 +1,12 @@
-//   Verifica se o usuário já esta logado e se negativo, redireciona para tela de login        
-//   if (!usuarioCorrente.login) {
-//     window.location.href = login.html;
-// }
-
 function exibeUsuarios() {
     
     document.querySelector("#nome").value = usuarioCorrente.nome
     document.querySelector("#email").value = usuarioCorrente.email
-
-            console.log(usuarioCorrente.nome);
-
 }
 
 function initPage() {
-
     // Associa a função de logout ao botão
     document.getElementById('btn_logout').addEventListener('click', logoutUser);
-
     // Lista os usuários 
     exibeUsuarios ();
 }
@@ -27,7 +17,6 @@ window.addEventListener('load', initPage);
 //foto
 document.querySelector('#image_input').addEventListener('change', function () {
     const reader = new FileReader()
-
 
     reader.addEventListener('load', () => {
         localStorage.setItem("recent-image", reader.result)
