@@ -46,15 +46,23 @@
                     <div class="lista-itens">
                         Lista de Itens
                         <a href="#" onclick="onOff('item')" class="button"><img src="../Images/item.png" alt="Item"></a>
+                        <div id="todos-itens">
+                            <div id="cada-item" class="cada-item" onclick="abrirModalItem(event)" style="display: none;">
+                            </div>
+                        </div>
                     </div>
                     <div class="lista-habitos">
                         Lista de Hábitos
                         <a href="#" onclick="onOff('habito')" class="button"><img src="../Images/lista-habitos.png"
                                 alt="Hábitos"></a>
+                        <div id="todos-habitos">
+                            <div id="cada-habito" class="cada-habito" onclick="abrirModalHabito(event)" style="display: none;">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
             <div id="container-calendario">
                 <div class="calendario">
                     <div id="header">
@@ -64,7 +72,7 @@
                             <button id="nextButton">Seguinte</button>
                         </div>
                     </div>
-    
+
                     <div id="weekdays">
                         <div>Domingo</div>
                         <div>Segunda</div>
@@ -74,12 +82,12 @@
                         <div>Sexta</div>
                         <div>Sábado</div>
                     </div>
-    
+
                     <div id="calendar"></div>
-    
+
                 </div>
             </div>
-        
+
             <button class="menu" type="button">
                 <i class="fa-solid fa-plus"></i>
             </button>
@@ -110,10 +118,11 @@
                             alt="Atividade"></a>
                 </button>
                 <button class="criacao-item" type="button">
-                    <a href="#" onclick="onOff('item')" class="button"><img src="../Images/item.png" alt="Item"></a>
+                    <a href="#" onclick="onOff('item', 'criar')" class="button"><img src="../Images/item.png"
+                            alt="Item"></a>
                 </button>
                 <button class="criacao-habito" type="button">
-                    <a href="#" onclick="onOff('habito')" class="button"><img src="../Images/lista-habitos.png"
+                    <a href="#" onclick="onOff('habito', 'criar')" class="button"><img src="../Images/lista-habitos.png"
                             alt="Hábitos"></a>
                 </button>
                 <button class="criacao-categoria" type="button">
@@ -205,19 +214,20 @@
                 </div>
 
                 <form id="form-item">
+                    <input type="hidden" id="idItem" name="idItem" value="">
                     <div class="campos">
                         <label for="titulo">Título: </label>
-                        <input type="text" name="titulo">
+                        <input type="text" id="item-titulo" class="campos">
                     </div>
 
                     <div class="campos">
                         <label for="descricao">Descrição: </label>
-                        <textarea name="descricao" cols="30" rows="10"></textarea>
+                        <textarea id="item-descricao" class="campos" cols="30" rows="10"></textarea>
                     </div>
 
                     <div class="campos">
                         <label for="categoria">Categoria: </label>
-                        <select id="categoria" name="categoria">
+                        <select id="item-categoria" class="campos">
                             <option value="Faculdade">Faculdade</option>
                             <option value="Trabalho">Trabalho</option>
                             <option value="Saúde">Saúde</option>
@@ -227,13 +237,15 @@
 
                     <div class="campos">
                         <label for="prioridade">Prioridade: </label>
-                        <select id="prioridade" name="prioridade">
+                        <select id="item-prioridade" class="campos">
                             <option value="Baixa">Baixa</option>
                             <option value="Média">Média</option>
                             <option value="Alta">Alta</option>
                         </select>
                     </div>
                     <button id="btn-criar-item">Criar</button>
+                    <button id='btn-atualizar-item' onclick="atualizarItem()" style="display: none;">Atualizar</button>
+                    <button id='btn-remover-item' onclick="removerItem()" style="display: none">Remover</button>
                 </form>
             </div>
         </div>
@@ -244,28 +256,28 @@
                     <h1>Novo hábito</h1>
                     <a href="#" onclick="onOff('habito')"><i class="fa-solid fa-x"></i></a>
                 </div>
-
-                <form id="form-habito" method="POST">
+                <form id="form-habito">
+                    <input type="hidden" id="idHabito" name="idHabito" value="">
                     <div class="campos">
                         <label for="titulo">Título: </label>
-                        <input type="text" name="titulo">
+                        <input id="habito-titulo" type="text" name="titulo">
                     </div>
 
                     <div class="campos">
                         <label for="descricao">Descrição: </label>
-                        <textarea name="descricao" cols="30" rows="10"></textarea>
+                        <textarea id="habito-descricao" name="descricao" cols="30" rows="10"></textarea>
                     </div>
 
                     <div class="data">
                         <label for="data-inicio">Data </label>
-                        <input type="date" name="data-inicio">
+                        <input id="habito-data-inicio" type="date" name="data-inicio">
                         <label for="data-fim"> até </label>
-                        <input type="date" name="data-fim">
+                        <input id="habito-data-fim" type="date" name="data-fim">
                     </div>
 
                     <div class="campos">
                         <label for="categoria">Categoria: </label>
-                        <select id="categoria" name="categoria">
+                        <select id="habito-categoria" name="categoria">
                             <option value="Faculdade">Faculdade</option>
                             <option value="Trabalho">Trabalho</option>
                             <option value="Saúde">Saúde</option>
@@ -275,7 +287,7 @@
 
                     <div class="campos">
                         <label for="prioridade">Prioridade: </label>
-                        <select id="prioridade" name="prioridade">
+                        <select id="habito-prioridade" name="prioridade">
                             <option value="Baixa">Baixa</option>
                             <option value="Média">Média</option>
                             <option value="Alta">Alta</option>
@@ -284,7 +296,7 @@
 
                     <div class="campos">
                         <label for="periodizacao">Periodização: </label>
-                        <select id="periodizacao" name="periodizacao">
+                        <select id="habito-periodizacao" name="periodizacao">
                             <option value="nao-se-aplica" selected>Não se aplica </option>
                             <option value="diariamente">Diariamente </option>
                             <option value="semanalmente">Semanalmente </option>
@@ -292,6 +304,8 @@
                         </select>
                     </div>
                     <button id="btn-criar-habito">Criar</button>
+                    <button id='btn-atualizar-habito' onclick="atualizarHabito()" style="display: none;">Atualizar</button>
+                    <button id='btn-remover-habito' onclick="removerHabito()" style="display: none">Remover</button>
                 </form>
             </div>
         </div>
