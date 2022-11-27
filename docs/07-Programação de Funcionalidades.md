@@ -203,15 +203,25 @@ Desenvolvedor(a): Ellen Caroline Trindade Gonçalves Cândido
 ## Criação de atividades (RF-01, RF-09)
 Desenvolvedor(a): Pedro Mota Cassemiro
 
-## Notificação e resumos por email (RF-006)
+## Notificação e resumos por email (RF-06)
 Desenvolvedor(a): Gabriela Vitoria Pereira
 
-## Alteração de design do site (RF-011)
+## Alteração de design do site (RF-11)
 ### Desenvolvedor(a): Juliana Dutra Moreira
 
-A tela de temas permite que o usuário escolha um tema de desing específico para aplicar em todo o site durante o uso do sistema, permitindo que este tema se mantenha durante todo o acesso ao site.
+A tela de temas permite que o usuário escolha um tema de desing específico para aplicar em todo o site durante o uso do sistema, permitindo que este tema se mantenha durante todo o acesso ao site. É possível alterar as cores e os itens do menu lateral.
 
-<img src="img/temas-juliana.png">
+Opções do menu drop-down que exibe as opções de temas para o usuário.
+<img src="img/Func_Tema_1.jpg">
+
+Opção de tema com alteração nos ícones do menu lateral de criação.
+<img src="img/Func_Tema_2.jpg">
+
+Exemplo de aplicação de tema:
+<img src="img/Func_Tema_3.jpg">
+
+Exemplo de aplicação de tema:
+<img src="img/Func_Tema_4.jpg">
 
 ### Requisitos atendidos
 
@@ -219,35 +229,51 @@ RF-11 - O site deve possibilitar edições de design como mudanças de cores, pl
 
 ### Artefatos da funcionalidade
 
-- template-cores-tina.html.html
+- template-cores-tina.html
 - template-cores-tina.js
 - template-cores-tina.css
 - tema-dark.css
+- tema-icones-dark.css
 - tema-padrao.css
+- tema-icones
+- tema1.css
+- tema1-icones.css
+- tema2.css
+- tema2-icones.css
+- tema3.css
+- tema3-icones.css
 - logo.png
 - favicon.ico
 
 ```js
-        function initThemeSelector() {
-            const themeSelect = document.getElementById("themeSelect");
-            const themeStylesheetLink = document.getElementById("themeStylesheetLink");
-            const currentTheme = localStorage.getItem("theme") || "tema-padrao";
+window.onload=function(){
 
-            function ativarTema(themeName) {
-                themeStylesheetLink.setAttribute("href", `temas/${themeName}.css`);
-            }
-            themeSelect.addEventListener("change", () => {
-                ativarTema(themeSelect.value);
-                localStorage.setItem("theme", themeSelect.value);
-            });
+function initThemeSelector() {
+    const themeSelect = document.getElementById("themeSelect");
+    const themeStylesheetLink = document.getElementById("themeStylesheetLink");
+    const currentTheme = localStorage.getItem("theme") || "tema-padrao";
 
-            ativarTema(currentTheme);
-            themeSelect.value = currentTheme;
+    function ativarTema(themeName) {
+        themeStylesheetLink.setAttribute("href", `temas/${themeName}.css`);
+    }
+    themeSelect.addEventListener("change", () => {
+        ativarTema(themeSelect.value);
+        localStorage.setItem("theme", themeSelect.value);
+    });
+
+    ativarTema(currentTheme);
+    themeSelect.value = currentTheme;
+
+}
+
+initThemeSelector();
+}
+
 ```
 
 ### Instruções de acesso
 
-A Tela perfil é acessada ao usuário acessar o botão ferramentas no menu lateral.
+A Tela perfil é acessada ao usuário selecionar o botão ferramentas no menu lateral.
 
 ## Criação de Itens e hábitos (RF-03, RF-08)
 ### Desenvolvedor(a): Ellen Caroline Trindade Gonçalves Cândido
