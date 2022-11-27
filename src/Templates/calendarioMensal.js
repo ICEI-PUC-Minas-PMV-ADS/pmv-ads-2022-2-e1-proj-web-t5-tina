@@ -64,6 +64,11 @@ function initButtons() {
         nav--;
         load();
     });
+
+    document.getElementById('botao-hoje').addEventListener('click', () => {
+        nav = 0;
+        load();
+    })
 }
 
 initButtons();
