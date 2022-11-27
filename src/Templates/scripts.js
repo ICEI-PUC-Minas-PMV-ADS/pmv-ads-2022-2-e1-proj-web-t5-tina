@@ -4,7 +4,7 @@ const ano = dataMinima.getFullYear()
 const mes = dataMinima.getMonth()
 const dia = dataMinima.getDate()
 
-const dataMinimaFormatada = `${ano}-${month < 9 ? '0' : '' }${mes + 1}-${dia}`
+const dataMinimaFormatada = `${ano}-${mes < 9 ? '0' : '' }${mes + 1}-${dia}`
 
 function onOff(type) {
     if (type == "atividade") {
