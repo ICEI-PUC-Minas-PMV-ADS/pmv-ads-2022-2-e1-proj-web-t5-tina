@@ -374,10 +374,10 @@ No calendário, deve-se clicar na atividade que se deseja editar. Uma janela ir�
 ## Notificação e resumos por email (RF-06)
 Desenvolvedor(a): Gabriela Vitoria Pereira
 
-## Alteração de design do site (RF-11)
+## Alteração de estilização do site (RF-11)
 ### Desenvolvedor(a): Juliana Dutra Moreira
 
-A tela de temas permite que o usuário escolha um tema de desing específico para aplicar em todo o site durante o uso do sistema, permitindo que este tema se mantenha durante todo o acesso ao site. É possível alterar as cores e os itens do menu lateral.
+A tela de temas permite que o usuário escolha um tema de desing específico para aplicar em todo o site, permitindo que este tema se mantenha durante todo o acesso ao site. É possível alterar as cores e os ícones dos itens do menu lateral.
 
 Opções do menu drop-down que exibe as opções de temas para o usuário.
 <img src="img/Func_Tema_1.jpg">
@@ -431,18 +431,15 @@ function initThemeSelector() {
 
     ativarTema(currentTheme);
     themeSelect.value = currentTheme;
-
 }
 
 initThemeSelector();
 }
-
 ```
 
 ### Instruções de acesso
 
-A Tela perfil é acessada ao usuário selecionar o botão ferramentas no menu lateral.
-
+Para acessar esta funcionalidade o usuário deve selecionar o icóne de ferramentas no menu lateral de criações.
 
 ## Criação de Itens e hábitos (RF-03, RF-08)
 ### Desenvolvedor(a): Ellen Caroline Trindade Gonçalves Cândido
@@ -678,10 +675,15 @@ function removerHabito() {
 }
 ```
 
+### Instruções de acesso
+
+Para atualizar um Item, clique no item a ser atualizado na "Lista de Itens". Uma janela surgirá com os campos disponíveis com os valores anteriores preenchidos, na qual é possível alterar os conteúdos e clicar em "Atualizar". Para remover o Item, repita o mesmo procedimento para a abertura da janela do elemento escolhido e clique no botão "Remover".
+Para atualizar um Hábito, clique no hábito escolhido na "Lista de Hábitos". Uma janela surgirá com os campos disponíveis com os valores anteriores preenchidos, na qual é possível alterar os conteúdos e clicar em "Atualizar". Para remover o Hábito, repita o mesmo procedimento para a abertura da janela do elemento escolhido e clique no botão "Remover".
+
 ## Cadastro do usuário (RF-)
 ### Desenvolvedor(a): Juliana Dutra Moreira
 
-O cadastro permite que o usuário crie sua conta para acessar o site. O usuário preenche os campos de Nome, Email, Senha e Confirmação de senha com diversas validações para a criação correta da conta. As validações vão instruindo o usuário colocar nos campos as informações necessárias conforme as regras do cadastro. Após o preenchimento correto o usuário é informado que a conta foi criada e é redirecionado para a tela de login. Caso o e-mail do usuário já tenha sido cadastrado uma mensagem é exibida informando que o e-mail já está cadastrado e se desejar, o usuário deve ir para a página de login ou tentar novamente.
+O cadastro permite que o usuário crie sua conta para acessar o site. O usuário preenche os campos de Nome, Email, Senha e Confirmação de senha com diversas validações para a criação correta da conta. As validações vão instruindo o usuário colocar nos campos as informações necessárias conforme os critérios exibidos nas mensagens dos campos do fomulário de cadastro. Após o preenchimento correto o usuário é informado que a conta foi criada e é redirecionado para a tela de login. Caso o e-mail do usuário já tenha sido cadastrado uma mensagem é exibida informando que o e-mail já está cadastrado e se desejar, o usuário deve ir para a página de login ou tentar novamente.
 
 <img src="img/Cadastro.jpg">
 
@@ -702,7 +704,6 @@ Funcionalidade sem requisitos específicos
 
 ```js
 function salvaCadastro (event) {
-    // Cancela a submissão do formulário para tratar sem fazer refresh da tela
     event.preventDefault ();
 
     // Obtem os dados do formulário
@@ -766,7 +767,6 @@ function salvaCadastro (event) {
     }
 
      if ((nome != '' && email != '' && senha != '' && senha2 != '') && (validNome && validEmail && validSenha && validEmailRepetido)) {
-        // Adiciona o usuário no banco de dados
         addUser (nome, senha, email);
         alert ('Usuário salvo com sucesso. Proceda com o login');
         window.location.href = 'login.html'
@@ -778,7 +778,6 @@ function salvaCadastro (event) {
 function acessarTelaLogin() {
     return window.location.href = 'login.html'
 }
-  // Associar salvamento ao botao
   document.getElementById('cadastrar').addEventListener('click', salvaCadastro);
   
 ```
@@ -790,7 +789,7 @@ Na página inicial do login o usuário seleciona o link "cadastre-se" e é encam
 ## Login do usuário (RF-)
 ### Desenvolvedor(a): Juliana Dutra Moreira
 
-O login é a página inicial do site, no qual é possível visualizar a logo, avatar e um texto explicativo sobre o site. O usuário insere nos campos e-mail e senha seus dados de login e seleciona o botão "entrar" para acessar o site. Caso, inicialmente, o usuário não tenha cadastro, é possível realizar o cadastro pelo link "Cadastra-se" abaixo do campo "senha". Este mesmo campo possui uma ferramenta que permite o usuário visualizar sua senha clicando no ícone de olho.
+O login é a página inicial do site, no qual é possível visualizar a logo, avatar e um texto explicativo sobre o site. O usuário insere nos campos e-mail e senha seus dados de login previamente cadastrados e seleciona o botão "entrar" para acessar o site. Caso, inicialmente, o usuário não tenha cadastro, é possível realizar o cadastro pelo link "Cadastre-se" abaixo do campo "senha". Este mesmo campo possui uma ferramenta que permite o usuário visualizar sua senha clicando no ícone representado por um olho.
 
 <img src="img/Login.jpg">
 
@@ -846,7 +845,7 @@ function initLoginApp () {
     
     var usuariosJSON = localStorage.getItem('db_usuarios');
 
-    if (!usuariosJSON) {  // Se NÃO há dados no localStorage
+    if (!usuariosJSON) {
 
         db_usuarios = dadosIniciais;
 
@@ -928,7 +927,7 @@ btn.addEventListener('click', ()=>{
 
 ### Instruções de acesso
 
-Para acessar o login o usuário deve acesar o site. Também é possível acessar o login ao clicar na logo, localizada canto superior esquerdo na página do cadastro, assim também, ao realizar logout.  
+Para acessar o login o usuário deve acesar o site. Também é possível acessar o login ao clicar na logo, localizada canto superior esquerdo na página do cadastro, e assim também, ao realizar logout.
 
 ## Perfil do usuário (RF-)
 ### Desenvolvedor(a): Juliana Dutra Moreira
@@ -992,7 +991,7 @@ function logoutUser () {
 
 ### Instruções de acesso
 
-A tela perfil é possível acessar clicando no icone localizado no canto superior direito da página do site, após o usuário realizar o login.
+Para acessar o perfil é necessário clicar no ícone localizado no canto superior direito da página do site, após o usuário realizar o login.
 
 ## Parabenização por concluir atividade antes da data final (RF-12)
 ### Desenvolvedor(a): Pedro Mota Cassemiro
