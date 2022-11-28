@@ -51,3 +51,12 @@ A seguir são descritos os testes funcionais a serem executados:
 | Objetivo do Teste | Verificar o funcionamento adequado da criação, leitura e exclusão de categorias. |
 | Passos | 1) Abrir o navegador 2) Acessar o site 3) Acessar a página inicial 4) Clicar na opção Categoria no menu lateral 5) Preencher e selecionar Criar | 
 | Critérios de Êxito | - 
+
+| Caso de Teste | CT-06 - Parabenização |
+|---------------|--------------------------|
+| Requisitos Associados | RF-12 -O site parabeniza o usuário quando uma atividade é marcada como concluída antes do prazo. |
+| Objetivo do Teste | Verificar se a parabenização por concluir uma atividade antes da data final definida é realizada da maneira correta |
+| Passos | 1) Abrir o navegador 2) Acessar o site 3) Na página, no calendário, selecionar a atividade que se deseja concluir 4) No modal de edição de atividade, selecionar o botão "Concluir" |
+| Critérios de Êxito | - O modal de edição de atividade deve abrir corretamente - Ao selecionar acionar o botão "Concluir", um áudio deverá ser reproduzido pelo browser e a atividade devera desaparecer do calendário e ser excluída do Local Storage.
+
+
