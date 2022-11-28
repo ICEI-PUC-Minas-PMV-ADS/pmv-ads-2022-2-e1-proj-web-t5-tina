@@ -211,7 +211,7 @@ Na imagem é possível observar, em Local Storage, Uma atividade já criada. À 
 
 ### Requisitos atendidos
 
-RF-04 - O site deve permitir que as atividades sejam editadas, inclusive entre as unidades de tempo no calendário.
+RF-04 - O site deve permitir que as atividades sejam editadas, inclusive entre as unidades de tempo no calendário.<br>
 RF-05 - O site deve permitir que o usuário sinalize uma atividade como finalizada ou cancelada.
 
 ### Artefatos da funcionalidade
