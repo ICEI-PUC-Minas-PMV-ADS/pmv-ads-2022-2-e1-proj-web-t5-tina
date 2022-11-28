@@ -26,8 +26,8 @@ Com base nsa funcionalidades, requisitos e casos de testes propostos no item ant
 | Objetivo do Teste | Verificar o funcionamento correto da tela perfil |
 | Passos | 1) Abrir o navegador 2) Acessar o site 3) Realizar o login 4) Selecionar o botão "entrar" 5) Ser direcionado para o Perfil |
 | Critérios de Êxito | - A tela do Perfil deve abrir corretamente exibindo nome e e-mail do usuário que realizou o login - Ao inserir uma foto e clicar em salvar, a imagem selecionada deve ser exibida no campo foto |
-| Print do Teste | ... |
-| Conclusão do teste | ... |
+| Print do Teste | <img src="img/perfil-correto.jpg"> |
+| Conclusão do teste | Teste realizado com sucesso. Após realizar o login o perfil é acessado exibindo os dados so usuário que realizou login e foto selecionada |
 
 | Caso de Teste | CT-04 - Temas e estilização do site|
 |---------------|--------------------------|
@@ -35,5 +35,5 @@ Com base nsa funcionalidades, requisitos e casos de testes propostos no item ant
 | Objetivo do Teste | Verificar se a ferramenta de mudança do tema de cores e ícones do site está ocorrendo corretamente |
 | Passos | 1) Abrir o navegador 2) Acessar o site 3) Acessar a página de estilização no menu ferramentas 4) Clicar no menu drop-down para exibir as opções de estilização 5) Selecionar o tema desejado | 
 | Critérios de Êxito | - A tela de estilização deve abrir corretamente - O menu drop-down deve exibir os temas - O tema selecionado deve ser apliacado na página - A mudança de tema deve ocorrer caso seja selecionado outro tema. |
-| Print do Teste | ... |
-| Conclusão do teste | ... |
+| Print do Teste | <img src="img/Func_Tema_3.jpg"> |
+| Conclusão do teste | Teste realizado com sucesso. Ao selecionar a opção do tema, o site é estilizado para o tema escolhido|
