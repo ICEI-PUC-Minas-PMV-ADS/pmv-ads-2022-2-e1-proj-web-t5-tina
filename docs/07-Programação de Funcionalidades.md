@@ -389,3 +389,282 @@ btnCriarHabito.addEventListener("click", function(event){
 
 Para criar item, no menu lateral, deve-se clicar no botão de criar item, com o ícone de checkbox. Uma janela irá aparecer no centro da tela e terá os campos a serem preenchidos pelo usuário para registrar o item no Local Storage e aparecer na lista. Ao terminar de preencher todos os campos, deve-se clicar no botão “Criar”.
 Já para criar hábito, no menu lateral novamente, deve-se clicar no botão de criar hábito, destacado pelo ícone de estrela. Uma janela irá aparecer no centro da tela e terá os campos a serem preenchidos pelo usuário para registrar o hábito no Local Storage e aparecer na lista. Ao terminar de preencher todos os campos, deve-se clicar no botão “Criar”.
+
+## Cadastro do usuário (RF-)
+### Desenvolvedor(a): Juliana Dutra Moreira
+
+O cadastro permite que o usuário crie sua conta para acessar o site. O usuário preenche os campos de Nome, Email, Senha e Confirmação de senha com diversas validações para a criação correta da conta. As validações vão instruindo o usuário colocar nos campos as informações necessárias conforme as regras do cadastro. Após o preenchimento correto o usuário é informado que a conta foi criada e é redirecionado para a tela de login. Caso o e-mail do usuário já tenha sido cadastrado uma mensagem é exibida informando que o e-mail já está cadastrado e se desejar, o usuário deve ir para a página de login ou tentar novamente.
+
+<img src="img/Cadastro.jpg">
+
+### Requisitos atendidos
+
+Funcionalidade sem requisitos específicos
+
+### Artefatos da funcionalidade
+
+- cadastro.html
+- cadastro.css
+- cadastro.js
+- logo2.png
+- logo3.png
+- tinaavatar.png
+- favicon.ico
+- /Images
+
+```js
+function salvaCadastro (event) {
+    // Cancela a submissão do formulário para tratar sem fazer refresh da tela
+    event.preventDefault ();
+
+    // Obtem os dados do formulário
+    let nome   = document.getElementById('nome').value;
+    let validNome = false
+
+    let email  = document.getElementById('email').value;
+    let validEmail = false
+    var validEmailRepetido = true 
+
+    let senha  = document.getElementById('senha').value;
+    let validSenha = false
+
+    let senha2 = document.getElementById('confirmsenha').value;
+   
+    if (nome.length <= 4) {
+        labelnome.setAttribute('style', 'color: red')
+        labelnome.innerHTML = 'Nome completo: *Insira no minimo 5 caracteres'
+        validNome = false
+    } else {
+        labelnome.setAttribute('style', 'color: green')
+        validNome = true
+    }
+
+    if (email.indexOf(".com", "@") <= 1) {
+        labelemail.setAttribute('style', 'color: red')
+        labelemail.innerHTML = 'E-mail: *Insira um e-mail válido'
+        validEmail = false
+    } else {
+        labelemail.setAttribute('style', 'color: green')
+        validEmail = true
+        
+        var usuariosJSON = localStorage.getItem('db_usuarios');
+        db_usuarios = JSON.parse(usuariosJSON);    
+    
+        for(var i = 0; i < db_usuarios.usuarios.length; i++) {
+            var usuario = db_usuarios.usuarios[i];
+  
+        var controlador = 0
+    
+         if (email == usuario.email) {
+            controlador++
+        } 
+    
+        if (controlador != 0) {
+            alert ('E-mail já cadastrado. Tente novamente ou prossiga para o login');
+            validEmailRepetido = false
+        }}
+    }
+
+    if (senha != senha2) {
+        labelSenha.setAttribute('style', 'color: red')
+        labelconfirm.setAttribute('style', 'color: red')
+        labelconfirm.innerHTML = 'Confirmar Senha *As senhas não conferem'
+        validSenha = false
+    } else {
+        labelconfirm.setAttribute('style', 'color: green')
+        labelSenha.setAttribute('style', 'color: green')
+        labelconfirm.innerHTML = 'Confirmar Senha *correto'
+        validSenha = true
+    }
+
+     if ((nome != '' && email != '' && senha != '' && senha2 != '') && (validNome && validEmail && validSenha && validEmailRepetido)) {
+        // Adiciona o usuário no banco de dados
+        addUser (nome, senha, email);
+        alert ('Usuário salvo com sucesso. Proceda com o login');
+        window.location.href = 'login.html'
+    } else {
+        alert("Preencha todos os campos corretamente antes de prosseguir")
+    }
+}
+
+function acessarTelaLogin() {
+    return window.location.href = 'login.html'
+}
+  // Associar salvamento ao botao
+  document.getElementById('cadastrar').addEventListener('click', salvaCadastro);
+  
+```
+
+### Instruções de acesso
+
+Na página inicial do login o usuário seleciona o link "cadastre-se" e é encaminahdo para a página do cadastro.
+
+## Login do usuário (RF-)
+### Desenvolvedor(a): Juliana Dutra Moreira
+
+O login é a página inicial do site, no qual é possível visualizar a logo, avatar e um texto explicativo sobre o site. O usuário insere nos campos e-mail e senha seus dados de login e seleciona o botão "entrar" para acessar o site. Caso, inicialmente, o usuário não tenha cadastro, é possível realizar o cadastro pelo link "Cadastra-se" abaixo do campo "senha". Este mesmo campo possui uma ferramenta que permite o usuário visualizar sua senha clicando no ícone de olho.
+
+<img src="img/Login.jpg">
+
+### Requisitos atendidos
+
+Funcionalidade sem requisitos específicos
+
+### Artefatos da funcionalidade
+
+- Login.html
+- Login.css
+- Login.js
+- logo3.png
+- tinaavatar.png
+- favicon.ico
+
+
+```js
+const LOGIN_URL = "login.html";
+
+var db_usuarios = {};
+
+var usuarioCorrente = {};
+
+function generateUUID() { 
+    var d = new Date().getTime();
+    var d2 = (performance && performance.now && (performance.now()*1000)) || 0;
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16;
+        if(d > 0){
+            r = (d + r)%16 | 0;
+            d = Math.floor(d/16);
+        } else {
+            r = (d2 + r)%16 | 0;
+            d2 = Math.floor(d2/16);
+        }
+        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+}
+
+const dadosIniciais = {
+    usuarios: [
+        { "id": generateUUID (), "login": "admin", "senha": "123", "nome": "Administrador do Sistema", "email": "admin@abc.com"},
+        { "id": generateUUID (), "login": "user", "senha": "123", "nome": "Usuario Comum", "email": "user@abc.com"},
+    ]
+};
+
+function initLoginApp () {
+    usuarioCorrenteJSON = sessionStorage.getItem('usuarioCorrente');
+    if (usuarioCorrenteJSON) {
+        usuarioCorrente = JSON.parse (usuarioCorrenteJSON);
+    }
+    
+    var usuariosJSON = localStorage.getItem('db_usuarios');
+
+    if (!usuariosJSON) {  // Se NÃO há dados no localStorage
+
+        db_usuarios = dadosIniciais;
+
+        localStorage.setItem('db_usuarios', JSON.stringify (dadosIniciais));
+    }
+    else  {
+        db_usuarios = JSON.parse(usuariosJSON);    
+    }
+};
+
+function loginUser (email, senha) {
+    
+    for (var i = 0; i < db_usuarios.usuarios.length; i++) {
+        var usuario = db_usuarios.usuarios[i];
+        
+        if (email == usuario.email && senha == usuario.senha) {
+            usuarioCorrente.id = usuario.id;
+            usuarioCorrente.email = usuario.email;
+            usuarioCorrente.senha = usuario.senha;
+            usuarioCorrente.nome = usuario.nome;
+            
+            sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
+
+            console.log(usuarioCorrente.nome)
+            console.log(usuarioCorrente.email)
+            console.log(usuarioCorrente.senha)
+            
+            return true
+        }
+    }
+    return false;
+}
+
+function addUser (nome, senha, email) {
+    
+    let newId = generateUUID ();
+    let usuario = { "id": newId, "senha": senha, "nome": nome, "email": email };
+    
+    db_usuarios.usuarios.push (usuario);
+
+    localStorage.setItem('db_usuarios', JSON.stringify (db_usuarios));
+}
+
+// function setUserPass () {
+
+// }
+
+function processaFormLogin (event) {                
+    event.preventDefault ();
+
+    var email = document.getElementById('email').value;
+    var senha = document.getElementById('senha').value;
+
+    resultadoLogin = loginUser (email, senha);
+    if (resultadoLogin) {
+        window.location.href = 'perfil.html';
+    }
+    else { // Se login falhou, avisa ao usuário
+        alert ('Usuário ou senha incorretos');
+    }
+}
+
+initLoginApp ();
+document.getElementById ('entrar').addEventListener ('click', processaFormLogin);
+
+let btn = document.querySelector('.fa-eye')
+
+btn.addEventListener('click', ()=>{
+  let inputSenha = document.querySelector('#senha')
+  
+  if(inputSenha.getAttribute('type') == 'password'){
+    inputSenha.setAttribute('type', 'text')
+  } else {
+    inputSenha.setAttribute('type', 'password')
+  }
+})
+
+```
+
+### Instruções de acesso
+
+Para acessar o login o usuário deve acesar o site. Também é possível acessar o login ao clicar na logo, localizada canto superior esquerdo na página do cadastro, assim também, ao realizar logout.  
+
+## Perfil do usuário (RF-)
+### Desenvolvedor(a): Juliana Dutra Moreira
+
+O perfil exibe as informações armazenadas no cadastro do usuário e outras funcionalidades como habilitar ou desabilitar o envio de notificações por e-mail e inserir foto.
+
+<img src="img/Perfil.jpg">
+
+### Requisitos atendidos
+
+Funcionalidade sem requisitos específicos
+
+### Artefatos da funcionalidade
+
+- Perfil.html
+- Perfil.css
+- Perfil.js
+- logo2.png
+- favicon.ico
+- /Images
+
+```js
+```
+
+### Instruções de acesso
+
+A tela perfil é possível acessar clicando no icone localizado no canto superior direito da página do site, após o usuário realizar o login.
