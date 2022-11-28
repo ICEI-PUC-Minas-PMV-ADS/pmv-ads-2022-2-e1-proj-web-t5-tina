@@ -200,8 +200,180 @@ function toggle(el) {
 ## Tela Criação de itens e hábitos (RF-08, RF-03, RF-09) 
 Desenvolvedor(a): Ellen Caroline Trindade Gonçalves Cândido
 
-## Criação de atividades (RF-01, RF-09)
-Desenvolvedor(a): Pedro Mota Cassemiro
+## Edição e Exclusão de Atividade (RF-04, RF-05)
+### Desenvolvedor(a): Pedro Mota Cassemiro
+
+O modal de edição de atividade apresenta os campos preenchidos com os dados da atividade a ser editada. Os campos são: Título, descrição, data inicial, data final, horário inicial, horário final, categoria, prioridade e periodização. O título ainda deve ser único e continua atuando como um identificador da atividade editada. O alerta exibido pelo browser, sinalizando que já há atividade registrada no banco com o mesmo título, ainda é apresentada caso essa regra seja violada no momento de edição. Todos os campos continuam necessitando preenchimento obrigatório, caso algum deles não seja preenchido, seu contorno se torna destacado em vermelho e a atividade não é armazenada no Local Storage. Ao excluir a atividade selecionada, a mesma é apagada do registro no Local Storage. Por se tratar de uma alteração irreversível, uma mensagem de confirmação é apresentada pelo browser ao usuário. Caso a resposta seja afirmativa, a ação é concluída, caso seja negativa, nenhuma alteração é realizada.
+
+<img src="img/editar-excluir-atividade-JSON.PNG" alt="Editar-Excluir-Atividade">
+
+Na imagem é possível observar, em Local Storage, Uma atividade já criada. À esquerda, está o modal de edição, apresentado as alterações feitas, em horário inicial, horário final e periodização. Também é possível observar, além do botão de edição, os botões de exclusão e conclusão.
+
+### Requisitos atendidos
+
+RF-04 - O site deve permitir que as atividades sejam editadas, inclusive entre as unidades de tempo no calendário.
+RF-05 - O site deve permitir que o usuário sinalize uma atividade como finalizada ou cancelada.
+
+### Artefatos da funcionalidade
+
+- tela inicial+criacoes.html
+- scripts.js
+- atualizarAtividade.js
+- tela inicial+criacoes.css
+- logo.png
+- favicon.ico
+- /Images
+
+```js
+// CRUD - atualizar Atividade
+
+var atividadeASerAtualizada;
+var atividadeASerExcluida;
+var index = 0
+
+const tituloEditado = document.getElementById('atualizar-titulo')
+const descricaoEditado = document.getElementById('atualizar-descricao')
+const dataInicioEditado = document.getElementById('atualizar-data-inicio')
+const dataFimEditado = document.getElementById('atualizar-data-fim')
+const horarioInicioEditado = document.getElementById('atualizar-horario-inicio')
+const horarioFinalEditado = document.getElementById('atualizar-horario-final')
+const categoriaEditado = document.getElementById('atualizar-categoria')
+const prioridadeEditado = document.getElementById('atualizar-prioridade')
+const periodizacaoEditado = document.getElementById('atualizar-periodizacao')
+
+const camposEditados = [tituloEditado, descricaoEditado, dataInicioEditado, dataFimEditado, horarioInicioEditado, horarioFinalEditado, categoriaEditado, prioridadeEditado, periodizacaoEditado]
+
+const preencherCamposModal = (atividadeASerAtualizada) => {
+
+    document.querySelector("#atualizar-titulo").value = atividadeASerAtualizada.titulo
+    document.querySelector("#atualizar-descricao").value = atividadeASerAtualizada.descricao
+    document.querySelector("#atualizar-data-inicio").value = atividadeASerAtualizada.dataInicio
+    document.querySelector("#atualizar-data-fim").value = atividadeASerAtualizada.dataFim
+    document.querySelector("#atualizar-horario-final").value = atividadeASerAtualizada.horarioFinal
+    document.querySelector("#atualizar-horario-inicio").value = atividadeASerAtualizada.horarioInicio
+    document.querySelector("#atualizar-categoria").value = atividadeASerAtualizada.categoria
+    document.querySelector("#atualizar-prioridade").value = atividadeASerAtualizada.prioridade
+    document.querySelector("#atualizar-periodizacao").value = atividadeASerAtualizada.periodizacao
+
+}
+
+const abrirModalUpdateExcluir = (event) => {
+
+    if (event.target.id != "" && event.target.id != "calendar" && event.target.id != "currentDay") {
+        onOff('atualizar-atividade')
+
+        getDados().forEach(atividade => {
+
+            if (atividade.titulo == event.target.id) {
+
+                index = getDados().findIndex(atividade => {
+                    return atividade.titulo == event.target.id
+                })
+                atividadeASerAtualizada = getDados()[index]
+                preencherCamposModal(atividadeASerAtualizada)
+            }
+        });
+    }
+}
+
+const limparErrosEdicao = () => {
+    tituloEditado.classList.remove('campo-vazio')
+    descricaoEditado.classList.remove('campo-vazio')
+    dataInicioEditado.classList.remove('campo-vazio')
+    dataFimEditado.classList.remove('campo-vazio')
+    horarioInicioEditado.classList.remove('campo-vazio')
+    horarioFinalEditado.classList.remove('campo-vazio')
+    categoriaEditado.classList.remove('campo-vazio')
+    prioridadeEditado.classList.remove('campo-vazio')
+    periodizacaoEditado.classList.remove('campo-vazio')
+}
+
+function isSameAtividade(atividadeAtualizada) {
+
+    var valido = true
+    var indexAtividade = 0
+    getDados().forEach(atividade => {
+        
+       if ((atividade.titulo == atividadeAtualizada.titulo) && (index != indexAtividade)) {
+            valido = false
+            alert('Já existe atividade cadastrada com o título inserido.')
+        }
+
+        indexAtividade++
+
+    });
+    return valido
+}
+
+const atualizarAtividade = (atividadeAtualizada) => {
+    
+    const dbAtividade = getDados()
+    dbAtividade[index] = atividadeAtualizada
+    setDados(dbAtividade)
+}
+
+const salvarAtividadeAtualizada = () => {
+    var camposVazios = 0;
+
+    camposEditados.forEach(campo => {
+        if (campo.value == '') {
+            campo.classList.add('campo-vazio')
+            camposVazios++
+        } else {
+            campo.classList.remove('campo-vazio')
+        }
+    });
+
+    if (camposVazios == 0) {
+        const atividadeAtualizada = {
+            titulo: tituloEditado.value,
+            descricao: descricaoEditado.value,
+            dataInicio: dataInicioEditado.value,
+            dataFim: dataFimEditado.value,
+            horarioInicio: horarioInicioEditado.value,
+            horarioFinal: horarioFinalEditado.value,
+            categoria: categoriaEditado.value,
+            prioridade: prioridadeEditado.value,    
+            periodizacao: periodizacaoEditado.value
+        }   
+
+        if (isSameAtividade(atividadeAtualizada)) {
+            atualizarAtividade(atividadeAtualizada)
+            load();
+            onOff('atualizar-atividade')
+        }
+    }
+}
+
+// Excluir Atividade
+
+const excluirAtividade = () => {
+
+    let confirmacao = confirm('Realmente deseja excluir a atividade selecionada? A ação não pode ser desfeita.')
+    if (confirmacao) {
+        const dbAtividade = getDados()
+        dbAtividade.splice(index, 1)
+        setDados(dbAtividade)
+        load()
+        onOff('atualizar-atividade')
+    } else {
+        onOff('atualizar-atividade')
+    }
+}
+
+document.querySelector('#calendar')
+    .addEventListener('click', abrirModalUpdateExcluir)
+
+document.querySelector('#atualizar')
+    .addEventListener('click', salvarAtividadeAtualizada)
+
+document.querySelector("#excluir")
+    .addEventListener('click', excluirAtividade)
+```
+
+### Instruções de acesso
+
+No calendário, deve-se clicar na atividade que se deseja editar. Uma janela irá aparecer no centro da tela e terá os campos já preenchidos com os dados da atividade selecionada. Ao terminar de preencher todos os campos, deve-se clicar no botão “Atualizar”. Caso o usuário deseje excluir a atividade, deve-se clicar no botão "Excluir" e confirmar a ação no alerta que aparecerá no browser.
 
 ## Notificação e resumos por email (RF-06)
 Desenvolvedor(a): Gabriela Vitoria Pereira
