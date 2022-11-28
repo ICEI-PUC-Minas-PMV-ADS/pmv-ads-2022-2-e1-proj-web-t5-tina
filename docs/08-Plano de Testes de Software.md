@@ -45,3 +45,9 @@ A seguir são descritos os testes funcionais a serem executados:
 | Passos | 1) Abrir o navegador 2) Acessar o site 3) Acessar a página de estilização no menu ferramentas 4) Clicar no menu drop-down para exibir as opções de estilização 5) Selecionar o tema desejado | 
 | Critérios de Êxito | - A tela de estilização deve abrir corretamente - O menu drop-down deve exibir os temas - O tema selecionado deve ser apliacado na página - A mudança de tema deve ocorrer caso seja selecionado outro tema.
 
+| Caso de Teste | CT-05 - Criação, leitura e exclusão Categorias|
+|---------------|--------------------------|
+| Requisitos Associados | RF-01 - O site deve permitir que o usuário crie atividades, associe os cadastros a unidades de tempo no calendário e os classifique quanto ao âmbito e nível de prioridade. |
+| Objetivo do Teste | Verificar o funcionamento adequado da criação, leitura e exclusão de categorias. |
+| Passos | 1) Abrir o navegador 2) Acessar o site 3) Acessar a página inicial 4) Clicar na opção Categoria no menu lateral 5) Preencher e selecionar Criar | 
+| Critérios de Êxito | - 
