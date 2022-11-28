@@ -647,8 +647,6 @@ Para acessar o login o usuário deve acesar o site. Também é possível acessar
 
 O perfil exibe as informações armazenadas no cadastro do usuário e outras funcionalidades como habilitar ou desabilitar o envio de notificações por e-mail e inserir foto.
 <img src="img/Perfil.jpg">
-<img src="img/Perfil.jpg">
-
 ### Requisitos atendidos
 
 Funcionalidade sem requisitos específicos
