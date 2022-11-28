@@ -375,6 +375,61 @@ document.querySelector("#excluir")
 
 No calendário, deve-se clicar na atividade que se deseja editar. Uma janela irá aparecer no centro da tela e terá os campos já preenchidos com os dados da atividade selecionada. Ao terminar de preencher todos os campos, deve-se clicar no botão “Atualizar”. Caso o usuário deseje excluir a atividade, deve-se clicar no botão "Excluir" e confirmar a ação no alerta que aparecerá no browser.
 
+## Parabenização por concluir atividade antes da data final (RF-12)
+### Desenvolvedor(a): Pedro Mota Cassemiro
+
+O modal apresentado ao selecionar uma atividade no calendário possui na sua parte inferior o botão "Concluir". O usuário, ao clicar nesse botão, irá ouvir o trecho inicial do refrão da música "The Best" de Tina Turner, com o trecho "You're simply the best". Tal trecho de áudio é uma resposta lúdica para o usuário, que somente será ouvido caso a conclusão da atividade ocorra antes ou no mesmo dia da data final definida na criação da atividade.
+
+<img src="img/editar-excluir-atividade-JSON.PNG" alt="Editar-Excluir-Atividade">
+
+Na imagem é possível observar o botão "Concluir", que pode ser acionado pelo usuário.
+
+### Requisitos atendidos
+
+RF-12 - O site parabeniza o usuário quando uma atividade é marcada como concluída antes do prazo.
+
+### Artefatos da funcionalidade
+
+- tela inicial+criacoes.html
+- scripts.js
+- atualizarAtividade.js
+- tela inicial+criacoes.css
+- logo.png
+- favicon.ico
+- /Images
+- parabenizacao.mp3
+
+```js
+const concluirAtividade = () => {
+
+    const partesData = dataFimEditado.value.split('-')
+    const dataFormatada = new Date(partesData[0], partesData[1] - 1, partesData[2], 0, 0, 0, 0)
+    const dataAtual = new Date()
+    const anoAtual = dataAtual.getFullYear()
+    const mesAtual = dataAtual.getMonth()
+    const diaAtual = dataAtual.getDate()
+    const dataAtualString = `${anoAtual}-${mes < 9 ? '0' : '' }${mesAtual + 1}-${diaAtual}`
+    const partesDataAtual = dataAtualString.split('-')
+    const dataAtualNoTime = new Date(partesDataAtual[0], partesDataAtual[1] - 1, partesDataAtual[2], 0, 0, 0, 0)
+    
+    if (dataFormatada >= dataAtualNoTime) {
+        new Audio('parabenizacao.mp3').play()
+        const dbAtividade = getDados()
+        dbAtividade.splice(index, 1)
+        setDados(dbAtividade)
+        load()
+        onOff('atualizar-atividade')
+    }
+}
+
+document.querySelector("#concluir")
+    .addEventListener('click', concluirAtividade)
+```
+
+### Instruções de acesso
+
+No modal de edição de atividade, deve-se clicar no botão "Concluir". Um áudio será reproduzido pelo browser.
+
 ## Notificação e resumos por email (RF-06)
 Desenvolvedor(a): Gabriela Vitoria Pereira
 
