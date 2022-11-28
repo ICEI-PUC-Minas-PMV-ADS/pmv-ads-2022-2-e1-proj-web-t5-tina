@@ -646,7 +646,7 @@ Para acessar o login o usuário deve acesar o site. Também é possível acessar
 ### Desenvolvedor(a): Juliana Dutra Moreira
 
 O perfil exibe as informações armazenadas no cadastro do usuário e outras funcionalidades como habilitar ou desabilitar o envio de notificações por e-mail e inserir foto.
-
+<img src="img/Perfil.jpg">
 <img src="img/Perfil.jpg">
 
 ### Requisitos atendidos
@@ -663,6 +663,45 @@ Funcionalidade sem requisitos específicos
 - /Images
 
 ```js
+function exibeUsuarios() {
+    
+    document.querySelector("#nome").value = usuarioCorrente.nome
+    document.querySelector("#email").value = usuarioCorrente.email
+}
+
+function initPage() {
+    document.getElementById('btn_logout').addEventListener('click', logoutUser);
+    exibeUsuarios ();
+}
+
+window.addEventListener('load', initPage);
+
+document.querySelector('#image_input').addEventListener('change', function () {
+    const reader = new FileReader()
+
+    reader.addEventListener('load', () => {
+        localStorage.setItem("recent-image", reader.result)
+    })
+
+    reader.readAsDataURL(this.files[0])
+})
+
+document.addEventListener("DOMContentLoaded", () => {
+    const recentImageDataUrl = localStorage.getItem("recent-image")
+    if (recentImageDataUrl) {
+        document.querySelector('#imgPreview').setAttribute('src', recentImageDataUrl)
+    }
+})
+
+document.querySelector('#salvaFoto').addEventListener('click', function recarregarPagina(){
+    window.location.reload();
+} )
+
+function logoutUser () {
+    usuarioCorrente = {};
+    sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
+    window.location.href = 'login.html'
+}
 ```
 
 ### Instruções de acesso
