@@ -490,6 +490,7 @@ footer {
 
 /*modal-atividade*/
 #modal-atividade,
+#modal-atualizar-atividade,
 #modal-item,
 #modal-categoria,
 #modal-habito {
@@ -515,6 +516,7 @@ footer {
 
 #modal-atividade.hide,
 #modal-item.hide,
+#modal-atualizar-atividade.hide,
 #modal-categoria.hide,
 #modal-habito.hide {
     opacity: 0;
@@ -523,6 +525,7 @@ footer {
 
 #modal-atividade.addScroll,
 #modal-item.addScroll,
+#modal-atualizar-atividade.addScroll,
 #modal-categoria.addScroll,
 #modal-habito.addScroll {
     overflow: auto;
@@ -530,6 +533,7 @@ footer {
 
 #modal-atividade .nova-atividade .cabecalho,
 #modal-item .nova-item .cabecalho,
+#modal-atualizar-atividade .atualizar-atividade .cabecalho,
 #modal-categoria .nova-categoria .cabecalho,
 #modal-habito .nova-habito .cabecalho {
     display: flex;
@@ -540,6 +544,7 @@ footer {
 
 #modal-atividade .nova-atividade .cabecalho h1,
 #modal-item .nova-item .cabecalho h1,
+#modal-atualizar-atividade .atualizar-atividade h1,
 #modal-categoria .nova-categotia .cabecalho h1,
 #modal-habito .nova-habito .cabecalho h1 {
     font-family: Arial, Helvetica, sans-serif;
@@ -548,6 +553,7 @@ footer {
 
 .nova-atividade .cabecalho a,
 .novo-item .cabecalho a,
+.atualizar-atividade a,
 .novo-categoria .cabecalho a,
 .novo-habito .cabecalho a {
     background-color: rgb(223, 39, 39);
@@ -570,6 +576,7 @@ footer {
 
 .nova-atividade .cabecalho a:hover,
 .novo-item .cabecalho a:hover,
+.atualizar-atividade .cabecalho a:hover,
 .nova-categoria .cabecalho a:hover,
 .novo-habito .cabecalho a:hover {
     background-color: #ff616199;
@@ -577,6 +584,7 @@ footer {
 }
 
 #modal-atividade form,
+#modal-atualizar-atividade form,
 #modal-categoria form,
 #modal-item form,
 #modal-habito form {
@@ -632,7 +640,23 @@ form button {
 }
 
 
-#criar-atividade {
+#div-atualizar-excluir-atividade {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+#div-criar-atividade {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#criar-atividade,
+#atualizar,
+#excluir,
+#concluir {
     background-color: rgb(223, 39, 39);
     border: none;
 
@@ -641,6 +665,8 @@ form button {
 
     width: 150px;
     height: 40px;
+    margin: 0 10px;
+    margin-top: 10px;
 
     cursor: pointer;
     font-size: 14px;
@@ -654,7 +680,10 @@ form button {
     transition: 400ms;
 }
 
-#criar-atividade:hover {
+#criar-atividade:hover,
+#atualizar:hover,
+#excluir:hover,
+#concluir:hover {
 
     background-color: #ff616199;
     text-decoration: none;
@@ -664,12 +693,42 @@ form button {
     border: solid 2px rgb(209, 45, 45) !important;
 }
 
+.cada-item, .cada-habito {
+    width: 97%;
+    padding: 10px;
+    height: 10%;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 5px;
+    box-shadow: 0px 0px 3px #CBD4C2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+#todos-itens, #todos-habitos {
+    height: 90%;
+    margin: 1%;
+    padding-top: 2%;
+}
+#todos-itens.addScroll, #todos-habitos.addScroll {
+    overflow: auto;
+}
 
+#todos-itens::-webkit-scrollbar, #todos-habitos::-webkit-scrollbar {
+    width: 0.7em;
+}
 
+#todos-itens::-webkit-scrollbar-track, #todos-habitos::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
 
-
-
-
+#todos-itens::-webkit-scrollbar-thumb, #todos-habitos::-webkit-scrollbar-thumb {
+    background-color: rgba(217, 217, 217, 0.58);
+    outline: 1px solid white;
+    border-radius: 10px;
+}
 
 
 
@@ -739,6 +798,7 @@ form button {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: auto;
 }
 
 .day:hover {
@@ -760,12 +820,13 @@ form button {
 }
 
 .event {
+    padding: 5px;
+
+    display: inline-table;
+    flex-direction: column;
     color: darkblue;
     background-color: lightgray;
     border-radius: 15px;
-    padding: 5px;
+    margin: 5px 0;
     font-weight: 200;
 }
-
-
-
