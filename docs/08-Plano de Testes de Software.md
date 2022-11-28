@@ -1,6 +1,13 @@
 # Plano de Testes de Software
 
-A seguir são descritos os testes funcionais a serem executados: 
+A seguir são descritos os testes funcionais a serem executados:
+
+| Caso de Teste | CT-01 - Criação de Atividade |
+|---------------|--------------------------|
+| Requisitos Associados | RF-0 - O site deve permitir que o usuário crie atividades, associe os cadastros a unidades de tempo no calendário e os classifique quanto ao âmbito e nível de prioridade. |
+| Objetivo do Teste | Verificar se a criação de atividade é realizada da maneira correta, com as validações e armazenamento no LocalStorage |
+| Passos | 1) Abrir o navegador 2) Acessar o site 3) Na página inicial selecionar o ícone de criar atividade 4) No modal de criação de atividade, inserir nos campos do formulário as informações para a criação da atividade 5) Selecionar o botão "Criar" |
+| Critérios de Êxito | - O modal de criação de atividade deve abrir corretamente - Ao inserir as informações do formulário, deve ser informado se todos os campos foram preenchidos, caso contrário, os campos ficarão com as bordas em vermelho e a atividade não será criada. Caso o título informado já tenha sido associado a uma atividade já criada, um alerta será exibido pelo browser. Ao clicar no ícone para fechar o modal, o mesmo deve ser recolhido. Ao abrir novamente o modal, os campos deverão estar vazios. Ao finalizar a criação da atividade, um novo modal que eventualmente for aberto, também deverá possuir seus campos vazios. Os "inputs" para data inicial e data final não deverão aceitar datas anteriores à data atual. Após concluir a criação, um elemento, com o título da atividade, deve estar presente no calendário e associado corretamente ao dia inicial definido pelo usuário.
 
 | Caso de Teste | CT-01 - Cadastro no site |
 |---------------|--------------------------|
