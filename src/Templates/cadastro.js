@@ -67,7 +67,7 @@ function salvaCadastro (event) {
      if ((nome != '' && email != '' && senha != '' && senha2 != '') && (validNome && validEmail && validSenha && validEmailRepetido)) {
         // Adiciona o usuário no banco de dados
         addUser (nome, senha, email);
-        alert ('Usuário salvo com sucesso. Proceda com o login');
+        alert ('Usuário salvo com sucesso. Prossiga para o login');
         window.location.href = 'login.html'
     } else {
         alert("Preencha todos os campos corretamente antes de prosseguir")

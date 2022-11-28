@@ -32,6 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 })
 
+//recarrega foto
+document.querySelector('#salvaFoto').addEventListener('click', function recarregarPagina(){
+    window.location.reload();
+} )
+
 function logoutUser () {
     usuarioCorrente = {};
     sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
