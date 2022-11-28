@@ -237,7 +237,8 @@ input[type=text] {
   font-size: 15px;
 }
 
-input[type=salvalteracoes] {
+input[type=salvalteracoes],
+#image_input, #salvaFoto {
   background-color: rgb(241, 85, 85);
   color: aliceblue;
   width: 20%;
@@ -252,6 +253,7 @@ input[type=salvalteracoes] {
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 
  footer {
   grid-column: 1/13;
