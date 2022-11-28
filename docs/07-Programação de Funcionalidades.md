@@ -9,9 +9,15 @@ Nesta seção são apresentadas as funcionalidades do sistema.
 
 O modal de criação de atividade apresenta os campos a serem preenchidos pelo usuário. Os campos são: Título, descrição, data inicial, data final, horário inicial, horário final, categoria, prioridade e periodização. A fim de tornar as atividades únicas, o título deve ser único e atua como um identificador da atividade criada. Ao tentar incluir uma atividade com o mesmo título, um alerta é exibido pelo browser sinalizando que já há atividade registrada no banco com o mesmo título. Todos os campos possuem preenchimento obrigatório, caso algum deles não seja preenchido, seu contorno se torna destacado em vermelho e a atividade não é armazenada no Local Storage. Ao concluir a ação, ou cancelá-la, fechando o modal, todos os campos são reiniciados e preparados para uma nova inserção de dados.
 
+As atividades criadas são associadas ao calendário, de maneira que o usuário consegue visualizá-las vínculadas à data inicial escolhida. Se várias atividades são alocadas no mesmo dia, torna-se possível visualizar todas elas, no mesmo dia, através do uso do "scroll" horizontal e vertical.
+
 <img src="img/criar-atividade-JSON.PNG" alt="Criar-atividade">
 
 Na imagem é possível observar, em Local Storage, duas atividades já criadas. A segunda, de índice 1, é expandida e apresenta todos os seus campos e valores. Na janela de "Nova Atividade", à esquerda, está um exemplo de atividade com seus campos preenchidos, prestes a ser criada.
+
+<img src="img/inserir-atividade-calendario.PNG" alt="Inserir-atividade">
+
+Na imagem é possível observar uma atividade vinculada ao calendário, em seu dia correspondente.
 
 ### Requisitos atendidos
 
@@ -22,6 +28,7 @@ RF-01 - O site deve permitir que o usuário crie atividades, associe os cadastro
 - tela inicial+criacoes.html
 - scripts.js
 - tela inicial+criacoes.css
+- inserirAtividadeCalendario.js
 - logo.png
 - favicon.ico
 - /Images
@@ -123,6 +130,23 @@ const salvarAtividade = () => {
 
 document.getElementById('criar-atividade')
     .addEventListener('click', salvarAtividade)
+```
+
+```js
+function inserirAtividades(dayString, daySquare) {
+
+    getDados().forEach(atividade => {
+
+        if (atividade.dataInicio === dayString && getDados() != []) {
+
+            const eventDiv = document.createElement('div');
+            eventDiv.classList.add('event');
+            eventDiv.setAttribute('id', atividade.titulo)
+            eventDiv.innerText = atividade.titulo;  
+            daySquare.appendChild(eventDiv);    
+        }
+    });
+}
 ```
 
 ### Instruções de acesso
