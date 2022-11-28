@@ -9,15 +9,9 @@ Nesta seção são apresentadas as funcionalidades do sistema.
 
 O modal de criação de atividade apresenta os campos a serem preenchidos pelo usuário. Os campos são: Título, descrição, data inicial, data final, horário inicial, horário final, categoria, prioridade e periodização. A fim de tornar as atividades únicas, o título deve ser único e atua como um identificador da atividade criada. Ao tentar incluir uma atividade com o mesmo título, um alerta é exibido pelo browser sinalizando que já há atividade registrada no banco com o mesmo título. Todos os campos possuem preenchimento obrigatório, caso algum deles não seja preenchido, seu contorno se torna destacado em vermelho e a atividade não é armazenada no Local Storage. Ao concluir a ação, ou cancelá-la, fechando o modal, todos os campos são reiniciados e preparados para uma nova inserção de dados.
 
-As atividades criadas são associadas ao calendário, de maneira que o usuário consegue visualizá-las vínculadas à data inicial escolhida. Se várias atividades são alocadas no mesmo dia, torna-se possível visualizar todas elas, no mesmo dia, através do uso do "scroll" horizontal e vertical.
-
 <img src="img/criar-atividade-JSON.PNG" alt="Criar-atividade">
 
 Na imagem é possível observar, em Local Storage, duas atividades já criadas. A segunda, de índice 1, é expandida e apresenta todos os seus campos e valores. Na janela de "Nova Atividade", à esquerda, está um exemplo de atividade com seus campos preenchidos, prestes a ser criada.
-
-<img src="img/inserir-atividade-calendario.PNG" alt="Inserir-atividade">
-
-Na imagem é possível observar uma atividade vinculada ao calendário, em seu dia correspondente.
 
 ### Requisitos atendidos
 
@@ -28,7 +22,6 @@ RF-01 - O site deve permitir que o usuário crie atividades, associe os cadastro
 - tela inicial+criacoes.html
 - scripts.js
 - tela inicial+criacoes.css
-- inserirAtividadeCalendario.js
 - logo.png
 - favicon.ico
 - /Images
@@ -132,23 +125,6 @@ document.getElementById('criar-atividade')
     .addEventListener('click', salvarAtividade)
 ```
 
-```js
-function inserirAtividades(dayString, daySquare) {
-
-    getDados().forEach(atividade => {
-
-        if (atividade.dataInicio === dayString && getDados() != []) {
-
-            const eventDiv = document.createElement('div');
-            eventDiv.classList.add('event');
-            eventDiv.setAttribute('id', atividade.titulo)
-            eventDiv.innerText = atividade.titulo;  
-            daySquare.appendChild(eventDiv);    
-        }
-    });
-}
-```
-
 ### Instruções de acesso
 
 No menu lateral, deve-se clicar no botão de criar atividade, com o ícone de bloco de notas. Uma janela irá aparecer no centro da tela e terá os campos a serem preenchidos pelo usuário para registrar a atividade no Local Storage. Ao terminar de preencher todos os campos, deve-se clicar no botão “Criar”.
@@ -219,10 +195,6 @@ function toggle(el) {
     }
 }
 ```
-
-
-## Tela Criação de itens e hábitos (RF-08, RF-03, RF-09) 
-Desenvolvedor(a): Ellen Caroline Trindade Gonçalves Cândido
 
 ## Edição e Exclusão de Atividade (RF-04, RF-05)
 ### Desenvolvedor(a): Pedro Mota Cassemiro
@@ -399,68 +371,13 @@ document.querySelector("#excluir")
 
 No calendário, deve-se clicar na atividade que se deseja editar. Uma janela irá aparecer no centro da tela e terá os campos já preenchidos com os dados da atividade selecionada. Ao terminar de preencher todos os campos, deve-se clicar no botão “Atualizar”. Caso o usuário deseje excluir a atividade, deve-se clicar no botão "Excluir" e confirmar a ação no alerta que aparecerá no browser.
 
-## Parabenização por concluir atividade antes da data final (RF-12)
-### Desenvolvedor(a): Pedro Mota Cassemiro
-
-O modal apresentado ao selecionar uma atividade no calendário possui na sua parte inferior o botão "Concluir". O usuário, ao clicar nesse botão, irá ouvir o trecho inicial do refrão da música "The Best" de Tina Turner, com o trecho "You're simply the best". Tal trecho de áudio é uma resposta lúdica para o usuário, que somente será ouvido caso a conclusão da atividade ocorra antes ou no mesmo dia da data final definida na criação da atividade.
-
-<img src="img/editar-excluir-atividade-JSON.PNG" alt="Editar-Excluir-Atividade">
-
-Na imagem é possível observar o botão "Concluir", que pode ser acionado pelo usuário.
-
-### Requisitos atendidos
-
-RF-12 - O site parabeniza o usuário quando uma atividade é marcada como concluída antes do prazo.
-
-### Artefatos da funcionalidade
-
-- tela inicial+criacoes.html
-- scripts.js
-- atualizarAtividade.js
-- tela inicial+criacoes.css
-- logo.png
-- favicon.ico
-- /Images
-- parabenizacao.mp3
-
-```js
-const concluirAtividade = () => {
-
-    const partesData = dataFimEditado.value.split('-')
-    const dataFormatada = new Date(partesData[0], partesData[1] - 1, partesData[2], 0, 0, 0, 0)
-    const dataAtual = new Date()
-    const anoAtual = dataAtual.getFullYear()
-    const mesAtual = dataAtual.getMonth()
-    const diaAtual = dataAtual.getDate()
-    const dataAtualString = `${anoAtual}-${mes < 9 ? '0' : '' }${mesAtual + 1}-${diaAtual}`
-    const partesDataAtual = dataAtualString.split('-')
-    const dataAtualNoTime = new Date(partesDataAtual[0], partesDataAtual[1] - 1, partesDataAtual[2], 0, 0, 0, 0)
-    
-    if (dataFormatada >= dataAtualNoTime) {
-        new Audio('parabenizacao.mp3').play()
-        const dbAtividade = getDados()
-        dbAtividade.splice(index, 1)
-        setDados(dbAtividade)
-        load()
-        onOff('atualizar-atividade')
-    }
-}
-
-document.querySelector("#concluir")
-    .addEventListener('click', concluirAtividade)
-```
-
-### Instruções de acesso
-
-No modal de edição de atividade, deve-se clicar no botão "Concluir". Um áudio será reproduzido pelo browser.
-
 ## Notificação e resumos por email (RF-06)
 Desenvolvedor(a): Gabriela Vitoria Pereira
 
-## Alteração de estilização do site (RF-11)
+## Alteração de design do site (RF-11)
 ### Desenvolvedor(a): Juliana Dutra Moreira
 
-A tela de temas permite que o usuário escolha um tema de desing específico para aplicar em todo o site, permitindo que este tema se mantenha durante todo o acesso ao site. É possível alterar as cores e os ícones dos itens do menu lateral.
+A tela de temas permite que o usuário escolha um tema de desing específico para aplicar em todo o site durante o uso do sistema, permitindo que este tema se mantenha durante todo o acesso ao site. É possível alterar as cores e os itens do menu lateral.
 
 Opções do menu drop-down que exibe as opções de temas para o usuário.
 <img src="img/Func_Tema_1.jpg">
@@ -514,21 +431,23 @@ function initThemeSelector() {
 
     ativarTema(currentTheme);
     themeSelect.value = currentTheme;
+
 }
 
 initThemeSelector();
 }
+
 ```
 
 ### Instruções de acesso
 
-Para acessar esta funcionalidade o usuário deve selecionar o icóne de ferramentas no menu lateral de criações.
+A Tela perfil é acessada ao usuário selecionar o botão ferramentas no menu lateral.
 
 ## Criação de Itens e hábitos (RF-03, RF-08)
 ### Desenvolvedor(a): Ellen Caroline Trindade Gonçalves Cândido
 
 O modal de criação de itens apresenta os campos a serem preenchidos pelo usuário.  Os campos são: Título, descrição, categoria, prioridade
-O modal de criação de hábitos apresenta os campos a serem preenchidos pelo usuário.Os campos são: Título, descrição, data inicial, data final, categoria, prioridade e periodização. Todos os campos possuem preenchimento obrigatório. Ao concluir a ação, ou cancelá-la, fechando o modal, nenhum item ou hábito é criado e o histórico do último é mantido para futura consulta. Ao selecionar "Criar", o item ou hábito é criado e inserido em sua respectiva lista.
+O modal de criação de hábitos apresenta os campos a serem preenchidos pelo usuário.Os campos são: Título, descrição, data inicial, data final, categoria, prioridade e periodização. Todos os campos possuem preenchimento obrigatório. Ao concluir a ação, ou cancelá-la, fechando o modal, nenhum item ou hábito é criado. Ao selecionar "Criar", o item ou hábito é criado e inserido em sua respectiva lista.
 
 <img src="img/Menu-Criar_item.png" alt="Criar-item">
 <img src="img/Menu-Criar_hábito.png" alt="Criar-item">
@@ -550,99 +469,223 @@ RF-08 - O site deve permitir que o usuário crie e associe anotações de hábit
 - logo.png
 - favicon.ico
 - /Images
-
 ```js
-function onOff(type) {
-    if (type == "atividade") {
-        document
-            .querySelector("#modal-atividade")
-            .classList
-            .toggle("hide")
-        document
-            .querySelector("#modal-atividade")
-            .classList
-            .toggle("addScroll")
-    }
-    else if(type == "item"){
-        document
-            .querySelector("#modal-item")
-            .classList
-            .toggle("hide")
-        document
-            .querySelector("#modal-item")
-            .classList
-            .toggle("addScroll")
-        
-    }
-    else if (type == "habito"){
-        document
-            .querySelector("#modal-habito")
-            .classList
-            .toggle("hide")
-        document
-            .querySelector("#modal-habito")
-            .classList
-            .toggle("addScroll")
-    }
+const getDadosItem = () => JSON.parse(localStorage.getItem("dbItens")) ?? [];
+const setDadosItem = (dbItens) => localStorage.setItem("dbItens", JSON.stringify(dbItens));
+
+const itemTitulo = document.getElementById('item-titulo')
+const itemDescricao = document.getElementById('item-descricao')
+const itemCategoria = document.getElementById('item-categoria')
+const itemPrioridade = document.getElementById('item-prioridade')
+
+const inputsItem = [itemTitulo, itemDescricao, itemCategoria, itemPrioridade]
+
+var listaItens = document.querySelector("#todos-itens")
+function exibirListaItens() {
+    listaItens.classList.toggle("addScroll")
+
+    var divModelo = document.getElementById('cada-item')
+    var cadaItem;
+
+    getDadosItem().forEach(elemento => {
+        cadaItem = divModelo.cloneNode(true)
+        cadaItem.innerHTML = elemento.titulo
+        cadaItem.style.display = 'block'
+        listaItens.appendChild(cadaItem)
+    })
 }
 
-var btnCriarItem = document.querySelector("#btn-criar-item");
-
-btnCriarItem.addEventListener("click", function(event){
-    event.preventDefault();
-
-    var formItem = document.querySelector("#form-item");
-    var item = {
-        "nome": formItem.titulo.value,
-        "descricao": formItem.descricao.value,
-        "categoria": formItem.categoria.value,
-        "prioridade": formItem.prioridade.value
+function criarItem() {
+    const item = {
+        titulo: itemTitulo.value.trim(),
+        descricao: itemDescricao.value,
+        categoria: itemCategoria.value,
+        prioridade: itemPrioridade.value
     }
-    
-    var listaItens = document.querySelector(".lista-itens");
-    var novoItem = document.createElement("div");
-    novoItem.innerHTML = "Nome: " + item.nome + "<br>Descrição: "+ item.descricao + "<br>Categoria: " + item.categoria + "      Prioridade: " + item.prioridade ;
 
-
-    listaItens.appendChild(novoItem);
-    onOff("item");
-})
-
-var btnCriarHabito = document.querySelector("#btn-criar-habito");
-
-btnCriarHabito.addEventListener("click", function(event){
-    event.preventDefault();
-    
-    var formHabito = document.querySelector("#form-habito");
-    var habito = {
-        "nome": formHabito.titulo.value,
-        "descricao": formHabito.descricao.value,
-        "data_inicio": formHabito['data-inicio'].value,
-        "data_fim" : formHabito['data-fim'].value,
-        "categoria": formHabito.categoria.value,
-        "prioridade": formHabito.prioridade.value,
-        "periodizacao": formHabito.periodizacao.value
+    if (saoDadosValidosEmItem(item)) {
+        inserirItem(item)
+        onOff("item")
+        adicionarUltimoItemEmLista(item.titulo)
+    } else {
+        alert("Não foi possível salvar. Há campos vazios ou título igual ao de outro item.")
     }
-    
-    var listaHabitos = document.querySelector(".lista-habitos");
-    var novoHabito = document.createElement("div");
-    novoHabito.innerHTML = "Nome: " + habito.nome + "<br>Descrição: "+ habito.descricao + "<br>De: "+ habito.data_inicio + "  até  : "+ habito.data_fim + "<br>Categoria: " + habito.categoria + "      Prioridade: " + habito.prioridade + "<br>Periodização: "+ habito.periodizacao;
-
-
-    listaHabitos.appendChild(novoHabito);
-    onOff("habito");
-})
+}
 ```
+
+```js
+const getDadosHabito = () => JSON.parse(localStorage.getItem("dbHabitos")) ?? [];
+const setDadosHabito = (dbHabitos) => localStorage.setItem("dbHabitos", JSON.stringify(dbHabitos));
+
+const habitoTitulo = document.getElementById('habito-titulo')
+const habitoDescricao = document.getElementById('habito-descricao')
+const habitoDataInicio = document.getElementById('habito-data-inicio')
+const habitoDataFim = document.getElementById('habito-data-fim')
+const habitoCategoria = document.getElementById('habito-categoria')
+const habitoPrioridade = document.getElementById('habito-prioridade')
+const habitoPeriodizacao = document.getElementById('habito-periodizacao')
+
+const inputsHabito = [habitoTitulo, habitoDescricao, habitoDataInicio, habitoDataFim, habitoCategoria, habitoPrioridade, habitoPeriodizacao]
+
+var listaHabitos = document.querySelector("#todos-habitos")
+function exibirListaHabitos() {
+    listaHabitos.classList.toggle("addScroll")
+
+    var divModelo = document.getElementById('cada-habito')
+    var cadaHabito;
+
+    getDadosHabito().forEach(elemento => {
+        cadaHabito = divModelo.cloneNode(true)
+        cadaHabito.innerHTML = elemento.titulo
+        cadaHabito.style.display = 'block'
+        listaHabitos.appendChild(cadaHabito)
+    })
+}
+
+function criarHabito() {
+    const habito = {
+        titulo: habitoTitulo.value.trim(),
+        descricao: habitoDescricao.value,
+        dataInicio: habitoDataInicio.value,
+        dataFim: habitoDataFim.value,
+        categoria: habitoCategoria.value,
+        prioridade: habitoPrioridade.value,
+        periodizacao: habitoPeriodizacao.value
+    }
+
+    if (saoDadosValidosEmHabito(habito)) {
+        inserirHabito(habito)
+        onOff("habito")
+        adicionarUltimoHabitoEmLista(habito.titulo)
+    } else {
+        alert("Não foi possível salvar. Há campos vazios ou título igual ao de outro hábito.")
+    }
+
+}
+```
+
 
 ### Instruções de acesso
 
 Para criar item, no menu lateral, deve-se clicar no botão de criar item, com o ícone de checkbox. Uma janela irá aparecer no centro da tela e terá os campos a serem preenchidos pelo usuário para registrar o item no Local Storage e aparecer na lista. Ao terminar de preencher todos os campos, deve-se clicar no botão “Criar”.
 Já para criar hábito, no menu lateral novamente, deve-se clicar no botão de criar hábito, destacado pelo ícone de estrela. Uma janela irá aparecer no centro da tela e terá os campos a serem preenchidos pelo usuário para registrar o hábito no Local Storage e aparecer na lista. Ao terminar de preencher todos os campos, deve-se clicar no botão “Criar”.
 
+## Atualização e Remoção de Itens e hábitos (RF-03, RF-08)
+### Desenvolvedor(a): Ellen Caroline Trindade Gonçalves Cândido
+
+Ao criar um "Item", uma div o representará na "Lista de Itens" disponível na tela principal. Ao clicar em algum dos elementos, o modal é carregado preenchido com os dados do item na tela com as opções para atualizar ou remover.
+Do mesmo modo, ao criar um "Hábito", uma div o representará na "Lista de Hábitos" disponível logo abaixo da lista anterior. Ao clicar em algum dos elementos, é carregado um modal preenchido com suas informações com as opções de atualizar ou remover.
+Em ambos os casos, ao clicar em "atualizar", é validado se o título é único e não há nenhum input vazio, caso sim, as informações presentes nos inputs serão atualizadas no armazenamento local e na lista de visualização. Já ao clicar em "remover", uma mensagem de confirmação é disparada, com a confirmação, o elemento selecionado será removido da lista e do armazenamento local.
+
+<img src="img/Menu-Criar_item.png" alt="Criar-item">
+Na imagem, é possível observar a "lista de Itens" preenchida e o item selecionado disponível para ser atualizado ou removido. Também é possível ver as informações no armazenamento local.
+
+<img src="img/Menu-Criar_hábito.png" alt="Criar-item">
+Nesta imagem, é possível observar a "lista de Hábitos" preenchida e o hábito selecionado disponível para ser atualizado ou removido. Também é possível ver as informações no armazenamento local.
+
+<img src="img/item-habitos-criados.png" alt="Itens e hábitos criados">
+
+### Requisitos atendidos
+
+RF-03 - O site deve permitir que o usuário crie itens em uma lista não associada a unidades de tempo no calendário 
+RF-08 - O site deve permitir que o usuário crie e associe anotações de hábitos ao calendário
+RF-09 - O site deve possibilitar automação como na criação de regras para periodização de atividades e/ou ações específicas
+
+
+### Artefatos da funcionalidade
+ 
+- tela inicial+criacoes.html
+- scripts.js
+- tela inicial+criacoes.css
+- logo.png
+- favicon.ico
+- /Images
+
+```js
+function atualizarItem() {
+    var indice = getDadosItem().findIndex(e => e.titulo === document.getElementById('idItem').value)
+    var db = getDadosItem()
+    const novoItem = {
+        titulo: itemTitulo.value.trim(),
+        descricao: itemDescricao.value,
+        categoria: itemCategoria.value,
+        prioridade: itemPrioridade.value
+    }
+
+    if (saoDadosValidosEmItem(novoItem)) {
+        db[indice] = novoItem
+        Array.prototype.forEach.call(document.getElementsByClassName("cada-item"), function (divisor) {
+            if (divisor.innerText == document.getElementById('idItem').value) {
+                divisor.innerText = itemTitulo.value
+            }
+        });
+        setDadosItem(db)
+        onOff("item")
+    } else {
+        alert("Não foi possível salvar. Há campos vazios ou título igual a outro item.")
+    }
+}
+
+function removerItem() {
+    var confirmacao = confirm("Você tem certeza que quer apagar o item '" + idItem.value + "'?")
+    if (confirmacao) {
+        var indice = getDadosItem().findIndex(e => e.titulo === document.getElementById('idItem').value)
+        var db = getDadosItem()
+        db.splice(indice, 1)
+        setDadosItem(db)
+    }
+}
+```
+
+```js
+function atualizarHabito() {
+    var indice = getDadosHabito().findIndex(e => e.titulo === document.getElementById('idHabito').value)
+    var db = getDadosHabito()
+    const novoHabito = {
+        titulo: habitoTitulo.value.trim(),
+        descricao: habitoDescricao.value,
+        dataInicio: habitoDataInicio.value,
+        dataFim: habitoDataFim.value,
+        categoria: habitoCategoria.value,
+        prioridade: habitoPrioridade.value,
+        periodizacao: habitoPeriodizacao.value
+    }
+
+    if (saoDadosValidosEmHabito(novoHabito)) {
+        db[indice] = novoHabito
+        Array.prototype.forEach.call(document.getElementsByClassName("cada-habito"), function (divisor) {
+            if (divisor.innerText == document.getElementById('idHabito').value) {
+                divisor.innerText = habitoTitulo.value
+            }
+        });
+        setDadosHabito(db)
+        onOff("habito")
+    } else {
+        alert("Não foi possível salvar. Há campos vazios ou título igual a outro hábito.")
+    }
+}
+
+function removerHabito() {
+    var confirmacao = confirm("Você tem certeza que quer apagar o hábito '" + idHabito.value + "' ?")
+    if (confirmacao) {
+        var indice = getDadosHabito().findIndex(e => e.titulo === document.getElementById('idHabito').value)
+        var db = getDadosHabito()
+        
+        db.splice(indice, 1)
+        setDadosHabito(db)
+    }
+}
+```
+
+### Instruções de acesso
+
+Para atualizar um Item, clique no item a ser atualizado na "Lista de Itens". Uma janela surgirá com os campos disponíveis com os valores anteriores preenchidos, na qual é possível alterar os conteúdos e clicar em "Atualizar". Para remover o Item, repita o mesmo procedimento para a abertura da janela do elemento escolhido e clique no botão "Remover".
+Para atualizar um Hábito, clique no hábito escolhido na "Lista de Hábitos". Uma janela surgirá com os campos disponíveis com os valores anteriores preenchidos, na qual é possível alterar os conteúdos e clicar em "Atualizar". Para remover o Hábito, repita o mesmo procedimento para a abertura da janela do elemento escolhido e clique no botão "Remover".
+
 ## Cadastro do usuário (RF-)
 ### Desenvolvedor(a): Juliana Dutra Moreira
 
-O cadastro permite que o usuário crie sua conta para acessar o site. O usuário preenche os campos de Nome, Email, Senha e Confirmação de senha com diversas validações para a criação correta da conta. As validações vão instruindo o usuário colocar nos campos as informações necessárias conforme os critérios exibidos nas mensagens dos campos do fomulário de cadastro. Após o preenchimento correto o usuário é informado que a conta foi criada e é redirecionado para a tela de login. Caso o e-mail do usuário já tenha sido cadastrado uma mensagem é exibida informando que o e-mail já está cadastrado e se desejar, o usuário deve ir para a página de login ou tentar novamente.
+O cadastro permite que o usuário crie sua conta para acessar o site. O usuário preenche os campos de Nome, Email, Senha e Confirmação de senha com diversas validações para a criação correta da conta. As validações vão instruindo o usuário colocar nos campos as informações necessárias conforme as regras do cadastro. Após o preenchimento correto o usuário é informado que a conta foi criada e é redirecionado para a tela de login. Caso o e-mail do usuário já tenha sido cadastrado uma mensagem é exibida informando que o e-mail já está cadastrado e se desejar, o usuário deve ir para a página de login ou tentar novamente.
 
 <img src="img/Cadastro.jpg">
 
@@ -663,6 +706,7 @@ Funcionalidade sem requisitos específicos
 
 ```js
 function salvaCadastro (event) {
+    // Cancela a submissão do formulário para tratar sem fazer refresh da tela
     event.preventDefault ();
 
     // Obtem os dados do formulário
@@ -750,7 +794,7 @@ Na página inicial do login o usuário seleciona o link "cadastre-se" e é encam
 ## Login do usuário (RF-)
 ### Desenvolvedor(a): Juliana Dutra Moreira
 
-O login é a página inicial do site, no qual é possível visualizar a logo, avatar e um texto explicativo sobre o site. O usuário insere nos campos e-mail e senha seus dados de login previamente cadastrados e seleciona o botão "entrar" para acessar o site. Caso, inicialmente, o usuário não tenha cadastro, é possível realizar o cadastro pelo link "Cadastre-se" abaixo do campo "senha". Este mesmo campo possui uma ferramenta que permite o usuário visualizar sua senha clicando no ícone representado por um olho.
+O login é a página inicial do site, no qual é possível visualizar a logo, avatar e um texto explicativo sobre o site. O usuário insere nos campos e-mail e senha seus dados de login e seleciona o botão "entrar" para acessar o site. Caso, inicialmente, o usuário não tenha cadastro, é possível realizar o cadastro pelo link "Cadastra-se" abaixo do campo "senha". Este mesmo campo possui uma ferramenta que permite o usuário visualizar sua senha clicando no ícone de olho.
 
 <img src="img/Login.jpg">
 
@@ -806,7 +850,7 @@ function initLoginApp () {
     
     var usuariosJSON = localStorage.getItem('db_usuarios');
 
-    if (!usuariosJSON) {
+    if (!usuariosJSON) {  // Se NÃO há dados no localStorage
 
         db_usuarios = dadosIniciais;
 
@@ -888,7 +932,7 @@ btn.addEventListener('click', ()=>{
 
 ### Instruções de acesso
 
-Para acessar o login o usuário deve acesar o site. Também é possível acessar o login ao clicar na logo, localizada canto superior esquerdo na página do cadastro, e assim também, ao realizar logout.  
+Para acessar o login o usuário deve acesar o site. Também é possível acessar o login ao clicar na logo, localizada canto superior esquerdo na página do cadastro, assim também, ao realizar logout.  
 
 ## Perfil do usuário (RF-)
 ### Desenvolvedor(a): Juliana Dutra Moreira
@@ -952,4 +996,4 @@ function logoutUser () {
 
 ### Instruções de acesso
 
-Para acessar o perfil é necessário clicar no ícone localizado no canto superior direito da página do site, após o usuário realizar o login.
+A tela perfil é possível acessar clicando no icone localizado no canto superior direito da página do site, após o usuário realizar o login.
