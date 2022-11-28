@@ -11,7 +11,7 @@ function onOff(type) {
         limparCampos()
         limparErros()
     }
-    else if (type == "item"){
+    else if (type == "item") {
         document
             .querySelector("#modal-item")
             .classList
@@ -20,8 +20,8 @@ function onOff(type) {
             .querySelector("#modal-item")
             .classList
             .toggle("addScroll")
-        }
 
+        }
     else if (type == "habito") {
         document
             .querySelector("#modal-habito")
@@ -42,7 +42,7 @@ function onOff(type) {
             .toggle("addScroll")
         limparErrosEdicao()
     }
-    else if (type == "categoria"){
+    else if (type == "categoria") {
         document
             .querySelector("#modal-categoria")
             .classList
