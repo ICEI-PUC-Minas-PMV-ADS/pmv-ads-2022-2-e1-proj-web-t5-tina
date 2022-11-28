@@ -443,6 +443,7 @@ initThemeSelector();
 
 A Tela perfil é acessada ao usuário selecionar o botão ferramentas no menu lateral.
 
+
 ## Criação de Itens e hábitos (RF-03, RF-08)
 ### Desenvolvedor(a): Ellen Caroline Trindade Gonçalves Cândido
 
@@ -676,11 +677,6 @@ function removerHabito() {
     }
 }
 ```
-
-### Instruções de acesso
-
-Para atualizar um Item, clique no item a ser atualizado na "Lista de Itens". Uma janela surgirá com os campos disponíveis com os valores anteriores preenchidos, na qual é possível alterar os conteúdos e clicar em "Atualizar". Para remover o Item, repita o mesmo procedimento para a abertura da janela do elemento escolhido e clique no botão "Remover".
-Para atualizar um Hábito, clique no hábito escolhido na "Lista de Hábitos". Uma janela surgirá com os campos disponíveis com os valores anteriores preenchidos, na qual é possível alterar os conteúdos e clicar em "Atualizar". Para remover o Hábito, repita o mesmo procedimento para a abertura da janela do elemento escolhido e clique no botão "Remover".
 
 ## Cadastro do usuário (RF-)
 ### Desenvolvedor(a): Juliana Dutra Moreira
