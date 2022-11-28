@@ -71,6 +71,9 @@ function initButtons() {
     });
 }
 
+exibirListaItens()
+exibirListaHabitos()
+
 initButtons();
 load();
 
