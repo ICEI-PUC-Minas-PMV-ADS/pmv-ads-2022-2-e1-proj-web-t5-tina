@@ -8,8 +8,8 @@ const dataMinimaFormatada = `${ano}-${mes < 9 ? '0' : '' }${mes + 1}-${dia}`
 
 function onOff(type) {
     if (type == "atividade") {
-        // dataInicio.setAttribute('min', dataMinimaFormatada)
-        // dataFim.setAttribute('min', dataMinimaFormatada)
+        dataInicio.setAttribute('min', dataMinimaFormatada)
+        dataFim.setAttribute('min', dataMinimaFormatada)
         document
             .querySelector("#modal-atividade")
             .classList
