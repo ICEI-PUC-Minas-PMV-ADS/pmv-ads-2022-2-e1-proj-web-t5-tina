@@ -6,11 +6,6 @@ const dia = dataMinima.getDate()
 
 const dataMinimaFormatada = `${ano}-${mes < 9 ? '0' : '' }${mes + 1}-${dia}`
 
-const modalAtividade = document.getElementById('modal-atividade')
-const modalAtualizarAtividade = document.getElementById('modal-atualizar-atividade')
-const modalItem = document.getElementById('modal-item')
-const modalHabito = document.getElementById('modal-habito')
-
 // botões
 const botoes = document.querySelectorAll('.button')
 
