@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="favicon.ico">
+    <link rel="stylesheet" href="tela-ajuda.css">
+    <script src="tela-ajuda.js" defer></script>
+    <script src="https://kit.fontawesome.com/e7dd02bc5b.js" crossorigin="anonymous"></script>
+    <title>Tina</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="#" class="botao-logo">Tina</a>
+            <button class="botao-hoje" type="button">Hoje</button>
+            <div id="cabecalho-direita">
+                <button class="botao-filtrar" type="button">
+                    <i class="fa-solid fa-filter"></i>
+                    Filtrar
+                </button>
+                <button class="botao-perfil">
+                    <i class="fa-solid fa-user"></i>
+                </button>
+            </div>
+        </header>
+        <div class="cabecalho-ajuda">
+            <div class="ajuda-funciona">Ajuda</div>
+        </div>
+        <main>
+          <div class="caixa-ajuda-principal">
+            <div class="caixa-perguntas">
+             <div class="duvidas">COMO FUNCIONA A TINA</div>
+                    
+                    
+                  <button id="action-btn">Como criar uma atividade? <i class="fas fa-angle-down"></i></button>
+
+                    <div id="resposta-1">
+                        
+                    À esquerda, no menu lateral, há um botão com o icone "Atividade". Clicando nele você poderá criar uma atividade e dar um titulo, uma descrição e uma categoria. Pode fixar por prioridade e inserir uma data para incia-la e termina-la. 
+                  
+                    </div>
+
+                  <button id="action-btn2">Como criar um hábito? <i class="fas fa-angle-down"></i></button>
+
+                    <div id="resposta-2">
+                          
+                    Também no menu à esquerda, você pode criar um hábito clicando no botão "Hábitos". Do mesmo modo que se cria uma atividade, os hábitos são personalizados com título, descrição, categoria e prioridades. 
+                
+                    </div>
+
+
+                  <button id="action-btn3">Como criar uma categoria? <i class="fas fa-angle-down"></i>
+                  </button> 
+
+                    <div id="resposta-3">
+                          
+                    Dentro das atividades ou dos hábitos, você pode criar categorias correspondentes a Faculdade, Trabalho, Saúde e Pessoais.   
+                  
+                    </div>
+
+
+                <button id="action-btn4">Como receber/desativar notificações por email? <i class="fas fa-angle-down"></i>
+                </button> 
+
+                    <div id="resposta-4">
+                          
+                    Para conseguir receber ou desativar as notificações que chegam por email, você deve seguir até o ícone de configurações no canto inferior esquerdo, encontrar a aba de notificações e ativa-la ou desativa-la. 
+                
+                    </div>
+
+                 
+                  
+              <button id="action-btn5">Como concluir uma atividade? <i class="fas fa-angle-down"></i>
+              </button> 
+          
+          
+  
+                  <div id="resposta-5">
+            
+                  Ao lado do campo que mostra a atividade, você verá um checkbox. Ao selecionar a caixa e confirmar a conclusão, a atividade estará finalizada.
+            
+                  </div>
+        
+  
+      
+  
+              <button id="action-btn6">Como alterar o tema da página? <i class="fas fa-angle-down"></i>
+              </button> 
+          
+  
+                <div id="resposta-6">
+                Seguindo para o seu perfil, você encontrará um ícone de personalização. Um menu de temas irá se abrir ao clicar sobre ele. Basta escolher um e confirmar.  
+                
+                  
+                </div>
+
+                <button id="action-btn7">Como alterar senha e dados do cadastro? <i class="fas fa-angle-down"></i> </button>
+
+                <div id="resposta-7">
+                    No menu à esquerda existe o ícone de configurações, lá você encontrá uma aba de alteração de dados cadastrais e poderá mudar a senha, email e informações referentes a sua conta.   
+
+                </div>
+
+
+            </div>
+                <div class="caixa-explicacoes"> Aqui você pode tirar suas dúvidas e entender mais sobre o funcionamento da Tina. Você irá aprender como se cria uma atividade ou um hábito. Como personalizar o site, escolhendo temas e definindo atribuições por prioridades. Também aprenderá como ser notificado por email quando uma determinada atividade está prestes a começar ou acabar, como alterar dados cadastrais e entre outras coisas. </div>
+            </div>
+            <button class="menu" type="button">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </main>
+        <aside>
+            <div class="menu-visualizacao">
+                <button class="visualizacao-mes" type="button"><img src="src/img/mensal.png" alt="Mensal">
+                </button>
+                
+                <button class="visualizacao-semana" type="button"><img src="src/img/semanal.png">
+                </button>
+
+                <button class="visualizacao-diaria" type="button">
+                    <img src="src/img/diaria.png">
+                </button>
+
+            </div>
+
+            <div class="menu-listas">
+                <button class="itens" type="button">
+                    <img src="src/img/item.png">
+                </button>
+
+                <button class="habitos" type="">
+                    <img src="src/img/habitos.png">
+                </button>
+
+            </div>
+
+            <div class="menu-criacao">
+                <button class="criacao-atividade" type="button">
+                    <img src="src/img/atividade.png">
+                </button>
+
+                <button class="criacao-item" type="button">
+                    <img src="src/img/item.png">
+                </button>
+
+                <button class="criacao-habito" type="button">
+                    <img src="src/img/habitos.png">
+                </button>
+
+                <button class="criacao-categoria" type="button">
+                    <img src="src/img/categoria.png">
+                </button>
+
+            </div>
+
+            <div class="menu-ferramentas">
+                <button class="ajuda" type="button">
+                    <img src="src/img/ajuda.png">
+                    <button class="ferramentas" type="button">
+                        <img src="src/img/configuracoes.png">
+                    </button>
+            </div>
+        </aside>
+        <footer>Rodapé</footer>
+    </div>
+</body>
+
+</html>
