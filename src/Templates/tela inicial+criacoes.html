@@ -35,7 +35,8 @@
                         Lista de Itens
                         <a href="#" onclick="onOff('item')" class="button"><img src="../Images/item.png" alt="Item"></a>
                         <div id="todos-itens">
-                            <div id="cada-item" class="cada-item" onclick="abrirModalItem(event)" style="display: none;">
+                            <div id="cada-item" class="cada-item" onclick="abrirModalItem(event)"
+                                style="display: none;">
                             </div>
                         </div>
                     </div>
@@ -44,7 +45,8 @@
                         <a href="#" onclick="onOff('habito')" class="button"><img src="../Images/lista-habitos.png"
                                 alt="Hábitos"></a>
                         <div id="todos-habitos">
-                            <div id="cada-habito" class="cada-habito" onclick="abrirModalHabito(event)" style="display: none;">
+                            <div id="cada-habito" class="cada-habito" onclick="abrirModalHabito(event)"
+                                style="display: none;">
                             </div>
                         </div>
                     </div>
@@ -61,7 +63,7 @@
                         </div>
                     </div>
 
-    
+
                     <div id="weekdays">
                         <div>Domingo</div>
                         <div>Segunda</div>
@@ -71,12 +73,12 @@
                         <div>Sexta</div>
                         <div>Sábado</div>
                     </div>
-    
+
                     <div id="calendar"></div>
-    
+
                 </div>
             </div>
-            
+
             <button class="menu" type="button">
                 <i class="fa-solid fa-plus"></i>
             </button>
@@ -202,7 +204,8 @@
                     <a href="#" onclick="onOff('atualizar-atividade')"><i class="fa-solid fa-x"></i></a>
                 </div>
 
-                <form id="form-atualizar-atividade" class="formulario" action="/" method="POST" onsubmit="checkFields(event)">
+                <form id="form-atualizar-atividade" class="formulario" action="/" method="POST"
+                    onsubmit="checkFields(event)">
                     <div class="campos">
                         <label for="titulo">Título: </label>
                         <input id="atualizar-titulo" class="titulo" type="text" name="titulo">
@@ -210,7 +213,8 @@
 
                     <div class="campos">
                         <label for="descricao">Descrição: </label>
-                        <textarea id="atualizar-descricao" class="descricao" name="descricao" cols="30" rows="10"></textarea>
+                        <textarea id="atualizar-descricao" class="descricao" name="descricao" cols="30"
+                            rows="10"></textarea>
                     </div>
 
                     <div class="data">
@@ -301,14 +305,17 @@
                             <option value="Alta">Alta</option>
                         </select>
                     </div>
-                    <button id="btn-criar-item">Criar</button>
-                    <button id='btn-atualizar-item' onclick="atualizarItem()" style="display: none;">Atualizar</button>
-                    <button id='btn-remover-item' onclick="removerItem()" style="display: none">Remover</button>
+                    <div id="div-botoes-item">
+                        <button id="btn-criar-item">Criar</button>
+                        <button id='btn-atualizar-item' onclick="atualizarItem()"
+                            style="display: none;">Atualizar</button>
+                        <button id='btn-remover-item' onclick="removerItem()" style="display: none">Remover</button>
+                    </div>
                 </form>
             </div>
         </div>
 
-        
+
 
         <div id="modal-habito" class="hide">
             <div class="novo-habito">
@@ -363,9 +370,11 @@
                             <option value="mensalmente">Mensalmente </option>
                         </select>
                     </div>
-                    <button id="btn-criar-habito">Criar</button>
-                    <button id='btn-atualizar-habito' onclick="atualizarHabito()" style="display: none;">Atualizar</button>
-                    <button id='btn-remover-habito' onclick="removerHabito()" style="display: none">Remover</button>
+                    <div id="div-botoes-habito">
+                        <button id="btn-criar-habito">Criar</button>
+                        <button id='btn-atualizar-habito' onclick="atualizarHabito()"    style="display: none;">Atualizar</button>
+                        <button id='btn-remover-habito' onclick="removerHabito()" style="display: none">Remover</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -388,7 +397,7 @@
                             <option value="#0000FF" selected>Azul </option>
                             <option value="#000000">Vermelho </option>
                             <option value="#000033">Verde </option>
-                                                <option value=" #FF00FF">Amarelo </option>
+                            <option value=" #FF00FF">Amarelo </option>
                         </select>
                     </div>
                     <button id="criar-categoria" type="button">Criar</button>
@@ -402,6 +411,7 @@
     <script src="atualizarAtividade.js"></script>
     <script src="inserirAtividadeCalendario.js"></script>
     <script src="calendarioMensal.js"></script>
+    <script src="crud-item.js"></script>
 </body>
 
 </html>

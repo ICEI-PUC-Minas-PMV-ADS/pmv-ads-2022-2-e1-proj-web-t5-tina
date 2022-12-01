@@ -488,7 +488,7 @@ footer {
 }
 
 
-/*modal-atividade*/
+/*modal-atividade, item, categoria, habito*/
 #modal-atividade,
 #modal-atualizar-atividade,
 #modal-item,
@@ -532,10 +532,10 @@ footer {
 }
 
 #modal-atividade .nova-atividade .cabecalho,
-#modal-item .nova-item .cabecalho,
+#modal-item .novo-item .cabecalho,
 #modal-atualizar-atividade .atualizar-atividade .cabecalho,
 #modal-categoria .nova-categoria .cabecalho,
-#modal-habito .nova-habito .cabecalho {
+#modal-habito .novo-habito .cabecalho {
     display: flex;
     justify-content: space-between;
     padding-bottom: 15px;
@@ -543,10 +543,10 @@ footer {
 
 
 #modal-atividade .nova-atividade .cabecalho h1,
-#modal-item .nova-item .cabecalho h1,
+#modal-item .novo-item .cabecalho h1,
 #modal-atualizar-atividade .atualizar-atividade h1,
 #modal-categoria .nova-categotia .cabecalho h1,
-#modal-habito .nova-habito .cabecalho h1 {
+#modal-habito .novo-habito .cabecalho h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: x-large;
 }
@@ -646,7 +646,9 @@ form button {
     
 }
 
-#div-criar-atividade {
+#div-criar-atividade,
+#div-botoes-item,
+#div-botoes-habito {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -655,7 +657,13 @@ form button {
 #criar-atividade,
 #atualizar,
 #excluir,
-#concluir {
+#concluir,
+#btn-criar-item,
+#btn-atualizar-item,
+#btn-remover-item,
+#btn-criar-habito,
+#btn-atualizar-habito,
+#btn-remover-habito {
     background-color: rgb(223, 39, 39);
     border: none;
 
@@ -675,14 +683,19 @@ form button {
 
     vertical-align: bottom;
 
-
     transition: 400ms;
 }
 
 #criar-atividade:hover,
 #atualizar:hover,
 #excluir:hover,
-#concluir:hover {
+#concluir:hover,
+#btn-criar-item:hover,
+#btn-atualizar-item:hover,
+#btn-remover-item:hover,
+#btn-criar-habito:hover,
+#btn-atualizar-habito:hover,
+#btn-remover-habito:hover {
 
     background-color: #ff616199;
     text-decoration: none;
@@ -692,7 +705,8 @@ form button {
     border: solid 2px rgb(209, 45, 45) !important;
 }
 
-.cada-item, .cada-habito {
+.cada-item,
+.cada-habito {
     width: 97%;
     padding: 10px;
     height: 10%;
@@ -705,25 +719,31 @@ form button {
     justify-content: space-between;
     text-align: left;
 }
-#todos-itens, #todos-habitos {
+#todos-itens,
+#todos-habitos {
     height: 90%;
     margin: 1%;
     padding-top: 2%;
 }
-#todos-itens.addScroll, #todos-habitos.addScroll {
+
+#todos-itens.addScroll,
+#todos-habitos.addScroll {
     overflow: auto;
 }
 
-#todos-itens::-webkit-scrollbar, #todos-habitos::-webkit-scrollbar {
+#todos-itens::-webkit-scrollbar,
+#todos-habitos::-webkit-scrollbar {
     width: 0.7em;
 }
 
-#todos-itens::-webkit-scrollbar-track, #todos-habitos::-webkit-scrollbar-track {
+#todos-itens::-webkit-scrollbar-track,
+#todos-habitos::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 15px;
 }
 
-#todos-itens::-webkit-scrollbar-thumb, #todos-habitos::-webkit-scrollbar-thumb {
+#todos-itens::-webkit-scrollbar-thumb,
+#todos-habitos::-webkit-scrollbar-thumb {
     background-color: rgba(217, 217, 217, 0.58);
     outline: 1px solid white;
     border-radius: 10px;
