@@ -144,20 +144,20 @@ function onOff(type, action = null) {
             if (botao.id !== 'atualizar-atividade' && document
             .querySelector("#modal-atualizar-atividade")
             .classList
-            .toggle("hide")&& botao.parentElement.classList.contains('criacao-atividade')) {
-                botao.reAttribute('onclick', "onOff('atividade')")
+            .toggle("hide") && botao.parentElement.classList.contains('criacao-atividade')) {
+                botao.setAttribute('onclick', "onOff('atividade')")
             }
             if (botao.id !== 'atualizar-atividade' && document
             .querySelector("#modal-atualizar-atividade")
             .classList
-            .toggle("hide")&& botao.parentElement.classList.contains('criacao-item')) {
-                botao.reAttribute('onclick', "onOff('item')")
+            .toggle("hide") && botao.parentElement.classList.contains('criacao-item')) {
+                botao.setAttribute('onclick', "onOff('item')")
             }
             if (botao.id !== 'atualizar-atividade' && document
             .querySelector("#modal-atualizar-atividade")
             .classList
-            .toggle("hide")&& botao.parentElement.classList.contains('criacao-habito')) {
-                botao.reAttribute('onclick', "onOff('habito')")
+            .toggle("hide") && botao.parentElement.classList.contains('criacao-habito')) {
+                botao.setAttribute('onclick', "onOff('habito')")
             }
         })
         }
