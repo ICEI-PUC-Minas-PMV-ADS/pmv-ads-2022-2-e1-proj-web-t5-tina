@@ -7,6 +7,30 @@ const dia = dataMinima.getDate()
 
 const dataMinimaFormatada = `${ano}-${mes < 9 ? '0' : '' }${mes + 1}-${dia}`
 
+function mostrarBotoesItens(action) {
+    if (action == "criar") {
+        document.getElementById('btn-criar-item').style.display = 'inline'
+        document.getElementById('btn-atualizar-item').style.display = 'none'
+        document.getElementById('btn-remover-item').style.display = 'none'
+    } else if (action == 'ler') {
+        document.getElementById('btn-criar-item').style.display = 'none'
+        document.getElementById('btn-atualizar-item').style.display = 'inline'
+        document.getElementById('btn-remover-item').style.display = 'inline'
+    }
+}
+
+function mostrarBotoesHabitos(action) {
+    if (action == 'criar') {
+        document.getElementById('btn-criar-habito').style.display = 'inline'
+        document.getElementById('btn-atualizar-habito').style.display = 'none'
+        document.getElementById('btn-remover-habito').style.display = 'none'
+    } else if (action == 'ler') {
+        document.getElementById('btn-criar-habito').style.display = 'none'
+        document.getElementById('btn-atualizar-habito').style.display = 'inline'
+        document.getElementById('btn-remover-habito').style.display = 'inline'
+    }
+}
+
 function onOff(type, action = null) {
     if (type == "atividade") {
         dataInicio.setAttribute('min', dataMinimaFormatada)
@@ -21,14 +45,14 @@ function onOff(type, action = null) {
         document.querySelector("#modal-item").classList.toggle("addScroll")
         limparCampos()
         limparErros()
-        mostrarBotoes(action)
+        mostrarBotoesItens(action)
     }
     else if (type == "habito") {
         document.querySelector("#modal-habito").classList.toggle("hide")
         document.querySelector("#modal-habito").classList.toggle("addScroll")
         limparCampos()
         limparErros()
-        mostrarBotoesHabito(action)
+        mostrarBotoesHabitos(action)
     }
     else if (type == "categoria") {
         document.querySelector("#modal-categoria").classList.toggle("hide")
@@ -41,7 +65,7 @@ function onOff(type, action = null) {
         limparErrosEdicao()
     }
 }
-
+/*
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //LocalStorage de Item
 const getDadosItem = () => JSON.parse(localStorage.getItem("dbItens")) ?? [];
@@ -56,7 +80,7 @@ const inputsItem = [itemTitulo, itemDescricao, itemCategoria, itemPrioridade]
 
 //Exibir Lista de Itens
 var listaItens = document.querySelector("#todos-itens")
-function exibirListaItens() {
+export function exibirListaItens() {
     listaItens.classList.toggle("addScroll")
 
     var divModelo = document.getElementById('cada-item')
@@ -69,7 +93,7 @@ function exibirListaItens() {
         listaItens.appendChild(cadaItem)
     })
 }
-
+/*
 function mostrarBotoes(action) {
     if (action == "criar") {
         document.getElementById('btn-criar-item').style.display = 'inline'
@@ -208,7 +232,7 @@ const inputsHabito = [habitoTitulo, habitoDescricao, habitoDataInicio, habitoDat
 
 //Exibir Lista de Hábito
 var listaHabitos = document.querySelector("#todos-habitos")
-function exibirListaHabitos() {
+export function exibirListaHabitos() {
     listaHabitos.classList.toggle("addScroll")
 
     var divModelo = document.getElementById('cada-habito')
@@ -353,11 +377,17 @@ function removerHabito() {
         setDadosHabito(db)
     }
 }
+*/
+function filtrarCategoria(){
+    alert("entrou na filtrar")
+    document.getElementById("filtrar-categoria").classList.toggle('hide')
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-document.getElementById('btn-criar-item').addEventListener('click', criarItem)
-document.getElementById('btn-criar-habito').addEventListener('click', criarHabito)
+//document.getElementById('btn-criar-item').addEventListener('click', criarItem)
+//document.getElementById('btn-criar-habito').addEventListener('click', criarHabito)
+document.getElementById('botao-filtrar').addEventListener('click', filtrarCategoria)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

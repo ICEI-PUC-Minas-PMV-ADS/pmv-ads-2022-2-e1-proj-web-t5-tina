@@ -19,10 +19,12 @@
             <a href="#" class="botao-logo">Tina</a>
             <button id="botao-hoje" class="botao-hoje" type="button">Hoje</button>
             <div id="cabecalho-direita">
-                <button class="botao-filtrar" type="button">
+                <button id="botao-filtrar" name="botao-filtrar" type="button">
                     <i class="fa-solid fa-filter"></i>
                     Filtrar
                 </button>
+                <input id="filtrar-categoria" type="text" name="search" placeholder="Search animals.." class="hide">
+
                 <button class="botao-perfil">
                     <i class="fa-solid fa-user"></i>
                 </button>
@@ -372,7 +374,8 @@
                     </div>
                     <div id="div-botoes-habito">
                         <button id="btn-criar-habito">Criar</button>
-                        <button id='btn-atualizar-habito' onclick="atualizarHabito()"    style="display: none;">Atualizar</button>
+                        <button id='btn-atualizar-habito' onclick="atualizarHabito()"
+                            style="display: none;">Atualizar</button>
                         <button id='btn-remover-habito' onclick="removerHabito()" style="display: none">Remover</button>
                     </div>
                 </form>
@@ -406,12 +409,15 @@
         </div>
         <footer>Desenvolvido por Diana, Ellen, Gabriela, Juliana, Pedro e Pedro.</footer>
     </div>
+    
     <script src="scripts.js"></script>
     <script src="criar-atividade.js"></script>
     <script src="atualizarAtividade.js"></script>
-    <script src="inserirAtividadeCalendario.js"></script>
-    <script src="calendarioMensal.js"></script>
     <script src="crud-item.js"></script>
+    <script src="crud-habito.js"></script>
+    <script src="inserirAtividadeCalendario.js"></script>
+    <script src="exibir-listas.js"></script>
+    <script src="calendarioMensal.js"></script>
 </body>
 
 </html>
