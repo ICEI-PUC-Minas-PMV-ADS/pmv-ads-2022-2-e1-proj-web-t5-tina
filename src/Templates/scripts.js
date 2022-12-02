@@ -5,7 +5,7 @@ const ano = dataMinima.getFullYear()
 const mes = dataMinima.getMonth()
 const dia = dataMinima.getDate()
 
-const dataMinimaFormatada = `${ano}-${mes < 9 ? '0' : '' }${mes + 1}-${dia}`
+const dataMinimaFormatada = `${ano}-${mes < 9 ? '0' : '' }${mes + 1}-${dia < 10 ? '0' : ''}${dia}`
 
 // botões
 const botoes = document.querySelectorAll('.button')
@@ -144,19 +144,19 @@ function onOff(type, action = null) {
             if (botao.id !== 'atualizar-atividade' && document
             .querySelector("#modal-atualizar-atividade")
             .classList
-            .toggle("hide") && botao.parentElement.classList.contains('criacao-atividade')) {
+            .contains("hide") && botao.parentElement.classList.contains('criacao-atividade')) {
                 botao.setAttribute('onclick', "onOff('atividade')")
             }
             if (botao.id !== 'atualizar-atividade' && document
             .querySelector("#modal-atualizar-atividade")
             .classList
-            .toggle("hide") && botao.parentElement.classList.contains('criacao-item')) {
+            .contains("hide") && botao.parentElement.classList.contains('criacao-item')) {
                 botao.setAttribute('onclick', "onOff('item')")
             }
             if (botao.id !== 'atualizar-atividade' && document
             .querySelector("#modal-atualizar-atividade")
             .classList
-            .toggle("hide") && botao.parentElement.classList.contains('criacao-habito')) {
+            .contains("hide") && botao.parentElement.classList.contains('criacao-habito')) {
                 botao.setAttribute('onclick', "onOff('habito')")
             }
         })
