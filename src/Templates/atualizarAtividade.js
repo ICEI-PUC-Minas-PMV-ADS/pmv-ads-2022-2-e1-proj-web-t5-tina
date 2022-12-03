@@ -1,3 +1,5 @@
+// CRUD - atualizar Atividade
+
 var atividadeASerAtualizada;
 var atividadeASerExcluida;
 var index = 0
@@ -30,7 +32,7 @@ const preencherCamposModal = (atividadeASerAtualizada) => {
 
 const abrirModalUpdateExcluir = (event) => {
 
-    if (event.target.id != "") {
+    if (event.target.id != "" && event.target.id != "calendar" && event.target.id != "currentDay") {
         onOff('atualizar-atividade')
 
         getDados().forEach(atividade => {
@@ -111,20 +113,47 @@ const salvarAtividadeAtualizada = () => {
         if (isSameAtividade(atividadeAtualizada)) {
             atualizarAtividade(atividadeAtualizada)
             load();
+            onOff('atualizar-atividade')
         }
-        onOff('atualizar-atividade')
     }
 }
 
 // Excluir Atividade
 
 const excluirAtividade = () => {
+    let confirmacao = confirm('Realmente deseja excluir a atividade selecionada? A ação não pode ser desfeita.')
+    if (confirmacao) {
+        const dbAtividade = getDados()
+        dbAtividade.splice(index, 1)
+        setDados(dbAtividade)
+        load()
+        onOff('atualizar-atividade')
+    } else {
+        onOff('atualizar-atividade')
+    }
 
-    const dbAtividade = getDados()
-    dbAtividade.splice(index, 1)
-    setDados(dbAtividade)
-    load()
-    onOff('atualizar-atividade')
+}
+
+const concluirAtividade = () => {
+
+    const partesData = dataFimEditado.value.split('-')
+    const dataFormatada = new Date(partesData[0], partesData[1] - 1, partesData[2], 0, 0, 0, 0)
+    const dataAtual = new Date()
+    const anoAtual = dataAtual.getFullYear()
+    const mesAtual = dataAtual.getMonth()
+    const diaAtual = dataAtual.getDate()
+    const dataAtualString = `${anoAtual}-${mes < 9 ? '0' : '' }${mesAtual + 1}-${diaAtual}`
+    const partesDataAtual = dataAtualString.split('-')
+    const dataAtualNoTime = new Date(partesDataAtual[0], partesDataAtual[1] - 1, partesDataAtual[2], 0, 0, 0, 0)
+    
+    if (dataFormatada >= dataAtualNoTime) {
+        new Audio('parabenizacao.mp3').play()
+        const dbAtividade = getDados()
+        dbAtividade.splice(index, 1)
+        setDados(dbAtividade)
+        load()
+        onOff('atualizar-atividade')
+    }
 }
 
 document.querySelector('#calendar')
@@ -136,6 +165,5 @@ document.querySelector('#atualizar')
 document.querySelector("#excluir")
     .addEventListener('click', excluirAtividade)
 
-
-
-
+document.querySelector("#concluir")
+    .addEventListener('click', concluirAtividade)

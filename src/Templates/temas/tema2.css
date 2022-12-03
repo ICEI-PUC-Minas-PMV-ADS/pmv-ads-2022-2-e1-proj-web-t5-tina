@@ -1,0 +1,17 @@
+:root {
+    /* --cor-background: rgb(223, 22, 39); */
+    --cor-botoes-visualizacao: #3460db;
+    --cor-botoes-listas: #3460db;
+    --cor-botoes-criacao: #3460db;
+    --cor-botoes-ferramentas: #3460db;
+    --cor-aside: #e5e9f7;
+    --cor-header: #e5e9f7;
+    --cor-bory: ;
+    --cor-botoes-houver: #1a2d61;
+    --cor-borda: lightgray;
+    --cor-shadow: lightblue;
+    --color-font: black;
+    --cor-background2: ;
+    --cor-background3: #e5e9f7;
+    --cor-fundo-titulo: #5f83e6;
+}

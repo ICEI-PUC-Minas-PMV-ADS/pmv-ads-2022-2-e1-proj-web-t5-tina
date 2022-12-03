@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Tina</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="#" class="botao-logo">
+                <img id="logo" src="logo3.png" title="logo Tina">
+            </a>
+        </header>
+        <main>
+            <div class="logo-grande">
+                <img id="logopag" src="logo2.png" title="logo Tina">
+            </div>
+            <div class="texto-explicativo">
+                Tina é uma ferramenta que te auxilia na gestão de tempo! Aqui você pode registrar suas atividades,
+                compromissos e até mesmo seus hábitos! Com a Tina, você poderá classificar seus afazeres em
+                diferentes níveis de prioridade e em diferentes categorias. As categorias serão só suas, você poderá
+                criá-las de acordo com sua necessidade e gosto! Além disso, muitas outras funcionalidades, criadas
+                para auxiliar a sua experiência, estão disponíveis. Cadastre-se e descubra como gerir seu tempo de
+                forma prática!
+            </div>
+            <div class="avatar">
+                <img src="tinaavatar.png" title="Avatar Tina" width="415" height="415">
+            </div>
+            <div class="input-usuario">
+
+                <div id="msgNaoEncontrado"></div>
+
+                <div class="label-float">
+                    <label id="labelemail" for="usuario">E-mail:</label>
+                    <input type="text" id="email" placeholder="" required>
+                </div>
+
+                <div class="label-float">
+                    <label id="senhaLabel" for="senha">Senha:</label>
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                    <input type="password" id="senha" placeholder=" " required>
+                </div>
+                <div>
+                    <button id="entrar" type="button">Entrar</button>
+                </div>
+                <p id="fazerconta"> Ainda não tem uma conta?
+                    <a href='cadastro.html'> Cadastre-se </a>
+                </p>
+            </div>
+        </main>
+        <footer>
+            Rodapé
+        </footer>
+
+    </div>
+    <script type="text/javascript" src="cadastro.js"></script>
+
+    <script type="text/javascript" src="login.js"></script>
+</body>
+
+</html>

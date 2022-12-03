@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  display: block;
+  height: 920px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  grid-gap: 10px;
+  height: 100%;
+}
+
+header {
+  grid-column: 1/13;
+  grid-row: 1/2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  border-bottom: solid 1px lightgray;
+  box-shadow: 1px 1px 2px lightblue;
+}
+
+.botao-logo {
+  padding: 25px;
+  border-right: solid 1px lightgray;
+  text-decoration: none;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+}
+
+#logo {
+  height: 25px;
+}
+
+main {
+  grid-column: 1/13;
+  grid-row: 2/12;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+} 
+
+#logogrande {
+  grid-column: 1/5;
+  grid-row: 5/5;
+  margin-left: 50px;
+}
+
+#logopag {
+  border: 3px solid rgb(0, 0, 0);
+  margin-left: 50px;
+}
+
+
+input[type=text],
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.label-float {
+  padding-top: 10px;
+}
+
+label{
+  font-size: large;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#tituloCad {
+  margin-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  width: 100%;
+  background-color: #F25E5E;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+}
+
+#avatarpag {
+  grid-column: 1/5;
+  grid-row: 1/5;
+  margin-left: 150px;
+  margin-top: 37px;
+}
+
+#cardpag {
+  grid-column: 3/5;
+  grid-row: 2/5;
+}
+
+.input-cad {
+  border-radius: 15px;
+  background-color: #f2f2f2;
+  padding: 30px 40px 30px 40px ;
+  width: 900px;
+  box-shadow: 1px 1px 8px lightblue;
+}
+
+#msgerror{
+  text-align: center;
+  color: #ff0000;
+  background-color: #ffbbbb;
+  padding: 10px;
+  border-radius: 40px;
+  display: none;
+}
+
+#msgsuccess{
+  text-align: center;
+  color: #00bb00;
+  background-color: #bbffbe;
+  padding: 10px;
+  border-radius: 40px;
+  display: none;
+}
+
+footer {
+  grid-column: 1/13;
+  grid-row: 12/13;
+  display: flex;
+  border-top: solid 1px lightgray;
+  box-shadow: 3px 3px 2px lightblue;
+  padding-left: 15px;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 1580px) {
+
+
+  }
+
+
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="shortcut icon" href="src/images/favicon.ico" type="image/x-icon"> -->
+    <link rel="stylesheet" href="perfil.css">
+    <script src="https://kit.fontawesome.com/e7dd02bc5b.js" crossorigin="anonymous"></script>
+    <title>Tina</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a href="#" class="botao-logo">Tina</a>
+            <div id="cabecalho-direita">
+                <button id="btn_logout" class="botao-perfil">
+                    <i class="fa-solid fa-user"></i>
+                </button>
+            </div>
+        </header>
+        <div class="cabecalho-perfil">
+            <div>
+                <i class="fa-solid fa-caret-left"></i>
+                Voltar
+            </div>
+            <div class="perfil"> Perfil</div>
+        </div>
+        <main>
+            <div class="campofoto">
+                <div class="foto-perfil">
+                    <div id="display_image"></div>
+                    <div>
+                        <img id="imgPreview" src="" alt="Preview">
+                        <input type="file" id="image_input" accept="image/png, image/ppg">
+                        <button id="salvaFoto" >Salvar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="perfilinformacoes">
+                <div class="dados-do-perfil"> Dados do perfil</div>
+                <div class="cabecalhodados">Informações pessoais</div>
+                <div class="infopessoais">
+                    <form action="#" class="formsinfo">
+                        <label for="nome">Nome completo:</label>
+                        <input type="text" id="nome" name="nome"><br>
+                        <label for="email">E-mail:</label>
+                        <input type="text" id="email" name="email"><br>
+                        <input type="checkbox" id="notifemail" name="notifemail" value="notifemail">
+                        <label for="notifemail"> Desejo receber notificações por E-mail</label><br>
+                    </form>
+                </div>
+                <!-- <div class="seguranca">
+                    <div class="segsenha">Segurança </div>
+                    <div class="formulariosenha">
+                        <form action="#2">
+                            <label for="senha">Alterar senha:</label>
+                            <input type="text" id="senha" name="senha"><br>
+                            <label for="confirmSenha">Confirmar nova senha:</label>
+                            <input type="text" id="confirmSenha" name="confirmSenha"><br>
+                        </form>
+                    </div>
+                </div> -->
+                <!-- <input type="salvalteracoes" value="Salvar alterações"> -->
+            </div>
+        </main>
+        <footer>Rodapé</footer>
+    </div>
+</body>
+
+
+</html>
+<script type="text/javascript" src="login.js"></script>
+
+<script type="text/javascript" src="cadastro.js"></script>
+<script type="text/javascript" src="perfil.js"></script>

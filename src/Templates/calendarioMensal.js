@@ -28,7 +28,6 @@ function load() {
 
     document.getElementById('monthDisplay').innerText =
         `${dt.toLocaleDateString('pt-br', { month: 'long' })} ${year}`;
-        
 
     calendar.innerHTML = '';
 
@@ -65,7 +64,16 @@ function initButtons() {
         nav--;
         load();
     });
+
+    document.getElementById('botao-hoje').addEventListener('click', () => {
+        nav = 0;
+        load();
+    });
 }
+
+exibirListaItens()
+exibirListaHabitos()
 
 initButtons();
 load();
+

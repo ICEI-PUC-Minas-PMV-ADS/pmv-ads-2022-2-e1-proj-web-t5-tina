@@ -1,6 +1,6 @@
 # Template padrão do site
 
-A elaboração do desing e a disposição dos elementos baseou-se no modelo feito anteriormente no Figma. Para fornecer responsividade ao layouta da página, usou-se o recurso de Media query para adequar os padrões a diferentes tamanhos de telas. Além disso, o menu de opções foi concentrado em um único botão para telas de tamanho a baixo de 600px para adequar melhor as ferramentas e visualizações da tela como um todo para o usuário.
+A elaboração do design e a disposição dos elementos baseou-se no modelo feito anteriormente no Figma. Para fornecer responsividade ao layout da página usou-se o recurso de <i>Media query</i> para adequar os padrões a diferentes tamanhos de telas. Além disso, o menu de opções foi concentrado em um único botão para telas de tamanho a baixo de 600px para adequar melhor as ferramentas e visualizações da tela como um todo para o usuário.
 
 ## Tela Inicial
 
