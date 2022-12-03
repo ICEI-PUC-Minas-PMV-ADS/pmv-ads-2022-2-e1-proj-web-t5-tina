@@ -524,10 +524,10 @@ footer {
 }
 
 #modal-atividade .nova-atividade .cabecalho,
-#modal-item .nova-item .cabecalho,
+#modal-item .novo-item .cabecalho,
 #modal-atualizar-atividade .atualizar-atividade .cabecalho,
 #modal-categoria .nova-categoria .cabecalho,
-#modal-habito .nova-habito .cabecalho {
+#modal-habito .novo-habito .cabecalho {
     display: flex;
     justify-content: space-between;
     padding-bottom: 15px;

@@ -12,20 +12,8 @@ const botoes = document.querySelectorAll('.button')
 
 function onOff(type, action = null) {
     if (type == "atividade") {
-        dataFim.disabled = true;
-        dataInicio.addEventListener('input', function() {
-            dataFim.disabled = false;
-        })
-        horarioFinal.disabled = true;
-        horarioInicio.addEventListener("input", function () {
-          horarioFinal.disabled = false;
-        });
         dataInicio.setAttribute('min', dataMinimaFormatada)
-        document
-          .getElementById("data-inicio")
-          .addEventListener("input", function () {
-            dataFim.setAttribute("min", dataInicio.value);
-          });
+        dataFim.setAttribute('min', dataMinimaFormatada)
         botoes.forEach(botao => {
             if (!botao.parentElement.classList.contains('criacao-atividade')) {
                 botao.removeAttribute('onclick')
@@ -41,9 +29,6 @@ function onOff(type, action = null) {
             .toggle("addScroll")
         limparCampos()
         limparErros()
-        if (document.querySelector("#modal-atividade").classList.contains('hide')) {
-            dataFim.removeAttribute('min');
-        }
         botoes.forEach(botao => {
             if (!botao.parentElement.classList.contains('criacao-atividade') &&
             document
@@ -58,13 +43,6 @@ function onOff(type, action = null) {
             .classList
             .contains('hide') && botao.parentElement.classList.contains('criacao-habito')) {
                 botao.setAttribute('onclick', "onOff('habito')")
-            }
-            if (!botao.parentElement.classList.contains('criacao-atividade') &&
-            document
-            .querySelector("#modal-atividade")
-            .classList
-            .contains('hide') && botao.parentElement.classList.contains('criacao-categoria')) {
-                botao.setAttribute('onclick', "onOff('categoria')")
             }
         })
     }
@@ -100,26 +78,9 @@ function onOff(type, action = null) {
             .contains('hide') && botao.parentElement.classList.contains('criacao-habito')) {
                 botao.setAttribute('onclick', "onOff('habito')")
             }
-            if (!botao.parentElement.classList.contains('criacao-item') &&
-            document
-            .querySelector("#modal-item")
-            .classList
-            .contains('hide') && botao.parentElement.classList.contains('criacao-categoria')) {
-                botao.setAttribute('onclick', "onOff('categoria')")
-            }
         })
     }
     else if (type == "habito") {
-        habitoDataFim.disabled = true;
-        habitoDataInicio.addEventListener("input", function () {
-          habitoDataFim.disabled = false;
-        });
-        habitoDataInicio.setAttribute("min", dataMinimaFormatada);
-        document
-          .getElementById("habito-data-inicio")
-          .addEventListener("input", function () {
-            habitoDataFim.setAttribute("min", habitoDataInicio.value);
-          });
         botoes.forEach(botao => {
             if (!botao.parentElement.classList.contains('criacao-habito')) {
                 botao.removeAttribute('onclick')
@@ -151,20 +112,8 @@ function onOff(type, action = null) {
             .contains('hide') && botao.parentElement.classList.contains('criacao-item')) {
                 botao.setAttribute('onclick', "onOff('item')")
             }
-            if (!botao.parentElement.classList.contains('criacao-habito') &&
-            document
-            .querySelector("#modal-habito")
-            .classList
-            .contains('hide') && botao.parentElement.classList.contains('criacao-categoria')) {
-                botao.setAttribute("onclick", "onOff('categoria')");
-            }
         })
     } else if (type == "categoria") {
-        botoes.forEach((botao) => {
-          if (!botao.parentElement.classList.contains("criacao-categoria")) {
-            botao.removeAttribute("onclick");
-          }
-        });
         document
             .querySelector("#modal-categoria")
             .classList
@@ -173,37 +122,6 @@ function onOff(type, action = null) {
             .querySelector("#modal-categoria")
             .classList
             .toggle("addScroll")
-        limparCampos();
-        limparErrosCategoria();
-        botoes.forEach((botao) => {
-          if (
-            !botao.parentElement.classList.contains("criacao-categoria") &&
-            document
-              .querySelector("#modal-categoria")
-              .classList.contains("hide") &&
-            botao.parentElement.classList.contains("criacao-atividade")
-          ) {
-            botao.setAttribute("onclick", "onOff('atividade')");
-          }
-          if (
-            !botao.parentElement.classList.contains("criacao-categoria") &&
-            document
-              .querySelector("#modal-categoria")
-              .classList.contains("hide") &&
-            botao.parentElement.classList.contains("criacao-item")
-          ) {
-            botao.setAttribute("onclick", "onOff('item')");
-          }
-          if (
-            !botao.parentElement.classList.contains("criacao-categoria") &&
-            document
-              .querySelector("#modal-categoria")
-              .classList.contains("hide") &&
-            botao.parentElement.classList.contains("criacao-habito")
-          ) {
-            botao.setAttribute("onclick", "onOff('habito')");
-          }
-        });
     } else if (type == "atualizar-atividade") {
         dataInicioEditado.setAttribute('min', dataMinimaFormatada)
         dataFimEditado.setAttribute('min', dataMinimaFormatada)
@@ -240,17 +158,9 @@ function onOff(type, action = null) {
             .contains("hide") && botao.parentElement.classList.contains('criacao-habito')) {
                 botao.setAttribute('onclick', "onOff('habito')")
             }
-            if (botao.id !== 'atualizar-atividade' && document
-            .querySelector("#modal-atualizar-atividade")
-            .classList
-            .contains("hide") && botao.parentElement.classList.contains('criacao-categoria')) {
-                botao.setAttribute('onclick', "onOff('categoria')")
-            }
         })
+        }
     }
-}
-
-
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //LocalStorage de Item
@@ -571,19 +481,4 @@ document.getElementById('btn-criar-habito').addEventListener('click', criarHabit
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Criar categoria
-const titulo_categoria = document.getElementById('titulo')
-const cor_categoria = document.getElementById('cor-categoria')
-
-const getCategoria = () => JSON.parse(localStorage.getItem("dbCategoria")) ?? [];
-const setCategoria = (dbCategoria) => localStorage.setItem("dbCategoria", JSON.stringify(dbCategoria));
-
-const criarCategoria = (categoria) => {
-    const dbCategoria = getDados();
-    dbCategoria.push(categoria);
-    setDados(dbCategoria)
-}
-
-
-document.getElementById('criar-categoria').addEventListener('click', criarCategoria())
 
