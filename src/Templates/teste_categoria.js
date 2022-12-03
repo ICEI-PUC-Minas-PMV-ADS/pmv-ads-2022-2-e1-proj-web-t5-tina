@@ -181,6 +181,6 @@ function condicional() {
     const categoriaSelecta = document.getElementById("atualizar-categoria");
     const categoriaLista = getLocalStorage()
     for (a in categoriaLista) {
-        option = new Option(categoriaLista[a].nome, a);
+        option = new Option(categoriaLista[a].nome, categoriaLista[a].nome);
         categoriaSelecta.options[categoriaSelecta.options.length] = option;
     }
