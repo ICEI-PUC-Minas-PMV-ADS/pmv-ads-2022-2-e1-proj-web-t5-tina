@@ -173,7 +173,7 @@ function condicional() {
     const categoriaSelect = document.getElementById("categoria");
     const categoriaList = getLocalStorage()
     for (o in categoriaList) {
-        option = new Option(categoriaList[o].nome, o);
+        option = new Option(categoriaList[o].nome, categoriaList[o].nome);
         categoriaSelect.options[categoriaSelect.options.length] = option;
     }
 
@@ -181,6 +181,6 @@ function condicional() {
     const categoriaSelecta = document.getElementById("atualizar-categoria");
     const categoriaLista = getLocalStorage()
     for (a in categoriaLista) {
-        optiona = new Option(categoriaLista[a].nome, a);
-        categoriaSelecta.options[categoriaSelecta.options.length] = optiona;
+        option = new Option(categoriaLista[a].nome, a);
+        categoriaSelecta.options[categoriaSelecta.options.length] = option;
     }
