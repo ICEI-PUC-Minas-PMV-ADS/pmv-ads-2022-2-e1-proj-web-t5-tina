@@ -16,6 +16,10 @@ function onOff(type, action = null) {
         dataInicio.addEventListener('input', function() {
             dataFim.disabled = false;
         })
+        horarioFinal.disabled = true;
+        horarioInicio.addEventListener("input", function () {
+          horarioFinal.disabled = false;
+        });
         dataInicio.setAttribute('min', dataMinimaFormatada)
         document
           .getElementById("data-inicio")
