@@ -115,7 +115,7 @@
                             alt="Hábitos"></a>
                 </button>
                 <button class="criacao-categoria" type="button">
-                    <img src="../Images/categoria.png" alt="Categoria">
+                                <a href="#" onclick="onOff('categoria')" class="button"><img src="../Images/iconecategoria.png" alt="Categoria"></a>
                 </button>
             </div>
             <div class="menu-ferramentas">
@@ -370,31 +370,33 @@
             </div>
         </div>
 
-        <div id="modal-categoria" class="hide">
-            <div class="nova-categoria">
-                <div class="cabecalho">
-                    <h1>Nova Categoria</h1>
-                    <a href="#" onclick="onOff('categoria')"><i class="fa-solid fa-x"></i></a>
-                </div>
-
-                <form action="/" method="POST" onsubmit="checkFields(event)">
-                    <div class="campos">
-                        <label for="titulo">Título: </label>
-                        <input id="titulo" class="titulo" type="text" name="titulo" required>
-                    </div>
-                    <div class="campos">
-                        <label for="cor-categoria">Cor: </label>
-                        <select id="cor-categoria" name="cor-categoria" type="color">
-                            <option value="#0000FF" selected>Azul </option>
-                            <option value="#000000">Vermelho </option>
-                            <option value="#000033">Verde </option>
-                                                <option value=" #FF00FF">Amarelo </option>
-                        </select>
-                    </div>
-                    <button id="criar-categoria" type="button">Criar</button>
-                </form>
-            </div>
         </div>
+            <div id="modal-categoria" class="hide">
+              <div class="nova-categoria">
+                  <div class="cabecalho">
+                      <h1>Nova Categoria</h1>
+                      <a href="#" onclick="onOff('categoria')"><i class="fa-solid fa-x"></i></a>
+                  </div>
+
+                  <form action="/" method="POST" onsubmit="checkFields(event)">
+                      <div class="campos">
+                          <label for="titulo">Título: </label>
+                          <input id="titulo" class="titulo" type="text" name="titulo" required>
+                      </div>
+                      <div class="campos">
+                          <label for="cor-categoria">Cor: </label>
+                          <select id="cor-categoria" name="cor-categoria" type="color">
+                              <option value="#0000FF" selected>Azul </option>
+                              <option value="#000000">Vermelho </option>
+                              <option value="#000033"">Verde </option>
+                              <option value="#FF00FF">Amarelo </option>
+                          </select>
+                      </div>
+                      <button id="criar-categoria" type="button">Criar</button>
+                  </form>
+              </div>
+          </div>
+      </div>  
         <footer>Desenvolvido por Diana, Ellen, Gabriela, Juliana, Pedro e Pedro.</footer>
     </div>
     <script src="scripts.js"></script>

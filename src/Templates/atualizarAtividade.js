@@ -121,7 +121,6 @@ const salvarAtividadeAtualizada = () => {
 // Excluir Atividade
 
 const excluirAtividade = () => {
-
     let confirmacao = confirm('Realmente deseja excluir a atividade selecionada? A ação não pode ser desfeita.')
     if (confirmacao) {
         const dbAtividade = getDados()
@@ -165,6 +164,6 @@ document.querySelector('#atualizar')
 
 document.querySelector("#excluir")
     .addEventListener('click', excluirAtividade)
-    
+
 document.querySelector("#concluir")
     .addEventListener('click', concluirAtividade)

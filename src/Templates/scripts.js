@@ -113,8 +113,7 @@ function onOff(type, action = null) {
                 botao.setAttribute('onclick', "onOff('item')")
             }
         })
-    }
-    else if (type == "categoria") {
+    } else if (type == "categoria") {
         document
             .querySelector("#modal-categoria")
             .classList
@@ -162,6 +161,7 @@ function onOff(type, action = null) {
         })
         }
     }
+    
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //LocalStorage de Item
 const getDadosItem = () => JSON.parse(localStorage.getItem("dbItens")) ?? [];
@@ -493,6 +493,5 @@ const criarCategoria = (categoria) => {
     dbCategoria.push(categoria);
     setDados(dbCategoria)
 }
-
 
 
