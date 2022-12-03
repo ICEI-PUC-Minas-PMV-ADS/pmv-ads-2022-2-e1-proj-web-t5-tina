@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="tela inicial+criacoes.css">
+    <script src="https://kit.fontawesome.com/e7dd02bc5b.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <title>Tina</title>
+</head>
+
+<div class="calendar-full">
+    <div class="calendar-month">
+      
+      <div id="full-clndr" class="clearfix">
+      <script type="text/template" id="full-clndr-template">
+              <div class="clndr-controls">
+                <div class="clndr-previous-button">‹</div>
+                <div class="month"><%= year %> <%= month %></div>
+                <div class="clndr-next-button">›</div>
+              </div>
+              <div class="clndr-grid">
+                <div class="days-of-the-week">
+                  <% _.each(daysOfTheWeek, function(day) { %>
+                    <div class="header-day"><%= day %></div>
+                  <% }); %>
+        </div>
+                <div class="days days-container">
+                  <% _.each(days, function(day) { %>
+                    <div class="<%= day.classes %> week-<%= moment(day.date).week() %>" data-week="<%= moment(day.date).week() %>" id="<%= day.id %>"><span class="day-number"><%= day.day %></span></div>
+                  <% }); %>
+        </div>
+        </div>
+        <div class="event-listing">
+                <div class="event-listing-title">
+                    Episodes Today
+                            <a href="#" class="x-button">x</a>
+                        </div>
+                <% _.each(eventsThisMonth, function(event) { %>
+                    <div class="event-item" id="event-<%=moment(event.date).format('YYYY-MM-DD')%>">
+                      <div class="event-item-image">
+                          <img src=<%= event.image %>>
+                                    </div>
+                      <div class="event-details">
+                        <div class="event-item-name"><%= event.title %></div>
+                        <div class="event-item-location"><%= event.show %></div>
+                        <div class="event-item-location"><%= event.episode %></div>
+                        <div class="event-item-location"><%= event.network %></div>
+                        <div class="event-item-location"><%= event.hours %></div>
+                        <div class="event-item-location">
+                            <a href=<%= event.url %> target="_blank">Homepage</a>
+                                        </div>
+                                    </div>
+                    </div>
+                  <% }); %>
+              </div>
+        </script>
+  </div>
+      
+      
+      
+    </div>
+    <div class="calendar-week">
+      calendar week
+            <div id="clndr-week">
+          <script type="text/template" id="clndr-week-template">
+            <div class="week-view">
+              <div class="date-range bg-red"><%= intervalStart.format('MMMM Do') %> - <%= intervalEnd.format('Do MMMM, YYYY') %></div>
+              <div class="days-of-the-week">
+                <% _.each(daysOfTheWeek, function(day) { %><div class="day-of-the-week"><%= day %></div><% }); %>
+              </div>
+              <div class="clndr-previous-button" data-week="<%= moment(intervalStart).week() - 1 %>">&lsaquo;</div>
+              <div class="days-container"  data-week="<%= moment(intervalStart).week() %>">
+                <% _.each(days, function(day) { %><div class="<%= day.classes %>">
+                  <span class="day-number"><%= day.day %></span>
+                  <div class="events">
+                    <% _.each(day.events, function(event){ %>
+                      <div class="event-item" id="event-<%=moment(event.date).format('YYYY-MM-DD')%>">
+                      <div class="event-item-image">
+                          <img src=<%= event.image %>>
+                                    </div>
+                      <div class="event-details">
+                        <div class="event-item-name"><%= event.title %></div>
+                        <div class="event-item-location"><%= event.show %></div>
+                        <div class="event-item-location"><%= event.episode %></div>
+                                    </div>
+                    </div>
+                    <% }); %>
+                  </div>
+                </div><% }); %>
+              </div>
+              <div class="clndr-next-button"  data-week="<%= moment(intervalStart).week() + 1 %>">&rsaquo;</div>
+            </div>
+          </script>
+        </div>
+  
+    </div>
+  </div>

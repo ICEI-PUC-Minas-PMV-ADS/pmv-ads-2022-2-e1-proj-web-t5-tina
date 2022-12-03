@@ -6,7 +6,6 @@ function inserirAtividades(dayString, daySquare) {
 
             const eventDiv = document.createElement('div');
             eventDiv.classList.add('event');
-            
 // Alterando a cor da atividade de acordo com a categoria 
 // pegos os dados salvo no LocalStorage e comparo o nome da categoria com a categoria declarada na atividade, depois checo qual a cor e aplico a estilização
             const getLocalStorage = () => JSON.parse(localStorage.getItem('db_categoria')) ?? []
@@ -32,3 +31,7 @@ function inserirAtividades(dayString, daySquare) {
         }
     });
 }
+
+
+
+

@@ -14,7 +14,7 @@ function load() {
     const day = dt.getDate();
     const month = dt.getMonth();
     const year = dt.getFullYear();
-
+    const semana_inicio = dt-7;
     const firstDayOfMonth = new Date(year, month, 1);
     const daysInMonth = new Date(year, month + 1, 0).getDate();
 
@@ -26,17 +26,16 @@ function load() {
     });
     const paddingDays = weekdays.indexOf(dateString.split(', ')[0]);
 
-    document.getElementById('monthDisplay').innerText =
+    document.getElementById('weeklytDisplay').inneText =
         `${dt.toLocaleDateString('pt-br', { month: 'long' })} ${year}`;
-        
 
     calendar.innerHTML = '';
 
-    for (let i = 1; i <= paddingDays + daysInMonth; i++) {
+    for (let i = 1; i <= paddingDays + semana_inicio; i++) {
         const daySquare = document.createElement('div');
         daySquare.classList.add('day');
-
-        const dayString = `${year}-${month < 9 ? '0' : '' }${month + 1}-${(i - paddingDays) < 10 ? '0' : ''}${i - paddingDays}`;
+/*o que a linha 38 faz? */
+        const dayString = dt;
 
         if (i > paddingDays) {
             daySquare.innerText = i - paddingDays;

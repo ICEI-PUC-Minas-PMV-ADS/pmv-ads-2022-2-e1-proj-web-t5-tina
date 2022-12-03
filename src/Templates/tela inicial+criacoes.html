@@ -13,11 +13,11 @@
     <title>Tina</title>
 </head>
 
-<body>
+<body onload="condicional()">
     <div class="container">
         <header>
             <a href="#" class="botao-logo">Tina</a>
-            <button id="botao-hoje" class="botao-hoje" type="button">Hoje</button>
+            <button class="botao-hoje" type="button">Hoje</button>
             <div id="cabecalho-direita">
                 <button class="botao-filtrar" type="button">
                     <i class="fa-solid fa-filter"></i>
@@ -28,25 +28,28 @@
                 </button>
             </div>
         </header>
+        <!-- <div class="cabecalho-calendario">
+            <div>
+                <i class="fa-solid fa-caret-left"></i>
+                Mês Anterior
+            </div>
+            <div>Mês</div>
+            <div>
+                Mês Posterior
+                <i class="fa-solid fa-caret-right"></i>
+            </div>
+        </div> -->
         <main>
             <div id="container-listas">
                 <div class="listas">
                     <div class="lista-itens">
                         Lista de Itens
                         <a href="#" onclick="onOff('item')" class="button"><img src="../Images/item.png" alt="Item"></a>
-                        <div id="todos-itens">
-                            <div id="cada-item" class="cada-item" onclick="abrirModalItem(event)" style="display: none;">
-                            </div>
-                        </div>
                     </div>
                     <div class="lista-habitos">
                         Lista de Hábitos
                         <a href="#" onclick="onOff('habito')" class="button"><img src="../Images/lista-habitos.png"
                                 alt="Hábitos"></a>
-                        <div id="todos-habitos">
-                            <div id="cada-habito" class="cada-habito" onclick="abrirModalHabito(event)" style="display: none;">
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -60,8 +63,6 @@
                             <button id="nextButton">Seguinte</button>
                         </div>
                     </div>
-
-    
                     <div id="weekdays">
                         <div>Domingo</div>
                         <div>Segunda</div>
@@ -71,12 +72,12 @@
                         <div>Sexta</div>
                         <div>Sábado</div>
                     </div>
-    
+
                     <div id="calendar"></div>
-    
+
                 </div>
             </div>
-            
+
             <button class="menu" type="button">
                 <i class="fa-solid fa-plus"></i>
             </button>
@@ -107,15 +108,15 @@
                             alt="Atividade"></a>
                 </button>
                 <button class="criacao-item" type="button">
-                    <a href="#" onclick="onOff('item', 'criar')" class="button"><img src="../Images/item.png"
-                            alt="Item"></a>
+                    <a href="#" onclick="onOff('item')" class="button"><img src="../Images/item.png" alt="Item"></a>
                 </button>
                 <button class="criacao-habito" type="button">
-                    <a href="#" onclick="onOff('habito', 'criar')" class="button"><img src="../Images/lista-habitos.png"
+                    <a href="#" onclick="onOff('habito')" class="button"><img src="../Images/lista-habitos.png"
                             alt="Hábitos"></a>
                 </button>
                 <button class="criacao-categoria" type="button">
-                                <a href="#" onclick="onOff('categoria')" class="button"><img src="../Images/iconecategoria.png" alt="Categoria"></a>
+                    <a href="#" onclick="onOff('categoria')" class="button"><img src="../Images/item.png"
+                            alt="Categoria"></a>
                 </button>
             </div>
             <div class="menu-ferramentas">
@@ -127,6 +128,53 @@
                 </button>
             </div>
         </aside>
+        <div id="modal-categoria" class="hide">
+            <div class="nova-categoria">
+                <div class="cabecalho">
+                    <h2>Categoria</h2>
+                    <a href="#" onclick="onOff('categoria')"><i class="fa-solid fa-x"></i></a>
+                </div>
+                <table id="tableClient" class="records">
+                    <thead>
+                        <tr>
+                            <th>Categoria</th>
+
+                            <th>Cor</th>
+
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="modal" id="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Nova categoria</h2>
+                            <div class="modal-close" id="modalClose">
+                            </div>
+                            <form id="form" class="modal-form">
+                                <input type="text" id="nome" data-index="new" class="modal-field"
+                                    placeholder="Descrição da categoria" required>
+                                <label for="categoria">Cor da categoria: </label>
+                                <select id="cor" class="modal-field" name="cor" placeholder="Cor da categoria"
+                                    type="text">
+                                    <option value="">Selecione</option>
+                                    <option class="redText" value="Vermelho">Vermelho</option>
+                                    <option class="greenText" value="Verde">Verde</option>
+                                    <option class="blueText" value="Azul">Azul</option>
+                                    <option class="yellowText" value="Amarelo">Amarelo</option>
+                                    <option class="pinkText" value="Rosa">Rosa</option>
+                                </select>
+                            </form>
+                            <footer class="modal-footer">
+                                <button id="salvar" class="button green">Salvar</button>
+                                <button id="cancelar" class="button blue">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div id="modal-atividade" class="hide">
             <div class="nova-atividade">
@@ -162,11 +210,8 @@
 
                     <div class="campos">
                         <label for="categoria">Categoria: </label>
-                        <select id="categoria" class="categoria" name="categoria">
-                            <option value="Faculdade">Faculdade</option>
-                            <option value="Trabalho">Trabalho</option>
-                            <option value="Saúde">Saúde</option>
-                            <option value="Pessoais">Pessoais</option>
+                        <select id="categoria" class="categoria" >
+                            <option value="" disabled selected>Escolha a categoria</option>
                         </select>
                     </div>
 
@@ -194,7 +239,6 @@
                 </form>
             </div>
         </div>
-
         <div id="modal-atualizar-atividade" class="hide">
             <div class="atualizar-atividade">
                 <div class="cabecalho">
@@ -202,7 +246,8 @@
                     <a href="#" onclick="onOff('atualizar-atividade')"><i class="fa-solid fa-x"></i></a>
                 </div>
 
-                <form id="form-atualizar-atividade" class="formulario" action="/" method="POST" onsubmit="checkFields(event)">
+                <form id="form-atualizar-atividade" class="formulario" action="/" method="POST"
+                    onsubmit="checkFields(event)">
                     <div class="campos">
                         <label for="titulo">Título: </label>
                         <input id="atualizar-titulo" class="titulo" type="text" name="titulo">
@@ -210,7 +255,8 @@
 
                     <div class="campos">
                         <label for="descricao">Descrição: </label>
-                        <textarea id="atualizar-descricao" class="descricao" name="descricao" cols="30" rows="10"></textarea>
+                        <textarea id="atualizar-descricao" class="descricao" name="descricao" cols="30"
+                            rows="10"></textarea>
                     </div>
 
                     <div class="data">
@@ -228,12 +274,9 @@
                     </div>
 
                     <div class="campos">
-                        <label for="categoria">Categoria: </label>
-                        <select id="atualizar-categoria" class="categoria" name="categoria">
-                            <option value="Faculdade">Faculdade</option>
-                            <option value="Trabalho">Trabalho</option>
-                            <option value="Saúde">Saúde</option>
-                            <option value="Pessoais">Pessoais</option>
+                        <label for="atualizar-categoria">Categoria: </label>
+                        <select id="atualizar-categoria" class="atualizar-categoria" >
+                            <option value="">Escolha a categoria</option>
                         </select>
                     </div>
 
@@ -258,12 +301,10 @@
                     <div id="div-atualizar-excluir-atividade">
                         <button id="atualizar" class="atualizar-atividade" type="button">Atualizar</button>
                         <button id="excluir" class="excluir-atividade" type="button">Excluir</button>
-                        <button id="concluir" class="concluir-atividade" type="button">Concluir</button>
                     </div>
                 </form>
             </div>
         </div>
-
         <div id="modal-item" class="hide">
             <div class="novo-item">
                 <div class="cabecalho">
@@ -272,43 +313,35 @@
                 </div>
 
                 <form id="form-item">
-                    <input type="hidden" id="idItem" name="idItem" value="">
                     <div class="campos">
                         <label for="titulo">Título: </label>
-                        <input type="text" id="item-titulo" class="campos">
+                        <input type="text" name="titulo">
                     </div>
 
                     <div class="campos">
                         <label for="descricao">Descrição: </label>
-                        <textarea id="item-descricao" class="campos" cols="30" rows="10"></textarea>
+                        <textarea name="descricao" cols="30" rows="10"></textarea>
                     </div>
 
                     <div class="campos">
                         <label for="categoria">Categoria: </label>
-                        <select id="item-categoria" class="campos">
-                            <option value="Faculdade">Faculdade</option>
-                            <option value="Trabalho">Trabalho</option>
-                            <option value="Saúde">Saúde</option>
-                            <option value="Pessoais">Pessoais</option>
+                        <select id="categoria" class="categoria" >
+                            <option value="" disabled selected>Escolha a categoria</option>
                         </select>
                     </div>
 
                     <div class="campos">
                         <label for="prioridade">Prioridade: </label>
-                        <select id="item-prioridade" class="campos">
+                        <select id="prioridade" name="prioridade">
                             <option value="Baixa">Baixa</option>
                             <option value="Média">Média</option>
                             <option value="Alta">Alta</option>
                         </select>
                     </div>
                     <button id="btn-criar-item">Criar</button>
-                    <button id='btn-atualizar-item' onclick="atualizarItem()" style="display: none;">Atualizar</button>
-                    <button id='btn-remover-item' onclick="removerItem()" style="display: none">Remover</button>
                 </form>
             </div>
         </div>
-
-        
 
         <div id="modal-habito" class="hide">
             <div class="novo-habito">
@@ -316,38 +349,35 @@
                     <h1>Novo hábito</h1>
                     <a href="#" onclick="onOff('habito')"><i class="fa-solid fa-x"></i></a>
                 </div>
-                <form id="form-habito">
-                    <input type="hidden" id="idHabito" name="idHabito" value="">
+
+                <form id="form-habito" method="POST">
                     <div class="campos">
                         <label for="titulo">Título: </label>
-                        <input id="habito-titulo" type="text" name="titulo">
+                        <input type="text" name="titulo">
                     </div>
 
                     <div class="campos">
                         <label for="descricao">Descrição: </label>
-                        <textarea id="habito-descricao" name="descricao" cols="30" rows="10"></textarea>
+                        <textarea name="descricao" cols="30" rows="10"></textarea>
                     </div>
 
                     <div class="data">
                         <label for="data-inicio">Data </label>
-                        <input id="habito-data-inicio" type="date" name="data-inicio">
+                        <input type="date" name="data-inicio">
                         <label for="data-fim"> até </label>
-                        <input id="habito-data-fim" type="date" name="data-fim">
+                        <input type="date" name="data-fim">
                     </div>
 
                     <div class="campos">
                         <label for="categoria">Categoria: </label>
-                        <select id="habito-categoria" name="categoria">
-                            <option value="Faculdade">Faculdade</option>
-                            <option value="Trabalho">Trabalho</option>
-                            <option value="Saúde">Saúde</option>
-                            <option value="Pessoais">Pessoais</option>
+                        <select id="categoria" class="categoria" >
+                            <option value="" disabled selected>Escolha a categoria</option>
                         </select>
                     </div>
 
                     <div class="campos">
                         <label for="prioridade">Prioridade: </label>
-                        <select id="habito-prioridade" name="prioridade">
+                        <select id="prioridade" name="prioridade">
                             <option value="Baixa">Baixa</option>
                             <option value="Média">Média</option>
                             <option value="Alta">Alta</option>
@@ -356,7 +386,7 @@
 
                     <div class="campos">
                         <label for="periodizacao">Periodização: </label>
-                        <select id="habito-periodizacao" name="periodizacao">
+                        <select id="periodizacao" name="periodizacao">
                             <option value="nao-se-aplica" selected>Não se aplica </option>
                             <option value="diariamente">Diariamente </option>
                             <option value="semanalmente">Semanalmente </option>
@@ -364,42 +394,13 @@
                         </select>
                     </div>
                     <button id="btn-criar-habito">Criar</button>
-                    <button id='btn-atualizar-habito' onclick="atualizarHabito()" style="display: none;">Atualizar</button>
-                    <button id='btn-remover-habito' onclick="removerHabito()" style="display: none">Remover</button>
                 </form>
             </div>
         </div>
-
-        </div>
-            <div id="modal-categoria" class="hide">
-              <div class="nova-categoria">
-                  <div class="cabecalho">
-                      <h1>Nova Categoria</h1>
-                      <a href="#" onclick="onOff('categoria')"><i class="fa-solid fa-x"></i></a>
-                  </div>
-
-                  <form action="/" method="POST" onsubmit="checkFields(event)">
-                      <div class="campos">
-                          <label for="titulo">Título: </label>
-                          <input id="titulo" class="titulo" type="text" name="titulo" required>
-                      </div>
-                      <div class="campos">
-                          <label for="cor-categoria">Cor: </label>
-                          <select id="cor-categoria" name="cor-categoria" type="color">
-                              <option value="#0000FF" selected>Azul </option>
-                              <option value="#000000">Vermelho </option>
-                              <option value="#000033"">Verde </option>
-                              <option value="#FF00FF">Amarelo </option>
-                          </select>
-                      </div>
-                      <button id="criar-categoria" type="button">Criar</button>
-                  </form>
-              </div>
-          </div>
-      </div>  
         <footer>Desenvolvido por Diana, Ellen, Gabriela, Juliana, Pedro e Pedro.</footer>
     </div>
     <script src="scripts.js"></script>
+    <script src="teste_categoria.js"></script>
     <script src="criar-atividade.js"></script>
     <script src="atualizarAtividade.js"></script>
     <script src="inserirAtividadeCalendario.js"></script>

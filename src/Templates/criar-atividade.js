@@ -1,5 +1,3 @@
-// CRUD - Criar Atividade
-
 const titulo = document.getElementById('titulo')
 const descricao = document.getElementById('descricao')
 const dataInicio = document.getElementById('data-inicio')
@@ -73,7 +71,7 @@ const salvarAtividade = () => {
         } else {
             campo.classList.remove('campo-vazio')
         }
-    });  
+    });
 
     if (camposVazios == 0) {
         const atividade = {
@@ -90,8 +88,9 @@ const salvarAtividade = () => {
         if (isDadosValidos(atividade)) {
             criarAtividade(atividade)
             load();
-            onOff('atividade')
         }
+        onOff('atividade')
+        AtualizarOptions()
     }
 }
 
