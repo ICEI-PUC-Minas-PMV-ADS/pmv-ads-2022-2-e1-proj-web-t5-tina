@@ -151,18 +151,7 @@ main img {
     width: 100%;
 }
 
-.lista-itens {
-    border: solid 1px lightgray;
-    border-radius: 15px;
-    box-shadow: 1px 1px 8px lightblue;
-    text-align: center;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: bolder;
-    padding-top: 10px;
-    height: 49%;
-    width: 100%;
-}
-
+.lista-itens,
 .lista-habitos {
     border: solid 1px lightgray;
     border-radius: 15px;
@@ -173,6 +162,7 @@ main img {
     padding-top: 10px;
     height: 49%;
     width: 100%;
+    display: block;
 }
 
 #container-calendario {

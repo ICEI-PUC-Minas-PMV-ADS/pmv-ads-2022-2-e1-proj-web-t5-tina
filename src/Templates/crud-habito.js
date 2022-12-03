@@ -76,6 +76,8 @@ function abrirModalHabito(evento) {
     var habitoParaLer = evento.target.innerText
     const habito = getDadosHabito().find(evento => evento.titulo === habitoParaLer)
         document.getElementById('modal-habito')
+        /*var h1= document.querySelector('#modal-habito .novo-habito .cabecalho')
+        h1.innerText('Atualizar Hábito')*/
     onOff("habito", 'ler')
     prencherInputsHabitos(habito)
 }

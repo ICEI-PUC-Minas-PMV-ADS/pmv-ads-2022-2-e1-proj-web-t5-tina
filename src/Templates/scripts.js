@@ -65,6 +65,8 @@ function onOff(type, action = null) {
         limparErrosEdicao()
     }
 }
+
+
 /*
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //LocalStorage de Item
@@ -381,6 +383,59 @@ function removerHabito() {
 function filtrarCategoria(){
     alert("entrou na filtrar")
     document.getElementById("filtrar-categoria").classList.toggle('hide')
+}
+
+/*function esconderMenuListas(evento){
+    var menu = evento.target.innerText
+    console.log("menus")
+    console.log(menu)
+    if(menu == 'Itens'){
+        var elem = document.querySelector('.listas .lista-itens').style.display 
+        console.log("clicou em itens")
+    } else if(menu == 'Hábitos'){
+        var elem = document.querySelector('.listas .lista-habitos').style.display 
+        console.log("clicou em habitos")
+    }
+    menu = ""
+    console.log(elem)
+
+    if(elem == 'block'){
+        elem = 'none'
+    } else {
+        elem = 'block'
+    }
+    
+}*/
+
+function esconderMenuItens(){
+    var menu = document.querySelector('.listas .lista-itens')
+    if(menu.style.display == 'block'){
+        menu.style.display = 'none'
+        aumentarCalendario()
+    } else {
+        menu.style.display = 'block'
+    }
+    
+}
+
+function esconderMenuHabitos(){
+    var menu = document.querySelector('.listas .lista-habitos')
+    if(menu.style.display == 'block'){
+        menu.style.display = 'none'
+        aumentarCalendario()
+    } else {
+        menu.style.display = 'block'
+    }
+    
+}
+
+function aumentarCalendario(){
+    if(document.querySelector('.listas .lista-habitos').style.display == 'none' && document.querySelector('.listas .lista-itens').style.display == 'none'){
+        document.getElementById('container-calendario').style.width = 1000
+
+    } else {
+        document.getElementById('container-listas').style.display = 'grid'
+    }
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
