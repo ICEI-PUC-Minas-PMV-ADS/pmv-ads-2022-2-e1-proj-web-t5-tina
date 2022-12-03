@@ -1,4 +1,4 @@
-// CRUD - Criar Atividade
+// CRUD - Criar Categoria
 
 const tituloCategoria = document.getElementById("titulo-categoria");
 const corCategoria = document.getElementById("cor-categoria");
@@ -14,17 +14,6 @@ const criarCategoria = (categoria) => {
   dbCategoria.push(categoria);
   setDadosCategoria(dbCategoria);
 };
-
-// const limparCampos = () => {
-//   const inputs = document.querySelectorAll("form input");
-//   inputs.forEach((input) => (input.value = ""));
-
-//   const textareas = document.querySelectorAll("form textarea");
-//   textareas.forEach((textarea) => (textarea.value = ""));
-
-//   const selects = document.querySelectorAll("form select");
-//   selects.forEach((select) => (select.value = ""));
-// };
 
 const limparErrosCategoria = () => {
   tituloCategoria.classList.remove("campo-vazio");
