@@ -44,6 +44,13 @@ function onOff(type, action = null) {
             .contains('hide') && botao.parentElement.classList.contains('criacao-habito')) {
                 botao.setAttribute('onclick', "onOff('habito')")
             }
+            if (!botao.parentElement.classList.contains('criacao-atividade') &&
+            document
+            .querySelector("#modal-atividade")
+            .classList
+            .contains('hide') && botao.parentElement.classList.contains('criacao-categoria')) {
+                botao.setAttribute('onclick', "onOff('categoria')")
+            }
         })
     }
     else if (type == "item") {
@@ -77,6 +84,13 @@ function onOff(type, action = null) {
             .classList
             .contains('hide') && botao.parentElement.classList.contains('criacao-habito')) {
                 botao.setAttribute('onclick', "onOff('habito')")
+            }
+            if (!botao.parentElement.classList.contains('criacao-item') &&
+            document
+            .querySelector("#modal-item")
+            .classList
+            .contains('hide') && botao.parentElement.classList.contains('criacao-categoria')) {
+                botao.setAttribute('onclick', "onOff('categoria')")
             }
         })
     }
@@ -112,8 +126,20 @@ function onOff(type, action = null) {
             .contains('hide') && botao.parentElement.classList.contains('criacao-item')) {
                 botao.setAttribute('onclick', "onOff('item')")
             }
+            if (!botao.parentElement.classList.contains('criacao-habito') &&
+            document
+            .querySelector("#modal-habito")
+            .classList
+            .contains('hide') && botao.parentElement.classList.contains('criacao-categoria')) {
+                botao.setAttribute("onclick", "onOff('categoria')");
+            }
         })
     } else if (type == "categoria") {
+        botoes.forEach((botao) => {
+          if (!botao.parentElement.classList.contains("criacao-categoria")) {
+            botao.removeAttribute("onclick");
+          }
+        });
         document
             .querySelector("#modal-categoria")
             .classList
@@ -122,6 +148,35 @@ function onOff(type, action = null) {
             .querySelector("#modal-categoria")
             .classList
             .toggle("addScroll")
+        botoes.forEach((botao) => {
+          if (
+            !botao.parentElement.classList.contains("criacao-categoria") &&
+            document
+              .querySelector("#modal-categoria")
+              .classList.contains("hide") &&
+            botao.parentElement.classList.contains("criacao-atividade")
+          ) {
+            botao.setAttribute("onclick", "onOff('atividade')");
+          }
+          if (
+            !botao.parentElement.classList.contains("criacao-categoria") &&
+            document
+              .querySelector("#modal-categoria")
+              .classList.contains("hide") &&
+            botao.parentElement.classList.contains("criacao-item")
+          ) {
+            botao.setAttribute("onclick", "onOff('item')");
+          }
+          if (
+            !botao.parentElement.classList.contains("criacao-categoria") &&
+            document
+              .querySelector("#modal-categoria")
+              .classList.contains("hide") &&
+            botao.parentElement.classList.contains("criacao-habito")
+          ) {
+            botao.setAttribute("onclick", "onOff('habito')");
+          }
+        });
     } else if (type == "atualizar-atividade") {
         dataInicioEditado.setAttribute('min', dataMinimaFormatada)
         dataFimEditado.setAttribute('min', dataMinimaFormatada)
@@ -157,6 +212,12 @@ function onOff(type, action = null) {
             .classList
             .contains("hide") && botao.parentElement.classList.contains('criacao-habito')) {
                 botao.setAttribute('onclick', "onOff('habito')")
+            }
+            if (botao.id !== 'atualizar-atividade' && document
+            .querySelector("#modal-atualizar-atividade")
+            .classList
+            .contains("hide") && botao.parentElement.classList.contains('criacao-categoria')) {
+                botao.setAttribute('onclick', "onOff('categoria')")
             }
         })
         }
