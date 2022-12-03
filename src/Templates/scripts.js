@@ -578,12 +578,12 @@ const cor_categoria = document.getElementById('cor-categoria')
 const getCategoria = () => JSON.parse(localStorage.getItem("dbCategoria")) ?? [];
 const setCategoria = (dbCategoria) => localStorage.setItem("dbCategoria", JSON.stringify(dbCategoria));
 
-// const criarCategoria = (categoria) => {
-//     const dbCategoria = getDados();
-//     dbCategoria.push(categoria);
-//     setDados(dbCategoria)
-// }
+const criarCategoria = (categoria) => {
+    const dbCategoria = getDados();
+    dbCategoria.push(categoria);
+    setDados(dbCategoria)
+}
 
 
-// document.getElementById('criar-categoria').addEventListener('click', criarCategoria())
+document.getElementById('criar-categoria').addEventListener('click', criarCategoria())
 

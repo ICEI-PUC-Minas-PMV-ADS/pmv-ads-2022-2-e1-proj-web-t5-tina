@@ -1006,19 +1006,19 @@ button.red{
 
 /*cores da categoria*/
 .redText {
-    background-color:rgba(246, 55, 55, 0.762) !important
+    background-color:rgba(246, 55, 55, 0.762);
 }
 .greenText {
-    background-color:rgb(126, 196, 126) !important
+    background-color:rgb(126, 196, 126);
 }
 .blueText {
-    background-color:rgba(93, 93, 214, 0.814) !important
+    background-color:rgba(93, 93, 214, 0.814);
 }
 
 .yellowText {
-    background-color:rgba(239, 221, 122, 0.814) !important
+    background-color:rgba(239, 221, 122, 0.814);
 }
 
 .pinkText {
-    background-color:rgba(239, 122, 217, 0.814) !important
+    background-color:rgba(239, 122, 217, 0.814);
 }
