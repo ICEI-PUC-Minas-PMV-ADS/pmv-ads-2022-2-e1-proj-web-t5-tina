@@ -12,8 +12,16 @@ const botoes = document.querySelectorAll('.button')
 
 function onOff(type, action = null) {
     if (type == "atividade") {
+        dataFim.disabled = true;
+        dataInicio.addEventListener('input', function() {
+            dataFim.disabled = false;
+        })
         dataInicio.setAttribute('min', dataMinimaFormatada)
-        dataFim.setAttribute('min', dataMinimaFormatada)
+        document
+          .getElementById("data-inicio")
+          .addEventListener("input", function () {
+            dataFim.setAttribute("min", dataInicio.value);
+          });
         botoes.forEach(botao => {
             if (!botao.parentElement.classList.contains('criacao-atividade')) {
                 botao.removeAttribute('onclick')
@@ -29,6 +37,9 @@ function onOff(type, action = null) {
             .toggle("addScroll")
         limparCampos()
         limparErros()
+        if (document.querySelector("#modal-atividade").classList.contains('hide')) {
+            dataFim.removeAttribute('min');
+        }
         botoes.forEach(botao => {
             if (!botao.parentElement.classList.contains('criacao-atividade') &&
             document
@@ -95,6 +106,16 @@ function onOff(type, action = null) {
         })
     }
     else if (type == "habito") {
+        habitoDataFim.disabled = true;
+        habitoDataInicio.addEventListener("input", function () {
+          habitoDataFim.disabled = false;
+        });
+        habitoDataInicio.setAttribute("min", dataMinimaFormatada);
+        document
+          .getElementById("habito-data-inicio")
+          .addEventListener("input", function () {
+            habitoDataFim.setAttribute("min", habitoDataInicio.value);
+          });
         botoes.forEach(botao => {
             if (!botao.parentElement.classList.contains('criacao-habito')) {
                 botao.removeAttribute('onclick')
@@ -148,6 +169,8 @@ function onOff(type, action = null) {
             .querySelector("#modal-categoria")
             .classList
             .toggle("addScroll")
+        limparCampos();
+        limparErrosCategoria();
         botoes.forEach((botao) => {
           if (
             !botao.parentElement.classList.contains("criacao-categoria") &&
@@ -220,8 +243,10 @@ function onOff(type, action = null) {
                 botao.setAttribute('onclick', "onOff('categoria')")
             }
         })
-        }
     }
+}
+
+
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //LocalStorage de Item
@@ -549,10 +574,12 @@ const cor_categoria = document.getElementById('cor-categoria')
 const getCategoria = () => JSON.parse(localStorage.getItem("dbCategoria")) ?? [];
 const setCategoria = (dbCategoria) => localStorage.setItem("dbCategoria", JSON.stringify(dbCategoria));
 
-const criarCategoria = (categoria) => {
-    const dbCategoria = getDados();
-    dbCategoria.push(categoria);
-    setDados(dbCategoria)
-}
+// const criarCategoria = (categoria) => {
+//     const dbCategoria = getDados();
+//     dbCategoria.push(categoria);
+//     setDados(dbCategoria)
+// }
 
+
+// document.getElementById('criar-categoria').addEventListener('click', criarCategoria())
 

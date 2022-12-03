@@ -51,8 +51,10 @@ const isDadosValidos = (atividade) => {
     var validade = true
     atividades.forEach(dadoAtividade => {
 
-        if (dadoAtividade.titulo == atividade.titulo) {
-            controlador++
+        if (
+          dadoAtividade.titulo.toUpperCase() == atividade.titulo.toUpperCase()
+        ) {
+          controlador++;
         }
     });
 
