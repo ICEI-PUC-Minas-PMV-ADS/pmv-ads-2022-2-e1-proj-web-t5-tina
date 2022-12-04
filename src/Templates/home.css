@@ -1026,3 +1026,55 @@ button.red{
 .pinkText {
     background-color:rgba(239, 122, 217, 0.814);
 }
+
+#container-horarios {
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+  width: 100%;
+}
+
+#horarios {
+  display: flex;
+  flex-direction: column;
+  width: 75px;
+  height: 650px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#horarios span {
+  margin: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+span {
+  width: 100%;
+}
+
+#dia-semana {
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.dayDiario + #currentDayDiario{
+    background-color: #e8f4fa;
+}
+
+.dayDiario {
+    width: 100%;
+  padding: 10px;
+  height: 100%;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: white;
+  margin: 5px;
+  box-shadow: 0px 0px 3px #CBD4C2;
+  display: flex;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
