@@ -35,7 +35,7 @@ function load() {
         const daySquare = document.createElement('div');
         daySquare.classList.add('day');
 
-        const dayString = `${year}-${month < 9 ? '0' : '' }${month + 1}-${(i - paddingDays) < 10 ? '0' : ''}${i - paddingDays}`;
+        const dayString = `${year}-${month < 9 ? '0' : ''}${month + 1}-${(i - paddingDays) < 10 ? '0' : ''}${i - paddingDays}`;
 
         if (i > paddingDays) {
             daySquare.innerText = i - paddingDays;
@@ -73,6 +73,99 @@ function initButtons() {
 
 exibirListaItens()
 exibirListaHabitos()
+
+function filtrar(event) {
+    var filtro = event.target.value
+    var prioridade, categoria;
+    if(filtro.includes('Prioridade')){
+        filtro = filtro.slice(11)
+        filtrarPrioridade(filtro)
+    } else {
+        filtrarCategoria(filtro)
+    }
+}
+
+function filtrarCategoria(categoria){
+    Array.prototype.forEach.call(document.getElementsByClassName("cada-item"), function (divisor) {
+        var item = getDadosItem().find(item => item.categoria == categoria)
+        if (filtro == "Todos") {
+            divisor.style.display = 'block'
+        } else if (item && divisor.innerText == item.titulo) {
+            divisor.style.display = 'block'
+        } else {
+            divisor.style.display = 'none'
+        }
+    });
+
+    Array.prototype.forEach.call(document.getElementsByClassName("cada-habito"), function (divisor) {
+        var habito = getDadosHabito().find(habito => habito.categoria == categoria)
+        if (categoria == "Todos") {
+            divisor.style.display = 'block'
+        } else if (habito && divisor.innerHTML == habito.titulo) {
+                divisor.style.display = 'block'
+        } else {
+            divisor.style.display = 'none'
+        }
+    });
+
+    Array.prototype.forEach.call(document.getElementsByClassName("event"), function (divisor) {
+        var atividade = getDados().find(atividade => atividade.categoria == categoria)
+        if (categoria == "Todos") {
+            divisor.style.display = 'block'
+        } else if (atividade && divisor.innerHTML == atividade.titulo) {
+                divisor.style.display = 'block'
+        } else {
+            divisor.style.display = 'none'
+        }
+    });
+
+}
+
+function filtrarPrioridade(prioridade) {
+
+    Array.prototype.forEach.call(document.getElementsByClassName("cada-item"), function (divisor) {
+        var item = getDadosItem().find(item => item.prioridade == prioridade)
+        if (prioridade == "Todos") {
+            divisor.style.display = 'block'
+        } else if (item && divisor.innerText == item.titulo) {
+            divisor.style.display = 'block'
+        } else {
+            divisor.style.display = 'none'
+        }
+    });
+
+    Array.prototype.forEach.call(document.getElementsByClassName("cada-habito"), function (divisor) {
+        var habito = getDadosHabito().find(habito => habito.prioridade == prioridade)
+        if (prioridade == "Todos") {
+            divisor.style.display = 'block'
+        } else if (habito && divisor.innerHTML == habito.titulo) {
+                divisor.style.display = 'block'
+        } else {
+            divisor.style.display = 'none'
+        }
+    });
+
+    Array.prototype.forEach.call(document.getElementsByClassName("event"), function (divisor) {
+        var atividade = getDados().find(atividade => atividade.prioridade == prioridade)
+        if (prioridade == "Todos") {
+            divisor.style.display = 'block'
+        } else if (atividade && divisor.innerHTML == atividade.titulo) {
+                divisor.style.display = 'block'
+        } else {
+            divisor.style.display = 'none'
+        }
+    });
+
+}
+
+function aparecerFiltros(){
+    if(document.getElementById('filtro').style.display == 'none'){
+        document.getElementById('filtro').style.display = 'block'
+    } else {
+        document.getElementById('filtro').style.display = 'none'
+    }
+}
+
 
 initButtons();
 load();

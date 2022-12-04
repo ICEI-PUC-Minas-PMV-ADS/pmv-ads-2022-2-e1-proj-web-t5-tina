@@ -21,10 +21,20 @@
             </a>
             <button id="botao-hoje" class="botao-hoje" type="button">Hoje</button>
             <div id="cabecalho-direita">
-                <button class="botao-filtrar" type="button">
+                <button class="botao-filtrar" type="button" onclick="aparecerFiltros()">
                     <i class="fa-solid fa-filter"></i>
                     Filtrar
                 </button>
+                <div class="campos">
+                    <select id="filtro" class="categoria" onchange="filtrar(event)" style="display: none;">
+                        <option value="Todos" selected>Todos</option>
+                        <option value="Todos" disabled>Prioridades</option>
+                        <option value="Prioridade Baixa">Baixa</option>
+                        <option value="Prioridade Média">Média</option>
+                        <option value="Prioridade Alta">Alta</option>
+                        <option value="Todos" disabled>Categorias</option>
+                    </select>
+                </div>
                 <a href="./perfil.html">
                     <button class="botao-perfil">
                         <i class="fa-solid fa-user"></i>
@@ -39,7 +49,7 @@
                         Lista de Itens
                         <img src="../Images/item.png" alt="Item">
                         <div id="todos-itens">
-                            <div id="cada-item" class="cada-item" onclick="abrirModalItem(event)"
+                            <div id="cada-item" onclick="abrirModalItem(event)"
                                 style="display: none;">
                             </div>
                         </div>
@@ -48,7 +58,7 @@
                         Lista de Hábitos
                         <img src="../Images/lista-habitos.png" alt="Hábitos">
                         <div id="todos-habitos">
-                            <div id="cada-habito" class="cada-habito" onclick="abrirModalHabito(event)"
+                            <div id="cada-habito" onclick="abrirModalHabito(event)"
                                 style="display: none;">
                             </div>
                         </div>

@@ -60,6 +60,7 @@ function adicionarUltimoHabitoEmLista(habito) {
     var cadaHabito= divModelo.cloneNode(true)
     cadaHabito.innerHTML = habito.titulo
     cadaHabito.style.display = 'block'
+    cadaHabito.classList.add('cada-habito')
     cadaHabito.style.background = getLocalStorage().find(categoria => habito.categoria == categoria.nome).codigo
     listaHabitos.appendChild(cadaHabito)
 }

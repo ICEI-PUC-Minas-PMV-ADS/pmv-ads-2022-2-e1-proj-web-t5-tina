@@ -212,6 +212,13 @@ for (o in categoriaListh) {
 const categoriaSelecta = document.getElementById("atualizar-categoria");
 const categoriaLista = getLocalStorage()
 for (a in categoriaLista) {
-    option = new Option(categoriaLista[a].nome, categoriaList[a].nome);
+    option = new Option(categoriaLista[a].nome, categoriaLista[a].nome);
     categoriaSelecta.options[categoriaSelecta.options.length] = option;
 }
+
+const categoriaSelectFiltro = document.getElementById("filtro");
+const categoriaListFiltro = getLocalStorage()
+for (a in categoriaListFiltro) {
+    option = new Option(categoriaListFiltro[a].nome, categoriaListFiltro[a].nome);
+    categoriaSelectFiltro.options[categoriaSelectFiltro.options.length] = option;
+}   

@@ -58,7 +58,7 @@ function adicionarUltimoItemEmLista(item) {
     var cadaItem = divModelo.cloneNode(true)
     cadaItem.innerHTML = item.titulo
     cadaItem.style.display = 'block'
-    //cadaItem.classList.add(corDiv);
+    cadaItem.classList.add('cada-item');
     cadaItem.style.background = getLocalStorage().find(categoria => item.categoria == categoria.nome).codigo
     listaItens.appendChild(cadaItem)
 }
@@ -72,22 +72,6 @@ function criarItem() {
         prioridade: itemPrioridade.value
     }
 
-    /*const getLocalStorage = () => JSON.parse(localStorage.getItem('db_categoria')) ?? []
-    getLocalStorage().forEach(categoria => {
-
-        if (item.categoria == categoria.nome) {
-            if (categoria.cor == "Azul")
-                corDiv = "blueText";
-            else if (categoria.cor == "Amarelo")
-                corDiv = "yellowText";
-            else if (categoria.cor == "Vermelho")
-                corDiv = "redText";
-            else if (categoria.cor == "Verde")
-                corDiv = "greenText";
-            else if (categoria.cor == "Rosa")
-                corDiv = "pinkText";
-        }
-    });*/
 
     if (saoDadosValidosEmItem(item)) {
         inserirItem(item)
