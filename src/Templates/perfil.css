@@ -38,6 +38,30 @@ header {
   font-weight: bolder;
 }
 
+#logo {
+  height: 25px;
+}
+
+.botao-hoje {
+  background-color: white;
+  border: solid 1px lightgray;
+  border-radius: 15px;
+  box-shadow: 1px 1px 1px lightblue;
+  color: black;
+  padding: 10px 70px;
+  text-align: center;
+  text-decoration: none;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  font-weight: bolder;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.botao-hoje:hover {
+  background-color: rgb(241, 247, 248);
+  box-shadow: 1px 1px 3px black;
+}
+
 .botao-perfil {
   background-color: white;
   border: solid 1px lightgray;

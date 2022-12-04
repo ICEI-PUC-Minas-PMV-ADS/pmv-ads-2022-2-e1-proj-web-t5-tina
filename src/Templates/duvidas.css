@@ -8,7 +8,6 @@ html,
 body {
   display: block;
   height: 920px;
-  background-color: var(--cor-bory);
 }
 
 .container {
@@ -26,27 +25,28 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 5px;
-  background-color: var(--cor-header);
-  border-bottom: solid 1px var(--cor-borda);
-  box-shadow: 1px 1px 2px var(--cor-shadow);
-  background-color: var(--cor-background2);
+  border-bottom: solid 1px lightgray;
+  box-shadow: 1px 1px 2px lightblue;
 }
 
 .botao-logo {
   padding: 25px;
-  border-right: solid 1px var(--cor-borda);
+  border-right: solid 1px lightgray;
   text-decoration: none;
   color: black;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bolder;
-  color: var(--color-font);
+}
+
+#logo {
+  height: 25px;
 }
 
 .botao-hoje {
-  background-color: var(--cor-background3);
-  border: solid 1px var(--cor-borda);
+  background-color: white;
+  border: solid 1px lightgray;
   border-radius: 15px;
-  box-shadow: 1px 1px 1px var(--cor-shadow);
+  box-shadow: 1px 1px 1px lightblue;
   color: black;
   padding: 10px 70px;
   text-align: center;
@@ -55,19 +55,18 @@ header {
   transition-duration: 0.4s;
   font-weight: bolder;
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--color-font);
 }
 
 .botao-hoje:hover {
-  background-color:var(--cor-botoes-houver);
+  background-color: rgb(241, 247, 248);
   box-shadow: 1px 1px 3px black;
 }
 
 .botao-filtrar {
-  background-color: var(--cor-background3);
-  border: solid 1px var(--cor-borda);
+  background-color: white;
+  border: solid 1px lightgray;
   border-radius: 15px;
-  box-shadow: 1px 1px 1px var(--cor-shadow);
+  box-shadow: 1px 1px 1px lightblue;
   color: black;
   padding: 10px 15px;
   text-decoration: none;
@@ -78,11 +77,10 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: var(--color-font);
 }
 
 .botao-filtrar:hover {
-  background-color:var(--cor-botoes-houver);
+  background-color: rgb(241, 247, 248);
   box-shadow: 1px 1px 3px black;
 }
 
@@ -91,11 +89,11 @@ header {
 }
 
 .botao-perfil {
-  background-color: var(--cor-background3);
-  border: solid 1px var(--cor-borda);
+  background-color: white;
+  border: solid 1px lightgray;
   border-radius: 15px;
-  box-shadow: 1px 1px 1px var(--cor-shadow);
-  color: var(--color-font);
+  box-shadow: 1px 1px 1px lightblue;
+  color: black;
   padding: 10px 10px;
   text-align: center;
   text-decoration: none;
@@ -103,11 +101,10 @@ header {
   transition-duration: 0.4s;
   font-weight: bolder;
   font-family: Arial, Helvetica, sans-serif;
-
 }
 
 .botao-perfil:hover {
-  background-color:var(--cor-botoes-houver);
+  background-color: rgb(241, 247, 248);
   box-shadow: 1px 1px 3px black;
 }
 
@@ -117,82 +114,195 @@ header {
   align-items: center;
 }
 
-.cabecalho-calendario {
-  grid-column: 1/13;
-  grid-row: 2/3;
-  display: flex;
-  border-bottom: solid 1px var(--cor-borda);
-  border-top: solid 1px var(--cor-borda);
-  box-shadow: 1px 1px 2px var(--cor-shadow);
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 15px;
-  padding-right: 15px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bolder;
-  font-size: 30px;
-  color: var(--color-font);
-  background-color: var(--cor-background2);
-}
-
-main {
-  grid-column: 2/12;
-  grid-row: 3/12;
-  display: grid;
-  grid-template-columns: 6fr 6fr;
-  grid-template-rows: 1fr 1fr;
-  grid-gap: 15px;
-  padding-right: 10px;
-}
-
-#themeSelect {
-  background-color: rgb(255, 255, 255);
+.botao-perfil {
+  background-color: white;
   border: solid 1px lightgray;
   border-radius: 15px;
   box-shadow: 1px 1px 1px lightblue;
   color: black;
-  padding: 10px 50px;
+  padding: 10px 10px;
   text-align: center;
   text-decoration: none;
-  margin-top: 10px;
+  margin: 4px 2px;
   transition-duration: 0.4s;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.botao-perfil:hover {
+  background-color: rgb(241, 247, 248);
+  box-shadow: 1px 1px 3px black;
+}
+
+#cabecalho-direita {
+  padding-right: 5px;
+  align-items: center;
+}
+
+ .cabecalho-ajuda {
+  grid-column: 1/13;
+  grid-row: 2/3;
+  border-bottom: solid 1px lightgray;
+  border-top: solid 1px lightgray;
+  box-shadow: 1px 1px 2px lightblue;
+  justify-content: flex start;
+  padding-top: 15px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+main {
+  grid-column: 2/13;
+  grid-row: 2/12;
+  padding: 20px 30px 30px 30px;
+  margin-top: 59px;
+  margin-right: 90px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 15px;
+  background-color: rgba(241, 242, 242, 1);
+  border: solid 1px lightgray;
+  box-shadow: 1px 1px 8px lightblue;
+  height: 800px;
+}
+
+.caixa-ajuda-principal {
+  grid-column: 1/3;
+  grid-row: 1/3;
+  display: grid;
+  grid-template-columns: 3fr 3fr;
+  grid-template-rows: repeat(12, 1fr);
+  background-color: rgba(217, 217, 217, 1);
+  border: solid 1px lightgray;
+  border-radius: 15px;
+  box-shadow: 1px 1px 8px rgb(110, 110, 110);
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  padding-top: 10px;
+  
+}
+
+.duvidas {
+  padding-bottom: 10px;
+  font-size: 25px;
+}
+
+#resposta-1 {
+  display: none;
+  margin: 10px;
+  width: 400;
+  height: 100;
+  padding-top: 7px;
+  
+}
+
+#resposta-2 {
+  display: none;
+  margin: 10px;
+  width: 400;
+  height: 100;
+  padding-top: 7px;
+}
+
+#resposta-3 {
+  display: none;
+  margin: 10px;
+  width: 400;
+  height: 100;
+  padding-top: 7px;
+}
+
+#resposta-4 {
+  display: none;
+  margin: 10px;
+  width: 400;
+  height: 100;
+  padding-top: 7px;
+}
+
+#resposta-5 {
+  display: none;
+  margin: 10px;
+  width: 400;
+  height: 100;
+  padding-top: 7px;
+}
+
+#resposta-6 {
+  display: none;
+  margin: 10px;
+  width: 400;
+  height: 100;
+  padding-top: 7px;
+}
+
+#resposta-7 {
+  display: none;
+  margin: 10px;
+  width: 400;
+  height: 100;
+  padding-top: 7px;
+}
+
+#resposta-8 {
+  display: none;
+  margin: 10px;
+  width: 400;
+  height: 100;
+  padding-top: 7px;
+}
+#resposta-9 {
+  display: none;
+  margin: 10px;
+  width: 400;
+  height: 100;
+  padding-top: 7px;
+}
+.caixa-perguntas {
+  padding-top: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+.caixa-perguntas > button {
+  height: 40px;
+  width: 600px;
+  margin: 20px 20px 0px 20px;
+  background-color:  rgb(255, 255, 255);;
+  border: solid 1px lightgray;
+  border-radius: 15px;
+  box-shadow: 1px 1px 8px rgb(110, 110, 110);
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#themeSelect>option {
-  font-size: 20px;
-  text-align: center;
-  margin-top: 19px;
-
+.caixa-perguntas > button:hover {
+  background-color: rgb(255, 240, 240);
+  box-shadow: 1px 1px 3px rgb(65, 64, 64);
+  font-weight: bold;
+  transition: 1.5;
 }
 
-.titulo-cabecalho-temas {
-  background-color: var(--cor-fundo-titulo);
-  height: 50px;
-  border-radius: 15px 15px 0px 0px;
-  border: solid 1px var(--cor-borda);
-  padding-top: 13px;
-  font-size: 25px;
-}
-
-.titulo-tema {
-  padding-top: 30px;
-  font-size: 25px;
-}
-
-.lista-itens {
-  grid-column: 1/1;
-  grid-row: 1/2;
-  height: 600px;
-  border: solid 1px var(--cor-borda);
+.caixa-explicacoes {
+  grid-column: 2/2;
+  grid-row: 1/13;
+  height: 615px;
+  padding: 45px;
+  margin: 10px 25px 25px 20px;
+  background-color: rgb(255, 255, 255);
+  border: solid 1px lightgray;
   border-radius: 15px;
-  box-shadow: 1px 1px 8px var(--cor-shadow);
-  text-align: center;
+  box-shadow: 1px 1px 8px rgb(110, 110, 110);
+  text-align:justify;
+  text-indent: 50px;
+  font-weight: normal;
+  line-height: 40px;
+  font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: bolder;
-  color: var(--color-font);
-  background-color: var(--cor-background2);
 }
 
 aside {
@@ -203,13 +313,18 @@ aside {
   width: 65px;
   height: 700px;
   justify-content: space-around;
-  background-color: var(--cor-aside);
-  border-right: solid 1px var(--cor-borda);
-  border-top: solid 1px var(--cor-borda);
-  border-bottom: solid 1px var(--cor-borda);
+  background-color: #F2F2F2;
+  border-right: solid 1px lightgray;
+  border-top: solid 1px lightgray;
+  border-bottom: solid 1px lightgray;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  box-shadow: 3px 3px 5px var(--cor-shadow);
+  box-shadow: 3px 3px 5px lightblue;
+}
+
+aside img {
+  width: 21px;
+  height: 21px;
 }
 
 .menu-visualizacao {
@@ -219,8 +334,8 @@ aside {
 }
 
 .menu-visualizacao>button {
-  background-color: var(--cor-botoes-visualizacao);
-  border: hidden 4px var(--cor-shadow);
+  background-color: rgb(223, 39, 39);
+  border: hidden 4px lightblue;
   width: 40px;
   height: 40px;
   border-radius: 100%;
@@ -237,7 +352,7 @@ aside {
 }
 
 .menu-visualizacao>button:hover {
-  background-color: var(--cor-botoes-houver);
+  background-color: rgb(241, 85, 85);
   box-shadow: 1px 1px 3px black;
 }
 
@@ -248,10 +363,10 @@ aside {
 }
 
 .menu-listas>button {
-  background-color: var(--cor-botoes-listas);
+  background-color: rgb(223, 39, 39);
   width: 40px;
   height: 40px;
-  border: hidden 4px var(--cor-shadow);
+  border: hidden 4px lightblue;
   border-radius: 20px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
   color: white;
@@ -267,7 +382,7 @@ aside {
 }
 
 .menu-listas>button:hover {
-  background-color: var(--cor-botoes-houver);
+  background-color: rgb(241, 85, 85);
   box-shadow: 1px 1px 3px black;
 }
 
@@ -278,7 +393,7 @@ aside {
 }
 
 .menu-criacao>button {
-  background-color: var(--cor-botoes-criacao);
+  background-color: rgb(223, 39, 39);
   width: 40px;
   height: 40px;
   border: hidden 4px lightblue;
@@ -297,7 +412,7 @@ aside {
 }
 
 .menu-criacao>button:hover {
-  background-color: var(--cor-botoes-houver);
+  background-color: rgb(241, 85, 85);
   box-shadow: 1px 1px 3px black;
 }
 
@@ -308,7 +423,7 @@ aside {
 }
 
 .menu-ferramentas>button {
-  background-color: var(--cor-botoes-ferramentas);
+  background-color: rgb(223, 39, 39);
   width: 40px;
   height: 40px;
   border: hidden 4px lightblue;
@@ -327,7 +442,7 @@ aside {
 }
 
 .menu-ferramentas>button:hover {
-  background-color: var(--cor-botoes-houver);
+  background-color: rgb(241, 85, 85);
   box-shadow: 1px 1px 3px black;
 }
 
@@ -342,7 +457,6 @@ footer {
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bolder;
-  color: var(--color-font);
 }
 
 .menu {
@@ -368,7 +482,7 @@ footer {
     top: 95%;
     left: 50%;
     transform: translate(-50%, -95%);
-    background-color: var(--cor-botoes-ferramentas);
+    background-color: rgb(236, 42, 42);
     border: hidden 4px lightblue;
     border-radius: 100%;
     box-shadow: 2px 2px 5px black;
@@ -387,7 +501,7 @@ footer {
     grid-row: 1/2;
   }
 
-  .cabecalho-calendario {
+  .cabecalho-ajuda {
     grid-column: 1/13;
     grid-row: 2/3;
   }
@@ -402,13 +516,7 @@ footer {
     padding-right: 15px;
   }
 
-  #themeSelect>option {
-    font-size: 15px;
-    margin: 0px;
-  }
-
-
-  .lista-itens {
+  .caixa-ajuda {
     grid-column: 1;
     grid-row: 1/2;
   }

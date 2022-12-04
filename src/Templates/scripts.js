@@ -411,6 +411,8 @@ function criarHabito() {
         alert("Não foi possível salvar. Há campos vazios ou título igual ao de outro hábito.")
     }
 
+    
+
 }
 
 //Ler Habito

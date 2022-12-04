@@ -112,7 +112,7 @@ function processaFormLogin (event) {
     // Valida login e se estiver ok, redireciona para tela inicial da aplicação
     resultadoLogin = loginUser (email, senha);
     if (resultadoLogin) {
-        window.location.href = 'perfil.html';
+        window.location.href = 'home.html';
     }
     else { // Se login falhou, avisa ao usuário
         alert ('Usuário ou senha incorretos');

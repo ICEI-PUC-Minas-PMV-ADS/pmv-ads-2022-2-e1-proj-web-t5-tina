@@ -61,6 +61,7 @@ const saveCategoria = () => {
             closeModal()
         }
     }
+    window.location.reload()
 }
 
 const createRow = (adCategoria, index) => {
@@ -175,6 +176,22 @@ function condicional() {
     for (o in categoriaList) {
         option = new Option(categoriaList[o].nome, categoriaList[o].nome);
         categoriaSelect.options[categoriaSelect.options.length] = option;
+    }
+
+    
+    const categoriaSelecti = document.getElementById("categoria-item");
+    const categoriaListi = getLocalStorage()
+    for (o in categoriaListi) {
+        option = new Option(categoriaListi[o].nome, categoriaListi[o].nome);
+        categoriaSelecti.options[categoriaSelecti.options.length] = option;
+    }
+
+    
+    const categoriaSelecth = document.getElementById("categoria-habito");
+    const categoriaListh = getLocalStorage()
+    for (o in categoriaListh) {
+        option = new Option(categoriaListh[o].nome, categoriaList[o].nome);
+        categoriaSelecth.options[categoriaSelecth.options.length] = option;
     }
 
 
