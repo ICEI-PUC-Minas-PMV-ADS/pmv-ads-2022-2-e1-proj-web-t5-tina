@@ -30,8 +30,9 @@
         </header>
         <div class="cabecalho-perfil">
             <div>
-                <i class="fa-solid fa-caret-left"></i>
-                Voltar
+                <a href="./home.html">
+                <button id="voltar"><i class="fa-solid fa-caret-left"></i> Voltar</button>
+                </a>
             </div>
             <div class="perfil"> Perfil</div>
         </div>
@@ -40,9 +41,9 @@
                 <div class="foto-perfil">
                     <div id="display_image"></div>
                     <div>
-                        <input type="file" id="image_input" accept="image/png, image/ppg">
-                        <button id="salvaFoto">Salvar</button>
                         <img id="imgPreview" src="tinaavatar.png" alt="Preview">
+                            <input type="file" id="image_input" accept="image/png, image/ppg">
+                        <button id="salvaFoto">Salvar</button>
                     </div>
                 </div>
             </div>

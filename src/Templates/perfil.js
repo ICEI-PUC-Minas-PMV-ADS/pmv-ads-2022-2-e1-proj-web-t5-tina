@@ -5,6 +5,7 @@
 document.querySelector("#nomePerfil").value = usuarioCorrente.nome
 document.querySelector("#emailPerfil").value = usuarioCorrente.email
 document.querySelector("#senhaPerfil").value = usuarioCorrente.senha
+document.querySelector("#confirmSenha").value = usuarioCorrente.senha
 
 let nomePerfil = usuarioCorrente.nome
 let emailPerfil = usuarioCorrente.email

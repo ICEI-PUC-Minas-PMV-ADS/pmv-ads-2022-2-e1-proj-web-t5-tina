@@ -88,6 +88,15 @@ header {
   align-items: center;
 }
 
+#voltar {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
 .cabecalho-perfil {
   grid-column: 1/13;
   grid-row: 2/3;
@@ -250,20 +259,8 @@ input[type=password] {
   font-size: 15px;
 }
 
-#genero, #datanasc {
-  width: 20%;
-  padding: 10px 10px;
-  margin: 5px 0;
-  display: inline-block;
-  border: 1px solid rgb(204, 204, 204);
-  border-radius: 10px;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-}
 
-#salvaAteracoes,
-#image_input, #salvaFoto {
+input::-webkit-file-upload-button, #salvaAteracoes, #salvaFoto  {
 background-color: rgb(241, 85, 85);
 color: aliceblue;
 width: 20%;
@@ -277,12 +274,21 @@ border-radius: 10px;
 box-sizing: border-box;
 font-size: 16px;
 font-family: Arial, Helvetica, sans-serif;
-cursor: pointer;
+}
+
+/* #image_input {
+  background-color: aqua;
+  width: 100%;
+  color: rgb(241, 85, 85);
+  cursor: pointer;
 }
 
 input::-webkit-file-upload-button {
-display: none;
-}
+  background-color: aqua;
+  width: 100%;
+  color: rgb(241, 85, 85);
+  cursor: pointer;
+} */
 
  footer {
   grid-column: 1/13;
