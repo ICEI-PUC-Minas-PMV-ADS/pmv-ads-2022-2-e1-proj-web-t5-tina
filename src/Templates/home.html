@@ -37,7 +37,7 @@
                 <div class="listas">
                     <div class="lista-itens">
                         Lista de Itens
-                        <a href="#" onclick="onOff('item')" class="button"><img src="../Images/item.png" alt="Item"></a>
+                        <img src="../Images/item.png" alt="Item">
                         <div id="todos-itens">
                             <div id="cada-item" class="cada-item" onclick="abrirModalItem(event)"
                                 style="display: none;">
@@ -46,8 +46,7 @@
                     </div>
                     <div class="lista-habitos">
                         Lista de Hábitos
-                        <a href="#" onclick="onOff('habito')" class="button"><img src="../Images/lista-habitos.png"
-                                alt="Hábitos"></a>
+                        <img src="../Images/lista-habitos.png" alt="Hábitos">
                         <div id="todos-habitos">
                             <div id="cada-habito" class="cada-habito" onclick="abrirModalHabito(event)"
                                 style="display: none;">
@@ -151,9 +150,7 @@
                     <thead>
                         <tr>
                             <th>Categoria</th>
-
                             <th>Cor</th>
-
                             <th>Ação</th>
                         </tr>
                     </thead>
@@ -289,13 +286,9 @@
                     </div>
 
                     <div class="campos">
-
                         <label for="categoria">Categoria: </label>
-
                         <select id="atualizar-categoria" class="categoria">
-
                             <option value="" disabled selected>Escolha a categoria</option>
-
                         </select>
 
                     </div>
@@ -348,7 +341,7 @@
 
                     <div class="campos">
                         <label for="categoria">Categoria: </label>
-                        <select id="categoria-item" class="categoria">
+                        <select id="item-categoria" class="categoria">
                             <option value="" disabled selected>Escolha a categoria</option>
                         </select>
                     </div>
@@ -396,13 +389,9 @@
                     </div>
 
                     <div class="campos">
-
                         <label for="categoria">Categoria: </label>
-
-                        <select id="categoria-habito" class="categoria">
-
+                        <select id="habito-categoria" class="categoria">
                             <option value="" disabled selected>Escolha a categoria</option>
-
                         </select>
 
                     </div>
@@ -440,8 +429,12 @@
     <script src="teste_categoria.js"></script>
     <script src="criar-atividade.js"></script>
     <script src="atualizarAtividade.js"></script>
+    <script src="crud-item.js"></script>
+    <script src="crud-habito.js"></script>
     <script src="inserirAtividadeCalendario.js"></script>
+    <script src="exibir-listas.js"></script>
     <script src="calendarioMensal.js"></script>
+
 </body>
 
 </html>

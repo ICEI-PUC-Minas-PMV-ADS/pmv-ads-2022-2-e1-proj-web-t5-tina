@@ -655,10 +655,18 @@ form button {
     justify-content: center;
 }
 
-#criar-atividade,
+#criar-atividade,   
 #atualizar,
 #excluir,
-#concluir {
+#concluir,
+#btn-criar-item,
+#btn-atualizar-item,
+#btn-remover-item,
+#btn-criar-habito,
+#btn-atualizar-habito,
+#btn-remover-habito,
+#salvar,
+#cancelar {
     background-color: rgb(223, 39, 39);
     border: none;
 
@@ -685,7 +693,13 @@ form button {
 #criar-atividade:hover,
 #atualizar:hover,
 #excluir:hover,
-#concluir:hover {
+#concluir:hover,
+#btn-criar-item:hover,
+#btn-atualizar-item:hover,
+#btn-remover-item:hover,
+#btn-criar-habito:hover,
+#btn-atualizar-habito:hover,
+#btn-remover-habito:hover {
     background-color: #ff616199;
     text-decoration: none;
 }
@@ -743,13 +757,14 @@ form button {
 }
 
 .cada-item, .cada-habito {
-    width: 97%;
+    width: 98%;
     padding: 10px;
     height: 10%;
     box-sizing: border-box;
     background-color: white;
     margin: 5px;
     box-shadow: 0px 0px 3px #CBD4C2;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -842,6 +857,7 @@ form button {
     background-color: white;
     margin: 5px;
     box-shadow: 0px 0px 3px #CBD4C2;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1016,7 +1032,7 @@ button.red{
     background-color:rgb(126, 196, 126);
 }
 .blueText {
-    background-color:rgba(93, 93, 214, 0.814);
+    background-color:rgba(93, 93, 214, 0.816);
 }
 
 .yellowText {
