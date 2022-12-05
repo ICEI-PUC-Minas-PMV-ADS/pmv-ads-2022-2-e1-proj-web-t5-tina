@@ -23,18 +23,18 @@
         <a href="./home.html" class="botao-logo">
           <img id="logo" src="logo3.png" title="logo Tina" />
         </a>
-        <button id="botao-hoje" class="botao-hoje" type="button">Hoje</button>
+        <button id="botao-hoje" class="botao-hoje" type="button"  title="Retornar a data atual">Hoje</button>
         <div id="cabecalho-direita">
           <button class="botao-filtrar" type="button">
             <i class="fa-solid fa-filter"></i>
             Filtrar
           </button>
           <a href="./perfil.html">
-            <button class="botao-perfil">
+            <button class="botao-perfil" title="Clique aqui para acessar seu Perfil">
               <i class="fa-solid fa-user"></i>
             </button>
           </a>
-          <button id="btnLogout">
+          <button id="btnLogout" title="Clique aqui para sair do Tina">
             <i class="fa-sharp fa-solid fa-power-off"></i>
         </button>
         </div>
@@ -42,7 +42,7 @@
       <main>
         <div id="container-listas">
           <div class="listas">
-            <div class="lista-itens">
+            <div class="lista-itens" title="Aqui são exibidos os itens adicionados à Lista de Itens">
               Lista de Itens
               <a href="#" onclick="onOff('item')" class="button"
                 ><img src="../Images/item.png" alt="Item"
@@ -56,7 +56,7 @@
                 ></div>
               </div>
             </div>
-            <div class="lista-habitos">
+            <div class="lista-habitos" title="Aqui são exibidos os hábitos adicionados à Lista de Hábitos">
               Lista de Hábitos
               <a href="#" onclick="onOff('habito')" class="button"
                 ><img src="../Images/lista-habitos.png" alt="Hábitos"
@@ -78,8 +78,9 @@
             <div id="header">
               <div id="monthDisplay"></div>
               <div>
-                <button id="backButton">Anterior</button>
-                <button id="nextButton">Seguinte</button>
+                <button id="backButton" title="Retornar ao mês anterior">Anterior</button>
+                <button id="nextButton" title="Avançar para o próximo mês">Seguinte</button>
+
               </div>
             </div>
             <div id="dia-semana"></div>
@@ -95,56 +96,56 @@
       </main>
       <aside>
         <div class="menu-visualizacao">
-          <button class="visualizacao-mes" type="button">
+          <button class="visualizacao-mes" type="button" title="Exibir visão mensal">
             <a href="./home.html">
             <img src="../Images/mensal.png" alt="Mensal" />
             </a>
           </button>
-          <button class="visualizacao-semana" type="button">
+          <button class="visualizacao-semana" type="button"title="Exibir visão semanal">
             <img src="../Images/semanal.png" alt="Semanal" />
           </button>
-          <button class="visualizacao-diaria" type="button">
+          <button class="visualizacao-diaria" type="button" title="Exibir visão diária">
             <img src="../Images/diaria.png" alt="Diária" />
           </button>
         </div>
         <div class="menu-listas">
-          <button class="itens" type="button">
+          <button class="itens" type="button" title="Exibir/ocultar lista de itens">
             <img src="../Images/item.png" alt="Item" />
           </button>
-          <button class="habitos" type="">
+          <button class="habitos" type="button" title="Exibir/ocultar lista de hábitos">
             <img src="../Images/lista-habitos.png" alt="Hábitos" />
           </button>
         </div>
         <div class="menu-criacao">
-          <button class="criacao-atividade" type="button">
+          <button class="criacao-atividade" type="button" title="Inserir uma atividade">
             <a href="#" onclick="onOff('atividade')" class="button"
               ><img src="../Images/atividade.png" alt="Atividade"
             /></a>
           </button>
-          <button class="criacao-item" type="button">
+          <button class="criacao-item" type="button" title="Inserir um item">
             <a href="#" onclick="onOff('item', 'criar')" class="button"
               ><img src="../Images/item.png" alt="Item"
             /></a>
           </button>
-          <button class="criacao-habito" type="button">
+          <button class="criacao-habito" type="button" title="Inserir um hábito">
             <a href="#" onclick="onOff('habito', 'criar')" class="button"
               ><img src="../Images/lista-habitos.png" alt="Hábitos"
             /></a>
           </button>
 
-          <button class="criacao-categoria" type="button">
+          <button class="criacao-categoria" type="button" title="Inserir uma categoria">
             <a href="#" onclick="onOff('categoria')" class="button"
               ><img src="../Images/categoria.png" alt="Categoria"
             /></a>
           </button>
         </div>
         <div class="menu-ferramentas">
-          <button class="ajuda" type="button">
+          <button class="ajuda" type="button" title="Aqui você encontra detalhes e informações sobre o Tina!">
             <a href="./duvidas.html">
               <img src="../Images/ajuda.png" alt="Ajuda" />
             </a>
           </button>
-          <button class="ferramentas" type="button">
+          <button class="ferramentas" type="button" title="Configurações e ajustes">
             <a href="./configuracoes.html">
               <img src="../Images/configuracoes.png" alt="Configurações" />
             </a>
