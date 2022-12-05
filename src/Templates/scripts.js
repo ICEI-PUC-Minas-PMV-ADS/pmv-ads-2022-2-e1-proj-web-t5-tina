@@ -133,7 +133,9 @@ function onOff(type, action = null) {
             .toggle("addScroll")
     } else if (type == "atualizar-atividade") {
         dataInicioEditado.setAttribute('min', dataMinimaFormatada)
-        dataFimEditado.setAttribute('min', dataMinimaFormatada)
+        dataInicioEditado.addEventListener("input", function () {
+          dataFimEditado.setAttribute("min", dataInicioEditado.value);
+        });
         botoes.forEach(botao => {
             if (botao.id !== 'atualizar-atividade') {
                 botao.removeAttribute('onclick')
