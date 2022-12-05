@@ -878,7 +878,7 @@ form button {
     color: darkblue;
     background-color: lightgray;
     border-radius: 15px;
-    margin: 5px 0;
+    margin: 5px 5px;
     font-weight: 200;
 }
 
@@ -1026,3 +1026,59 @@ button.red{
 .pinkText {
     background-color:rgba(239, 122, 217, 0.814);
 }
+
+#container-horarios {
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+  width: 100%;
+}
+
+#horarios {
+  display: flex;
+  flex-direction: column;
+  width: 750px;
+  height: 650px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-left: 5px;
+}
+
+#horarios span {
+  margin: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+span {
+  width: 700px;
+}
+
+#dia-semana {
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.dayDiario + #currentDayDiario {
+  background-color: #e8f4fa;
+  width: 100%;
+}
+
+.dayDiario {
+  width: 765px;
+  padding: 10px;
+  height: 98%;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: white;
+  margin: 5px;
+  box-shadow: 0px 0px 3px #cbd4c2;
+  display: flex;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: darkblue
+}
+
