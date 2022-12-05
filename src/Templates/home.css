@@ -867,7 +867,7 @@ form button {
   color: darkblue;
   background-color: lightgray;
   border-radius: 15px;
-  margin: 5px 0;
+  margin: 5px 5px;
   font-weight: 200;
 }
 
@@ -1024,7 +1024,7 @@ button.red {
 #horarios {
   display: flex;
   flex-direction: column;
-  width: 80px;
+  width: 750px;
   height: 650px;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -1037,7 +1037,7 @@ button.red {
 }
 
 span {
-  width: 100%;
+  width: 700px;
 }
 
 #dia-semana {

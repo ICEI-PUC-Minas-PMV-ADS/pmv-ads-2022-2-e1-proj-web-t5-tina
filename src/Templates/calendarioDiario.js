@@ -1,5 +1,4 @@
 let nav = 0;
-let clicked = null;
 
 const calendar = document.getElementById("calendar");
 const diaSemana = document.getElementById("dia-semana");
@@ -78,8 +77,10 @@ function load() {
   daySquare.classList.add("dayDiario");
 
   daySquare.innerText = day;
-
-  // inserirAtividades(dayString, daySquare);
+  
+  const dayString = `${year}-${month < 9 ? "0" : ""}${month + 1}-${
+    day < 10 ? "0" : ""
+  }${day}`;
 
   daySquare.id = "currentDayDiario";
 
@@ -89,9 +90,14 @@ function load() {
 
   intervaloHorarios.forEach(horario => {
     const intervalo = document.createElement("span");
+    intervalo.setAttribute('id', horario)
     intervalo.innerText = horario
     horarios.appendChild(intervalo);
+    let idIntervalo = intervalo.id;
+    inserirAtividades(dayString, intervalo, idIntervalo);
   });
+
+  
 
   weekday.classList.add("weekday");
   diaDaSemana = dt.toLocaleDateString("pt-br", {
@@ -116,10 +122,10 @@ function initButtons() {
     load();
   });
 
-  // document.getElementById('botao-hoje').addEventListener('click', () => {
-  //     nav = 0;
-  //     load();
-  // });
+  document.getElementById('botao-hoje').addEventListener('click', () => {
+      nav = 0;
+      load();
+  });
 }
 
 // exibirListaItens()

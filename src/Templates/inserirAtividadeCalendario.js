@@ -1,4 +1,4 @@
-function inserirAtividades(dayString, daySquare) {
+function inserirAtividades(dayString, intervalo, idIntervalo) {
 
     getDados().forEach(atividade => {
 
@@ -28,7 +28,14 @@ function inserirAtividades(dayString, daySquare) {
 
             eventDiv.setAttribute('id', atividade.titulo)
             eventDiv.innerText = atividade.titulo;
-            daySquare.appendChild(eventDiv);
+
+
+            const [horas, minutos] = atividade.horarioInicio.split(':')
+            const [horasIntervalo, minutosIntervalo] = idIntervalo.split(':')
+            if (horasIntervalo == horas && parseInt(minutos) >= parseInt(minutosIntervalo)) {
+              intervalo.appendChild(eventDiv);
+            }
+            
         }
     });
 }
