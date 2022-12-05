@@ -2,7 +2,7 @@ window.onload=function(){
 function initThemeSelector() {
     const themeSelect = document.getElementById("themeSelect");
     const themeStylesheetLink = document.getElementById("themeStylesheetLink");
-    const currentTheme = localStorage.getItem("theme") || "tema-padrao";
+    const currentTheme = localStorage.getItem("theme") || "tema-icones";
 
     function ativarTema(themeName) {
         themeStylesheetLink.setAttribute("href", `temas/${themeName}.css`);
