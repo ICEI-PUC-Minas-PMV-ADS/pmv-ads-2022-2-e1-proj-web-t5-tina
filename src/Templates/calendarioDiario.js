@@ -93,7 +93,7 @@ function load() {
     intervalo.innerText = horario;
     horarios.appendChild(intervalo);
     let idIntervalo = intervalo.id;
-    inserirAtividades(dayString, intervalo, idIntervalo);
+    inserirAtividadeDiario(dayString, intervalo, idIntervalo);
   });
 
   weekday.classList.add("weekday");
