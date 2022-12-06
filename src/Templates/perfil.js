@@ -1,7 +1,4 @@
-//   Verifica se o usuário já esta logado e se negativo, redireciona para tela de login        
-//   if (!usuarioCorrente.login) {
-//     window.location.href = login.html;
-// }
+
 document.querySelector("#nomePerfil").value = usuarioCorrente.nome
 document.querySelector("#emailPerfil").value = usuarioCorrente.email
 document.querySelector("#senhaPerfil").value = usuarioCorrente.senha
@@ -57,34 +54,3 @@ if (senha != senhaNova) {
 }
 
 document.getElementById('salvaAteracoes').addEventListener('click', editDados);
-
-//foto,
-document.querySelector('#image_input').addEventListener('change', function () {
-    const reader = new FileReader()
-
-    reader.addEventListener('load', () => {
-        localStorage.setItem("recent-image", reader.result)
-    })
-
-    reader.readAsDataURL(this.files[0])
-})
-
-document.addEventListener("DOMContentLoaded", () => {
-    const recentImageDataUrl = localStorage.getItem("recent-image")
-    if (recentImageDataUrl) {
-        document.querySelector('#imgPreview').setAttribute('src', recentImageDataUrl)
-    }
-
-})
-
-//recarrega foto
-document.querySelector('#salvaFoto').addEventListener('click', function recarregarPagina(){
-    window.location.reload();
-} )
-
-//Fazer logout
-function logoutUser () {
-    usuarioCorrente = {};
-    sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
-    window.location.href = 'login.html'
-}
