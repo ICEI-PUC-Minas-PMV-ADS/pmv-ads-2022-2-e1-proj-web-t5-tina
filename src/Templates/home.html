@@ -21,10 +21,20 @@
             </a>
             <button id="botao-hoje" class="botao-hoje" type="button" title="Retornar a data atual">Hoje</button>
             <div id="cabecalho-direita">
-                <button class="botao-filtrar" type="button">
+                <button class="botao-filtrar" type="button" onclick="aparecerFiltros()">
                     <i class="fa-solid fa-filter"></i>
                     Filtrar
                 </button>
+                <div class="campos">
+                    <select id="filtro" class="categoria" onchange="filtrar(event)" style="display: none;">
+                        <option value="Todos" selected>Todos</option>
+                        <option value="Todos" disabled>Prioridades</option>
+                        <option value="Prioridade Baixa">Baixa</option>
+                        <option value="Prioridade Média">Média</option>
+                        <option value="Prioridade Alta">Alta</option>
+                        <option value="Todos" disabled>Categorias</option>
+                    </select>
+                </div>
                 <a href="./perfil.html">
                     <button class="botao-perfil" title="Clique aqui para acessar seu Perfil">
                         <i class="fa-solid fa-user"></i>
@@ -39,21 +49,16 @@
             <div id="container-listas">
                 <div class="listas">
                     <div class="lista-itens" title="Aqui são exibidos os itens adicionados à Lista de Itens">
-                        Lista de Itens
-                        <a href="#" onclick="onOff('item')" class="button"><img src="../Images/item.png" alt="Item"></a>
+                        <p><img src="../Images/item.png" alt="Item"> Lista de Itens</p>
                         <div id="todos-itens">
-                            <div id="cada-item" class="cada-item" onclick="abrirModalItem(event)"
-                                style="display: none;">
+                            <div id="cada-item" onclick="abrirModalItem(event)" style="display: none;">
                             </div>
                         </div>
                     </div>
                     <div class="lista-habitos" title="Aqui são exibidos os hábitos adicionados à Lista de Hábitos">
-                        Lista de Hábitos
-                        <a href="#" onclick="onOff('habito')" class="button"><img src="../Images/lista-habitos.png"
-                                alt="Hábitos"></a>
+                        <p><img src="../Images/lista-habitos.png" alt="Hábitos"> Lista de Hábitos</p>
                         <div id="todos-habitos">
-                            <div id="cada-habito" class="cada-habito" onclick="abrirModalHabito(event)"
-                                style="display: none;">
+                            <div id="cada-habito" onclick="abrirModalHabito(event)" style="display: none;">
                             </div>
                         </div>
                     </div>
@@ -92,56 +97,63 @@
         </main>
         <aside>
             <div class="menu-visualizacao">
-                <button class="visualizacao-mes" type="button" title="Exibir visão mensal">
+            <p>Visão</p>
+                <button class="visualizacao-mes" type="button" id="btn-visualizacao-mensal" title="Exibir visão mensal">
                     <img src="../Images/mensal.png" alt="Mensal">
+                    <p>Mensal</p>
                 </button>
                 <button class="visualizacao-semana" type="button" title="Exibir visão semanal">
                     <img src="../Images/semanal.png" alt="Semanal">
-                </button>                
-                <button class="visualizacao-diaria" type="button" title="Exibir visão diária">
-                    <a href="./home-calendario-diario.html">
+                    <p>Semanal</p>
+                </button>
+                <button class="visualizacao-diaria" type="button" id="btn-visualizacao-diaria" title="Exibir visão diária">
                     <img src="../Images/diaria.png" alt="Diária">
-                    </a>
-                </button>               
+                    <p>Diária</p>
+                </button>
             </div>
             <div class="menu-listas">
-                <button class="itens" type="button" title="Exibir/ocultar lista de itens">
-                    <img src="../Images/item.png" alt="Item">
+                <p>Listas</p>
+                <button class="itens" type="button" onclick="esconderLista(event)" title="Exibir/ocultar lista de itens">
+                    <img src="../Images/item.png" alt="Item" class="icone itens">
+                    <p>Itens</p>
                 </button>
-                <button class="habitos" type="button" title="Exibir/ocultar lista de hábitos">
-                    <img src="../Images/lista-habitos.png" alt="Hábitos">
+                <button class="habitos" type="" onclick="esconderLista(event)">
+                    <img src="../Images/lista-habitos.png" alt="Hábitos" class="icone habitos" title="Exibir/ocultar lista de hábitos">
+                    <p>Hábitos</p>
                 </button>
             </div>
             <div class="menu-criacao">
-                <button class="criacao-atividade" type="button" title="Inserir uma atividade">
+                <p>Criar</p>
+                <button class="criacao-atividade" type="button"  title="Inserir uma atividade">
                     <a href="#" onclick="onOff('atividade')" class="button"><img src="../Images/atividade.png"
                             alt="Atividade"></a>
+                    <p>Atividade</p>
                 </button>
                 <button class="criacao-item" type="button" title="Inserir um item">
                     <a href="#" onclick="onOff('item', 'criar')" class="button"><img src="../Images/item.png"
                             alt="Item"></a>
+                    <p>Item</p>
                 </button>
                 <button class="criacao-habito" type="button" title="Inserir um hábito">
                     <a href="#" onclick="onOff('habito', 'criar')" class="button"><img src="../Images/lista-habitos.png"
-                            alt="Hábitos"></a>
+                            alt="Hábitos"></a> 
+                    <p>Hábito</p>
                 </button>
 
                 <button class="criacao-categoria" type="button" title="Inserir uma categoria">
                     <a href="#" onclick="onOff('categoria')" class="button"><img src="../Images/categoria.png"
-                            alt="Categoria"></a>
+                            alt="Categoria"></a><p>Categoria</p>
                 </button>
             </div>
             <div class="menu-ferramentas">
-
-                <button class="ajuda" type="button" title="Aqui você encontra detalhes e informações sobre o Tina!">
-                    <a href="./duvidas.html">
-                        <img src="../Images/ajuda.png" alt="Ajuda">
-                    </a>
+                <p>Mais</p>
+                <button class="ajuda" type="button" id="btn-ajuda" title="Aqui você encontra detalhes e informações sobre o Tina!">
+                    <img src="../Images/ajuda.png" alt="Ajuda">
+                    <p>Dúvidas</p>
                 </button>
-                <button class="ferramentas" type="button" title="Configurações e ajustes">
-                    <a href="./configuracoes.html">
-                        <img src="../Images/configuracoes.png" alt="Configurações">
-                    </a>
+                <button class="ferramentas" type="button" id="btn-configuracoes" title="Configurações e ajustes">
+                    <img src="../Images/configuracoes.png" alt="Configurações">
+                    <p>Ajustes</p>
                 </button>
             </div>
         </aside>
@@ -156,9 +168,7 @@
                     <thead>
                         <tr>
                             <th>Categoria</th>
-
                             <th>Cor</th>
-
                             <th>Ação</th>
                         </tr>
                     </thead>
@@ -233,7 +243,6 @@
                         </select>
 
                     </div>
-
                     <div class="campos">
                         <label for="prioridade">Prioridade: </label>
                         <select id="prioridade" class="prioridade" name="prioridade">
@@ -294,14 +303,9 @@
                     </div>
 
                     <div class="campos">
-
                         <label for="categoria">Categoria: </label>
-
                         <select id="atualizar-categoria" class="categoria">
-
                             <option value="" disabled selected>Escolha a categoria</option>
-                            <option value="teste" disabled selected>teste</option>
-
                         </select>
 
                     </div>
@@ -336,7 +340,7 @@
         <div id="modal-item" class="hide">
             <div class="novo-item">
                 <div class="cabecalho">
-                    <h1>Novo Item</h1>
+                    <h1 id="h1-item">Novo Item</h1>
                     <a href="#" onclick="onOff('item')"><i class="fa-solid fa-x"></i></a>
                 </div>
 
@@ -354,7 +358,7 @@
 
                     <div class="campos">
                         <label for="categoria">Categoria: </label>
-                        <select id="categoria-item" class="categoria">
+                        <select id="item-categoria" class="categoria">
                             <option value="" disabled selected>Escolha a categoria</option>
                         </select>
                     </div>
@@ -367,19 +371,19 @@
                             <option value="Alta">Alta</option>
                         </select>
                     </div>
-                    <button id="btn-criar-item">Criar</button>
-                    <button id='btn-atualizar-item' onclick="atualizarItem()" style="display: none;">Atualizar</button>
-                    <button id='btn-remover-item' onclick="removerItem()" style="display: none">Remover</button>
+                    <div id="div-criar-atualizar-excluir-item">
+                        <button id="btn-criar-item">Criar</button>
+                        <button id='btn-atualizar-item' onclick="atualizarItem()" style="display: none;">Atualizar</button>
+                        <button id='btn-remover-item' onclick="removerItem()" style="display: none">Remover</button>
+                    </div>
                 </form>
             </div>
         </div>
 
-
-
         <div id="modal-habito" class="hide">
             <div class="novo-habito">
                 <div class="cabecalho">
-                    <h1>Novo hábito</h1>
+                    <h1 id="h1-habito">Novo hábito</h1>
                     <a href="#" onclick="onOff('habito')"><i class="fa-solid fa-x"></i></a>
                 </div>
                 <form id="form-habito">
@@ -402,13 +406,9 @@
                     </div>
 
                     <div class="campos">
-
                         <label for="categoria">Categoria: </label>
-
-                        <select id="categoria-habito" class="categoria">
-
+                        <select id="habito-categoria" class="categoria">
                             <option value="" disabled selected>Escolha a categoria</option>
-
                         </select>
 
                     </div>
@@ -431,10 +431,12 @@
                             <option value="mensalmente">Mensalmente </option>
                         </select>
                     </div>
-                    <button id="btn-criar-habito">Criar</button>
-                    <button id='btn-atualizar-habito' onclick="atualizarHabito()"
-                        style="display: none;">Atualizar</button>
-                    <button id='btn-remover-habito' onclick="removerHabito()" style="display: none">Remover</button>
+                    <div id="div-criar-atualizar-excluir-habito">
+                        <button id="btn-criar-habito">Criar</button>
+                        <button id='btn-atualizar-habito' onclick="atualizarHabito()"
+                            style="display: none;">Atualizar</button>
+                        <button id='btn-remover-habito' onclick="removerHabito()" style="display: none">Remover</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -446,9 +448,13 @@
     <script src="teste_categoria.js"></script>
     <script src="criar-atividade.js"></script>
     <script src="atualizarAtividade.js"></script>
+    <script src="crud-item.js"></script>
+    <script src="crud-habito.js"></script>
     <script src="inserirAtividadeCalendario.js"></script>
+    <script src="exibir-listas.js"></script>
     <script src="logout.js"></script>
     <script src="calendarioMensal.js"></script>
+
 </body>
 
 </html>

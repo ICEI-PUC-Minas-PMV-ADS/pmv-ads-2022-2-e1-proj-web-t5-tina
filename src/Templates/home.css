@@ -136,27 +136,10 @@ header {
     align-items: center;
 }
 
-/* .cabecalho-calendario {
-    grid-column: 1/13;
-    grid-row: 2/3;
-    display: flex;
-    border-bottom: solid 1px lightgray;
-    border-top: solid 1px lightgray;
-    box-shadow: 1px 1px 2px lightblue;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 15px;
-    padding-right: 15px;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: bolder;
-} */
-
 main {
     grid-column: 2/13;
     grid-row: 2/12;
     display: flex;
-    justify-content: space-evenly;
-    padding-right: 10px;
 }
 
 main img {
@@ -167,7 +150,8 @@ main img {
 #container-listas {
     display: flex;
     justify-content: space-between;
-    width: 30%;
+    width: 25%;
+    margin-right: 4%;
 }
 
 .listas {
@@ -177,28 +161,25 @@ main img {
     width: 100%;
 }
 
-.lista-itens {
-    border: solid 1px lightgray;
-    border-radius: 15px;
-    box-shadow: 1px 1px 8px lightblue;
-    text-align: center;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: bolder;
-    padding-top: 10px;
-    height: 49%;
-    width: 100%;
-}
-
+.lista-itens,
 .lista-habitos {
     border: solid 1px lightgray;
     border-radius: 15px;
     box-shadow: 1px 1px 8px lightblue;
-    text-align: center;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: bolder;
-    padding-top: 10px;
     height: 49%;
     width: 100%;
+    padding-top: 3%;
+}
+
+.lista-itens p,
+.lista-habitos p{
+    color: black;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 3%;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bolder;
+    padding-top: 1%;
 }
 
 #container-calendario {
@@ -248,18 +229,17 @@ aside img {
     justify-content: space-around;
 }
 
-.menu-visualizacao>p,
-.menu-listas>p,
+.menu-visualizacao p,
+.menu-listas p,
 .menu-criacao p,
-.menu-ferramentas>p {
+.menu-ferramentas p {
     letter-spacing: 0.5px;
-    /*não tinha*/
     padding: 5px 10px;
-    /*5px 1px;*/
     text-decoration: none;
     transition-duration: 0.4s;
-    color: black;
-    font-size: small;
+    color: darkgrey;
+    font-size: 150;
+    opacity: 100;
     font-weight: bolder;
     font-family: Helvetica, Arial, sans-serif;
 }
@@ -271,24 +251,13 @@ aside img {
     background-color: rgb(223, 39, 39);
     border: hidden 4px lightblue;
     width: 40px;
-    /*40px*/
     height: 40px;
     border-radius: 15px;
-    /*100%*/
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
-    color: white;
-    letter-spacing: 0.5px;
-    /*não tinha*/
-    padding: 5px 10px;
-    /*5px 1px;*/
-    text-decoration: none;
-    margin: 3px 10px;
     transition-duration: 0.4s;
-    font-size: x-small;
-    /*large*/
+    padding: 5px 10px;
+    margin: 3px 10px;
     display: flex;
-    justify-content: space-between;
-    /*center*/
     align-items: center;
 }
 
@@ -296,8 +265,7 @@ aside img {
 .menu-listas>button:hover,
 .menu-criacao>button:hover,
 .menu-ferramentas>button:hover {
-    width: 100px;
-    /*40px*/
+    width: 110px;
     background-color: rgb(241, 85, 85);
     box-shadow: 1px 1px 3px black;
 }
@@ -311,13 +279,14 @@ aside img {
 }
 
 
-.menu-visualizacao>button:hover p,
+.menu-visualizacao>button:hover p, .menu-visualizacao>button:hover a,
 .menu-listas>button:hover p,
 .menu-criacao>button:hover p,
-.menu-ferramentas>button:hover p {
+.menu-ferramentas>button:hover p,.menu-ferramentas>button:hover a {
     color: white;
     opacity: 100;
     visibility: visible;
+    letter-spacing: 0.5px;
 }
 
 /*
@@ -664,23 +633,27 @@ form button {
 }
 
 
-#div-atualizar-excluir-atividade {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    
-}
-
-#div-criar-atividade {
+#div-atualizar-excluir-atividade,
+#div-criar-atividade,
+#div-criar-atualizar-excluir-item,
+#div-criar-atualizar-excluir-habito {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-#criar-atividade,
+#criar-atividade,   
 #atualizar,
 #excluir,
-#concluir {
+#concluir,
+#btn-criar-item,
+#btn-atualizar-item,
+#btn-remover-item,
+#btn-criar-habito,
+#btn-atualizar-habito,
+#btn-remover-habito,
+#salvar,
+#cancelar {
     background-color: rgb(223, 39, 39);
     border: none;
 
@@ -707,7 +680,13 @@ form button {
 #criar-atividade:hover,
 #atualizar:hover,
 #excluir:hover,
-#concluir:hover {
+#concluir:hover,
+#btn-criar-item:hover,
+#btn-atualizar-item:hover,
+#btn-remover-item:hover,
+#btn-criar-habito:hover,
+#btn-atualizar-habito:hover,
+#btn-remover-habito:hover {
     background-color: #ff616199;
     text-decoration: none;
 }
@@ -765,37 +744,42 @@ form button {
 }
 
 .cada-item, .cada-habito {
+    color: black;
+    font-size: 16px;
     width: 97%;
-    padding: 10px;
+    padding: 2% 1% 0 1%;
     height: 10%;
     box-sizing: border-box;
     background-color: white;
     margin: 5px;
     box-shadow: 0px 0px 3px #CBD4C2;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: left;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bolder;
 }
-#todos-itens, #todos-habitos {
+#todos-itens, #todos-habitos{
     height: 90%;
     margin: 1%;
     padding-top: 2%;
 }
-#todos-itens.addScroll, #todos-habitos.addScroll {
+#todos-itens.addScroll, #todos-habitos.addScroll, .day.addScroll {
     overflow: auto;
 }
 
-#todos-itens::-webkit-scrollbar, #todos-habitos::-webkit-scrollbar {
+#todos-itens::-webkit-scrollbar, #todos-habitos::-webkit-scrollbar, .day::-webkit-scrollbar {
     width: 0.7em;
 }
 
-#todos-itens::-webkit-scrollbar-track, #todos-habitos::-webkit-scrollbar-track {
+#todos-itens::-webkit-scrollbar-track, #todos-habitos::-webkit-scrollbar-track, .day::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 15px;
 }
 
-#todos-itens::-webkit-scrollbar-thumb, #todos-habitos::-webkit-scrollbar-thumb {
+#todos-itens::-webkit-scrollbar-thumb, #todos-habitos::-webkit-scrollbar-thumb, .day::-webkit-scrollbar-thumb {
     background-color: rgba(217, 217, 217, 0.58);
     outline: 1px solid white;
     border-radius: 10px;
@@ -803,7 +787,7 @@ form button {
 
 #header {
     padding: 10px;
-    color: darkblue;
+    color: rgb(223, 39, 39);
     font-size: 26px;
     font-family: sans-serif;
     display: flex;
@@ -837,7 +821,7 @@ form button {
 #weekdays {
     width: 100%;
     display: flex;
-    color: darkblue;
+    color: black;
     justify-content: center
 }
 
@@ -864,6 +848,7 @@ form button {
     background-color: white;
     margin: 5px;
     box-shadow: 0px 0px 3px #CBD4C2;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -897,11 +882,11 @@ form button {
     padding: 5px;
     display: inline-table;
     flex-direction: column;
-    color: darkblue;
     background-color: lightgray;
-    border-radius: 15px;
-    margin: 5px 5px;
-    font-weight: 200;
+    border-radius: 10px;
+    margin: 5px 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 600;
 }
 
 
@@ -1038,7 +1023,7 @@ button.red{
     background-color:rgb(126, 196, 126);
 }
 .blueText {
-    background-color:rgba(93, 93, 214, 0.814);
+    background-color:rgba(93, 93, 214, 0.816);
 }
 
 .yellowText {
