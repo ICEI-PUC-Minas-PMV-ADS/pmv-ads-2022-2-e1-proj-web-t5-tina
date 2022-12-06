@@ -237,123 +237,79 @@ aside {
   box-shadow: 3px 3px 5px var(--cor-shadow);
 }
 
-.menu-visualizacao {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.menu-visualizacao>button {
-  background-color: var(--cor-botoes-visualizacao);
-  border: hidden 4px var(--cor-shadow);
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
-  color: white;
-  padding: 5px 1px;
-  text-decoration: none;
-  margin: 3px 10px;
-  transition-duration: 0.4s;
-  font-size: large;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.menu-visualizacao>button:hover {
-  background-color: var(--cor-botoes-houver);
-  box-shadow: 1px 1px 3px black;
-}
-
-.menu-listas {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.menu-listas>button {
-  background-color: var(--cor-botoes-listas);
-  width: 40px;
-  height: 40px;
-  border: hidden 4px var(--cor-shadow);
-  border-radius: 20px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
-  color: white;
-  padding: 5px 1px;
-  text-align: center;
-  text-decoration: none;
-  margin: 3px 10px;
-  transition-duration: 0.4s;
-  font-size: large;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.menu-listas>button:hover {
-  background-color: var(--cor-botoes-houver);
-  box-shadow: 1px 1px 3px black;
-}
-
-.menu-criacao {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.menu-criacao>button {
-  background-color: var(--cor-botoes-criacao);
-  width: 40px;
-  height: 40px;
-  border: hidden 4px lightblue;
-  border-radius: 10px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
-  color: white;
-  padding: 5px 1px;
-  text-align: center;
-  text-decoration: none;
-  margin: 3px 10px;
-  transition-duration: 0.4s;
-  font-size: large;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.menu-criacao>button:hover {
-  background-color: var(--cor-botoes-houver);
-  box-shadow: 1px 1px 3px black;
-}
-
+.menu-visualizacao,
+.menu-listas,
+.menu-criacao,
 .menu-ferramentas {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
+.menu-visualizacao>p,
+.menu-listas>p,
+.menu-criacao p,
+.menu-ferramentas>p {
+    letter-spacing: 0.5px;
+    /*não tinha*/
+    padding: 5px 10px;
+    /*5px 1px;*/
+    text-decoration: none;
+    transition-duration: 0.4s;
+    color: black;
+    font-size: small;
+    font-weight: bolder;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.menu-visualizacao>button,
+.menu-listas>button,
+.menu-criacao>button,
 .menu-ferramentas>button {
-  background-color: var(--cor-botoes-ferramentas);
-  width: 40px;
-  height: 40px;
-  border: hidden 4px lightblue;
-  border-radius: 2px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
-  color: white;
-  padding: 5px 1px;
-  text-align: center;
-  text-decoration: none;
-  margin: 3px 10px;
-  transition-duration: 0.4s;
-  font-size: large;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background-color: var(--cor-botoes-visualizacao);
+    border: hidden 4px var(--cor-shadow);
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
+    color: white;
+    letter-spacing: 0.5px;
+    padding: var(--padding);
+    text-decoration: none;
+    margin: 3px 10px;
+    transition-duration: 0.4s;
+    font-size: var(--font-size);
+    display: flex;
+    justify-content: var(--justify);
+    align-items: center;
 }
 
+.menu-visualizacao>button:hover,
+.menu-listas>button:hover,
+.menu-criacao>button:hover,
 .menu-ferramentas>button:hover {
-  background-color: var(--cor-botoes-houver);
-  box-shadow: 1px 1px 3px black;
+    width: 100px;
+    /*40px*/
+    background-color: var(--cor-botoes-houver);
+    box-shadow: 1px 1px 3px black;
+}
+
+.menu-visualizacao>button p,
+.menu-listas>button p,
+.menu-criacao>button p,
+.menu-ferramentas>button p {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.menu-visualizacao>button:hover p,
+.menu-listas>button:hover p,
+.menu-criacao>button:hover p,
+.menu-ferramentas>button:hover p {
+    color: white;
+    opacity: 100;
+    visibility: visible;
 }
 
 footer {

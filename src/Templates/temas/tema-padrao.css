@@ -8,7 +8,7 @@
     --cor-aside: #F2F2F2;
     --cor-header: ;
     --cor-bory: ;
-    --cor-botoes-houver: rgb(241, 247, 248);;
+    --cor-botoes-houver: rgb(241, 85, 85);;
     --cor-borda: lightgray;
     --cor-shadow: lightblue;
     --color-font: black;
@@ -16,4 +16,7 @@
     --cor-background3: ;
     --cor-fundo-titulo: rgb(220, 224, 224);
     --color-font: black;
+    --padding: 5px 1px;
+    --font-size: large;
+    --justify: center;
 }

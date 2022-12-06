@@ -11,8 +11,11 @@
     --cor-botoes-houver: rgb(241, 85, 85);
     --cor-borda: lightgray;
     --cor-shadow: lightblue;
-    -color-font: black;
+    --color-font: black;
     --cor-background2: ;
+    --padding: 5px 10px;;
+    --font-size: x-small;
+    --justify: space-between;
 }
 
 .fa-solid.fa-m, .fa-solid.fa-s, .fa-solid.fa-d, .fa-solid.fa-i, .fa-solid.fa-h, .fa-solid.fa-a, .fa-solid.fa-plus, .fa-solid.fa-h, .fa-solid.fa-c, .fa-solid.fa-question, .fa-solid.fa-gear {

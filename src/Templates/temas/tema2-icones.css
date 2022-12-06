@@ -14,6 +14,9 @@
     --cor-background2: ;
     --cor-background3: #e5e9f7;
     --cor-fundo-titulo: #5f83e6;
+    --padding: 5px 10px;;
+    --font-size: x-small;
+    --justify: space-between;
 }
 
 .fa-solid.fa-m, .fa-solid.fa-s, .fa-solid.fa-d, .fa-solid.fa-i, .fa-solid.fa-h, .fa-solid.fa-a, .fa-solid.fa-plus, .fa-solid.fa-h, .fa-solid.fa-c, .fa-solid.fa-question, .fa-solid.fa-gear {
