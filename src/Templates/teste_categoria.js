@@ -193,31 +193,37 @@ for (o in categoriaList) {
 }
 
 const categoriaSelecti = document.getElementById("item-categoria");
-for (o in categoriaList) {
-    option = new Option(categoriaList[o].nome, categoriaList[o].nome);
-    option.style.backgroundColor = categoriaList[o].codigo;
-    categoriaSelecti.options[categoriaSelecti.options.length] = option;
+if (categoriaSelecti) {
+    for (o in categoriaList) {
+        option = new Option(categoriaList[o].nome, categoriaList[o].nome);
+        option.style.backgroundColor = categoriaList[o].codigo;
+        categoriaSelecti.options[categoriaSelecti.options.length] = option;
+    }
 }
-
 
 const categoriaSelecth = document.getElementById("habito-categoria");
-for (o in categoriaList) {
-    option = new Option(categoriaList[o].nome, categoriaList[o].nome);
-    option.style.backgroundColor = categoriaList[o].codigo;
-    categoriaSelecth.options[categoriaSelecth.options.length] = option;
+if (categoriaSelecth) {
+    for (o in categoriaList) {
+        option = new Option(categoriaList[o].nome, categoriaList[o].nome);
+        option.style.backgroundColor = categoriaList[o].codigo;
+        categoriaSelecth.options[categoriaSelecth.options.length] = option;
+    }
 }
 
-
 const categoriaSelecta = document.getElementById("atualizar-categoria");
-for (a in categoriaList) {
-    option = new Option(categoriaList[a].nome, categoriaList[a].nome);
-    option.style.backgroundColor = categoriaList[a].codigo;
-    categoriaSelecta.options[categoriaSelecta.options.length] = option;
+if (categoriaSelecta) {
+    for (a in categoriaList) {
+        option = new Option(categoriaList[a].nome, categoriaList[a].nome);
+        option.style.backgroundColor = categoriaList[a].codigo;
+        categoriaSelecta.options[categoriaSelecta.options.length] = option;
+    }
 }
 
 const categoriaSelectFiltro = document.getElementById("filtro");
-for (a in categoriaList) {
-    option = new Option(categoriaList[a].nome, categoriaList[a].nome);
-    option.style.backgroundColor = categoriaList[a].codigo;
-    categoriaSelectFiltro.options[categoriaSelectFiltro.options.length] = option;
-}   
+if (categoriaSelectFiltro) {
+    for (a in categoriaList) {
+        option = new Option(categoriaList[a].nome, categoriaList[a].nome);
+        option.style.backgroundColor = categoriaList[a].codigo;
+        categoriaSelectFiltro.options[categoriaSelectFiltro.options.length] = option;
+    }
+}
