@@ -108,6 +108,27 @@ header {
   box-shadow: 1px 1px 3px black;
 }
 
+#btnLogout {
+  background-color: white;
+  border: solid 1px lightgray;
+  border-radius: 15px;
+  box-shadow: 1px 1px 1px lightblue;
+  color: black;
+  padding: 10px 10px;
+  margin-left: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 4px 20px 4px 20px;
+  transition-duration: 0.4s;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#btnLogout:hover {
+  background-color: rgb(241, 247, 248);
+  box-shadow: 1px 1px 3px black;
+}
+
 #cabecalho-direita {
   display: flex;
   padding-right: 5px;

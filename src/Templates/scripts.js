@@ -12,8 +12,17 @@ const botoes = document.querySelectorAll('.button')
 
 function onOff(type, action = null) {
     if (type == "atividade") {
+        dataFim.disabled = true;
         dataInicio.setAttribute('min', dataMinimaFormatada)
+        dataInicio.addEventListener('input', function() {
+            dataFim.disabled = false;
+            dataFim.setAttribute('min', dataInicio.value)
+        })
         dataFim.setAttribute('min', dataMinimaFormatada)
+        horarioFinal.disabled = true;
+        horarioInicio.addEventListener('input', function() {
+            horarioFinal.disabled = false;
+        })
         botoes.forEach(botao => {
             if (!botao.parentElement.classList.contains('criacao-atividade')) {
                 botao.removeAttribute('onclick')
@@ -84,7 +93,9 @@ function onOff(type, action = null) {
         document.querySelector("#modal-categoria").classList.toggle("addScroll")
     } else if (type == "atualizar-atividade") {
         dataInicioEditado.setAttribute('min', dataMinimaFormatada)
-        dataFimEditado.setAttribute('min', dataMinimaFormatada)
+        dataInicioEditado.addEventListener("input", function () {
+          dataFimEditado.setAttribute("min", dataInicioEditado.value);
+        });
         botoes.forEach(botao => {
             if (botao.id !== 'atualizar-atividade') {
                 botao.removeAttribute('onclick')

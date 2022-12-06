@@ -82,10 +82,41 @@ header {
   box-shadow: 1px 1px 3px black;
 }
 
+
+#btnLogout {
+  background-color: white;
+  border: solid 1px lightgray;
+  border-radius: 15px;
+  box-shadow: 1px 1px 1px lightblue;
+  color: black;
+  padding: 10px 10px;
+  margin-left: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 4px 20px 4px 20px;
+  transition-duration: 0.4s;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#btnLogout:hover {
+  background-color: rgb(241, 247, 248);
+  box-shadow: 1px 1px 3px black;
+}
+
 #cabecalho-direita {
   display: flex;
   padding-right: 5px;
   align-items: center;
+}
+
+#voltar {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
 }
 
 .cabecalho-perfil {
@@ -250,20 +281,8 @@ input[type=password] {
   font-size: 15px;
 }
 
-#genero, #datanasc {
-  width: 20%;
-  padding: 10px 10px;
-  margin: 5px 0;
-  display: inline-block;
-  border: 1px solid rgb(204, 204, 204);
-  border-radius: 10px;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-}
 
-#salvaAteracoes,
-#image_input, #salvaFoto {
+input::-webkit-file-upload-button, #salvaAteracoes, #salvaFoto  {
 background-color: rgb(241, 85, 85);
 color: aliceblue;
 width: 20%;
@@ -277,12 +296,21 @@ border-radius: 10px;
 box-sizing: border-box;
 font-size: 16px;
 font-family: Arial, Helvetica, sans-serif;
-cursor: pointer;
+}
+
+/* #image_input {
+  background-color: aqua;
+  width: 100%;
+  color: rgb(241, 85, 85);
+  cursor: pointer;
 }
 
 input::-webkit-file-upload-button {
-display: none;
-}
+  background-color: aqua;
+  width: 100%;
+  color: rgb(241, 85, 85);
+  cursor: pointer;
+} */
 
  footer {
   grid-column: 1/13;

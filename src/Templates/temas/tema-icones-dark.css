@@ -1,5 +1,3 @@
-
-
 :root {
     /* --cor-background: rgba(112, 111, 114, 0.212); */
     --cor-background: rgba(112, 111, 114, 0.212);
@@ -18,41 +16,33 @@
     --cor-background3: black;
     --cor-fundo-titulo: rgb(11, 12, 12);
 }
-
 .fa-solid.fa-m, .fa-solid.fa-s, .fa-solid.fa-d, .fa-solid.fa-i, .fa-solid.fa-h, .fa-solid.fa-a, .fa-solid.fa-plus, .fa-solid.fa-h, .fa-solid.fa-c, .fa-solid.fa-question, .fa-solid.fa-gear {
     display: none;
 }
 
 #mensal{
-    background-image: url("/temas/mensal.png");
-    background-size: 20px 20px;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#semanal{
-    background-image: url("/temas/semanal.png");
+    background-image: url("/src/Images/mensal.png");
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 #diaria{
-    background-image: url("/temas/diaria.png");
+    background-image: url("/src/Images/diaria.png");
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 #item{
-    background-image: url("/temas/item.png");
+    background-image: url("/src/Images/item.png");
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 #habitos{
-    background-image: url("/temas/habitos.png");
+    background-image: url("/src/Images/habitos.png");
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: center;
@@ -60,7 +50,7 @@
 
 
 #atividade{
-    background-image: url("/temas/atividade.png");
+    background-image: url("/src/Images/atividade.png");
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: center;
@@ -68,21 +58,21 @@
 
 
 #categoria{
-    background-image: url("/temas/categoria.png");
+    background-image: url("/src/Images/categoria.png");
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 #ajuda{
-    background-image: url("/temas/ajuda.png");
+    background-image: url("/src/Images/ajuda.png");
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 #configuracoes{
-    background-image: url("/temas/configuracoes.png");
+    background-image: url("/src/Images/configuracoes.png");
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: center;
