@@ -84,7 +84,7 @@ const preencherCamposModal = (atividadeASerAtualizada) => {
 const abrirModalUpdateExcluir = (event) => {
 
     if (event.target.id != "" && event.target.id != "calendar" && event.target.id != "currentDay" && event.target.id != "currentDayDiario" && event.target.id != "horarios" && !intervaloHorariosDiarios.includes(event.target.id)) {
-        onOff('atualizar-atividade')
+        onOff('atualizar-atividade')    
 
         getDados().forEach(atividade => {
 
