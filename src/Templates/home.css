@@ -448,7 +448,7 @@ footer {
 #modal-atividade .nova-atividade .cabecalho h1,
 #modal-item .novo-item .cabecalho h1,
 #modal-atualizar-atividade .atualizar-atividade h1,
-#modal-categoria .nova-categotia .cabecalho h1,
+#modal-categoria .nova-categoria .cabecalho h1,
 #modal-habito .novo-habito .cabecalho h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: x-large;
@@ -457,7 +457,7 @@ footer {
 .nova-atividade .cabecalho a,
 .novo-item .cabecalho a,
 .atualizar-atividade a,
-.novo-categoria .cabecalho a,
+.nova-categoria .cabecalho a,
 .novo-habito .cabecalho a {
     background-color: rgb(223, 39, 39);
     border: hidden 4px lightblue;
@@ -552,7 +552,8 @@ form button {
 #div-atualizar-excluir-atividade,
 #div-criar-atividade,
 #div-criar-atualizar-excluir-item,
-#div-criar-atualizar-excluir-habito {
+#div-criar-atualizar-excluir-habito,
+#div-salvar-cancelar-categoria {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -805,8 +806,7 @@ form button {
     font-weight: 600;
 }
 
-
-.button-categoria{
+/*.button-categoria{
     color: gray;
     border: solid 1px lightgray;
     border-radius: 15px;
@@ -820,7 +820,7 @@ form button {
     transition: box-shadow .6s ease;
     font-weight: bold;
     font-family: Helvetica, Arial, sans-serif;
-}
+}*/
 
 .button.blue{
     color: gray;
@@ -933,13 +933,13 @@ button.red{
 
 /*cores da categoria*/
 .redText {
-    background-color:rgba(246, 55, 55, 0.762);
+    background-color: rgb(240, 128, 128);
 }
 .greenText {
-    background-color:rgb(126, 196, 126);
+    background-color:rgb(183, 213, 172);
 }
 .blueText {
-    background-color:rgba(93, 93, 214, 0.816);
+    background-color: rgb(173, 216, 230);
 }
 
 .yellowText {
@@ -947,7 +947,7 @@ button.red{
 }
 
 .pinkText {
-    background-color:rgba(239, 122, 217, 0.814);
+    background-color:rgb(255, 182, 193);
 }
 
 #container-horarios {
