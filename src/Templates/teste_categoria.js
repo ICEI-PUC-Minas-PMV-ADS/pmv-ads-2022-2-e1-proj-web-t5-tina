@@ -47,16 +47,21 @@ const saveCategoria = () => {
     if (isValidFields()) {
         var codigo = document.getElementById('cor').value
 
-        if (codigo == "Azul")
-            codigo = 'rgba(93, 93, 214, 0.816)'
-        else if (codigo == "Amarelo")
-            codigo = 'rgba(239, 221, 122, 0.814)'
-        else if (codigo == "Vermelho")
-            codigo = 'rgba(246, 55, 55, 0.762)'
-        else if (codigo == "Verde")
-            codigo = 'rgb(126, 196, 126)'
-        else if (codigo == "Rosa")
-            codigo = 'rgba(239, 122, 217, 0.814)'
+        if (codigo == 'Azul') {
+            codigo = "rgb(173, 216, 230)";
+        }
+        else if (codigo == 'Rosa') {
+            codigo = "rgb(255, 182, 193)";
+        }
+        else if (codigo == 'Vermelho') {
+            codigo = "rgb(240, 128, 128)";
+        }
+        else if (codigo == 'Verde') {
+            codigo = "rgb(183, 213, 172)";
+        }
+        else if (codigo == 'Amarelo') {
+            codigo = "rgba(239, 221, 122, 0.814)";
+        }
 
         const adCategoria = {
             nome: document.getElementById('nome').value,
@@ -166,16 +171,16 @@ function condicional() {
     var i;
     for (i = 0; i < tds.length; i++) {
         if (tds[i].innerHTML == 'Azul') {
-            tds[i].style.backgroundColor = "rgba(93, 93, 214, 0.814)";
+            tds[i].style.backgroundColor = "rgb(173, 216, 230)";
         }
         else if (tds[i].innerHTML == 'Rosa') {
-            tds[i].style.backgroundColor = "rgba(239, 122, 217, 0.814)";
+            tds[i].style.backgroundColor = "rgb(255, 182, 193)";
         }
         else if (tds[i].innerHTML == 'Vermelho') {
-            tds[i].style.backgroundColor = "rgba(246, 55, 55, 0.762)";
+            tds[i].style.backgroundColor = "rgb(240, 128, 128)";
         }
         else if (tds[i].innerHTML == 'Verde') {
-            tds[i].style.backgroundColor = "rgb(126, 196, 126)";
+            tds[i].style.backgroundColor = "rgb(183, 213, 172)";
         }
         else if (tds[i].innerHTML == 'Amarelo') {
             tds[i].style.backgroundColor = "rgba(239, 221, 122, 0.814)";
