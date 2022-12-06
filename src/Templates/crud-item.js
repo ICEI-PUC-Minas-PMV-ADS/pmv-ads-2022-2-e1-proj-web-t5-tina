@@ -92,6 +92,7 @@ function abrirModalItem(evento) {
 }
 
 const prencherInputsItens = (item) => {
+    document.getElementById('h1-item').innerHTML = "Editar Item"
     document.getElementById('idItem').value = item.titulo
     document.getElementById('item-titulo').value = item.titulo
     document.getElementById('item-descricao').value = item.descricao

@@ -35,3 +35,29 @@ function exibirListaHabitos() {
         listaHabitos.appendChild(cadaHabito)
     })
 }
+
+//Esconder listas
+function esconderLista(lista) {
+    if(lista.target.classList.contains('itens')){
+        if(document.querySelector(".listas .lista-itens").style.display != 'none'){
+            document.querySelector(".listas .lista-itens").style.display = 'none';
+        } else {
+            document.querySelector(".listas .lista-itens").style.display = 'block'
+        }
+    }
+    if(lista.target.classList.contains('habitos')){
+        if(document.querySelector(".listas .lista-habitos").style.display != 'none'){
+            document.querySelector(".listas .lista-habitos").style.display = 'none';
+            listasEscondidas = listasEscondidas && true
+        } else {
+            //document.querySelector("#container-listas").style.display == 'flex'
+            document.querySelector("#container-listas").style.visibility = 'visible'
+            document.querySelector(".listas .lista-habitos").style.display = 'block'
+        }
+    }
+    if(document.querySelector(".listas .lista-itens").style.display == 'none' && document.querySelector(".listas .lista-habitos").style.display == 'none'){
+       document.querySelector("#container-listas").style.visibility = 'hidden'
+    } else {
+        document.querySelector("#container-listas").style.visibility = 'visible'
+    }
+ }

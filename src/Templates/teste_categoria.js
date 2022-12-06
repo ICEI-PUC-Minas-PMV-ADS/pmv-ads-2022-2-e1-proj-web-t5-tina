@@ -56,7 +56,7 @@ const saveCategoria = () => {
         else if (codigo == "Verde")
             codigo = 'rgb(126, 196, 126)'
         else if (codigo == "Rosa")
-            codigo = 'rgba(239, 221, 122, 0.814)'
+            codigo = 'rgba(239, 122, 217, 0.814)'
 
         const adCategoria = {
             nome: document.getElementById('nome').value,
@@ -183,42 +183,41 @@ function condicional() {
     }
 }
 
-// tornando a escolha da categoria (option) dinamica ( falta ajustar reiniciar em qualquer alteração)
-
-const categoriaSelect = document.getElementById("categoria");
+// tornando a escolha da categoria (option)
 const categoriaList = getLocalStorage()
+const categoriaSelect = document.getElementById("categoria");
 for (o in categoriaList) {
     option = new Option(categoriaList[o].nome, categoriaList[o].nome);
+    option.style.backgroundColor = categoriaList[o].codigo;
     categoriaSelect.options[categoriaSelect.options.length] = option;
 }
 
-
 const categoriaSelecti = document.getElementById("item-categoria");
-const categoriaListi = getLocalStorage()
-for (o in categoriaListi) {
-    option = new Option(categoriaListi[o].nome, categoriaListi[o].nome);
+for (o in categoriaList) {
+    option = new Option(categoriaList[o].nome, categoriaList[o].nome);
+    option.style.backgroundColor = categoriaList[o].codigo;
     categoriaSelecti.options[categoriaSelecti.options.length] = option;
 }
 
 
 const categoriaSelecth = document.getElementById("habito-categoria");
-const categoriaListh = getLocalStorage()
-for (o in categoriaListh) {
-    option = new Option(categoriaListh[o].nome, categoriaList[o].nome);
+for (o in categoriaList) {
+    option = new Option(categoriaList[o].nome, categoriaList[o].nome);
+    option.style.backgroundColor = categoriaList[o].codigo;
     categoriaSelecth.options[categoriaSelecth.options.length] = option;
 }
 
 
 const categoriaSelecta = document.getElementById("atualizar-categoria");
-const categoriaLista = getLocalStorage()
-for (a in categoriaLista) {
-    option = new Option(categoriaLista[a].nome, categoriaLista[a].nome);
+for (a in categoriaList) {
+    option = new Option(categoriaList[a].nome, categoriaList[a].nome);
+    option.style.backgroundColor = categoriaList[a].codigo;
     categoriaSelecta.options[categoriaSelecta.options.length] = option;
 }
 
 const categoriaSelectFiltro = document.getElementById("filtro");
-const categoriaListFiltro = getLocalStorage()
-for (a in categoriaListFiltro) {
-    option = new Option(categoriaListFiltro[a].nome, categoriaListFiltro[a].nome);
+for (a in categoriaList) {
+    option = new Option(categoriaList[a].nome, categoriaList[a].nome);
+    option.style.backgroundColor = categoriaList[a].codigo;
     categoriaSelectFiltro.options[categoriaSelectFiltro.options.length] = option;
 }   

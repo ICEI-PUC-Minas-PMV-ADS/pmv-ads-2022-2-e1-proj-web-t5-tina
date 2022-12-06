@@ -106,3 +106,11 @@ function onOff(type, action = null) {
         })
         }
     }
+
+document.getElementById('btn-ajuda').addEventListener('click', function(){window.location.href = "./duvidas.html"})
+
+document.getElementById('btn-configuracoes').addEventListener('click', function(){window.location.href = "./configuracoes.html"})
+
+document.getElementById('btn-visualizacao-mensal').addEventListener('click', function(){window.location.href = "./home.html"})
+
+document.getElementById('btn-visualizacao-diaria').addEventListener('click', function(){window.location.href = "./home-calendario-diario.html"})

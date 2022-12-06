@@ -83,9 +83,6 @@ function criarHabito() {
     } else {
         alert("Não foi possível salvar. Há campos vazios ou título igual ao de outro hábito.")
     }
-
-    
-
 }
 
 //Ler Habito
@@ -97,7 +94,8 @@ function abrirModalHabito(evento) {
     prencherInputsHabitos(habito)
 }
 
-const prencherInputsHabitos = (habito) => {
+const prencherInputsHabitos = (habito) => {    
+    document.getElementById('h1-habito').innerHTML = "Editar Hábito"
     document.getElementById('idHabito').value = habito.titulo
     document.getElementById('habito-titulo').value = habito.titulo
     document.getElementById('habito-descricao').value = habito.descricao

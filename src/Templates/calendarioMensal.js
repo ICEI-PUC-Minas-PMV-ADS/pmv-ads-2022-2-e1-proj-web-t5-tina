@@ -77,7 +77,9 @@ exibirListaHabitos()
 function filtrar(event) {
     var filtro = event.target.value
     var prioridade, categoria;
-    if(filtro.includes('Prioridade')){
+    if(filtro == 'Todos'){
+        window.location.href = './home.html';
+    } else if(filtro.includes('Prioridade')){
         filtro = filtro.slice(11)
         filtrarPrioridade(filtro)
     } else {
@@ -87,10 +89,8 @@ function filtrar(event) {
 
 function filtrarCategoria(categoria){
     Array.prototype.forEach.call(document.getElementsByClassName("cada-item"), function (divisor) {
-        var item = getDadosItem().find(item => item.categoria == categoria)
-        if (filtro == "Todos") {
-            divisor.style.display = 'block'
-        } else if (item && divisor.innerText == item.titulo) {
+        var item = getDadosItem().find(item => item.categoria == categoria && item.titulo == divisor.innerHTML)
+        if (item && divisor.innerText == item.titulo) {
             divisor.style.display = 'block'
         } else {
             divisor.style.display = 'none'
@@ -98,21 +98,18 @@ function filtrarCategoria(categoria){
     });
 
     Array.prototype.forEach.call(document.getElementsByClassName("cada-habito"), function (divisor) {
-        var habito = getDadosHabito().find(habito => habito.categoria == categoria)
-        if (categoria == "Todos") {
-            divisor.style.display = 'block'
-        } else if (habito && divisor.innerHTML == habito.titulo) {
+        var habito = getDadosHabito().find(habito => habito.categoria == categoria && habito.titulo == divisor.innerHTML)
+        if (habito && divisor.innerHTML == habito.titulo) {
                 divisor.style.display = 'block'
         } else {
             divisor.style.display = 'none'
         }
+
     });
 
     Array.prototype.forEach.call(document.getElementsByClassName("event"), function (divisor) {
-        var atividade = getDados().find(atividade => atividade.categoria == categoria)
-        if (categoria == "Todos") {
-            divisor.style.display = 'block'
-        } else if (atividade && divisor.innerHTML == atividade.titulo) {
+        var atividade = getDados().find(atividade => atividade.categoria == categoria && atividade.titulo == divisor.innerHTML)
+        if (atividade && divisor.innerHTML == atividade.titulo) {
                 divisor.style.display = 'block'
         } else {
             divisor.style.display = 'none'
@@ -124,10 +121,8 @@ function filtrarCategoria(categoria){
 function filtrarPrioridade(prioridade) {
 
     Array.prototype.forEach.call(document.getElementsByClassName("cada-item"), function (divisor) {
-        var item = getDadosItem().find(item => item.prioridade == prioridade)
-        if (prioridade == "Todos") {
-            divisor.style.display = 'block'
-        } else if (item && divisor.innerText == item.titulo) {
+        var item = getDadosItem().find(item => item.prioridade == prioridade  && item.titulo == divisor.innerHTML)
+        if (item && divisor.innerText == item.titulo) {
             divisor.style.display = 'block'
         } else {
             divisor.style.display = 'none'
@@ -136,9 +131,7 @@ function filtrarPrioridade(prioridade) {
 
     Array.prototype.forEach.call(document.getElementsByClassName("cada-habito"), function (divisor) {
         var habito = getDadosHabito().find(habito => habito.prioridade == prioridade)
-        if (prioridade == "Todos") {
-            divisor.style.display = 'block'
-        } else if (habito && divisor.innerHTML == habito.titulo) {
+        if (habito && divisor.innerHTML == habito.titulo) {
                 divisor.style.display = 'block'
         } else {
             divisor.style.display = 'none'
@@ -147,9 +140,7 @@ function filtrarPrioridade(prioridade) {
 
     Array.prototype.forEach.call(document.getElementsByClassName("event"), function (divisor) {
         var atividade = getDados().find(atividade => atividade.prioridade == prioridade)
-        if (prioridade == "Todos") {
-            divisor.style.display = 'block'
-        } else if (atividade && divisor.innerHTML == atividade.titulo) {
+        if (atividade && divisor.innerHTML == atividade.titulo) {
                 divisor.style.display = 'block'
         } else {
             divisor.style.display = 'none'
