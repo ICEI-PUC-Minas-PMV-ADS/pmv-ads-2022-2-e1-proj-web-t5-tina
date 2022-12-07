@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="perfil.css">
+    <link rel="stylesheet" id="themeStylesheetLink" href="temas/tema-icones.css">
     <script src="https://kit.fontawesome.com/e7dd02bc5b.js" crossorigin="anonymous"></script>
     <title>Tina</title>
 </head>
@@ -20,14 +21,26 @@
             <a href="./home.html">
                 <button class="botao-hoje" type="button">Hoje</button>
             </a>
+                <select id="themeSelect" style="display: none;">
+                    <option class="opcao-tema" value="tema-padrao">Padrão</option>
+                    <option class="opcao-tema" value="tema-icones">Padrão - Icones</option>
+                    <option class="opcao-tema" value="tema-dark">Dark </option>
+                    <option class="opcao-tema" value="tema-icones-dark">Dark - Icones</option>
+                    <option class="opcao-tema" value="tema1">Tema1</option>
+                    <option class="opcao-tema" value="tema1-icones">Tema 1 - Icones</option>
+                    <option class="opcao-tema" value="tema2">Tema2</option>
+                    <option class="opcao-tema" value="tema2-icones">Tema 2 - Icones</option>
+                    <option class="opcao-tema" value="Tema3">Tema3</option>
+                    <option class="opcao-tema" value="tema3-icones">Tema 3 - Icones</option>
+                </select>
             <div id="cabecalho-direita">
                 <a href="./perfil.html">
                     <button class="botao-perfil">
                         <i class="fa-solid fa-user"></i>
                     </button>
                 </a>
-                <button id="btnLogout">
-                    <i class="fa-sharp fa-solid fa-power-off"></i>
+                <button id="btnLogout" title="Clique aqui para sair do Tina">
+                    <i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i>
                 </button>
             </div>
         </header>
@@ -69,6 +82,7 @@
         </main>
         <footer>Rodapé</footer>
     </div>
+
 </body>
 
 
@@ -76,4 +90,5 @@
 <script type="text/javascript" src="login.js"></script>
 <script src="logout.js"></script>
 <script type="text/javascript" src="cadastro.js"></script>
+<script type="text/javascript" src="configuracoes.js"></script>
 <script type="text/javascript" src="perfil.js"></script>

@@ -8,6 +8,7 @@ html,
 body {
   display: block;
   height: 1080px;
+  background-color: var(--cor-bory);
 }
 
 .container {

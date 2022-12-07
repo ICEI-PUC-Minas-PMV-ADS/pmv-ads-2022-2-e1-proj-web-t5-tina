@@ -8,10 +8,12 @@
     --cor-aside: #F2F2F2;
     --cor-header: ;
     --cor-bory: ;
-    --cor-botoes-houver: rgb(241, 85, 85);
+    --cor-botoes-hover: rgb(241, 85, 85);
+    --cor-botoes-hover2: rgb(241, 247, 248);
     --cor-borda: lightgray;
     --cor-shadow: lightblue;
     --color-font: black;
+    --cor-fundo-titulo: rgb(220, 224, 224);
     --cor-background2: ;
     --padding: 5px 10px;;
     --font-size: x-small;

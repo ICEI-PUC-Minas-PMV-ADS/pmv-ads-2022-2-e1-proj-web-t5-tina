@@ -63,7 +63,7 @@ header {
 }
 
 .botao-hoje:hover {
-  background-color:var(--cor-botoes-houver);
+  background-color: var(--cor-botoes-hover2);
   box-shadow: 1px 1px 3px black;
 }
 
@@ -86,7 +86,7 @@ header {
 }
 
 .botao-filtrar:hover {
-  background-color:var(--cor-botoes-houver);
+  background-color: var(--cor-botoes-hover2);
   box-shadow: 1px 1px 3px black;
 }
 
@@ -111,8 +111,12 @@ header {
 }
 
 .botao-perfil:hover {
-  background-color:var(--cor-botoes-houver);
+  background-color: var(--cor-botoes-hover2);
   box-shadow: 1px 1px 3px black;
+}
+
+.fa-user, .fa-arrow-right-from-bracket {
+color: var(--color-font);
 }
 
 #btnLogout {
@@ -132,7 +136,7 @@ header {
 }
 
 #btnLogout:hover {
-  background-color: rgb(241, 247, 248);
+  background-color: var(--cor-botoes-hover2);
   box-shadow: 1px 1px 3px black;
 }
 
@@ -290,7 +294,7 @@ aside {
 .menu-ferramentas>button:hover {
     width: 100px;
     /*40px*/
-    background-color: var(--cor-botoes-houver);
+    background-color: var(--cor-botoes-hover);
     box-shadow: 1px 1px 3px black;
 }
 
