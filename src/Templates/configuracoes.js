@@ -1,4 +1,5 @@
 window.onload=function(){
+
 function initThemeSelector() {
     const themeSelect = document.getElementById("themeSelect");
     const themeStylesheetLink = document.getElementById("themeStylesheetLink");
@@ -15,6 +16,9 @@ function initThemeSelector() {
     ativarTema(currentTheme);
     themeSelect.value = currentTheme;
 
+    // if (currentTheme === "tema-padrao") {
+    //     document.getElementById("atividadeTeste").style.display = "none"
+    // }
 }
 
 initThemeSelector();
