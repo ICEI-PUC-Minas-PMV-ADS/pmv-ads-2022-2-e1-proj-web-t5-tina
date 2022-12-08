@@ -1,6 +1,8 @@
 :root {
-    /* --cor-background: rgba(112, 111, 114, 0.212); */
     --cor-background: rgba(112, 111, 114, 0.212);
+    --cor-background2: rgba(146, 145, 148, 0.993);
+    --cor-background3: black;
+    --cor-background4: rgb(0, 0, 0);
     --cor-botoes-visualizacao: black;
     --cor-botoes-listas: black;
     --cor-botoes-criacao: black;
@@ -12,13 +14,12 @@
     --cor-borda: rgb(116, 113, 113);
     --cor-shadow: rgb(102, 100, 100);
     --color-font: rgb(230, 230, 230);
-    --cor-background2: rgba(112, 111, 114, 0.212);
-    --cor-background3: black;
     --cor-fundo-titulo: rgb(11, 12, 12);
-    --padding: 5px 10px;;
-    --font-size: x-small;
-    --justify: space-between;
+    --padding: 5px 1px;
+    --font-size: large;
+    --justify: center;
 }
+
 .fa-solid.fa-m, .fa-solid.fa-s, .fa-solid.fa-d, .fa-solid.fa-i, .fa-solid.fa-h, .fa-solid.fa-a, .fa-solid.fa-plus, .fa-solid.fa-h, .fa-solid.fa-c, .fa-solid.fa-question, .fa-solid.fa-gear {
     display: none;
 }

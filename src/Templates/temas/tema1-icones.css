@@ -7,12 +7,14 @@
     --cor-aside: #F2F2F2;
     --cor-header: ;
     --cor-bory: ;
-    --cor-botoes-hover: rgb(241, 85, 85);
+    --cor-botoes-hover: #FBF5C5;
+    --cor-botoes-hover2:  #AFDEFA;
     --cor-borda: lightgray;
     --cor-shadow: lightblue;
     --color-font: black;
     --cor-background2: ;
-    --cor-background3: #ffe4f1d3;;
+    --cor-background3: #f38989;;
+    --cor-background4:  white;
     --cor-fundo-titulo: #FBF5C5;
     --padding: 5px 10px;;
     --font-size: x-small;

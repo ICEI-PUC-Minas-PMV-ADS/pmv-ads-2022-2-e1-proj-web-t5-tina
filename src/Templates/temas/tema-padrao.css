@@ -13,11 +13,11 @@
     --cor-borda: lightgray;
     --cor-shadow: lightblue;
     --color-font: black;
-    --cor-background2: ;
-    --cor-background3: ;
     --cor-fundo-titulo: rgb(220, 224, 224);
-    --color-font: black;
-    --padding: 5px 1px;
+    --cor-background2: ;
+    --cor-background3: #eca3a3;
+    --cor-background4: white;
+    --padding: 5px 10px;;
     --font-size: large;
     --justify: center;
 }

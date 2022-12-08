@@ -29,7 +29,6 @@ header {
   background-color: var(--cor-header);
   border-bottom: solid 1px var(--cor-borda);
   box-shadow: 1px 1px 2px var(--cor-shadow);
-  background-color: var(--cor-background2);
 }
 
 .botao-logo {
@@ -47,11 +46,10 @@ header {
 }
 
 .botao-hoje {
-  background-color: var(--cor-background3);
+  background-color: var(--cor-background4);
   border: solid 1px var(--cor-borda);
   border-radius: 15px;
   box-shadow: 1px 1px 1px var(--cor-shadow);
-  color: black;
   padding: 10px 70px;
   text-align: center;
   text-decoration: none;
@@ -68,11 +66,11 @@ header {
 }
 
 .botao-filtrar {
-  background-color: var(--cor-background3);
+  background-color: var(--cor-background4);
   border: solid 1px var(--cor-borda);
   border-radius: 15px;
   box-shadow: 1px 1px 1px var(--cor-shadow);
-  color: black;
+  color: var(--color-font);
   padding: 10px 15px;
   text-decoration: none;
   margin: 4px 2px;
@@ -95,7 +93,7 @@ header {
 }
 
 .botao-perfil {
-  background-color: var(--cor-background3);
+  background-color: var(--cor-background4);
   border: solid 1px var(--cor-borda);
   border-radius: 15px;
   box-shadow: 1px 1px 1px var(--cor-shadow);
@@ -120,7 +118,7 @@ color: var(--color-font);
 }
 
 #btnLogout {
-  background-color: white;
+  background-color: var(--cor-background4);
   border: solid 1px lightgray;
   border-radius: 15px;
   box-shadow: 1px 1px 1px lightblue;
@@ -266,11 +264,66 @@ aside {
     font-family: Helvetica, Arial, sans-serif;
 }
 
-.menu-visualizacao>button,
-.menu-listas>button,
-.menu-criacao>button,
+.menu-visualizacao>button{
+  background-color: var(--cor-botoes-visualizacao);
+  border: hidden 4px var(--cor-shadow);
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
+  color: white;
+  letter-spacing: 0.5px;
+  padding: var(--padding);
+  text-decoration: none;
+  margin: 3px 10px;
+  transition-duration: 0.4s;
+  font-size: var(--font-size);
+  display: flex;
+  justify-content: var(--justify);
+  align-items: center;
+}
+
+.menu-listas>button {
+  background-color: var(--cor-botoes-listas);
+  border: hidden 4px var(--cor-shadow);
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
+  color: white;
+  letter-spacing: 0.5px;
+  padding: var(--padding);
+  text-decoration: none;
+  margin: 3px 10px;
+  transition-duration: 0.4s;
+  font-size: var(--font-size);
+  display: flex;
+  justify-content: var(--justify);
+  align-items: center;
+}
+
+.menu-criacao>button {
+  background-color: var( --cor-botoes-criacao);
+  border: hidden 4px var(--cor-shadow);
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
+  color: white;
+  letter-spacing: 0.5px;
+  padding: var(--padding);
+  text-decoration: none;
+  margin: 3px 10px;
+  transition-duration: 0.4s;
+  font-size: var(--font-size);
+  display: flex;
+  justify-content: var(--justify);
+  align-items: center;
+}
+
+
 .menu-ferramentas>button {
-    background-color: var(--cor-botoes-visualizacao);
+    background-color: var(--cor-botoes-ferramentas);
     border: hidden 4px var(--cor-shadow);
     width: 40px;
     height: 40px;

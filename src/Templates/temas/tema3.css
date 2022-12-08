@@ -8,14 +8,14 @@
     --cor-header: rgba(112, 111, 114, 0.212);
     --cor-bory: rgb(37, 37, 37);
     --cor-botoes-hover: rgb(87, 87, 87);
+    --cor-botoes-hover2: rgb(101, 177, 39);
     --cor-borda: rgb(116, 113, 113);
     --cor-shadow: rgb(102, 100, 100);
     --color-font: rgb(230, 230, 230);
     --cor-background2: rgba(112, 111, 114, 0.212);
     --cor-background3: rgb(187, 144, 236);
     --cor-fundo-titulo: rgb(52, 107, 224);
-    --padding: 5px 1px;
+    --padding: 5px 10px;;
     --font-size: large;
     --justify: center;
 }
-
