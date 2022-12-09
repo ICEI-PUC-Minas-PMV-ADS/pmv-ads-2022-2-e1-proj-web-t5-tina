@@ -11,7 +11,10 @@ function initPage() {
 
     //Fazer logout
 function logoutUser () {
+    let sair = confirm('Deseja realmente sair do Tina?')
+     if (sair) {
     usuarioCorrente = {};
     sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
     window.location.href = 'login.html'
+     }
 }
