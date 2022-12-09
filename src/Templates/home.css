@@ -8,6 +8,7 @@ html,
 body {
     display: block;
     height: 920px;
+    background-color: var(--cor-bory);
 }
 
 .container {
@@ -25,15 +26,16 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 5px;
-    border-bottom: solid 1px lightgray;
-    box-shadow: 1px 1px 2px lightblue;
+    border-bottom: solid 1px var(--cor-borda);
+    box-shadow: 1px 1px 2px var(--cor-shadow);
+    background-color: var(--cor-background);
 }
 
 .botao-logo {
     padding: 25px;
-    border-right: solid 1px lightgray;
+    border-right: solid 1px var(--cor-borda);
     text-decoration: none;
-    color: black;
+    color: var(--color-font);
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bolder;
 }
@@ -43,11 +45,11 @@ header {
 }
 
 .botao-hoje {
-    background-color: white;
-    border: solid 1px lightgray;
+    background-color: var(--cor-background4);
+    border: solid 1px var(--cor-borda);
     border-radius: 15px;
-    box-shadow: 1px 1px 1px lightblue;
-    color: black;
+    box-shadow: 1px 1px 1px var(--cor-shadow);
+    color: var(--color-font);
     padding: 10px 70px;
     text-align: center;
     text-decoration: none;
@@ -58,16 +60,16 @@ header {
 }
 
 .botao-hoje:hover {
-    background-color: rgb(241, 247, 248);
-    box-shadow: 1px 1px 3px black;
+    background-color: var(--cor-botoes-hover2);
+    box-shadow: 1px 1px 3px var(--cor-shadow);
 }
 
 .botao-filtrar {
-    background-color: white;
-    border: solid 1px lightgray;
+    background-color: var(--cor-background4);
+    border: solid 1px var(--cor-borda);
     border-radius: 15px;
-    box-shadow: 1px 1px 1px lightblue;
-    color: black;
+    box-shadow: 1px 1px 1px var(--cor-shadow);
+    color: var(--color-font);
     padding: 10px 15px;
     text-decoration: none;
     margin: 4px 2px;
@@ -80,8 +82,8 @@ header {
 }
 
 .botao-filtrar:hover {
-    background-color: rgb(241, 247, 248);
-    box-shadow: 1px 1px 3px black;
+    background-color: var(--cor-botoes-hover2);
+    box-shadow: 1px 1px 3px var(--cor-shadow);
 }
 
 .fa-filter {
@@ -89,11 +91,11 @@ header {
 }
 
 .botao-perfil {
-    background-color: white;
-    border: solid 1px lightgray;
+    background-color: var(--cor-background4);
+    border: solid 1px var(--cor-borda);
     border-radius: 15px;
-    box-shadow: 1px 1px 1px lightblue;
-    color: black;
+    box-shadow: 1px 1px 1px var(--cor-shadow);
+    color: var(--color-font);
     padding: 10px 10px;
     text-align: center;
     text-decoration: none;
@@ -104,17 +106,17 @@ header {
 }
 
 .botao-perfil:hover {
-    background-color: rgb(241, 247, 248);
-    box-shadow: 1px 1px 3px black;
+    background-color: var(--cor-botoes-hover2);
+    box-shadow: 1px 1px 3px var(--cor-shadow);
 }
 
 
 #btnLogout {
-    background-color: white;
-    border: solid 1px lightgray;
+    background-color: var(--cor-background4);
+    border: solid 1px var(--cor-borda);
     border-radius: 15px;
-    box-shadow: 1px 1px 1px lightblue;
-    color: black;
+    box-shadow: 1px 1px 1px var(--cor-shadow);
+    color: var(--color-font);
     padding: 10px 10px;
     margin-left: 30px;
     text-align: center;
@@ -126,8 +128,8 @@ header {
   }
   
   #btnLogout:hover {
-    background-color: rgb(241, 247, 248);
-    box-shadow: 1px 1px 3px black;
+    background-color: var(--cor-botoes-hover2);
+    box-shadow: 1px 1px 3px var(--cor-shadow);
   }
 
 #cabecalho-direita {
@@ -163,17 +165,18 @@ main img {
 
 .lista-itens,
 .lista-habitos {
-    border: solid 1px lightgray;
+    border: solid 1px var(--cor-borda);
     border-radius: 15px;
-    box-shadow: 1px 1px 8px lightblue;
+    box-shadow: 1px 1px 8px var(--cor-shadow);
     height: 49%;
     width: 100%;
     padding-top: 3%;
+    background-color: var(--cor-background);
 }
 
 .lista-itens p,
 .lista-habitos p{
-    color: rgb(32, 33, 36);
+    color: var(--color-font);
     font-size: 20px;
     text-align: left;
     padding-left: 3%;
@@ -189,9 +192,9 @@ main img {
 }
 
 .calendario {
-    border: solid 1px lightgray;
+    border: solid 1px var(--cor-borda);
     border-radius: 15px;
-    box-shadow: 1px 1px 8px lightblue;
+    box-shadow: 1px 1px 8px var(--cor-shadow);
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bolder;
     width: 775px;
@@ -206,13 +209,13 @@ aside {
     /*65px*/
     height: 700px;
     justify-content: space-around;
-    background-color: #F2F2F2;
-    border-right: solid 1px lightgray;
-    border-top: solid 1px lightgray;
-    border-bottom: solid 1px lightgray;
+    background-color: var(--cor-aside);
+    border-right: solid 1px var(--cor-borda);
+    border-top: solid 1px var(--cor-borda);
+    border-bottom: solid 1px var(--cor-borda);
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    box-shadow: 3px 3px 5px lightblue;
+    box-shadow: 3px 3px 5px var(--cor-shadow);
 }
 
 aside img {
@@ -237,7 +240,7 @@ aside img {
     padding: 5px 10px;
     text-decoration: none;
     transition-duration: 0.4s;
-    color: rgb(32, 33, 36);
+    color: var(--color-font);
     font-size: 150;
     opacity: 100;
     font-weight: bolder;
@@ -343,7 +346,7 @@ aside img {
 .menu-criacao>button:hover,
 .menu-ferramentas>button:hover {
     width: 110px;
-    background-color: rgb(241, 85, 85);
+    background-color: var(--cor-botoes-hover);
     box-shadow: 1px 1px 3px black;
 }
 
@@ -816,8 +819,8 @@ form button {
 #weekdays {
     width: 100%;
     display: flex;
-    color: black;
-    justify-content: center
+    color: var(--color-font);
+    justify-content: center;
 }
 
 #weekdays div {

@@ -21,6 +21,14 @@
     --justify: space-between;
 }
 
+.menu-visualizacao>button:hover p, .menu-visualizacao>button:hover a,
+.menu-listas>button:hover p,
+.menu-criacao>button:hover p,
+.menu-ferramentas>button:hover p,.menu-ferramentas>button:hover a {
+    color: rgb(10, 10, 10);
+
+}
+
 .fa-solid.fa-m, .fa-solid.fa-s, .fa-solid.fa-d, .fa-solid.fa-i, .fa-solid.fa-h, .fa-solid.fa-a, .fa-solid.fa-plus, .fa-solid.fa-h, .fa-solid.fa-c, .fa-solid.fa-question, .fa-solid.fa-gear {
     display: none;
 }
