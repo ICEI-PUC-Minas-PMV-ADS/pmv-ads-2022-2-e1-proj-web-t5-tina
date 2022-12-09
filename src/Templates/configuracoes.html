@@ -15,26 +15,27 @@
     <div class="container">
         <header>
             <a href="./home.html" class="botao-logo">
-                <img id="logo" src="logo3.png" title="logo Tina">
+                <img id="logo" src="logo3.png" title="Retornar para página inicial">
             </a>
-            <button class="botao-hoje" type="button">Hoje</button>
+            <a href="./home.html">
+                <button class="botao-hoje" type="button" title="Retornar a data atual">Hoje</button>
+            </a>
             <div id="cabecalho-direita">
-                <button class="botao-filtrar" type="button">
-                    <i class="fa-solid fa-filter"></i>
-                    Filtrar
-                </button>
                 <a href="./perfil.html">
-                    <button class="botao-perfil">
+                    <button class="botao-perfil" title="Clique aqui para acessar seu Perfil">
                         <i class="fa-solid fa-user"></i>
                 </a>
-                <button id="btnLogout">
+                <button id="btnLogout" title="Clique aqui para sair do Tina">
                     <i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i>
                 </button>
             </div>
         </header>
         <div class="cabecalho-calendario">
             <div>
-
+                <a href="./home.html">
+                    <button id="voltar" title="Retornar para página inicial"><i class="fa-solid fa-caret-left"></i>
+                        Voltar</button>
+                </a>
             </div>
             <div>Configurações</div>
             <div>
@@ -49,7 +50,7 @@
                 <p class="titulo-tema">
                     Selecione um tema:
                 </p>
-                <select id="themeSelect">
+                <select id="themeSelect" title="Selecione um tema para aplicar no site">
                     <option class="opcao-tema" value="tema-icones">Padrão - Icones</option>
                     <!-- <option class="opcao-tema" value="tema-padrao">Padrão - letras</option> -->
                     <option class="opcao-tema" value="tema-icones-dark">Dark - Icones</option>

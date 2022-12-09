@@ -21,6 +21,20 @@
     --justify: space-between;
 }
 
+.cabecalhodados, .segsenha {
+    color: aliceblue;
+    background-color:rgb(129, 177, 219);
+}
+
+#salvaAteracoes {
+    background-color: #86eecb;
+    color: rgb(10, 10, 10);
+}
+
+#salvaAteracoes:hover {
+    background-color:  rgb(201, 158, 221);
+  }
+
 .menu-visualizacao>button:hover p, .menu-visualizacao>button:hover a,
 .menu-listas>button:hover p,
 .menu-criacao>button:hover p,

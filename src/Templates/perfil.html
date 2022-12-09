@@ -15,11 +15,11 @@
 <body>
     <div class="container">
         <header>
-            <a href="./home.html" class="botao-logo">
-                <img id="logo" src="logo3.png" title="logo Tina">
+            <a href="./home.html" class="botao-logo" title="Retornar para página inicial">
+                <img id="logo" src="logo3.png">
             </a>
             <a href="./home.html">
-                <button class="botao-hoje" type="button">Hoje</button>
+                <button class="botao-hoje" type="button" title="Retornar a data atual">Hoje</button>
             </a>
                 <select id="themeSelect" style="display: none;">
                     <option class="opcao-tema" value="tema-icones">Padrão - Icones</option>
@@ -35,7 +35,7 @@
                 </select>
             <div id="cabecalho-direita">
                 <a href="./perfil.html">
-                    <button class="botao-perfil">
+                    <button class="botao-perfil" title="Clique aqui para acessar seu Perfil">
                         <i class="fa-solid fa-user"></i>
                     </button>
                 </a>
@@ -47,7 +47,7 @@
         <div class="cabecalho-perfil">
             <div>
                 <a href="./home.html">
-                <button id="voltar"><i class="fa-solid fa-caret-left"></i> Voltar</button>
+                <button id="voltar"  title="Retornar para página inicial"><i class="fa-solid fa-caret-left"></i> Voltar</button>
                 </a>
             </div>
             <div class="perfil"> Perfil</div>
@@ -59,11 +59,11 @@
                 <div class="infopessoais">
                     <form action="#" class="formsinfo">
                         <label for="nome">Nome completo:</label>
-                        <input type="text" id="nomePerfil" name="nome"><br>
+                        <input type="text" id="nomePerfil" name="nome" title="Nome cadastrado. Insira ou modifique seu nome se deseja altera-lo"><br>
                         <label for="email">E-mail:</label>
-                        <input type="text" id="emailPerfil" name="email"><br>
+                        <input type="text" id="emailPerfil" name="email" title="E-mail cadastrado. Insira um novo se deseja altera-lo"><br>
                         <input type="checkbox" id="notifemail" name="notifemail" value="notifemail">
-                        <label for="notifemail"> Desejo receber notificações por E-mail</label><br>
+                        <label for="notifemail" title="Ativar notificações por email"> Desejo receber notificações por E-mail</label><br>
                     </form>
                 </div>
                 <div class="seguranca">
@@ -71,13 +71,13 @@
                     <div class="formulariosenha">
                         <form action="#2">
                             <label for="senha">Senha:</label>
-                            <input type="password" id="senhaPerfil" name="senha"><br>
+                            <input type="password" id="senhaPerfil" name="senha" title="Senha cadastrada. Insira uma nova senha se deseja altera-la"><br>
                             <label for="confirmSenha">Confirmar nova senha:</label>
-                            <input type="password" id="confirmSenha" name="confirmSenha"><br>
+                            <input type="password" id="confirmSenha" name="confirmSenha" title="Senha cadastrada. Insira novamente a nova senha que deseja alterar"><br>
                         </form>
                     </div>
                 </div>
-                <button id="salvaAteracoes" type="button">Salvar</button>
+                <button id="salvaAteracoes" type="button" title="Clique para salvar as alterações">Salvar</button>
             </div>
         </main>
         <footer>Rodapé</footer>

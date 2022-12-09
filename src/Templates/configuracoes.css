@@ -144,6 +144,16 @@ color: var(--color-font);
   align-items: center;
 }
 
+#voltar {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  border: none;
+  color: var(--color-font);
+  background-color: var(--cor-header);
+  cursor: pointer;
+}
+
 .cabecalho-calendario {
   grid-column: 1/13;
   grid-row: 2/3;
@@ -339,34 +349,6 @@ aside {
     display: flex;
     justify-content: var(--justify);
     align-items: center;
-}
-
-.menu-visualizacao>button:hover,
-.menu-listas>button:hover,
-.menu-criacao>button:hover,
-.menu-ferramentas>button:hover {
-    width: 100px;
-    /*40px*/
-    background-color: var(--cor-botoes-hover);
-    box-shadow: 1px 1px 3px black;
-}
-
-.menu-visualizacao>button p,
-.menu-listas>button p,
-.menu-criacao>button p,
-.menu-ferramentas>button p {
-    opacity: 0;
-    visibility: hidden;
-}
-
-
-.menu-visualizacao>button:hover p,
-.menu-listas>button:hover p,
-.menu-criacao>button:hover p,
-.menu-ferramentas>button:hover p {
-    color: white;
-    opacity: 100;
-    visibility: visible;
 }
 
 footer {
