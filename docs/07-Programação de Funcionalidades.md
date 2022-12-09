@@ -1249,7 +1249,7 @@ const concluirAtividade = () => {
     const anoAtual = dataAtual.getFullYear()
     const mesAtual = dataAtual.getMonth()
     const diaAtual = dataAtual.getDate()
-    const dataAtualString = `${anoAtual}-${mes < 9 ? '0' : '' }${mesAtual + 1}-${diaAtual}`
+    const dataAtualString = `${anoAtual}-${mes < 9 ? '0' : '' }${mesAtual + 1}-${diaAtual < 10 ? '0' : ''}${diaAtual}`
     const partesDataAtual = dataAtualString.split('-')
     const dataAtualNoTime = new Date(partesDataAtual[0], partesDataAtual[1] - 1, partesDataAtual[2], 0, 0, 0, 0)
     
