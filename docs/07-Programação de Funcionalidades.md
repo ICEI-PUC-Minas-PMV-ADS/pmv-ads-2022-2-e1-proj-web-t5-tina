@@ -384,15 +384,14 @@ if (categoriaSelectFiltro) {
 }
 ```
 
-
 ## Visualização Mensal do calendário (RF-02)
-### Desenvolvedor(a): Pedro Henrique Diniz Luiz
+### Desenvolvedor(a): Pedro Mota Cassemiro e Pedro Henrique Diniz Luiz
 
-A Visualização Mensal conta com um botão funcional que exibe o calandário com as atividades do mês criada pelo usuário.  
+A Visualização Mensal apresenta os meses do ano e seus dias, além de disponibilizar espaço para a apresentaçao das atividades criadas pelo usuário. As atividades são vinculadas aos dias do calendário de acordo com a data inicial estabelecida no momento da criação da mesma.  
 
-<img src ="img/calendario-visuMensal2 (1).png">
-<img src ="img/calendario-visuMensal2 (2).png">
+<img src ="img/Calendario-mensal.png">
 
+Na imagem é possível observar a apresentação mensal do calendário. No topo há o nome do mês, seguido pelo ano, e dois botões à direita que permitem a navegação pelos meses. O dia atual é destacado na cor azul claro.
 
 ## Requisitos atendidos
 
@@ -400,24 +399,99 @@ RF-02 - O site deve apresentar, em sua página inicial, um calendário do ano co
 
 ### Artefatos da funcionalidade
 
-- visao-mensal.html
-- visao-mensal.css
-- mensal.js
-- perfil-sem-foto-220615.png
+- home.html
+- home.css
+- calendarioMensal.js
+- inserirAtividadeCalendario.js
+- logo.png
+- favicon.ico
+- /Images
 
 ### Estrutura dos dados 
 
 ``` js
-function toggle(el) {
-    var display = document.getElementById(el).style.display;
-    if(display == "none"){
-        document.getElementById(el).style.display = 'block';
+let nav = 0;
+let clicked = null;
+
+const calendar = document.getElementById('calendar');
+const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+function load() {
+    const dt = new Date();
+
+    if (nav !== 0) {
+        dt.setMonth(new Date().getMonth() + nav);
     }
-    else{
-        document.getElementById(el).style.display = 'none';
+
+    const day = dt.getDate();
+    const month = dt.getMonth();
+    const year = dt.getFullYear();
+
+    const firstDayOfMonth = new Date(year, month, 1);
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    const dateString = firstDayOfMonth.toLocaleDateString('en-us', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+    });
+    const paddingDays = weekdays.indexOf(dateString.split(', ')[0]);
+
+    document.getElementById('monthDisplay').innerText =
+        `${dt.toLocaleDateString('pt-br', { month: 'long' })} ${year}`;
+
+    calendar.innerHTML = '';
+
+    for (let i = 1; i <= paddingDays + daysInMonth; i++) {
+        const daySquare = document.createElement('div');
+        daySquare.classList.add('day');
+
+        const dayString = `${year}-${month < 9 ? '0' : ''}${month + 1}-${(i - paddingDays) < 10 ? '0' : ''}${i - paddingDays}`;
+
+        if (i > paddingDays) {
+            daySquare.innerText = i - paddingDays;
+
+            inserirAtividades(dayString, daySquare);
+
+            if (i - paddingDays === day && nav === 0) {
+                daySquare.id = 'currentDay';
+            }
+
+        } else {
+            daySquare.classList.add('padding');
+        }
+
+        calendar.appendChild(daySquare);
     }
 }
+
+function initButtons() {
+    document.getElementById('nextButton').addEventListener('click', () => {
+        nav++;
+        load();
+    });
+
+    document.getElementById('backButton').addEventListener('click', () => {
+        nav--;
+        load();
+    });
+
+    document.getElementById('botao-hoje').addEventListener('click', () => {
+        nav = 0;
+        load();
+    });
+}
+
+exibirListaItens()
+exibirListaHabitos()
+initButtons();
+load();
 ```
+
+### Instruções de acesso
+
+O calendário mensal é a exibição padrão e já estará disponível na página principal. Para navegar pelos meses, basta utilzar os botões "anterior" e "seguinte", localizados no canto superior direito do calendário. Para retornar para o mês atual, deve-se utilizar o botão "Hoje", localizado no centro superior da página.
 
 ## Edição e Exclusão de Atividade (RF-04, RF-05)
 ### Desenvolvedor(a): Pedro Mota Cassemiro
