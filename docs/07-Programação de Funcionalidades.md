@@ -835,22 +835,43 @@ No calendário, deve-se clicar na atividade que se deseja editar. Uma janela ir�
 ## Notificação e resumos por email (RF-06)
 Desenvolvedor(a): Gabriela Vitoria Pereira
 
+
+## Tooltips (RF-10)
+### Desenvolvedor(a): Juliana Dutra Moreira
+
+Os tooltips auxiliam o usúario por meio explicações resumidas sobre o conteúdo ou funcionalidade dos itens que ele esta interagindo.
+
+Exemplo do tooltip sendo exibido ao colocar o cursos no botão "Seguinte" do calendário.
+<img src="img/tooltips.png">
+
+### Requisitos atendidos
+
+RF-10 - O site deve apresentar tooltips para facilitar o uso.
+
+### Artefatos da funcionalidade
+
+- cadastro.html
+- configurações.html
+- duvidas.html
+- home-calendario-diario.html
+- home.html
+- login.html
+- perfil.html
+
+### Instruções de acesso
+
+Para visualizar os tooltips o usuário deve posicionar o cursor em cima do item que deseja interagir, então, uma pequena caixa aparecerá com o resumo explicativo.
+
 ## Alteração de estilização do site (RF-11)
 ### Desenvolvedor(a): Juliana Dutra Moreira
 
 A tela de temas permite que o usuário escolha um tema de desing específico para aplicar em todo o site, permitindo que este tema se mantenha durante todo o acesso ao site. É possível alterar as cores e os ícones dos itens do menu lateral.
 
-Opções do menu drop-down que exibe as opções de temas para o usuário.
-<img src="img/Func_Tema_1.jpg">
+Opções do menu drop-down que exibe as opções de temas para o usuário:
+<img src="img/tela-configurações1.png">
 
-Opção de tema com alteração nos ícones do menu lateral de criação.
-<img src="img/Func_Tema_2.jpg">
-
-Exemplo de aplicação de tema:
-<img src="img/Func_Tema_3.jpg">
-
-Exemplo de aplicação de tema:
-<img src="img/Func_Tema_4.jpg">
+Aplicação do tema escolhido no calendário:
+<img src="img/tela-configurações2.png">
 
 ### Requisitos atendidos
 
@@ -858,9 +879,9 @@ RF-11 - O site deve possibilitar edições de design como mudanças de cores, pl
 
 ### Artefatos da funcionalidade
 
-- template-cores-tina.html
-- template-cores-tina.js
-- template-cores-tina.css
+- configurações.html
+- configurações.js
+- configurações.css
 - tema-dark.css
 - tema-icones-dark.css
 - tema-padrao.css
@@ -1447,6 +1468,25 @@ function logoutUser () {
     usuarioCorrente = {};
     sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
     window.location.href = 'login.html'
+}
+```
+
+Script para função de logout:
+
+```js
+function initPage() {
+        document.getElementById('btnLogout').addEventListener('click', logoutUser);
+    }
+    
+    window.addEventListener('load', initPage);
+
+function logoutUser () {
+    let sair = confirm('Deseja realmente sair do Tina?')
+     if (sair) {
+    usuarioCorrente = {};
+    sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
+    window.location.href = 'login.html'
+     }
 }
 ```
 
