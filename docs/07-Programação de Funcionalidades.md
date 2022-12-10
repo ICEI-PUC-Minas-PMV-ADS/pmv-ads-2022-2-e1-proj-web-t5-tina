@@ -19,14 +19,19 @@ RF-01 - O site deve permitir que o usuário crie atividades, associe os cadastro
 
 ### Artefatos da funcionalidade
 
-- tela inicial+criacoes.html
+- home.html
 - scripts.js
-- tela inicial+criacoes.css
+- criar-atividade.js
+- inserirAtividadeCalendario.js
+- inserirAtividadeDiario.js
+- home.css
 - logo.png
 - favicon.ico
 - /Images
 
 ```js
+// CRUD - Criar Atividade
+
 const titulo = document.getElementById('titulo')
 const descricao = document.getElementById('descricao')
 const dataInicio = document.getElementById('data-inicio')
@@ -78,8 +83,10 @@ const isDadosValidos = (atividade) => {
     var validade = true
     atividades.forEach(dadoAtividade => {
 
-        if (dadoAtividade.titulo == atividade.titulo) {
-            controlador++
+        if (
+          dadoAtividade.titulo.toUpperCase() == atividade.titulo.toUpperCase()
+        ) {
+          controlador++;
         }
     });
 
@@ -87,7 +94,7 @@ const isDadosValidos = (atividade) => {
         validade = false
         alert('Já existe atividade com o mesmo título registrada.')
     }
-    return validade       
+    return validade
 }
 
 const salvarAtividade = () => {
@@ -100,7 +107,7 @@ const salvarAtividade = () => {
         } else {
             campo.classList.remove('campo-vazio')
         }
-    });
+    });  
 
     if (camposVazios == 0) {
         const atividade = {
@@ -116,8 +123,9 @@ const salvarAtividade = () => {
         }
         if (isDadosValidos(atividade)) {
             criarAtividade(atividade)
+            load();
+            onOff('atividade')
         }
-        onOff('atividade')
     }
 }
 
@@ -673,10 +681,10 @@ RF-05 - O site deve permitir que o usuário sinalize uma atividade como finaliza
 
 ### Artefatos da funcionalidade
 
-- tela inicial+criacoes.html
+- home.html
 - scripts.js
 - atualizarAtividade.js
-- tela inicial+criacoes.css
+- home.css
 - logo.png
 - favicon.ico
 - /Images
@@ -698,6 +706,57 @@ const categoriaEditado = document.getElementById('atualizar-categoria')
 const prioridadeEditado = document.getElementById('atualizar-prioridade')
 const periodizacaoEditado = document.getElementById('atualizar-periodizacao')
 
+const intervaloHorariosDiarios = [
+  "00:00",
+  "00:30",
+  "01:00",
+  "01:30",
+  "02:00",
+  "02:30",
+  "03:00",
+  "03:30",
+  "04:00",
+  "04:30",
+  "05:00",
+  "05:30",
+  "06:00",
+  "06:30",
+  "07:00",
+  "07:30",
+  "08:00",
+  "08:30",
+  "09:00",
+  "09:30",
+  "10:00",
+  "10:30",
+  "11:00",
+  "11:30",
+  "12:00",
+  "12:30",
+  "13:00",
+  "13:30",
+  "14:00",
+  "14:30",
+  "15:00",
+  "15:30",
+  "16:00",
+  "16:30",
+  "17:00",
+  "17:30",
+  "18:00",
+  "18:30",
+  "19:00",
+  "19:30",
+  "20:00",
+  "20:30",
+  "21:00",
+  "21:30",
+  "22:00",
+  "22:30",
+  "23:00",
+  "23:30",
+];
+
 const camposEditados = [tituloEditado, descricaoEditado, dataInicioEditado, dataFimEditado, horarioInicioEditado, horarioFinalEditado, categoriaEditado, prioridadeEditado, periodizacaoEditado]
 
 const preencherCamposModal = (atividadeASerAtualizada) => {
@@ -716,8 +775,8 @@ const preencherCamposModal = (atividadeASerAtualizada) => {
 
 const abrirModalUpdateExcluir = (event) => {
 
-    if (event.target.id != "" && event.target.id != "calendar" && event.target.id != "currentDay") {
-        onOff('atualizar-atividade')
+    if (event.target.id != "" && event.target.id != "calendar" && event.target.id != "currentDay" && event.target.id != "currentDayDiario" && event.target.id != "horarios" && !intervaloHorariosDiarios.includes(event.target.id)) {
+        onOff('atualizar-atividade')    
 
         getDados().forEach(atividade => {
 
@@ -805,7 +864,6 @@ const salvarAtividadeAtualizada = () => {
 // Excluir Atividade
 
 const excluirAtividade = () => {
-
     let confirmacao = confirm('Realmente deseja excluir a atividade selecionada? A ação não pode ser desfeita.')
     if (confirmacao) {
         const dbAtividade = getDados()
@@ -814,6 +872,29 @@ const excluirAtividade = () => {
         load()
         onOff('atualizar-atividade')
     } else {
+        onOff('atualizar-atividade')
+    }
+
+}
+
+const concluirAtividade = () => {
+
+    const partesData = dataFimEditado.value.split('-')
+    const dataFormatada = new Date(partesData[0], partesData[1] - 1, partesData[2], 0, 0, 0, 0)
+    const dataAtual = new Date()
+    const anoAtual = dataAtual.getFullYear()
+    const mesAtual = dataAtual.getMonth()
+    const diaAtual = dataAtual.getDate()
+    const dataAtualString = `${anoAtual}-${mes < 9 ? '0' : '' }${mesAtual + 1}-${diaAtual < 10 ? '0' : ''}${diaAtual}`
+    const partesDataAtual = dataAtualString.split('-')
+    const dataAtualNoTime = new Date(partesDataAtual[0], partesDataAtual[1] - 1, partesDataAtual[2], 0, 0, 0, 0)
+    
+    if (dataFormatada >= dataAtualNoTime) {
+        new Audio('parabenizacao.mp3').play()
+        const dbAtividade = getDados()
+        dbAtividade.splice(index, 1)
+        setDados(dbAtividade)
+        load()
         onOff('atualizar-atividade')
     }
 }
@@ -826,6 +907,9 @@ document.querySelector('#atualizar')
 
 document.querySelector("#excluir")
     .addEventListener('click', excluirAtividade)
+
+document.querySelector("#concluir")
+    .addEventListener('click', concluirAtividade)
 ```
 
 ### Instruções de acesso
@@ -1509,10 +1593,10 @@ RF-12 - O site parabeniza o usuário quando uma atividade é marcada como conclu
 
 ### Artefatos da funcionalidade
 
-- tela inicial+criacoes.html
+- home.html
 - scripts.js
 - atualizarAtividade.js
-- tela inicial+criacoes.css
+- home.css
 - logo.png
 - favicon.ico
 - /Images
