@@ -200,7 +200,8 @@ main {
 #themeSelect>option {
   font-size: 20px;
   text-align: center;
-  margin-top: 19px;
+  padding: 0px;
+  margin: 0px;
 
 }
 
