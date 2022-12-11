@@ -29,18 +29,15 @@ A solução implementada conta com os seguintes módulos:
 
 - Linguagens utilizadas para desenvolver o projeto: HTML, CSS, JavaScript.
 - IDEs de desenvolvimento: Visual Studio Code.
-- Plataforma para hospedagem do site: Heroku.
+- Plataforma para hospedagem do site: Git Pages.
 - Plataforma para repositório dos arquivos: GitHub.
 - Ferramenta de versionamento: Git.
 - Ferramenta para a criação de logo e imagens: Canva.
 - Ferramenta para crição de template: Figma.
 - Ferramenta para diagramação dos componentes: Diagrams.net.
 
-
 ## Hospedagem
 
-A plataforma Heroku foi escolhida por prover um ambiente em nuvem para hospedar, manter e disponibilizar o site do projeto, que pode ser acessado através da URL: 
-https://projeto-tina.herokuapp.com 
-A publicação do site no Heroku se dá através de um vínculo entre a plataforma e o repositório de arquivos, encontrado no link:
-https://git.heroku.com/projeto-tina
+O Git Pages foi escolhido por prover um ambiente em nuvem para hospedar, manter e disponibilizar o site do projeto.A publicação do site no Git Pages se dá através de um vínculo entre a plataforma e o repositório de arquivos, encontrado no link:
+https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2022-2-e1-proj-web-t5-tina/src/Templates/login.html
 As atualizações ao sistema são disponibilizadas por submissões do projeto via git a plataforma.
