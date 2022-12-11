@@ -759,6 +759,11 @@ form button {
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bolder;
 }
+
+#todos-itens h4, #todos-habitos h4{
+    font-weight: lighter;
+}
+
 #todos-itens, #todos-habitos{
     height: 90%;
     margin: 1%;
