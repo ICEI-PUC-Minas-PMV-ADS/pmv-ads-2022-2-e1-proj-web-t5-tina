@@ -925,7 +925,7 @@ Desenvolvedor(a): Gabriela Vitoria Pereira
 
 Os tooltips auxiliam o usúario por meio explicações resumidas sobre o conteúdo ou funcionalidade dos itens que ele esta interagindo.
 
-Exemplo do tooltip sendo exibido ao colocar o cursos no botão "Seguinte" do calendário.
+Exemplo do tooltip sendo exibido ao colocar o cursor no botão "Seguinte" do calendário.
 <img src="img/tooltips.png">
 
 ### Requisitos atendidos
@@ -1272,7 +1272,6 @@ Funcionalidade sem requisitos específicos
 function salvaCadastro (event) {
     event.preventDefault ();
 
-    // Obtem os dados do formulário
     let nome   = document.getElementById('nome').value;
     let validNome = false
 
@@ -1455,10 +1454,6 @@ function addUser (nome, senha, email) {
     localStorage.setItem('db_usuarios', JSON.stringify (db_usuarios));
 }
 
-// function setUserPass () {
-
-// }
-
 function processaFormLogin (event) {                
     event.preventDefault ();
 
@@ -1469,7 +1464,7 @@ function processaFormLogin (event) {
     if (resultadoLogin) {
         window.location.href = 'perfil.html';
     }
-    else { // Se login falhou, avisa ao usuário
+    else { 
         alert ('Usuário ou senha incorretos');
     }
 }
