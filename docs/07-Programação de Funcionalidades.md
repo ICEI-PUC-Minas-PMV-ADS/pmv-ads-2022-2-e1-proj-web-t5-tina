@@ -1493,8 +1493,9 @@ Para acessar o login o usuário deve acesar o site. Também é possível acessar
 ## Perfil do usuário (RF-)
 ### Desenvolvedor(a): Juliana Dutra Moreira
 
-O perfil exibe as informações armazenadas no cadastro do usuário e outras funcionalidades como habilitar ou desabilitar o envio de notificações por e-mail e inserir foto.
-<img src="img/Perfil.jpg">
+O perfil exibe as informações armazenadas no cadastro do usuário e outras funcionalidades como habilitar ou desabilitar o envio de notificações por e-mail. No perfil é possível o usuário editar as informções se desejar.
+
+<img src="img/Perfil.png">
 ### Requisitos atendidos
 
 Funcionalidade sem requisitos específicos
@@ -1509,64 +1510,80 @@ Funcionalidade sem requisitos específicos
 - /Images
 
 ```js
-function exibeUsuarios() {
-    
-    document.querySelector("#nome").value = usuarioCorrente.nome
-    document.querySelector("#email").value = usuarioCorrente.email
-}
+document.querySelector("#nomePerfil").value = usuarioCorrente.nome
+document.querySelector("#emailPerfil").value = usuarioCorrente.email
+document.querySelector("#senhaPerfil").value = usuarioCorrente.senha
+document.querySelector("#confirmSenha").value = usuarioCorrente.senha
+
+var nomePerfil = usuarioCorrente.nome
+var emailPerfil = usuarioCorrente.email
+var senhaPerfil = usuarioCorrente.senha
+
+console.log(nomePerfil)
 
 function initPage() {
     document.getElementById('btn_logout').addEventListener('click', logoutUser);
-    exibeUsuarios ();
 }
 
 window.addEventListener('load', initPage);
 
-document.querySelector('#image_input').addEventListener('change', function () {
-    const reader = new FileReader()
+function editDados (event) {
+    event.preventDefault();
 
-    reader.addEventListener('load', () => {
-        localStorage.setItem("recent-image", reader.result)
-    })
+    var usuariosJSON = localStorage.getItem('db_usuarios');
+    db_usuarios = JSON.parse(usuariosJSON);    
 
-    reader.readAsDataURL(this.files[0])
-})
-
-document.addEventListener("DOMContentLoaded", () => {
-    const recentImageDataUrl = localStorage.getItem("recent-image")
-    if (recentImageDataUrl) {
-        document.querySelector('#imgPreview').setAttribute('src', recentImageDataUrl)
-    }
-})
-
-document.querySelector('#salvaFoto').addEventListener('click', function recarregarPagina(){
-    window.location.reload();
-} )
-
-function logoutUser () {
-    usuarioCorrente = {};
-    sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
-    window.location.href = 'login.html'
-}
-```
-
-Script para função de logout:
-
-```js
-function initPage() {
-        document.getElementById('btnLogout').addEventListener('click', logoutUser);
-    }
-    
-    window.addEventListener('load', initPage);
-
-function logoutUser () {
-    let sair = confirm('Deseja realmente sair do Tina?')
-     if (sair) {
-    usuarioCorrente = {};
-    sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
-    window.location.href = 'login.html'
+    for (var i = 0; i < db_usuarios.usuarios.length; i++) {
+        var usuario = db_usuarios.usuarios[i];
      }
+
+var nome = document.getElementById('nomePerfil').value;
+var email = document.getElementById('emailPerfil').value;
+var senha = document.getElementById('senhaPerfil').value;
+var senhaNova = document.getElementById('confirmSenha').value;
+
+if (senha != senhaNova) {
+    alert("as senhas não são iguais, tente novamente")
+    } else if ((nome!= nomePerfil) || (email!= emailPerfil) || (senha!= senhaPerfil)) {
+
+        
+        for (var i = 0; i < db_usuarios.usuarios.length; i++) {
+            var usuario = db_usuarios.usuarios[i];
+            if (usuario.email == emailPerfil) {
+                usuario.email = email;
+                break;
+            }
+            
+            if (usuario.nome == nomePerfil) {
+                usuario.nome = nome;
+                break;
+            }
+
+            if (usuario.senha == senhaPerfil) {
+                usuario.senha = senha;
+                break;
+            }
+        }
+
+        console.log(usuario.email); 
+
+    usuario.nome = nome
+    usuario.email = email
+    usuario.senha = senha
+    localStorage.setItem('db_usuarios', JSON.stringify (db_usuarios));
+
+    usuarioCorrente.email = usuario.email;
+    usuarioCorrente.senha = usuario.senha;
+    usuarioCorrente.nome = usuario.nome;        
+    sessionStorage.setItem('usuarioCorrente', JSON.stringify (usuarioCorrente));
+    
+    alert("Alterações salvas com sucesso :)")
+} else {
+    alert("Altere seus dados antes de salvar")
 }
+}
+
+document.getElementById('salvaAteracoes').addEventListener('click', editDados);
 ```
 
 ### Instruções de acesso
