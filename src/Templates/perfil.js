@@ -4,9 +4,9 @@ document.querySelector("#emailPerfil").value = usuarioCorrente.email
 document.querySelector("#senhaPerfil").value = usuarioCorrente.senha
 document.querySelector("#confirmSenha").value = usuarioCorrente.senha
 
-let nomePerfil = usuarioCorrente.nome
-let emailPerfil = usuarioCorrente.email
-let senhaPerfil = usuarioCorrente.senha
+var nomePerfil = usuarioCorrente.nome
+var emailPerfil = usuarioCorrente.email
+var senhaPerfil = usuarioCorrente.senha
 
 console.log(nomePerfil)
 
@@ -18,7 +18,7 @@ function initPage() {
 // Associa ao evento de carga da página a função para verificar se o usuário está logado
 window.addEventListener('load', initPage);
 
-///tentativa de editar cadastro ----------------------------------
+///editar cadastro ----------------------------------
 
 function editDados (event) {
     event.preventDefault();
@@ -30,14 +30,36 @@ function editDados (event) {
         var usuario = db_usuarios.usuarios[i];
      }
 
-let nome = document.getElementById('nomePerfil').value;
-let email = document.getElementById('emailPerfil').value;
-let senha = document.getElementById('senhaPerfil').value;
-let senhaNova = document.getElementById('confirmSenha').value;
+var nome = document.getElementById('nomePerfil').value;
+var email = document.getElementById('emailPerfil').value;
+var senha = document.getElementById('senhaPerfil').value;
+var senhaNova = document.getElementById('confirmSenha').value;
 
 if (senha != senhaNova) {
     alert("as senhas não são iguais, tente novamente")
     } else if ((nome!= nomePerfil) || (email!= emailPerfil) || (senha!= senhaPerfil)) {
+
+        
+        for (var i = 0; i < db_usuarios.usuarios.length; i++) {
+            var usuario = db_usuarios.usuarios[i];
+            if (usuario.email == emailPerfil) {
+                usuario.email = email;
+                break;
+            }
+            
+            if (usuario.nome == nomePerfil) {
+                usuario.nome = nome;
+                break;
+            }
+
+            if (usuario.senha == senhaPerfil) {
+                usuario.senha = senha;
+                break;
+            }
+        }
+
+        console.log(usuario.email); 
+
     usuario.nome = nome
     usuario.email = email
     usuario.senha = senha
@@ -46,11 +68,12 @@ if (senha != senhaNova) {
     usuarioCorrente.email = usuario.email;
     usuarioCorrente.senha = usuario.senha;
     usuarioCorrente.nome = usuario.nome;        
-    localStorage.setItem('usuarioCorrente', JSON.stringify (usuarioCorrente));
     sessionStorage.setItem('usuarioCorrente', JSON.stringify (usuarioCorrente));
     
     alert("Alterações salvas com sucesso :)")
-} 
+} else {
+    alert("Altere seus dados antes de salvar")
+}
 }
 
 document.getElementById('salvaAteracoes').addEventListener('click', editDados);
