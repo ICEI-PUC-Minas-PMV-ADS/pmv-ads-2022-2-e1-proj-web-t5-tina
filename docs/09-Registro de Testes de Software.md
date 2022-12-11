@@ -55,3 +55,12 @@ Com base nas funcionalidades, requisitos e casos de testes propostos no item ant
 | Critérios de Êxito | - A tela de estilização deve abrir corretamente - O menu drop-down deve exibir os temas - O tema selecionado deve ser apliacado na página - A mudança de tema deve ocorrer caso seja selecionado outro tema. |
 | Print do Teste | <img src="img/configurações3.png"> |
 | Conclusão do teste | Teste realizado com sucesso. Ao selecionar a opção do tema, o site é estilizado para o tema escolhido|
+
+| Caso de Teste | CT-08 - Parabenização |
+|---------------|--------------------------|
+| Requisitos Associados | RF-12 -O site parabeniza o usuário quando uma atividade é marcada como concluída antes do prazo. |
+| Objetivo do Teste | Verificar se a parabenização por concluir uma atividade antes da data final definida é realizada da maneira correta |
+| Passos | 1) Abrir o navegador 2) Acessar o site 3) Na página, no calendário, selecionar a atividade que se deseja concluir 4) No modal de edição de atividade, selecionar o botão "Concluir" | 
+| Critérios de Êxito | - O modal de edição de atividade deve abrir corretamente - Ao selecionar acionar o botão "Concluir", um áudio deverá ser reproduzido pelo browser e a atividade devera desaparecer do calendário e ser excluída do Local Storage. |
+| Print do Teste | <img src="img/modal-concluir-atividade.png"> <img src="img/concluir-atividade.png"> |
+| Conclusão do teste | Teste realizado com sucesso. Ao selecionar "Concluir", a atividade não é mais apresentada no calendário e é excluída do Local Storage. O áudio de parabenização é executado pelo navegador |
