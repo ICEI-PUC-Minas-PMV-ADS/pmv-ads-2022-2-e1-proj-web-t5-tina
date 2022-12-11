@@ -1,6 +1,15 @@
 # Registro de Testes de Software
 
-Com base nsa funcionalidades, requisitos e casos de testes propostos no item anterior (08. Plano de Testes de Software) os registros dos testes são descritos a seguir: 
+Com base nas funcionalidades, requisitos e casos de testes propostos no item anterior (08. Plano de Testes de Software) os registros dos testes são descritos a seguir:
+
+| Caso de Teste | CT-01 - Criação de atividade |
+|---------------|--------------------------|
+| Requisitos Associados | RF-01 - O site deve permitir que o usuário crie atividades, associe os cadastros a unidades de tempo no calendário e os classifique quanto à categoria e nível de prioridade. |
+| Objetivo do Teste | Verificar se a criação de atividade é realizada de maneira correta, com as validações e armazenamento no LocalStorage |
+| Passos | 1) Abrir o navegador 2) Acessar o site 3) Após o login, acessar o modal de criação de atividade interagindo com o botão de criar atividade no menu lateral esquerdo 4) No modal, inserir nos campos do formulário as informações sobre a atividade a ser criada 5) Selecionar o botão "Criar" |
+| Critérios de Êxito | - O modal de criação de atividade deve abrir corretamente e com os campos vazios - O campo de data final e horário final devem estar inativos e só serão habilitados após o campo data inicial e horário inicial serem preenchidos com valores válidos. O campo de data inicial deverá apresentar como valor mínimo para seleção a data atual, impossibilitando o usuário de selecionar datas anteriores. Por sua vez, o campo de data final deverá apresentar como valor mínimo para seleção a data utilizada no campo data inicial. Ao tentar criar uma atividade sem preencher algum dos campos, o campo vazio deverá apresentar contorno vermelho e a atividade não deverá ser criada. Ao tentar criar atividade com título já utilizado, uma mensagem de alerta deverá ser apresentada ao usuário, indicando que já existe atividade com o título escolhido. Ao finalizar a criação, a atividade deverá ser visualizada no calendário, apresentando a cor de sua categoria e disposição compatível com a periodização selecionada pelo usuário. |
+| Print dos Testes | <img src="img/abertura-modal-criar-atividade.png"> <img src="img/data-inicial-atividade.png"> <img src="img/data-final-atividade.png"> <img src="img/validacao-campo-atividade.png"> <img src="img/validacao-titulo-atividade.png"> <img src="img/atividade-calendario.png"> |
+| Conclusão do teste | Teste realizado com sucesso. Após inserir os dados corretamente, a atividade é criada e apresentada no calendário. |
 
 | Caso de Teste | CT-03 - Cadastro no site |
 |---------------|--------------------------|
