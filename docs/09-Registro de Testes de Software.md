@@ -2,7 +2,7 @@
 
 Com base nsa funcionalidades, requisitos e casos de testes propostos no item anterior (08. Plano de Testes de Software) os registros dos testes são descritos a seguir: 
 
-| Caso de Teste | CT-01 - Cadastro no site |
+| Caso de Teste | CT-03 - Cadastro no site |
 |---------------|--------------------------|
 | Requisitos Associados | RF-0 - Funcionalidade sem requisito em específico |
 | Objetivo do Teste | Verificar se o cadastro é realizado da maneira correta, com as validações e armazenamento no LocalStorage |
@@ -11,7 +11,7 @@ Com base nsa funcionalidades, requisitos e casos de testes propostos no item ant
 | Print do Teste | <img src="img/Cadastro-preenchimento-certo.jpg"> <img src="img/Cadastro-preenchimento-certo-localstorage.jpg"> <img src="img/Cadastro-preenchimento-errado.jpg">|
 | Conclusão do teste | Teste realizado com sucesso. Após inserir os dados corretamento com as validações o usuário é direcionado para o login e tem seus dados armazenados |
 
-| Caso de Teste | CT-02 - Login |
+| Caso de Teste | CT-04 - Login |
 |---------------|--------------------------|
 | Requisitos Associados | RF-0 - Funcionalidade sem requisito em específico |
 | Objetivo do Teste | Verificar se o login está ocorrendo corretamente |
@@ -20,7 +20,7 @@ Com base nsa funcionalidades, requisitos e casos de testes propostos no item ant
 | Print do Teste | <img src="img/login-correto.jpg"> <img src="img/login-incorreto.jpg"> |
 | Conclusão do teste | Teste realizado com sucesso. Após inserir os dados corretamento com as validações o login é realizado e o usuário é direcionado para a tela de perfil |
 
-| Caso de Teste | CT-03 - Perfil|
+| Caso de Teste | CT-05 - Perfil|
 |---------------|--------------------------|
 | Requisitos Associados | RF-0 - Funcionalidade sem requisito em específico |
 | Objetivo do Teste | Verificar o funcionamento correto da tela perfil |
@@ -29,7 +29,7 @@ Com base nsa funcionalidades, requisitos e casos de testes propostos no item ant
 | Print do Teste | <img src="img/teste-perfil1.png"><img src="img/teste-perfil2.png"> |
 | Conclusão do teste | Teste realizado com sucesso. Após realizar o login o perfil é acessado exibindo os dados so usuário que realizou login e ao ser feita a modificação dos dados do cadastro há alteração correta dos campos modificados no SessionStorage e LocalStorage |
 
-| Caso de Teste | CT-04 - Temas e estilização do site|
+| Caso de Teste | CT-06 - Temas e estilização do site|
 |---------------|--------------------------|
 | Requisitos Associados | RF-11 - O site deve possibilitar edições de design como mudanças de cores, plano de fundo e adesivos |
 | Objetivo do Teste | Verificar se a ferramenta de mudança do tema de cores e ícones do site está ocorrendo corretamente |
