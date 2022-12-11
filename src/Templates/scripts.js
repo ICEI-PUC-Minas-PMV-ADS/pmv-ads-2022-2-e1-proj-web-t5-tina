@@ -125,3 +125,11 @@ document.getElementById('btn-configuracoes').addEventListener('click', function(
 document.getElementById('btn-visualizacao-mensal').addEventListener('click', function(){window.location.href = "./home.html"})
 
 document.getElementById('btn-visualizacao-diaria').addEventListener('click', function(){window.location.href = "./home-calendario-diario.html"})
+
+document.getElementById('criacao-item').addEventListener('click', function(){window.location.href = "#"; onOff('item','criar')})
+
+document.getElementById('criacao-habito').addEventListener('click', function(){window.location.href = "#"; onOff('habito','criar')})
+
+document.getElementById('criacao-atividade').addEventListener('click', function(){window.location.href = "#"; onOff('atividade')})
+
+document.getElementById('criacao-categoria').addEventListener('click', function(){window.location.href = "#"; onOff('categoria')})

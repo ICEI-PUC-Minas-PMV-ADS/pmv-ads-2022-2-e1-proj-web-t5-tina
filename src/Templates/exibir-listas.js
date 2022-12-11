@@ -38,19 +38,17 @@ function exibirListaHabitos() {
 
 //Esconder listas
 function esconderLista(lista) {
-    if(lista.target.classList.contains('itens')){
+    if(lista == 'itens'){
         if(document.querySelector(".listas .lista-itens").style.display != 'none'){
             document.querySelector(".listas .lista-itens").style.display = 'none';
         } else {
             document.querySelector(".listas .lista-itens").style.display = 'block'
         }
     }
-    if(lista.target.classList.contains('habitos')){
+    if(lista == 'habitos'){
         if(document.querySelector(".listas .lista-habitos").style.display != 'none'){
             document.querySelector(".listas .lista-habitos").style.display = 'none';
-            listasEscondidas = listasEscondidas && true
         } else {
-            //document.querySelector("#container-listas").style.display == 'flex'
             document.querySelector("#container-listas").style.visibility = 'visible'
             document.querySelector(".listas .lista-habitos").style.display = 'block'
         }
@@ -61,3 +59,8 @@ function esconderLista(lista) {
         document.querySelector("#container-listas").style.visibility = 'visible'
     }
  }
+
+ 
+document.getElementById('itens').addEventListener('click', function(){esconderLista('itens')})
+document.getElementById('habitos').addEventListener('click', function(){esconderLista('habitos')})
+//document.getElementById('itens').addEventListener('click', esconderLista)

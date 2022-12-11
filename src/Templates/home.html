@@ -51,6 +51,7 @@
                     <div class="lista-itens" title="Aqui são exibidos os itens adicionados à Lista de Itens">
                         <p><img src="../Images/item.png" alt="Item"> Lista de Itens</p>
                         <div id="todos-itens">
+                            <h4>Anote simples informações que você precisa lembrar aqui</h4>
                             <div id="cada-item" onclick="abrirModalItem(event)" style="display: none;">
                             </div>
                         </div>
@@ -58,6 +59,7 @@
                     <div class="lista-habitos" title="Aqui são exibidos os hábitos adicionados à Lista de Hábitos">
                         <p><img src="../Images/lista-habitos.png" alt="Hábitos"> Lista de Hábitos</p>
                         <div id="todos-habitos">
+                            <h4>Registre hábitos que você precisa desenvolver e em quanto tempo</h4>
                             <div id="cada-habito" onclick="abrirModalHabito(event)" style="display: none;">
                             </div>
                         </div>
@@ -102,10 +104,6 @@
                     <img src="../Images/mensal.png" alt="Mensal">
                     <p>Mensal</p>
                 </button>
-                <button class="visualizacao-semana" type="button" title="Exibir visão semanal">
-                    <img src="../Images/semanal.png" alt="Semanal">
-                    <p>Semanal</p>
-                </button>
                 <button class="visualizacao-diaria" type="button" id="btn-visualizacao-diaria" title="Exibir visão diária">
                     <img src="../Images/diaria.png" alt="Diária">
                     <p>Diária</p>
@@ -113,36 +111,33 @@
             </div>
             <div class="menu-listas">
                 <p>Listas</p>
-                <button class="itens" type="button" onclick="esconderLista(event)" title="Exibir/ocultar lista de itens">
+                <button id="itens" type="button" title="Exibir/ocultar lista de itens">
                     <img src="../Images/item.png" alt="Item" class="icone itens">
                     <p>Itens</p>
                 </button>
-                <button class="habitos" type="" onclick="esconderLista(event)">
+                <button id="habitos" type="">
                     <img src="../Images/lista-habitos.png" alt="Hábitos" class="icone habitos" title="Exibir/ocultar lista de hábitos">
                     <p>Hábitos</p>
                 </button>
             </div>
             <div class="menu-criacao">
                 <p>Criar</p>
-                <button class="criacao-atividade" type="button"  title="Inserir uma atividade">
-                    <a href="#" onclick="onOff('atividade')" class="button"><img src="../Images/atividade.png"
-                            alt="Atividade"></a>
+                <button class="criacao-atividade" id="criacao-atividade" type="button"  title="Inserir uma atividade">
+                    <img src="../Images/atividade.png" alt="Atividade">
                     <p>Atividade</p>
                 </button>
-                <button class="criacao-item" type="button" title="Inserir um item">
-                    <a href="#" onclick="onOff('item', 'criar')" class="button"><img src="../Images/item.png"
-                            alt="Item"></a>
+                <button class="criacao-item" id="criacao-item" type="button" title="Inserir um item">
+                    <img src="../Images/item.png" alt="Item">
                     <p>Item</p>
                 </button>
-                <button class="criacao-habito" type="button" title="Inserir um hábito">
-                    <a href="#" onclick="onOff('habito', 'criar')" class="button"><img src="../Images/lista-habitos.png"
-                            alt="Hábitos"></a> 
+                <button class="criacao-habito" id="criacao-habito" type="button" title="Inserir um hábito">
+                    <img src="../Images/lista-habitos.png" alt="Hábitos"> 
                     <p>Hábito</p>
                 </button>
 
-                <button class="criacao-categoria" type="button" title="Inserir uma categoria">
-                    <a href="#" onclick="onOff('categoria')" class="button"><img src="../Images/categoria.png"
-                            alt="Categoria"></a><p>Categoria</p>
+                <button class="criacao-categoria" id="criacao-categoria" type="button" title="Inserir uma categoria">
+                    <img src="../Images/categoria.png" alt="Categoria">
+                    <p>Categoria</p>
                 </button>
             </div>
             <div class="menu-ferramentas">
