@@ -38,6 +38,9 @@ A solução implementada conta com os seguintes módulos:
 
 ## Hospedagem
 
-O Git Pages foi escolhido por prover um ambiente em nuvem para hospedar, manter e disponibilizar o site do projeto.A publicação do site no Git Pages se dá através de um vínculo entre a plataforma e o repositório de arquivos, encontrado no link:
+O Git Pages foi escolhido por prover um ambiente em nuvem para hospedar, manter e disponibilizar o site do projeto. 
+
+A publicação do site no Git Pages se dá através de um vínculo entre a plataforma e o repositório de arquivos, encontrado no link:
 https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2022-2-e1-proj-web-t5-tina/src/Templates/login.html
+
 As atualizações ao sistema são disponibilizadas por submissões do projeto via git a plataforma.
