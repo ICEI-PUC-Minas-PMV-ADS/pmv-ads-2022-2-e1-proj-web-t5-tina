@@ -27,7 +27,7 @@ O projeto desenvolvido é uma aplicação Web Front-End como solução para a ge
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+O link da hospedagem deve ser acessado. Ao acessar o site, inicialmente, é necessário realizar o cadastro e em seguida, o login no site. Após isso, o usuário será direcionado para a página inicial do site, na visão mesal do calendário, no qual poderá começar a usar e explorar as diversas funcionalidades do Tina. 
 
 # Documentação
 
