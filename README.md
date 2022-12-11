@@ -6,6 +6,10 @@
 
 `Eixo 1 - 1º Semestre`
 
+<p align = "center">
+<img src="/docs/img/logo2.png">
+</p>
+
 O projeto desenvolvido é uma aplicação Web Front-End como solução para a gestão de tempo de estudantes a partir do Ensino Médio. O sistema possibilitará que os usuários cadastrem atividades em calendários e estabeleçam datas e horários para cumprimento de prazos e atendimento a compromissos. Também auxiliará na listagem de tarefas, cumprimento e criação de hábitos.
 
 ## Integrantes
@@ -17,7 +21,7 @@ O projeto desenvolvido é uma aplicação Web Front-End como solução para a ge
 * Pedro Henrique Diniz Luiz
 * Pedro Mota Cassemiro
 
-## Orientador
+## Orientadora
 
 * Simone Alves Nogueira
 
@@ -43,7 +47,7 @@ Assim que a primeira versão do sistema estiver disponível, deverá complementa
 
 # Hospedagem
 
-* Insira o endereço eletrônico público de acesso ao conteúdo publicado. 
+https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2022-2-e1-proj-web-t5-tina/src/Templates/login.html
 
 # Armazenamento do Código-Fonte
 
