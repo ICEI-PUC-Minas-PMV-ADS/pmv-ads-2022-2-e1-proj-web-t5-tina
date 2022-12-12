@@ -60,7 +60,7 @@ A seguir são descritos os testes funcionais a serem executados:
 | Critérios de Êxito | - O modal de edição de atividade deve abrir corretamente - Ao selecionar acionar o botão "Concluir", um áudio deverá ser reproduzido pelo browser e a atividade devera desaparecer do calendário e ser excluída do Local Storage.
 
 
-| Caso de Teste | CT-09 - Criando, editando e excluindo Categorias |
+| Caso de Teste | CT-09 - Criação, edição e exclusão de Categorias |
 |---------------|--------------------------|
 | Requisitos Associados | RF-01 - O site deve permitir que o usuário crie atividades, associe os cadastros a unidades de tempo no calendário e os classifique quanto ao âmbito e nível de prioridade. |
 | Objetivo do Teste | Verificar se a criação, edição e exclusão de categorias é realizada da maneira correta, com as validações e armazenamento no LocalStorage |
