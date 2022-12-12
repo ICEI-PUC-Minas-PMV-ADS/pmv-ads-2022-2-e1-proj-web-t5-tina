@@ -12,4 +12,4 @@
 
 ## Vídeo - Demostração da solução
 
-[Vídeo - Demostração Tina](https://sgapucminasbr-my.sharepoint.com/personal/886953_sga_pucminas_br/_layouts/15/stream.aspx?id=%2Fpersonal%2F886953_sga_pucminas_br%2FDocuments%2FADS-2022-2-TURMA-5-GRUPO2-TINA%203.mp4&referrer=OfficeHome&referrerScenario=UPLOAD)
+[Vídeo - Demonstração Tina](https://sgapucminasbr-my.sharepoint.com/:v:/g/personal/886953_sga_pucminas_br/ER82jfj0FtBDqEeeKLIJwUsBg_2Zff5ufYZBjaPAQncwbw?e=CXcmH8)
