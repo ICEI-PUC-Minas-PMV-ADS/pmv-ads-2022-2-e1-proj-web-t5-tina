@@ -64,3 +64,13 @@ Com base nas funcionalidades, requisitos e casos de testes propostos no item ant
 | Critérios de Êxito | - O modal de edição de atividade deve abrir corretamente - Ao selecionar acionar o botão "Concluir", um áudio deverá ser reproduzido pelo browser e a atividade devera desaparecer do calendário e ser excluída do Local Storage. |
 | Print do Teste | <img src="img/modal-concluir-atividade.png"> <img src="img/concluir-atividade.png"> |
 | Conclusão do teste | Teste realizado com sucesso. Ao selecionar "Concluir", a atividade não é mais apresentada no calendário e é excluída do Local Storage. O áudio de parabenização é executado pelo navegador |
+
+| Caso de Teste | CT-09 - Criação, edição e exclusão de Categorias |
+|---------------|--------------------------|
+| Requisitos Associados | RF-01 - O site deve permitir que o usuário crie atividades, associe os cadastros a unidades de tempo no calendário e os classifique quanto ao âmbito e nível de prioridade. |
+| Objetivo do Teste | Verificar se a criação, edição e exclusão de categorias é realizada da maneira correta, com as validações e armazenamento no LocalStorage |
+| Passos | 1) Abrir o navegador 2) Acessar o site 3) Na página inicial selecionar o ícone de criar categoria 4) No modal de criação de categoria, inserir nos campos do formulário as informações para a criação da atividade 5) Selecionar o botão "Salvar" |
+| Critérios de Êxito | - O modal de criação de categoria deve abrir corretamente - Ao inserir as informações do formulário e selecionar a cor da categoria, deve ser aparecer uma lista suspensa com as opções de cores. Ao excluir uma categoria, uma mensagem de confirmação deve ser emitida pelo browser. - Caso a resposta seja positiva, a categoria não deverá mais aparecer na tabela de edição de categorias.
+| Print do Teste | <img src="img/criação-categoria.png"> <img src="img/categoria-cadastrada.png"> |
+| Conclusão do teste | Teste realizado com sucesso. Foi possível criar a categoria nomeando e definindo uma cor. Após salvar a categoria criada já ficou disponível para uso na criação da atividade e assim também a cor da categoria apareceu no calendário junto a atividade cadastrada. A edição e exclusão da atividade também ocorreu com sucesso. |
+
