@@ -66,3 +66,24 @@ A seguir são descritos os testes funcionais a serem executados:
 | Objetivo do Teste | Verificar se a criação, edição e exclusão de categorias é realizada da maneira correta, com as validações e armazenamento no LocalStorage |
 | Passos | 1) Abrir o navegador 2) Acessar o site 3) Na página inicial selecionar o ícone de criar categoria 4) No modal de criação de categoria, inserir nos campos do formulário as informações para a criação da atividade 5) Selecionar o botão "Salvar" |
 | Critérios de Êxito | - O modal de criação de categoria deve abrir corretamente - Ao inserir as informações do formulário e selecionar a cor da categoria, deve ser aparecer uma lista suspensa com as opções de cores. Ao excluir uma categoria, uma mensagem de confirmação deve ser emitida pelo browser. - Caso a resposta seja positiva, a categoria não deverá mais aparecer na tabela de edição de categorias.
+
+| Caso de Teste | CT-10 - Criando um Item e Hábito|
+|---------------|--------------------------|
+| Requisitos Associados | RF-03 - O site deve permitir que o usuário crie itens em uma lista não associada a unidades de tempo no calendário RF-08 - O site deve permitir que o usuário crie e associe anotações de hábitos ao calendário |
+| Objetivo do Teste | Verificar se as criações de itens ou hábitos são realizadas da maneira correta, com as validações e armazenamento no LocalStorage |
+| Passos | 1) Abrir o navegador 2) Acessar o site 3) Na página inicial selecionar o ícone de criar Item ou Hábtio 4) No modal de criação que surgirá, preencher os campos obrigatórios do formulário com as informações para a criação 5) Selecionar o botão "Criar" |
+| Critérios de Êxito | - O modal de criação de Item ou de Hábito deve abrir corretamente - Ao preencher todos os campos do formulário e clicar em "Criar", o modal deve ser fechado e o novo Item ou Hábito deve aparecer em sua respectiva lista na cor da categoria associada. 
+
+| Caso de Teste | CT-11 - Editando e excluindo Item e Hábito|
+|---------------|--------------------------|
+| Requisitos Associados | RF-03 - O site deve permitir que o usuário crie itens em uma lista não associada a unidades de tempo no calendário RF-08 - O site deve permitir que o usuário crie e associe anotações de hábitos ao calendário |
+| Objetivo do Teste | Verificar se a edição e exclusão de itens e hábitos são realizadas da maneira correta, com as validações e armazenamento no LocalStorage |
+| Passos | 1) Abrir o navegador 2) Acessar o site 3) Na página inicial há a lista de Itens ou a de Hábitos onde é possível ver os já criados 4) Selecionar o item ou hábito a ser editado ou excluído clicando nele 5) Escolher a opção "Atualizar" ou "Remover" |
+| Critérios de Êxito | - O modal de criação de Item deve abrir corretamente - Ao alterar um dos campos e clicar em "Atualizar" e abrir novamente o mesmo elemento, o campo alterado deve estar atualizado. - Caso o campo alterado seja nome ou cor, devem mudar na visualização da lista também. - Caso escolha a opção "Remover", então uma mensagem de confirmação deve ser emitida pelo browser. - Caso a resposta seja positiva, o elemento não deverá mais aparecer na sua respectiva lista.
+
+| Caso de Teste | CT-12 - Filtrar por prioridades ou categorias |
+|---------------|--------------------------|
+| Requisitos Associados | RF-07 - O site deve permitir que o usuário filtre as atividades por título, categoria ou prioridade |
+| Objetivo do Teste | Verificar se os filtros de prioridade ou categorias se aplicam corretamente sob os itens, hábitos e atividades |
+| Passos | 1) Abrir o navegador 2) Acessar o site 3) Na página inicial no canto superior esquerdo deve clicar no botão "Filtrar" 4) Selecionar o tipo de Filtro escolhido |
+| Critérios de Êxito | - A caixa seletora dos filtros deve aparecer ao clicar no botão "Filtrar" nas telas de visualização mensal ou diária. - Ao escolher um filtro, apenas elementos com aquela informação associada devem aparecer - Ao escolher a opção "Todos", todos os elementos devem aparecer.
