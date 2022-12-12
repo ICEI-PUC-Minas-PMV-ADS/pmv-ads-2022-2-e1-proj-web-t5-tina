@@ -1024,10 +1024,14 @@ RF-08 - O site deve permitir que o usuário crie e associe anotações de hábit
  
 - home.html
 - scripts.js
+- crud-item.js
+- crud-habito.js
+- exibir-lista.js
 - home.css
 - logo.png
 - favicon.ico
 - /Images
+
 ```js
 const getDadosItem = () => JSON.parse(localStorage.getItem("dbItens")) ?? [];
 const setDadosItem = (dbItens) => localStorage.setItem("dbItens", JSON.stringify(dbItens));
@@ -1155,6 +1159,9 @@ RF-09 - O site deve possibilitar automação como na criação de regras para pe
  
 - home.html
 - scripts.js
+- crud-item.js
+- crud-habito.js
+- exibir-lista.js
 - home.css
 - logo.png
 - favicon.ico
@@ -1782,4 +1789,112 @@ button.addEventListener("click", function() {
 }); 
 ```
 
+###Filtrar por categorias e prioridades (RF-07)
 
+### Desenvolvedor(a): Ellen Caroline Trindade Gonçalves Cândido
+
+O botão filtrar permite filtrar todos os itens, hábitos e atividades de uma só vez com base em suas prioriadades ou categorias, selecionadas no momento de sua criação.
+
+### Requisitos atendidos
+
+RF-07 - O site deve permitir que o usuário filtre as atividades por título, categoria ou prioridade
+
+### Artefatos da funcionalidade
+
+- home.html
+  
+- home-calendario-diario.html
+  
+- filtros.js
+  
+- home.css
+  
+- ```javascript
+  function filtrar(event) {
+      var filtro = event.target.value
+      var prioridade, categoria;
+      if(filtro == 'Todos'){
+          window.location.href = './home.html';
+      } else if(filtro.includes('Prioridade')){
+          filtro = filtro.slice(11)
+          filtrarPrioridade(filtro)
+      } else {
+          filtrarCategoria(filtro)
+      }
+  }
+  
+  function filtrarCategoria(categoria){
+      Array.prototype.forEach.call(document.getElementsByClassName("cada-item"), function (divisor) {
+          var item = getDadosItem().find(item => item.categoria == categoria && item.titulo == divisor.innerHTML)
+          if (item && divisor.innerText == item.titulo) {
+              divisor.style.display = 'block'
+          } else {
+              divisor.style.display = 'none'
+          }
+      });
+  
+      Array.prototype.forEach.call(document.getElementsByClassName("cada-habito"), function (divisor) {
+          var habito = getDadosHabito().find(habito => habito.categoria == categoria && habito.titulo == divisor.innerHTML)
+          if (habito && divisor.innerHTML == habito.titulo) {
+                  divisor.style.display = 'block'
+          } else {
+              divisor.style.display = 'none'
+          }
+  
+      });
+  
+      Array.prototype.forEach.call(document.getElementsByClassName("event"), function (divisor) {
+          var atividade = getDados().find(atividade => atividade.categoria == categoria && atividade.titulo == divisor.innerHTML)
+          if (atividade && divisor.innerHTML == atividade.titulo) {
+                  divisor.style.display = 'block'
+          } else {
+              divisor.style.display = 'none'
+          }
+      });
+  
+  }
+  
+  function filtrarPrioridade(prioridade) {
+  
+      Array.prototype.forEach.call(document.getElementsByClassName("cada-item"), function (divisor) {
+          var item = getDadosItem().find(item => item.prioridade == prioridade  && item.titulo == divisor.innerHTML)
+          if (item && divisor.innerText == item.titulo) {
+              divisor.style.display = 'block'
+          } else {
+              divisor.style.display = 'none'
+          }
+      });
+  
+      Array.prototype.forEach.call(document.getElementsByClassName("cada-habito"), function (divisor) {
+          var habito = getDadosHabito().find(habito => habito.prioridade == prioridade)
+          if (habito && divisor.innerHTML == habito.titulo) {
+                  divisor.style.display = 'block'
+          } else {
+              divisor.style.display = 'none'
+          }
+      });
+  
+      Array.prototype.forEach.call(document.getElementsByClassName("event"), function (divisor) {
+          var atividade = getDados().find(atividade => atividade.prioridade == prioridade)
+          if (atividade && divisor.innerHTML == atividade.titulo) {
+                  divisor.style.display = 'block'
+          } else {
+              divisor.style.display = 'none'
+          }
+      });
+  
+  }
+  
+  function aparecerFiltros(){
+      if(document.getElementById('filtro').style.display == 'none'){
+          document.getElementById('filtro').style.display = 'block'
+      } else {
+          document.getElementById('filtro').style.display = 'none'
+      }
+  }
+  ```
+  
+
+## Instruções de acesso
+
+No canto superior direito, há um botão "Filtrar" que, ao ser clicado, revela uma caixa seletora com opções de filtro por prioridades (Alta, Média ou Baixa) e pelas categorias criadas pelo usuário. Ao filtrar, apenas as atividades, itens e hábitos com a prioridade ou categoria escolhida aparecerão.
