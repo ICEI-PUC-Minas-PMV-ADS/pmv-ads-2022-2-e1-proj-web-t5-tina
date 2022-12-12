@@ -148,9 +148,9 @@ A criação das categorias permite que os usuários categorizem por âmbito suas
 
 ## Artefatos da funcionalidade
 
-- tela inicial+criacoes.html
+- home.html
 - teste_categoria.js
-- tela inicial+criacoes.css
+- home.css
 - nova_categoria.png
 
 #### Estrutura dos dados 
@@ -966,15 +966,10 @@ RF-11 - O site deve possibilitar edições de design como mudanças de cores, pl
 - configurações.html
 - configurações.js
 - configurações.css
-- tema-dark.css
-- tema-icones-dark.css
-- tema-padrao.css
 - tema-icones
-- tema1.css
+- tema-icones-dark.css
 - tema1-icones.css
-- tema2.css
 - tema2-icones.css
-- tema3.css
 - tema3-icones.css
 - logo.png
 - favicon.ico
@@ -1027,9 +1022,9 @@ RF-08 - O site deve permitir que o usuário crie e associe anotações de hábit
 
 ### Artefatos da funcionalidade
  
-- tela inicial+criacoes.html
+- home.html
 - scripts.js
-- tela inicial+criacoes.css
+- home.css
 - logo.png
 - favicon.ico
 - /Images
@@ -1158,9 +1153,9 @@ RF-09 - O site deve possibilitar automação como na criação de regras para pe
 
 ### Artefatos da funcionalidade
  
-- tela inicial+criacoes.html
+- home.html
 - scripts.js
-- tela inicial+criacoes.css
+- home.css
 - logo.png
 - favicon.ico
 - /Images
