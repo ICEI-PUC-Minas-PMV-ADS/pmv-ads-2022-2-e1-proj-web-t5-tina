@@ -966,15 +966,10 @@ RF-11 - O site deve possibilitar edições de design como mudanças de cores, pl
 - configurações.html
 - configurações.js
 - configurações.css
-- tema-dark.css
-- tema-icones-dark.css
-- tema-padrao.css
 - tema-icones
-- tema1.css
+- tema-icones-dark.css
 - tema1-icones.css
-- tema2.css
 - tema2-icones.css
-- tema3.css
 - tema3-icones.css
 - logo.png
 - favicon.ico

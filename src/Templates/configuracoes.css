@@ -182,6 +182,11 @@ main {
   padding-right: 10px;
 }
 
+main img {
+  width: 21px;
+  height: 21px;
+}
+
 #themeSelect {
   background-color: rgb(255, 255, 255);
   border: solid 1px lightgray;
@@ -248,6 +253,11 @@ aside {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   box-shadow: 3px 3px 5px var(--cor-shadow);
+}
+
+aside img {
+  width: 21px;
+  height: 21px;
 }
 
 .menu-visualizacao,
